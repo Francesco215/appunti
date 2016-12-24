@@ -28,14 +28,18 @@
           \end{cases}
       \end{displaymath}
       E$[x]$ \'e un'operatore lineare quindi E$[ax]=$E$a[x]$
+      e se $x_{1} \lor x_{2}$ sono variabili indipendenti, allora
+      E$[x_{1}x_{2}]$=E$[x_{1}]$E$[x_{2}]$=$\mu_{1}\mu_{2}$
        
-     \subsection{Varianza $(\sigma^2)$}
-       \[
-         \sigma^2=\textrm{E}\bigr[(x-\mu)^2\bigr]=\begin{cases}
-             \displaystyle \int_{-\infty}^{+\infty}(x-\mu)^p(x)dx 
-             \textrm{ per variabili continue}\\
-             \displaystyle \sum_{k=0}^{n}(x_{k}-\mu)^2\textrm{P}(x-{k})
-             \textrm { per variabili continue}
-           \end{cases}
-       \]
+    \subsection{Varianza $(\sigma^2)$}
+      \[
+        \sigma^2=\textrm{E}\bigr[(x-\mu)^2\bigr]=\begin{cases}
+            \displaystyle \int_{-\infty}^{+\infty}(x-\mu)^p(x)dx 
+            \textrm{ per variabili continue}\\
+            \displaystyle \sum_{k=0}^{n}(x_{k}-\mu)^2\textrm{P}(x-{k})
+            \textrm { per variabili continue}
+          \end{cases}
+      \]
+      Var$[cx]=c^2$Var$[x]$ e se $x_{1} \lor x_{2}$ sono variabili indipendenti, allora
+      $\sigma^2=\sigma_{1}^2+\sigma_{2}^2$
 \end{document}
