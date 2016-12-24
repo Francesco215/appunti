@@ -1,0 +1,169 @@
+\documentclass{exam}
+\date{Dicembre 2016}
+\usepackage[italian]{babel}
+\usepackage[T1]{fontenc}
+\title{Appunti di Analisi Matematica}
+\author{Francesco Sacco}
+\begin{document}
+
+
+
+
+
+\section{Limiti}
+  \subsection{Definizioni}
+    \begin{enumerate}
+      \item 
+        sia $f(x) \in D\subset R$ e sia $x_{0}$ un punto di accumulazione di $D$. diremo che
+        \begin{displaymath}
+          (\lim_{x \to x_{0}}=L\Leftrightarrow \forall \varepsilon , \exists \delta > 0 :
+          \forall x \in D \land 0<|x-x_{0}|< \delta) \Rightarrow |f(x)-L|<\varepsilon
+        \end{displaymath}
+      \item
+        $\textrm{sia } f(x) \in D \subset \mathbf{R} \land x_{0}\in f(x) $
+        \begin{displaymath}
+          \textrm{se } \forall M \in \mathbf{R} \exists \delta >0: \forall x \subset D , 
+          0<|x-x_{0}|<\delta \Rightarrow f(x)>M
+          \textrm{ allora} \lim_{x \to x_{0}}f(x)=\infty
+        \end{displaymath}
+      \item 
+        sia $f(x) \in D \subset \mathbf{R}$ non limitato superiormente
+        \begin{displaymath}
+          \lim_{x \to \infty}=L \Leftrightarrow 
+          \forall \varepsilon>0 \exists \nu:\forall x\in D,
+          x>\nu \Rightarrow |f(x)-L|<\varepsilon
+        \end{displaymath}
+      \item
+        \(\displaystyle
+          \textrm{sia } f(x) \in D\subset \mathbf{R}
+          \textrm{ se }\lim_{x\to x_{0}}=\infty \textrm{ allora diremo che la funzione }f(x) 
+          \textrm{ ha un'asintoto verticale in }x_{0}
+        \)
+      \item 
+        sia $f(x)\in (c, \pm \infty)$ Diremo che la retta di equazione $y=ax+b$
+        \'e un asintoto di $f$ se
+          \begin{displaymath}
+            \lim_{x\to \pm \infty}[f(x)-ax-b]=0
+          \end{displaymath}
+    \end{enumerate}
+  
+  
+  
+  \subsection{Teoremi}
+    \begin{enumerate}
+      \item siamo $f(x)$ e $g(x)$ due funzioni tali che
+        \begin{displaymath}
+          \lim_{x\to x_{0}}f(x)=L
+        \end{displaymath}
+        \begin{displaymath}
+          \lim_{x\to x_{0}}g(x)=M
+        \end{displaymath}
+        \begin{displaymath}
+          \textrm{allora}
+        \end{displaymath}
+        \begin{displaymath}
+          \lim_{x \to x_{0}} [f(x)+g(x)]= L+M
+        \end{displaymath}
+        \begin{displaymath}
+          \lim_{x \to x_{0}} f(x)g(x)=LM
+        \end{displaymath}
+        \begin{displaymath}
+          \lim_{x\to x_{0}} \frac{f(x)}{g(x)}=\frac{L}{M}
+        \end{displaymath}
+      \item{teorema della permanenza del segno}
+        \begin{displaymath}
+          \textrm{se} \lim_{x\to x_{0}} f(x)=L>0 \Rightarrow \exists \delta >0 : \forall x :
+          0<|x-x_{0}|<\delta \textrm{ si ha } f(x)>\frac{M}{2}>0
+        \end{displaymath}
+      \item{teorema dei 2 carabinieri}
+        \begin{displaymath}
+          \textrm{siano} f(x),g(x)\textrm{ e } h(x) \in \mathbf{R} \land f(x)<g(x)<h(x) 
+          \land \lim_{x \to x_{0}}f(x)=\lim_{x \to x_{0}}h(x)=L
+        \end{displaymath}
+        \begin{displaymath}
+          \textrm{allora }\lim_{x \to x_{0}}g(x)=L
+        \end{displaymath}
+    \end{enumerate}
+  
+  
+  
+  \subsection{Limiti notevoli}
+    \begin{center}
+      \begin{tabular}{|c|c|}
+        \(\displaystyle \lim_{x\to 0}\frac{\textrm{sen}(x)}{x}=1\)&
+        \(\displaystyle \lim_{x\to 0}\frac{1-\textrm{cos}(x)}{x}=\frac{1}{2}\)\\
+        \(\displaystyle \lim_{x\to 0}\frac{\textrm{tan}(x)}{x}=1\)&
+        \(\displaystyle \lim_{x\to 0}\frac{\textrm{arcCos}(x)}{\sqrt[]{1-x}}=\sqrt[]{2}\)\\
+        \(\displaystyle \lim_{x\to 0}(1+x)^\frac{1}{x}=e\)&
+        \(\displaystyle \lim_{x\to 0}(1-x)^\frac{1}{x}=\frac{1}{e}\)\\
+        \(\displaystyle \lim_{x\to \infty}\Big(1+\frac{1}{x}\Big)^x=e\)&
+        \(\displaystyle \lim_{x\to \infty}\Big(1+\frac{k}{x}\Big)^x=e^k\)\\
+        \(\displaystyle \lim_{x\to 0}\frac{a^x-1}{x}=\textrm{ln}{a}\)&
+        \(\displaystyle \lim_{x\to 0}\frac{\textrm{ln}(1\pm x)}{x}=\pm 1\)\\
+      \end{tabular}
+    \end{center}
+   \newpage
+
+
+
+
+
+\section{Successioni}
+  \subsection{Definizioni}
+    \begin{enumerate}
+      \item una successione \'e una funzione $a_{n}: \mathbf{N} \rightarrow \mathbf{R}$
+      \item un insieme $K\subset \mathbf{R}$ si dice compatto se da ogni successione a valori in $K$
+        si può estrarre una sottosuccessione convergente a un punto di $K$
+      \item una successione è definita monotona crescente se $\forall n\subset \mathbf{N}:
+        a_{n+1}\ge a_{n}$
+        mentre monotone decrescente se $\forall n\subset \mathbf{N}: a_{n+1}\le a_{n}$ 
+      \item Una successione si dice di Cauchy se $\forall \varepsilon>0 \exists \nu:
+        \forall n,m>\nu \quad |a_{m}-a_{n}|<\varepsilon$  
+     \end{enumerate}
+  
+  
+  
+  \subsection{Teoremi}
+    \begin{enumerate}
+      \item Da ogni successione limitata si può estrarre una sottosuccessione convergente
+      \item una successione $a_{n}$ monotona ha sempre limite, se $a_{n}$ \'e crescente si ha 
+      \(\displaystyle \lim_{n\to \infty}a_{n}= \sup_{n\in \mathbf{N}}a_{n}\),
+      mentre se $a_{n}$ \'e decrescente
+      \(\displaystyle \lim_{n\to \infty}a_{n}= \inf_{n\in \mathbf{N}}a_{n}\),
+    \end{enumerate}
+  \newpage
+
+
+
+
+
+\section{Serie}
+ \subsection{Definizioni}
+ 
+ 
+ 
+ \subsection{Teoremi}
+  \newpage
+
+
+
+
+
+\section{Funzioni continue}
+  \subsection{Teoremi}
+    \begin{enumerate}
+      \item
+        siano $f(x)$ una funzione continua in $x_{0}$ e
+        $g(y)$ una funzione continua in $y_{0}=f(x_{0})$, allora
+        la funzione composta $g(f(x))$ \'e continua in $x_{0}$
+        \begin{displaymath}
+          x_{0}\cup y_{0}\subset \mathbf{R}:f(x) \in x_{0} \land g(y) 
+          \in y_{0}=f(x_{0}) \Rightarrow f(g(x))\in x_{0}
+        \end{displaymath}
+      \item
+        se $g(x)$ \'e una funzione continua, allora
+        \begin{displaymath}
+          g:A\rightarrow \mathbf{R}\Rightarrow\lim_{x\to x_{0}}g(f(x))=g(\lim_{x\to x_{0}}f(x))
+        \end{displaymath}
+    \end{enumerate}
+\end{document}

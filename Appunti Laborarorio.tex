@@ -1,0 +1,41 @@
+\documentclass{exam}
+\date{Dicembre 2016}
+\usepackage[italian]{babel}
+\usepackage[T1]{fontenc}
+\title{Appunti di Laboratorio}
+\author{Francesco Sacco}
+\usepackage{amsmath}
+\begin{document}
+
+
+  \section{Teoria delle probabilit\'a}
+    \subsection{Coeafficenti binomiali}
+      dato un insieme di $n$ elementi \'e possibile ordirarli in 
+      $\binom{n}{k}$ gruppi di dimenzione $k$
+      \[ \binom{n}{k}=\frac{n!}{k!(n-k)!} \]
+      inoltre la potenza $n$-esima di un binomio \'e uguale a 
+      \(\displaystyle(a+b)^n=\sum_{k=0}^n \binom{n}{k}a^k b^{k-n} \)
+      
+    \subsection{Teorema di Bayes}
+      \[P(E_{1}|E_{2})=\frac{P(E_{2}|E_{1})P(E_{1})}{P(E_{2})} \]
+      
+    \subsection{Media ($\mu$)}
+      \begin{displaymath}
+        \mu=\textrm{E}[x]=\begin{cases}
+            \displaystyle \int_{-\infty}^{+\infty}xp(x)dx \textrm{ per variabili continue}\\
+            \displaystyle \sum_{k=0}^{n}x_{k}\textrm{P}(x_{k})
+            \textrm{ per variabili discrete}
+          \end{cases}
+      \end{displaymath}
+      E$[x]$ \'e un'operatore lineare quindi E$[ax]=$E$a[x]$
+       
+     \subsection{Varianza $(\sigma^2)$}
+       \[
+         \sigma^2=\textrm{E}\bigr[(x-\mu)^2\bigr]=\begin{cases}
+             \displaystyle \int_{-\infty}^{+\infty}(x-\mu)^p(x)dx 
+             \textrm{ per variabili continue}\\
+             \displaystyle \sum_{k=0}^{n}(x_{k}-\mu)^2\textrm{P}(x-{k})
+             \textrm { per variabili continue}
+           \end{cases}
+       \]
+\end{document}
