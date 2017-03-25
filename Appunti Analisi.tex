@@ -1,5 +1,5 @@
 \documentclass{exam}
-\date{Dicembre 2016}
+\date{Marzo 2017}
 \usepackage[italian]{babel}
 \usepackage[T1]{fontenc}
 \title{Appunti di Analisi Matematica}
@@ -16,7 +16,7 @@
       \item 
         sia $f(x) \in D\subset R$ e sia $x_{0}$ un punto di accumulazione di $D$. diremo che
         \begin{displaymath}
-          (\lim_{x \to x_{0}}=L\Leftrightarrow \forall \varepsilon , \exists \delta > 0 :
+          \lim_{x \to x_{0}}=L\Leftrightarrow \forall \varepsilon , \exists \delta > 0 :
           \forall x \in D \land 0<|x-x_{0}|< \delta) \Rightarrow |f(x)-L|<\varepsilon
         \end{displaymath}
       \item
@@ -91,7 +91,7 @@
     \begin{center}
       \begin{tabular}{|c|c|}
         \(\displaystyle \lim_{x\to 0}\frac{\textrm{sen}(x)}{x}=1\)&
-        \(\displaystyle \lim_{x\to 0}\frac{1-\textrm{cos}(x)}{x}=\frac{1}{2}\)\\
+        \(\displaystyle \lim_{x\to 0}\frac{1-\textrm{cos}(x)}{x^2}=\frac{1}{2}\)\\
         \(\displaystyle \lim_{x\to 0}\frac{\textrm{tan}(x)}{x}=1\)&
         \(\displaystyle \lim_{x\to 0}\frac{\textrm{arcCos}(x)}{\sqrt[]{1-x}}=\sqrt[]{2}\)\\
         \(\displaystyle \lim_{x\to 0}(1+x)^\frac{1}{x}=e\)&
@@ -113,8 +113,8 @@
     \begin{enumerate}
       \item una successione \'e una funzione $a_{n}: \mathbf{N} \rightarrow \mathbf{R}$
       \item un insieme $K\subset \mathbf{R}$ si dice compatto se da ogni successione a valori in $K$
-        si può estrarre una sottosuccessione convergente a un punto di $K$
-      \item una successione è definita monotona crescente se $\forall n\subset \mathbf{N}:
+        si pu\'o estrarre una sottosuccessione convergente a un punto di $K$
+      \item una successione \'e definita monotona crescente se $\forall n\subset \mathbf{N}:
         a_{n+1}\ge a_{n}$
         mentre monotone decrescente se $\forall n\subset \mathbf{N}: a_{n+1}\le a_{n}$ 
       \item Una successione si dice di Cauchy se $\forall \varepsilon>0 \exists \nu:
@@ -125,13 +125,12 @@
   
   \subsection{Teoremi}
     \begin{enumerate}
-      \item Da ogni successione limitata si può estrarre una sottosuccessione convergente
+      \item Da ogni successione limitata si pu\'o estrarre una sottosuccessione convergente
       \item una successione $a_{n}$ monotona ha sempre limite, se $a_{n}$ \'e crescente si ha 
       \(\displaystyle \lim_{n\to \infty}a_{n}= \sup_{n\in \mathbf{N}}a_{n}\),
       mentre se $a_{n}$ \'e decrescente
       \(\displaystyle \lim_{n\to \infty}a_{n}= \inf_{n\in \mathbf{N}}a_{n}\),
     \end{enumerate}
-  \newpage
 
 
 
@@ -139,10 +138,37 @@
 
 \section{Serie}
  \subsection{Definizioni}
- 
+  \begin{enumerate}
+    \item
+      sia $a_{i}+a_{i+1}+\dots+a_{j}$ la somma dei terimini tra $i$ e $j$ della successione $a_{n}$ essa \'e definita come \(\displaystyle \sum_{n=i}^j a_{n}\)
+    \item
+      se \(\displaystyle \forall n\in \mathbf{R}\,|\, s_{n}=\sum_{k=0}^n a_{k}\), allora $s_{n}$ \'e definita la successione delle somme parziali
+  \end{enumerate}
  
  
  \subsection{Teoremi}
+  \begin{enumerate}
+    \item
+      sia $\sum a_{n}$ una serie a termini positivi, e sia $s_{n}$ la successione delle somme parziali. Se la successione $s_{n}$ \'e limitata superiormente, la serie converge, altrimenti diverge a $+\infty$
+    \item
+      se serie $\sum a_{n}$ \'e convergente, allora la successione $a_{n}$ \'e infinitesima
+    \item{criterio del confronto}\newline
+      siano $\sum a_{k}$ e $\sum b_{k}$, e supponiamo che $\forall n\in \mathbf{R}\,|\, 0\le
+      a_{n}\le b_{n}$, allora se $\sum b_{k}$ converge, allora $\sum a_{k}$ converge, viceversa se $\sum a_{k}$ diverge, allora anche $\sum b_{k}$ diverge
+    \item{criterio del confronto asintotico}\newline
+      siano $a_{n}$ e $b_{n}$ serie a termini positivi
+      \begin{equation} 
+        \sum_{n}^\infty b_{n} \textrm{ converge}\land \lim_{n\to \infty}\frac{a_{n}}{b_{n}}=L\in \mathbf{R} \Rightarrow \sum_{n}^\infty a_{n} \textrm{converge}
+      \end{equation}
+    \item{criterio della radice}\newline
+      sia $\sum a_{n}$ una serie a termini positivi, se \(\displaystyle \lim_{n\to \infty}\sqrt[n]{a_{n}}=L<1\), allora la serie converge
+    \item{criterio dell'assoluta convergenza}\\
+      se $\sum |a_{n}|$ converge, allora $\sum a_{n}$ converge anch'essa
+    \item{}sia $a_{n}$ una serie a termini positivi, se
+      \begin{equation}
+        \lim_{n\to \infty}a_{n}=0\Rightarrow \sum {(-1)}^{n}a_{n} \textrm{converge}
+      \end{equation}
+  \end{enumerate}
   \newpage
 
 
