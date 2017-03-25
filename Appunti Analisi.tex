@@ -164,7 +164,8 @@
       sia $\sum a_{n}$ una serie a termini positivi, se \(\displaystyle \lim_{n\to \infty}\sqrt[n]{a_{n}}=L<1\), allora la serie converge
     \item{criterio dell'assoluta convergenza}\\
       se $\sum |a_{n}|$ converge, allora $\sum a_{n}$ converge anch'essa
-    \item{}sia $a_{n}$ una serie a termini positivi, se
+    \item
+      sia $a_{n}$ una serie a termini positivi, se
       \begin{equation}
         \lim_{n\to \infty}a_{n}=0\Rightarrow \sum {(-1)}^{n}a_{n} \textrm{converge}
       \end{equation}
@@ -180,7 +181,13 @@
     \begin{enumerate}
       \item
         una funzione si dice continua se \(\displaystyle \lim_{x\to x_{0}}f(x)=f(x_{0})\)
+      \item
+        sia $f(x)$ una funzione definita in un insieme $A$, e sia $x_{0}$ un punto di $A$. Diremo che $x_{0}$ \'e un punto di massimo assoluto se risulta che $f(x)\le f(x_{0}) \forall x\in A$
+      \item
+        sia $f(x)$ una funzione definita in un insieme $A$, e sia $x_{0}$ un punto di $A$. Diremo che $x_{0}$ \'e un punto di massimo relativo se in un'intorno $I\subset A\,|\,f(x)\le f(x_{0}) \forall x\in I$
     \end{enumerate}
+
+
   \subsection{Teoremi}
     \begin{enumerate}
       \item
@@ -194,7 +201,36 @@
       \item
         se $g(x)$ \'e una funzione continua, allora
         \begin{displaymath}
-          g:A\rightarrow \mathbf{R}\Rightarrow\lim_{x\to x_{0}}g(f(x))=g(\lim_{x\to x_{0}}f(x))
+          g:A\rightarrow \mathbf{R}:\lim_{x\to x_{0}}g(f(x))=g(\lim_{x\to x_{0}}f(x))
         \end{displaymath}
+      \item
+        una funzione $f:A\rightarrow \mathbf{R}$ \'e continua se e solo se per ogni successione $x_{n}$ a valori in $A$ convergente a $x_{0}$, la successione $f(x_{n})$ converge a $f(x_{0})$
+      \item{teorema della permanenza del segno}\\
+        sia $f(x)$ una funzione continua in $A$, e sia $x_{0}$ un punto di $A$. Se risulta $f(x_{0})>0$, allora esiste un'intordo $I$ di $x_{0}$ tale che per ogni $x\in I\cap A$ si ha $f(x)>0$
+      \item{teorema degli zeri delle funzioni continue}\\
+        sia $f(x)$ una funzione continua in un intervallo $[a,b]$, se $f(a)>0 \lor f(b)<0$, allora esiste un punto $x_{0}\in (a,b):f(x_{0})=0$
+      \item{teorema dei valori intermedi}\\
+        una funzione $f(x)$ continua in un intervallo $I$ assume tutti i valori compresi tra $\inf_{I}f$ e $\sup_{I}f$
+      \item{teorema della continuità della funzione inversa}\\
+        sia $f(x)$ una funzione continua e invertibile in un intervallo $I$ che può essere una semiretta o tutto $\mathbf{R}$. Allora la sua inversa \'e continua
+      \item le funzioni goniometriche e le loro inverse sono continue
+      \item{Teorema di Weistrass}\\
+        Una funzione continua in un insieme E compatto ha massmo e minimo
     \end{enumerate}
+  \newpage
+
+
+
+
+\section{Uniforme continuit\'a}
+  \subsection{Definizone}
+  Una funzione \'e uniformemente continua se
+  \begin{equation}
+    \forall \epsilon >0, \exists \delta >0 : \forall x_{0},x_{1} \in Dom(f),[|x_{0}-x{1}|<\delta \Rightarrow |f(x_{0})-f(x_{1})|<\epsilon]
+  \end{equation}
+
+
+  \subsection{Teoremi}
+
+
 \end{document}
