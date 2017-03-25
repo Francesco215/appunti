@@ -8,7 +8,7 @@
 \begin{document}
 
 
-  \section{Teoria delle probabilit\'a}
+  \section{Basi}
     \subsection{Coeafficenti binomiali}
       dato un insieme di $n$ elementi \'e possibile ordirarli in 
       $\binom{n}{k}$ gruppi di dimenzione $k$
@@ -30,16 +30,24 @@
       E$[x]$ \'e un'operatore lineare quindi E$[ax]=$E$a[x]$
       e se $x_{1} \lor x_{2}$ sono variabili indipendenti, allora
       E$[x_{1}x_{2}]$=E$[x_{1}]$E$[x_{2}]$=$\mu_{1}\mu_{2}$
+      Il calcolo della media resta identica anche nel caso in cui si effettuano delle misurazioni, infatti \(\displaystyle m=\frac{1}{n}\sum_{i=1}^{n}x_{i}\)
        
     \subsection{Varianza $(\sigma^2)$}
       \[
-        \sigma^2=\textrm{E}\bigr[(x-\mu)^2\bigr]=\begin{cases}
-            \displaystyle \int_{-\infty}^{+\infty}(x-\mu)^p(x)dx 
+        \sigma^2=\textrm{E}\Big[(x-\mu)^2\Big]=\begin{cases}
+            \displaystyle \int_{-\infty}^{+\infty}(x-\mu)^2 p(x)dx 
             \textrm{ per variabili continue}\\
-            \displaystyle \sum_{k=0}^{n}(x_{k}-\mu)^2\textrm{P}(x-{k})
+            \displaystyle \sum_{k=0}^{n}(x_{k}-\mu)^2\textrm{P}(x_{k})
             \textrm { per variabili continue}
           \end{cases}
       \]
       Var$[cx]=c^2$Var$[x]$ e se $x_{1} \lor x_{2}$ sono variabili indipendenti, allora
       $\sigma^2=\sigma_{1}^2+\sigma_{2}^2$
+
+      Precedentemente abbiamo analizzato il caso in cui si conosce la funzione di distribuzione, nel caso in cui gli unici dati a disposizione sono delle misurazioni, allora $\sigma^2$ viene stimata nel seguente modo
+      \begin{displaymath}
+        \textrm{E}\Big[s_{n-1}^2\Big]=
+        \textrm{E}\Bigg[\frac{1}{n-1}\sum_{i=1}^{n}(x_{i}-m)^2\Bigg]=\sigma^2 
+      \end{displaymath}
+  \section{Ora si f\'a sul serio}
 \end{document}
