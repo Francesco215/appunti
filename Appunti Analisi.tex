@@ -163,9 +163,9 @@
       se $\sum |a_{n}|$ converge, allora $\sum a_{n}$ converge anch'essa
     \item
       sia $a_{n}$ una serie a termini positivi, se
-      \begin{equation}
+      \begin{displaymath}
         \lim_{n\to \infty}a_{n}=0\Rightarrow \sum {(-1)}^{n}a_{n} \textrm{converge}
-      \end{equation}
+      \end{displaymath}
   \end{enumerate}
   \newpage
 
@@ -191,15 +191,15 @@
         siano $f(x)$ una funzione continua in $x_{0}$ e
         $g(y)$ una funzione continua in $y_{0}=f(x_{0})$, allora
         la funzione composta $g(f(x))$ \'e continua in $x_{0}$
-        \begin{displaymath}
+        \begin{equation}
           x_{0}\cup y_{0}\subset \mathbf{R}:f(x) \in x_{0} \land g(y) 
           \in y_{0}=f(x_{0}) \Rightarrow f(g(x))\in x_{0}
-        \end{displaymath}
+        \end{equation}
       \item
         se $g(x)$ \'e una funzione continua, allora
-        \begin{displaymath}
+        \begin{equation}
           g:A\rightarrow \mathbf{R}:\lim_{x\to x_{0}}g(f(x))=g(\lim_{x\to x_{0}}f(x))
-        \end{displaymath}
+        \end{equation}
       \item
         una funzione $f:A\rightarrow \mathbf{R}$ \'e continua se e solo se per ogni successione $x_{n}$ a valori in $A$ convergente a $x_{0}$, la successione $f(x_{n})$ converge a $f(x_{0})$
       \item{teorema della permanenza del segno}\\
@@ -237,9 +237,9 @@
     \begin{enumerate}
       \item
         sia $f:A\rightarrow \mathbf{R}$ se essa \'e lipsichitiziana in A, allora \'e anche uniformemente continua
-      \item{Teorema di Heine-Cantor}
+      \item{Teorema di Heine-Cantor}\\
         se $f(x)$ \'e continua in $[a,b]$, allora \'e uniformemente continua
-      \item{Osservazione Heine-Cantor}
+      \item{Osservazione Heine-Cantor}\\
         se $f(x)$ \'e definita in un inzieme chiuso e limitato, allora \'e uniformemente continua
       \item
         sia $f:[a,+\infty)\rightarrow \mathbf{R}$ continua, se la funzione ha un asintoto non verticale, allora da un certo punto in poi \'e uniformemente continua
@@ -259,8 +259,41 @@
 
 \section{Derivata}
   \subsection{Definizioni}
+    \begin{enumerate}
+      \item
+        sia $f:(a,b)\rightarrow \mathbf{R}$ e sia $x$ un punto di $(a,b)$. Diremo che $f$ \'e derivabile in $x$ se esiste il limite finito
+        \begin{equation}
+          f'(x)=\lim_{h\to 0}\frac{f(x+h)-f(x)}{h} 
+        \end{equation}
+    \end{enumerate}
 
 
   \subsection{Teoremi}
-
+    \begin{enumerate}
+      \item
+        se una funzione $f$ \'e derivabile in un punto $x_{0}$, \'e continua in $x_{0}$
+      \item 
+        sia $f(x)$ una funzione definita in $A\subset \mathbf{R}$, e sia $x_{0}\in A$ un punto stazionario. se $f$ \'e derivabile in $A$, allora $f'(x_{0})=0$
+      \item{Teorema di Rolle}\\
+        sia $f(x)$ una funzione continua in un'intervallo chiuso $[a,b]$, derivabile in $(a,b)$ e tale che $f(a)=f(b)$. Allora esiste almeno un punto compreso tra $a$ e $b$ in cui la derivata si annulla
+      \item{Teorema di Lagrange}\\
+        sia $f(x)$ una funzione continua in un'intervallo chiuso $[a,b]$, derivabile in $(a,b)$. esiste un punto $\xi \in (a,b)$ tale che
+        \begin{equation}
+          f'(\xi)=\frac{f(b)-f(a)}{b-a}
+        \end{equation}
+      \item{Teorema di Caucy}\\
+        siano $f(x)$ e $g(x)$ 2 funzioni continue in un'intervallo chiuso $[a,b]$ e derivabili in $(a,b)$, allora esiste un punto $\xi$ tale che
+        \begin{equation}
+          \frac{f'(\xi)}{g'(\xi)}=\frac{f(b)-f(a)}{g(b)-g(a)}
+        \end{equation}
+      \item
+        sia $f(x)$ una funzione derivabile definita in un intervalo $I$. Se $\forall x\in I\,|\,f'(x)=0$, allora $f(x)$ \'e costante
+      \item
+        una funzione $f(x)$ derivabile in un'intervallo $I$ \'e crescente se e solo se $f'(x)\ge 0$
+      \item{Teorema di de l'Hopital}\\
+        siano $f(x)$ e $g(x)$ funzioni derivabili in un'intervallo $I$, con la possibile eccezzione di $x_{0}\in I$, supponiamo che $f(x_{0})=g(x_{0})=0$, e supponiamo che esista il limite del rapporto delle derivate, allora
+        \begin{equation}
+          \lim_{x\to x_{0}}\frac{f(x)}{g(x)}=\lim_{x\to x_{0}}\frac{f'(x)}{g'(x)}=L
+        \end{equation}
+    \end{enumerate}
 \end{document}
