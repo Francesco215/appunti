@@ -309,7 +309,7 @@
 			\item{Funzione costante a tratti}
 				sia $\varphi(x)_{I_{k}}$ una funzione che vale $1$ nell'intervallo $I_{k}$ e zero in tutto il resto e sia $\lambda_{k}$ una costante, allora la funzione $\varphi(x)=\lambda_{1}\varphi_{I_{1}}(x)+\lambda_{2}\varphi_{I_{2}}(x)+\dots+\lambda_{n}\varphi_{I_{n}}(x)=\sum\lambda_{k}\varphi_{I_{k}}$ \'e definita costante a tratti
 			\item{Integrale funzione semplice}\\
-				sia $\varphi(x)=\sum\lambda_{k}\varphi_{I_{k}}$ una funzione costante a tratti, siano $I_1 \cup I_2 \cup \dots \cup I_n \subset [a,b)$,  siano $x_{k}$ e $x_{k}'$ gli estremi dell'insieme $I_{k}$ , allora 
+				sia $\varphi(x)=\sum\lambda_{k}\varphi_{I_{k}}$ una funzione costante a tratti, siano $I_1 \cup I_2 \cup \dots \cup I_n \subseteq [a,b)$,  siano $x_{k}$ e $x_{k}'$ gli estremi dell'insieme $I_{k}$ , allora 
 				\begin{equation}
 					\int_a^b \varphi(x)=\sum \lambda_{k}(x_{k}-x_{k}')
 				\end{equation}
@@ -336,8 +336,30 @@
 	\subsection{Teoremi}
 		\begin{enumerate}
 			\item
-				a
+				se $f(x)$ \'e continua in $[a,b]$, allora \'e integrabile in $[a,b)$
+			\item
+				se $f(x)$ \'e continua e limitata in $(a,b]$, essa \'e integrabile in $[a,b]$
+			\item
+				se $f(x)$ \'e crescente in $[a,b]$ allora \'e integrabile
+			\item 
+				se $f(x)$ \'e integrabile, $|f(x)|$ \'e integrabile
+			\item{Teorema della media integrale}\\
+				sia $f(x)$ integrabile in $I=[x_1,x_2]$ allora 
+				\begin{equation}
+					\inf_{x\in I}f(x)\le\frac{1}{x_1-x_2}\int_{x_1}^{x_2} f(x)dx\le \sup_{x\in I}f(x)
+				\end{equation}
+			\item{Teorema dei valori intermedi}\\
+				sia $f(x)$ una funzione integrabile in $[x_1,x_2]$, esiste un punto $\xi$ compreso tra $x_1$ e $x_2$ tale che 
+				\begin{equation}
+					f(\xi)=\frac{1}{x_1-x_2}\int_{x_1}^{x_2} f(x)dx
+				\end{equation}
+			\item{Teorema fondamentale del calcolo integrale}\\
+				sia $f$ una funzione integrabile in $[a,b]$ e sia \(\displaystyle F(x)=\int_a^x f(t)dt \), allora $F'(x)=f(x)$.
+				Sia $G(x)$ una funzione tale che $G'(x)=f(x)$, allora $F'(x)=G(x)-G(a)$
+			\item
+				sia $f$ una funzione integrabile in $[a,b]$, allora \(\displaystyle F(x)=\int_a^x f(t)dt \) \'e lispsichitiziana
 		\end{enumerate}
+
 
 
 
