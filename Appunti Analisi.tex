@@ -209,11 +209,11 @@
         sia $f(x)$ una funzione continua in un intervallo $[a,b]$, se $f(a)>0 \lor f(b)<0$, allora esiste un punto $x_{0}\in (a,b):f(x_{0})=0$
       \item{teorema dei valori intermedi}\\
         una funzione $f(x)$ continua in un intervallo $I$ assume tutti i valori compresi tra $\inf_{I}f$ e $\sup_{I}f$
-      \item{teorema della continuità della funzione inversa}\\
+      \item{teorema della continuit\'a della funzione inversa}\\
         sia $f(x)$ una funzione continua e invertibile in un intervallo $I$ che pu\'o essere una semiretta o tutto $\mathbf{R}$. Allora la sua inversa \'e continua
       \item le funzioni goniometriche e le loro inverse sono continue
       \item{Teorema di Weistrass}\\
-        Una funzione continua in un insieme $E$ compatto ha massmo e minimo
+        Una funzione continua in un insieme $E$ compatto ha massimo e minimo
     \end{enumerate}
   \newpage
 
@@ -327,6 +327,21 @@
 				\begin{equation}
 					\int f(x)dx
 				\end{equation}
+			\item{Integrale di Reimann generalizzato 1}\\
+				sia $f(x)$ integrabile in $(a,b]$ e non limitata in $a$, e sia $c\in (a,b]$, allora 
+				\begin{equation}
+					\int_a^b f(x)dx = \lim_{c\to a}\int_c^b f(x)dx
+				\end{equation}
+			\item{Integrale di Reimann generalizzato 2}\\
+				sia $f(x)$ integrabile in $[a,+\infty)$, allora
+				\begin{equation}
+					\int_a^\infty f(x)dx=\lim_{b\to \infty}\int_a^b f(x)dx
+				\end{equation}
+			\item
+				un funzione $f$ viene detta assolutamente integrabile in $(a,+\infty)$ se esiste un $k\in\mathbf{R}$ tale che 
+				\begin{equation}
+					\int_a^{+\infty}|f(x)|dx < k
+				\end{equation}
 		\end{enumerate}
 			
 
@@ -358,6 +373,24 @@
 				Sia $G(x)$ una funzione tale che $G'(x)=f(x)$, allora $F'(x)=G(x)-G(a)$
 			\item
 				sia $f$ una funzione integrabile in $[a,b]$, allora \(\displaystyle F(x)=\int_a^x f(t)dt \) \'e lispsichitiziana
+			\item
+				sia $f$ una funzione assolutamente integrabile in $(a,b)$, allora $f$ \'e anche integrabile e in particolare
+				\begin{equation}
+					\bigg|\int_a^b f(x)dx\bigg|\le \int_a^b|f(x)|dx
+				\end{equation}
+			\item
+				sia $f$ una funzione continua integrabile in $(a,+\infty)$, allora se \(\displaystyle \int_a^{+\infty}f(x)dx=L\in\mathbf{R}\Rightarrow \lim_{x\to\infty}f(x)=0\) 
+			\item
+				sia $f:[a,+\infty)\rightarrow\mathbf{R}$ e $a_n$ una sucessione con $n\geq a$ se $f(n)=a_n$ per ogni $n\geq a$, allora
+				\begin{equation}
+					\int_a^\infty f(x)dx	\le \sum_n^\infty a_n \le f(a)+ \int_a^\infty f(x)dx 
+				\end{equation}
+			\item{criterio dell'integrale per le serie}\\
+				sia $f:[a,+\infty)\rightarrow\mathbf{R}$ e $a_n$ una sucessione con $n\geq a$ se $f(n)=a_n$ per ogni $n\geq a$, allora se
+				\begin{equation}
+					\sum_n^\infty a_n \textrm{ converge}\Leftrightarrow \int_a^\infty f(x)dx \textrm{ converge}
+				\end{equation}
+
 		\end{enumerate}
 
 
