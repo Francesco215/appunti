@@ -2,6 +2,7 @@
 \date{Marzo 2017}
 \usepackage[italian]{babel}
 \usepackage[T1]{fontenc}
+\usepackage{mathrsfs}
 \title{Appunti di Analisi Matematica}
 \author{Francesco Sacco}
 \begin{document}
@@ -154,9 +155,9 @@
       a_{n}\le b_{n}$, allora se $\sum b_{k}$ converge, allora $\sum a_{k}$ converge, viceversa se $\sum a_{k}$ diverge, allora anche $\sum b_{k}$ diverge
     \item{criterio del confronto asintotico}\newline
       siano $a_{n}$ e $b_{n}$ serie a termini positivi
-      \begin{equation} 
-        \sum_{n}^\infty b_{n} \textrm{ converge}\land \lim_{n\to \infty}\frac{a_{n}}{b_{n}}=L\in \mathbf{R} \Rightarrow \sum_{n}^\infty a_{n} \textrm{converge}
-      \end{equation}
+      \begin{displaymath} 
+        \sum_{n}^\infty b_{n} \textrm{ converge}\land \lim_{n\to \infty}\frac{a_{n}}{b_{n}}=L\in \mathbf{R} \Rightarrow \sum_{n}^\infty a_{n} \textrm{ converge}
+      \end{displaymath}
     \item{criterio della radice}\newline
       sia $\sum a_{n}$ una serie a termini positivi, se \(\displaystyle \lim_{n\to \infty}\sqrt[n]{a_{n}}=L<1\), allora la serie converge
     \item{criterio dell'assoluta convergenza}\\
@@ -164,7 +165,7 @@
     \item
       sia $a_{n}$ una serie a termini positivi, se
       \begin{displaymath}
-        \lim_{n\to \infty}a_{n}=0\Rightarrow \sum {(-1)}^{n}a_{n} \textrm{converge}
+        \lim_{n\to \infty}a_{n}=0\Rightarrow \sum {(-1)}^{n}a_{n} \textrm{ converge}
       \end{displaymath}
   \end{enumerate}
   \newpage
@@ -209,7 +210,7 @@
       \item{teorema dei valori intermedi}\\
         una funzione $f(x)$ continua in un intervallo $I$ assume tutti i valori compresi tra $\inf_{I}f$ e $\sup_{I}f$
       \item{teorema della continuità della funzione inversa}\\
-        sia $f(x)$ una funzione continua e invertibile in un intervallo $I$ che può essere una semiretta o tutto $\mathbf{R}$. Allora la sua inversa \'e continua
+        sia $f(x)$ una funzione continua e invertibile in un intervallo $I$ che pu\'o essere una semiretta o tutto $\mathbf{R}$. Allora la sua inversa \'e continua
       \item le funzioni goniometriche e le loro inverse sono continue
       \item{Teorema di Weistrass}\\
         Una funzione continua in un insieme $E$ compatto ha massmo e minimo
@@ -238,9 +239,9 @@
       \item
         sia $f:A\rightarrow \mathbf{R}$ se essa \'e lipsichitiziana in A, allora \'e anche uniformemente continua
       \item{Teorema di Heine-Cantor}\\
-        se $f(x)$ \'e continua in $[a,b]$, allora \'e uniformemente continua
-      \item{Osservazione Heine-Cantor}\\
         se $f(x)$ \'e definita in un inzieme chiuso e limitato, allora \'e uniformemente continua
+      \item{Osservazione di Heine-Cantor}\\
+        se $f(x)$ \'e continua in $[a,b]$, allora \'e uniformemente continua
       \item
         sia $f:[a,+\infty)\rightarrow \mathbf{R}$ continua, se la funzione ha un asintoto non verticale, allora da un certo punto in poi \'e uniformemente continua
       \item
@@ -296,4 +297,51 @@
           \lim_{x\to x_{0}}\frac{f(x)}{g(x)}=\lim_{x\to x_{0}}\frac{f'(x)}{g'(x)}=L
         \end{equation}
     \end{enumerate}
+  \newpage
+
+
+
+
+
+\section{Integrale}
+	\subsection{Definizioni}
+		\begin{enumerate}
+			\item{Funzione costante a tratti}
+				sia $\varphi(x)_{I_{k}}$ una funzione che vale $1$ nell'intervallo $I_{k}$ e zero in tutto il resto e sia $\lambda_{k}$ una costante, allora la funzione $\varphi(x)=\lambda_{1}\varphi_{I_{1}}(x)+\lambda_{2}\varphi_{I_{2}}(x)+\dots+\lambda_{n}\varphi_{I_{n}}(x)=\sum\lambda_{k}\varphi_{I_{k}}$ \'e definita costante a tratti
+			\item{Integrale funzione semplice}\\
+				sia $\varphi(x)=\sum\lambda_{k}\varphi_{I_{k}}$ una funzione costante a tratti, siano $I_1 \cup I_2 \cup \dots \cup I_n \subset [a,b)$,  siano $x_{k}$ e $x_{k}'$ gli estremi dell'insieme $I_{k}$ , allora 
+				\begin{equation}
+					\int_a^b \varphi(x)=\sum \lambda_{k}(x_{k}-x_{k}')
+				\end{equation}
+			\item{Integrale definito di Reimann}\\
+				sia f(x) una funzione limitata definita nell'intervallo $I=[a,b)$. Indichiamo con $\mathscr{S}^+$ la classe delle funzioni semplici $\psi$ maggioranti tali che $\psi(x)\geq f(x)$ in $[a,b)$ e con $\mathscr{S}^-$ la classe delle funzioni semplici $\varphi$ minoranti tali che $\varphi(x)\le f(x)$ in $[a,b)$ e siano $\psi(x)=\varphi(x)=0$ se $x$ non appartiene a $[a,b)$, allora se si ha che 
+				\begin{equation}
+					\sup_{\psi\in\mathscr{S}^+}\int_a^b \psi(x)dx=\inf_{\varphi\in\mathscr{S}^-}\int_a^b \varphi(x)dx
+				\end{equation}
+				il loro valore comune sar\'a uguale all'integrale in $[a,b)$ di $f(x)$ che verr\'a indicata col simbolo
+				\begin{equation}
+					\int_a^b f(x)dx
+				\end{equation}
+			\item{Integrale indefinito}\\
+				sia $f(t)$ una funzione integrabile, allora la funzione \(\displaystyle F(x)=\int_0^x f(t)dt\) \'e definita il suo integrale indefinito e verr\'a indicato cos\'i
+				\begin{equation}
+					\int f(x)dx
+				\end{equation}
+		\end{enumerate}
+			
+
+
+
+
+	\subsection{Teoremi}
+		\begin{enumerate}
+			\item
+				a
+		\end{enumerate}
+
+
+
+
+
+
 \end{document}
