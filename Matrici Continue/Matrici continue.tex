@@ -1,0 +1,109 @@
+%\documentclass[11pt,fleqn]{book}%
+%\documentclass{exam}%
+\documentclass[11pt,a4paper]{article}
+\date{marzo 2018}
+\usepackage[italian]{babel}
+\usepackage[T1]{fontenc}
+\usepackage{graphicx}
+\title{Matrici continue}
+\author{Francesco Sacco}
+\usepackage[utf8x]{inputenc}
+\usepackage{amsmath}
+\usepackage{amsthm}
+
+
+
+
+\begin{document}
+	\maketitle
+		Sono abbastanza convinto di specare tempo, e che forse era meglio se studiavo, ma non avrei studiato comunque quindi faccio questo pdf.\newline
+		Ovviamente non sarò formale, quindi Ischia non ci scassare la minchia, e farò parecchi errori grammaticali,quindi Silvio non ci scassare la minchia.
+		Buona lettura.
+		\section{Dalle matrici discrete a quelle continue}
+			Supponiamo di prendere una matrice $M$ $ n \times n$, adesso rendiamo le cellette della matrice sempre più strette mandando $n$ a infinito.
+			\begin{equation}
+				\begin{vmatrix}
+					a_{1,1} & \dots & a_{1,n} \\
+					\vdots	&	\ddots&	\vdots	\\
+					a_{n,1} & \dots & a_{n,n} 
+				\end{vmatrix}
+				\longrightarrow
+				\begin{vmatrix}
+					& & & \\
+					& & & \\
+					& & (x,y) & \\
+					& & & \\
+				\end{vmatrix}
+			\end{equation}
+			Così facendo non è più possibile indicare un'elemento della matrice con una coppia di numeri interi, ma è possibile indicarli con una coppia di numeri reali $(x,y)$, di  conseguenza la matrice non è più una funzione $M:n\times n \rightarrow \rm I\!R$, ma $M:[a,b]\times [c,d]\rightarrow \rm I\!R$.\newline
+			Usando lo stesso ragionamento con i vettori abbiamo che la loro versione con $n\rightarrow +\infty$ siano funzioni $v:[a,b]\rightarrow \rm I\!R$ 
+		\section{Prodotto}
+			In algebra lineare un prodotto tra una matrice $M$ e un vettore $v$ non è altro che un vettore $w$ che ha come componente $i$-esima il prodotto scalare canonico tra il vettore $v$ e la $i$-esima riga di $M$, quindi vediamo prima di generalizzare il prodotto scalare.\newline
+			Possiamo definire il prodotto scalare in questo modo: prendiamo questa funzione $P:V\times V\rightarrow V$ tale che 
+			\begin{equation}
+				v=
+				\begin{vmatrix}
+					v_1\\
+					\vdots \\
+					v_n
+				\end{vmatrix}
+				\quad w=
+				\begin{vmatrix}
+					w_1\\
+					\vdots \\
+					w_n
+				\end{vmatrix}
+				\quad P(v,w)=
+				\begin{vmatrix}
+					v_1 w_1\\
+					\vdots \\
+					v_n w_n
+				\end{vmatrix}
+			\end{equation}
+			Una volta aver definito questa apparentemente inutile funzione ne definisco un'altra.
+			prendi un vettore $v=(v_1,\dots,v_n)$ e immagina che ogni componente uscisse dal foglio con un'altezza pari al valore che ha (attento agli occhi).\newline
+			Adesso se lo guardi di lato dovresti vedere un'istrogramma, nell'immagine che se avrò voglia metterò si capisce benissimo quello che intendo.\newline
+			Definisco $A(v)$ l'area di quell'istogramma mostrato dalla fantomatica immagine, è facile verificare che $A(P(v,w))=<v,w>$ (supponendo che alla base dell'istogramma ci sia un quadrato di area unitaria).\newline
+			Adesso applichiamo lo stesso ragionamento possiamo generalizzarlo con le funzioni (che come abbiamo detto sono vettori continui), in questo caso la funzione $P(v(x),w(x))=v(x)w(x)$ e l'area è l'integrale nel dominio di definizione di $v$ e $w$, dunque
+			\begin{equation}
+			<v(x),w(x)>=\int_a^b v(x)w(x)dx
+			\end{equation}
+			ovviamente questo soddisfa le proprietà del prodotto scalare, non perchè lo so dimostrare, ma perchè lo so per sentito dire.\newline
+			Filamente possiamo definire il prodotto matrice per vettore. Come abbiamo detto prima un prodotto tra una matrice $M$ e un vettore $v$ non è altro che un vettore $w$ che ha come componente $i$-esima il prodotto scalare canonico tra il vettore $v$ e la $i$-esima riga di $M$, quindi il prototto $w$ tra $M$ e $v$ è
+			\begin{equation}
+				w(y)=\int_a^b M(x,y)v(x) dx
+			\end{equation}
+			da qui è facile verificare che rispetta tutte le stesse proprietà che ha il prodotto matrice-vettore standard.\newline
+			Lascio al lettore l'esercizio di trovare la matrice identità e di definire il prodotto tra matrici (se scrolli dovresti trovarle la soluzione) 
+		\section{cose con lo span parte discreta}
+			In algebra lineare sappiamo che se $w\in V$ e ${v_1,\dots,v_n}$ è una base di $V$ abbiamo che esistono dei coefficenti $a_1,\dots,a_n$ tali che $w=a_1 v_1+\dots +a_n v_n$, scritto in forma vettoriale
+			\begin{equation}
+				\begin{vmatrix}
+					w_1\\
+					\vdots\\
+					w_n
+				\end{vmatrix}
+				=
+				\begin{vmatrix}
+					& & \\
+					v_1 & \dots & v_n\\
+					& & 
+				\end{vmatrix}
+				\begin{vmatrix}
+					a_1\\
+					\vdots\\
+					a_n
+				\end{vmatrix}
+			\end{equation}
+			dove la matrice nel mezzo è la matrice che ha come colonne i vettori $v_1,\dots,v_n$, quindi un modo per calcolare i coefficenti $a_1,\dots,a_n$ è quello di calcolare l'inverso della matrice e moltiplicare membro a membro.\newline
+		\section{cose con lo span parte continua}
+			La stessa cosa si può fare con le matrici continue, ma prima parliamo di matrici inverse.
+			Sarei tentato di definire la matrice $M^{-1}$ l'inversa di $M$ se $Id(x,y)=\delta (x,y)=\int_a^b M^{-1}(x,t) M(t,y) dt$, ma per ora la definisco così:\newline
+			\newline
+				Sia $M:[a,b]\time [a,b]\rightarrow \rm I\!R$, e $N$ pure (se c'hai voglia te lo generalizzi tu), allora $N$ è l'inversa di $M$ se
+				\begin{equation}
+					v=NMv
+				\end{equation}
+		
+
+\end{document}

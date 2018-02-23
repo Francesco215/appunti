@@ -158,8 +158,10 @@
       \begin{displaymath} 
         \sum_{n}^\infty b_{n} \textrm{ converge}\land \lim_{n\to \infty}\frac{a_{n}}{b_{n}}=L\in \mathbf{R} \Rightarrow \sum_{n}^\infty a_{n} \textrm{ converge}
       \end{displaymath}
-    \item{criterio della radice}\newline
+    \item{criterio del rapporto}\\
       sia $\sum a_{n}$ una serie a termini positivi, se \(\displaystyle \lim_{n\to \infty}\sqrt[n]{a_{n}}=L<1\), allora la serie converge
+    \item{criterio della radice}\newline
+      sia $\sum a_{n}$ una serie a termini positivi, se \(\displaystyle \lim_{n\to \infty}\frac{a_{n+1}}{a_n}=L<1\), allora la serie converge
     \item{criterio dell'assoluta convergenza}\\
       se $\sum |a_{n}|$ converge, allora $\sum a_{n}$ converge anch'essa
     \item
@@ -225,9 +227,9 @@
   \subsection{Definizoni}
     \begin{enumerate}
       \item
-        Una funzione \'e uniformemente continua se
+        Una funzione \'e uniformemente continua in $I$ se
         \begin{equation}
-         \forall \epsilon >0, \exists \delta >0 : \forall x_{0},x_{1} \in Dom(f),[|x_{0}-x{1}|<\delta \Rightarrow |f(x_{0})-f(x_{1})|<\epsilon]
+         \forall \epsilon >0, \exists \delta >0 : \forall x_{0},x_{1} \in I,[|x_{0}-x{1}|<\delta \Rightarrow |f(x_{0})-f(x_{1})|<\epsilon]
         \end{equation}
       \item
        una funzione $f(x)$ definita in $A$ \'e detta lipsichitziana se $ \forall x\in A,\exists L\in \mathbf{R}:|f'(x)|\le L$
@@ -266,6 +268,13 @@
         \begin{equation}
           f'(x)=\lim_{h\to 0}\frac{f(x+h)-f(x)}{h} 
         \end{equation}
+      \item
+      	data una funzione $f$ e un applicazione lineare $L$ tale che $L(x)=\alpha x$ dove $\alpha$ \'e una costante. Allora $f$ si dice differenziabile in $x_0$ se \'e vero che 
+      	\begin{equation}
+      		f(x)=f(x_0)+L(x-x_0)+R(x,x_0)
+      	\end{equation}
+      	dove i primi due termini a secondo membro rappresentano una retta, e $R(x-x_0)$ rappresenta un resto, ossia una funzione che corregge l'approssimazione fatta.
+      	La peculiarit\'a del resto \'e che al tendere di $x$ a $x_0$ $\frac{R}{x-x_0}\rightarrow 0$
     \end{enumerate}
 
 
@@ -296,6 +305,8 @@
         \begin{equation}
           \lim_{x\to x_{0}}\frac{f(x)}{g(x)}=\lim_{x\to x_{0}}\frac{f'(x)}{g'(x)}=L
         \end{equation}
+      \item
+      	se $f$ \'e differenziabile in $x_0$, allora $f$ \'e derivabile in $x_0$ e $L(x-x_0)=f'(x)(x-x_0)$
     \end{enumerate}
   \newpage
 
@@ -351,6 +362,14 @@
 	\subsection{Teoremi}
 		\begin{enumerate}
 			\item
+				sia $f$ una funzione, se per ogni $\epsilon >0$ esiste una funzione semplice maggiorante $\psi$ e una funzione semplice minorante $\varphi$ di $f$ tale che
+			 \begin{equation}
+			 	\int_a^b \psi(x)dx - \int_a^b \varphi(x)dx < \epsilon
+			 \end{equation}
+			 allora la funzione $f(x)$ \'e integrabile in $[a,b)$
+			\item
+				se una funzione $f$ \'e integrabile in $[a,c)$ e $[c,b)$, allora essa \'e integrabile in $[a,b)$
+			\item
 				se $f(x)$ \'e continua in $[a,b]$, allora \'e integrabile in $[a,b)$
 			\item
 				se $f(x)$ \'e continua e limitata in $(a,b]$, essa \'e integrabile in $[a,b]$
@@ -358,6 +377,16 @@
 				se $f(x)$ \'e crescente in $[a,b]$ allora \'e integrabile
 			\item 
 				se $f(x)$ \'e integrabile, $|f(x)|$ \'e integrabile
+			\item
+				siano $f,g$ funzioni integrabili in $[a,b)$, allora
+				\begin{equation}
+					\int_a^b f(x)+g(x) dx=\int_a^b f(x)dx + \int_a^b g(x)dx
+				\end{equation}
+			\item
+				sia $f$ una funzione integrabile in $[a,b)$, allora
+				\begin{equation}
+					\int_a^b f(x)dx=\int_a^c f(x)dx + \int_c^b f(x)dx
+				\end{equation}
 			\item{Teorema della media integrale}\\
 				sia $f(x)$ integrabile in $I=[x_1,x_2]$ allora 
 				\begin{equation}
@@ -381,15 +410,24 @@
 			\item
 				sia $f$ una funzione continua integrabile in $(a,+\infty)$, allora se \(\displaystyle \int_a^{+\infty}f(x)dx=L\in\mathbf{R}\Rightarrow \lim_{x\to\infty}f(x)=0\) 
 			\item
-				sia $f:[a,+\infty)\rightarrow\mathbf{R}$ e $a_n$ una sucessione con $n\geq a$ se $f(n)=a_n$ per ogni $n\geq a$, allora
+				sia $f:[a,+\infty)\rightarrow\mathbf{R}$ monotona e $a_n$ una sucessione con $f(n)=a_n$ per ogni $n\geq a$, allora
 				\begin{equation}
 					\int_a^\infty f(x)dx	\le \sum_n^\infty a_n \le f(a)+ \int_a^\infty f(x)dx 
 				\end{equation}
 			\item{criterio dell'integrale per le serie}\\
-				sia $f:[a,+\infty)\rightarrow\mathbf{R}$ e $a_n$ una sucessione con $n\geq a$ se $f(n)=a_n$ per ogni $n\geq a$, allora se
+				sia $f:[a,+\infty)\rightarrow\mathbf{R}$ monotona e $a_n$ una sucessione con $f(n)=a_n$ per ogni $n\geq a$, allora se
 				\begin{equation}
 					\sum_n^\infty a_n \textrm{ converge}\Leftrightarrow \int_a^\infty f(x)dx \textrm{ converge}
 				\end{equation}
+      \item{criterio del confronto asintotico}\\
+        siano $f,g:[a,b)\rightarrow\mathbf{R}$ due funzioni integrabili tali che $f(x)\geq 0$ e $g(x)>0$ per ogni $x\in [a,b)$
+        \begin{equation}
+          \textrm{se} \int_a^b g(x) \textrm{ converge e } \lim_{x\to b^-}\frac{f(x)}{g(x)}=L\in \mathbf{R} \textrm{ allora }\int_a^b f(x) \textrm{ converge}
+        \end{equation}
+        oppure
+        \begin{equation}
+          \textrm{se} \int_a^b g(x) \textrm{ diverge e } \lim_{x\to b^-}\frac{f(x)}{g(x)}=L\in \mathbf{R} \textrm{ allora }\int_a^b f(x) \textrm{ diverge}
+        \end{equation}
 
 		\end{enumerate}
 
