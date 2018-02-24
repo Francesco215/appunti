@@ -11,14 +11,24 @@
 \usepackage{amsmath}
 \usepackage{amsthm}
 
+\theoremstyle{definition}
+\newtheorem{definizione}{Definizione}
 
+\theoremstyle{plain}
+\newtheorem{teorema}{Teorema}
+
+\theoremstyle{plain}
+\newtheorem{esempio}{Esempio}
 
 
 \begin{document}
 	\maketitle
 		Sono abbastanza convinto di specare tempo, e che forse era meglio se studiavo, ma non avrei studiato comunque quindi faccio questo pdf.\newline
-		Ovviamente non sarò formale, quindi Ischia non ci scassare la minchia, e farò parecchi errori grammaticali,quindi Silvio non ci scassare la minchia.
+		Ovviamente non sarò formale, quindi Ischia non ci scassare la minchia, e farò parecchi errori grammaticali, quindi Silvio non ci scassare la minchia.\newline
+
 		Buona lettura.
+		
+
 		\section{Dalle matrici discrete a quelle continue}
 			Supponiamo di prendere una matrice $M$ $ n \times n$, adesso rendiamo le cellette della matrice sempre più strette mandando $n$ a infinito.
 			\begin{equation}
@@ -29,15 +39,16 @@
 				\end{vmatrix}
 				\longrightarrow
 				\begin{vmatrix}
-					& & & \\
-					& & & \\
+					&\quad & & \\
 					& & (x,y) & \\
 					& & & \\
 				\end{vmatrix}
 			\end{equation}
 			Così facendo non è più possibile indicare un'elemento della matrice con una coppia di numeri interi, ma è possibile indicarli con una coppia di numeri reali $(x,y)$, di  conseguenza la matrice non è più una funzione $M:n\times n \rightarrow \rm I\!R$, ma $M:[a,b]\times [c,d]\rightarrow \rm I\!R$.\newline
 			Usando lo stesso ragionamento con i vettori abbiamo che la loro versione con $n\rightarrow +\infty$ siano funzioni $v:[a,b]\rightarrow \rm I\!R$ 
-		\section{Prodotto}
+		
+
+		\section{Prodotto caso discreto}
 			In algebra lineare un prodotto tra una matrice $M$ e un vettore $v$ non è altro che un vettore $w$ che ha come componente $i$-esima il prodotto scalare canonico tra il vettore $v$ e la $i$-esima riga di $M$, quindi vediamo prima di generalizzare il prodotto scalare.\newline
 			Possiamo definire il prodotto scalare in questo modo: prendiamo questa funzione $P:V\times V\rightarrow V$ tale che 
 			\begin{equation}
@@ -61,21 +72,32 @@
 				\end{vmatrix}
 			\end{equation}
 			Una volta aver definito questa apparentemente inutile funzione ne definisco un'altra.
-			prendi un vettore $v=(v_1,\dots,v_n)$ e immagina che ogni componente uscisse dal foglio con un'altezza pari al valore che ha (attento agli occhi).\newline
+			prendi un vettore $v=(v_1,\dots,v_n)$ e immagina che ogni componente uscisse dal foglio con un'altezza pari al suo valore (attento agli occhi).\newline
 			Adesso se lo guardi di lato dovresti vedere un'istrogramma, nell'immagine che se avrò voglia metterò si capisce benissimo quello che intendo.\newline
-			Definisco $A(v)$ l'area di quell'istogramma mostrato dalla fantomatica immagine, è facile verificare che $A(P(v,w))=<v,w>$ (supponendo che alla base dell'istogramma ci sia un quadrato di area unitaria).\newline
-			Adesso applichiamo lo stesso ragionamento possiamo generalizzarlo con le funzioni (che come abbiamo detto sono vettori continui), in questo caso la funzione $P(v(x),w(x))=v(x)w(x)$ e l'area è l'integrale nel dominio di definizione di $v$ e $w$, dunque
+			Definisco $A(v)$ l'area di quell'istogramma mostrato dalla fantomatica immagine, è facile verificare che $A(P(v,w))=<v,w>$\footnote{supponendo che alla base dell'istogramma ci sia un quadrato di area unitaria}.
+
+		\section{Prodotto caso continuo}
+			Adesso applichiamo lo stesso ragionamento generalizzandolo con le funzioni (che come abbiamo detto sono vettori continui), in questo caso la funzione $P(v(x),w(x))=v(x)w(x)$ e l'area è l'integrale nel dominio di definizione di $v$ e $w$, dunque
 			\begin{equation}
-			<v(x),w(x)>=\int_a^b v(x)w(x)dx
+				<v(x),w(x)>=\int_a^b v(x)w(x)dx
 			\end{equation}
 			ovviamente questo soddisfa le proprietà del prodotto scalare, non perchè lo so dimostrare, ma perchè lo so per sentito dire.\newline
 			Filamente possiamo definire il prodotto matrice per vettore. Come abbiamo detto prima un prodotto tra una matrice $M$ e un vettore $v$ non è altro che un vettore $w$ che ha come componente $i$-esima il prodotto scalare canonico tra il vettore $v$ e la $i$-esima riga di $M$, quindi il prototto $w$ tra $M$ e $v$ è
 			\begin{equation}
 				w(y)=\int_a^b M(x,y)v(x) dx
 			\end{equation}
-			da qui è facile verificare che rispetta tutte le stesse proprietà che ha il prodotto matrice-vettore standard.\newline
-			Lascio al lettore l'esercizio di trovare la matrice identità e di definire il prodotto tra matrici (se scrolli dovresti trovarle la soluzione) 
-		\section{cose con lo span parte discreta}
+			da qui è facile verificare che rispetta tutte le stesse proprietà che ha il prodotto matrice-vettore standard, infatti siano $M, N, O$ matrici continue, $v,w$ vettori, e $\lambda$ uno scalare, allora 
+			\begin{equation}
+				\lambda Mv= M(\lambda v),\quad M\circ (N \circ O)= (M \circ N) \circ O,
+			\end{equation}
+			\[
+				Mv + Nv=  (M+N)v,\quad Mv+Mw=M(v+w)
+			\]
+			
+			Lascio al lettore l'esercizio di dimostrare queste poprietà, trovare la matrice identità e la formula per prodotto tra matrici\footnote{se scrolli dovresti trovarle la soluzione}
+		
+
+		\section{Cose con lo span parte discreta}
 			In algebra lineare sappiamo che se $w\in V$ e ${v_1,\dots,v_n}$ è una base di $V$ abbiamo che esistono dei coefficenti $a_1,\dots,a_n$ tali che $w=a_1 v_1+\dots +a_n v_n$, scritto in forma vettoriale
 			\begin{equation}
 				\begin{vmatrix}
@@ -95,15 +117,80 @@
 					a_n
 				\end{vmatrix}
 			\end{equation}
-			dove la matrice nel mezzo è la matrice che ha come colonne i vettori $v_1,\dots,v_n$, quindi un modo per calcolare i coefficenti $a_1,\dots,a_n$ è quello di calcolare l'inverso della matrice e moltiplicare membro a membro.\newline
-		\section{cose con lo span parte continua}
+			dove la matrice nel mezzo è la matrice che ha come colonne i vettori $v_1,\dots,v_n$, quindi un modo per calcolare i coefficenti $a_1,\dots,a_n$ è quello di calcolare l'inversa della matrice\footnote{che esiste perchè le righe sono lienarmente indipendenti} e moltiplicare membro a membro.\newline
+
+
+		\section{Cose con lo span parte continua}
 			La stessa cosa si può fare con le matrici continue, ma prima parliamo di matrici inverse.
-			Sarei tentato di definire la matrice $M^{-1}$ l'inversa di $M$ se $Id(x,y)=\delta (x,y)=\int_a^b M^{-1}(x,t) M(t,y) dt$, ma per ora la definisco così:\newline
-			\newline
-				Sia $M:[a,b]\time [a,b]\rightarrow \rm I\!R$, e $N$ pure (se c'hai voglia te lo generalizzi tu), allora $N$ è l'inversa di $M$ se
+			Sarei tentato di definire la matrice $M^{-1}$ l'inversa di $M$ se $Id(x,y)=\delta (y-x)=\int_a^b M^{-1}(x,t) M(t,y) dt$, ma per ora la definisco così:\newline
+			\begin{definizione}[Matrice inversa]
+				Sia $M:[a,b]\times [a,b]\rightarrow \rm I\!R$, e $N$ pure (se c'hai voglia te lo generalizzi tu), allora $N$ è l'inversa di $M$ se
 				\begin{equation}
 					v=NMv
 				\end{equation}
-		
+			\end{definizione}
+			Adesso che sappiamo cos'è l'inversa possiamo usare lo stesso ragionamento della scorsa sezione: Supponiamo che $\{M(x,y_0)\,|\, y_0\in \rm I\!R \}$ sia una base di uno spazio vettoriale $V$, allora per ogni $v\in V$ è possibile trovare una combinazione lineare dei vettori di base che sia uguale a $v$ stesso, cioè
+			\begin{equation}
+				\begin{vmatrix}
+					\\
+					v(x)\\
+					\quad
+				\end{vmatrix}
+				=
+				\begin{vmatrix}
+					\, & & \, \\
+					& M(x,y) & \\
+					& & 
+				\end{vmatrix}
+				\begin{vmatrix}
+					\\
+					a(y)\\
+					\quad
+				\end{vmatrix}
+			\end{equation}
+			Di conseguenza se si vuole trovare $a(y)$ basta moltiplicare per l'inversa entrambi i lati.
+
+		\section{Serie di Furiè\footnote{se sai come funziona puoi saltarlo}}
+			Chi ha un'occhio attento avrà già notato che la trasformata di fourier è un prodotto matrice-vettore, ma prima di spiegare per bene il motivo è meglio cominciare dalla sua sorellina minore: la serie di fourier\newline 
+
+			Partiamo definendo un prodotto scalare che ci faccia comodo
+			\begin{equation}
+				<f(x),g(x)>=\frac{2}{T}\int_0^T f(x)g(x)dx
+			\end{equation}
+			se prendiamo questo insieme di vettori $E_T=\{e^{i2\pi n/ T} \, | \, n \in I\!\! N\}$ abbiamo che sono vettori ortonormali rispetto a questo prodotto scalare, quindi sono perfetti per usarli come base dello spazio vettoriale $C[0,T]$\footnote{a dire il vero bisognerebbe dimostrare che $Span\{E_T\}$ sia effettivamente $C[0,T]$}, o per le funzioni che oscillano con un periodo $T$.\newline
+			Tutto ciò ci porta alla celeberrima serie di fouriè, dove $\widehat{e_n}=e^{i2\pi n/ T}$
+			\begin{equation}
+			\label{serieFuriè}
+				f(x)=Re\Bigg[\sum_{n=0}^{+\infty} <f(x),\widehat{e_n}>\widehat{e_n}\Bigg]
+			\end{equation}
+			Scritto in forma vettoriale assume una forma strana, è una matrice semi continua, che sarebbe $M:[a,b]\times \{1,\dots,n\}\rightarrow I\!R$
+			\begin{equation}
+				\begin{vmatrix}
+					\,\\
+					\,\\
+					f(x)\\
+					\,\\
+					\,
+				\end{vmatrix}
+				=
+				\begin{vmatrix}
+					\, & & &\\
+					\, & & &\\
+					\widehat{e_0}& \dots & \widehat{e_n}&\dots\\
+					\, & & &\\
+					\, & & &
+				\end{vmatrix}
+				\begin{vmatrix}
+					<f(x),\widehat{e_0}>\\
+					\vdots\\
+					<f(x),\widehat{e_n}>\\
+					\vdots
+				\end{vmatrix}
+			\end{equation}
+			So che è un pò complicato, ma se avete dubbi chiedetemi di persona
+
+
+		\section{Trasformata di Furiè}
+			Ora che abbiamo reso incomprenzibile la serie, facciamo lo stesso lavoro con la trasformata
 
 \end{document}
