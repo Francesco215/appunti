@@ -1,7 +1,7 @@
 %\documentclass[11pt,fleqn]{book}%
 %\documentclass{exam}%
 \documentclass[11pt,a4paper]{article}
-\date{marzo 2018}
+\date{Marzo 2018}
 \usepackage[italian]{babel}
 \usepackage[T1]{fontenc}
 \usepackage{graphicx}
@@ -30,7 +30,7 @@
 	
 
 	\section{Dalle matrici discrete a quelle continue}
-		Supponiamo di prendere una matrice $M$ $ n \times n$, adesso rendiamo le cellette della matrice sempre più strette mandando $n$ a infinito.
+		Supponiamo di prendere una matrice $M$ $ n \times m$, adesso rendiamo le cellette della matrice sempre più strette mandando $n$ a infinito.
 		\begin{equation}
 			\begin{vmatrix}
 				a_{1,1} & \dots & a_{1,n} \\
@@ -44,7 +44,7 @@
 				& & & \\
 			\end{vmatrix}
 		\end{equation}
-		Così facendo non è più possibile indicare un'elemento della matrice con una coppia di numeri interi, ma è possibile indicarli con una coppia di numeri reali $(x,y)$, di  conseguenza la matrice non è più una funzione $M:n\times n \rightarrow \rm I\!R$, ma $M:[a,b]\times [c,d]\rightarrow \rm I\!R$.\newline
+		Così facendo non è più possibile indicare un'elemento della matrice con una coppia di numeri interi, ma è possibile indicarli con una coppia di numeri reali $(x,y)$, di  conseguenza la matrice non è più una funzione $M:\{1,\dots,n\}\times\{1,\dots,m\} \rightarrow \rm I\!R$, ma $M:[a,b]\times [c,d]\rightarrow \rm I\!R$.\newline
 		Usando lo stesso ragionamento con i vettori abbiamo che la loro versione con $n\rightarrow +\infty$ siano funzioni $v:[a,b]\rightarrow \rm I\!R$ 
 	
 
@@ -71,8 +71,7 @@
 				v_n w_n
 			\end{vmatrix}
 		\end{equation}
-		Una volta aver definito questa apparentemente inutile funzione ne definisco un'altra.
-		prendi un vettore $v=(v_1,\dots,v_n)$ e immagina che ogni componente uscisse dal foglio con un'altezza pari al suo valore (attento agli occhi).\newline
+		Una volta aver definito questa apparentemente inutile funzione ne definisco un'altra. Prendi un vettore $v=(v_1,\dots,v_n)$ e immagina che ogni componente uscisse dal foglio con un'altezza pari al suo valore (attento agli occhi).\newline
 		Adesso se lo guardi di lato dovresti vedere un'istrogramma, nell'immagine che se avrò voglia metterò si capisce benissimo quello che intendo.\newline
 		Definisco $A(v)$ l'area di quell'istogramma mostrato dalla fantomatica immagine, è facile verificare che $A(P(v,w))=<v,w>$\footnote{supponendo che alla base dell'istogramma ci sia un quadrato di area unitaria}.
 
@@ -94,7 +93,7 @@
 			Mv + Nv=  (M+N)v,\quad Mv+Mw=M(v+w)
 		\]
 		
-		Lascio al lettore l'esercizio di dimostrare queste poprietà, trovare la matrice identità e la formula per prodotto tra matrici\footnote{se scrolli dovresti trovarle la soluzione}
+		Lascio al lettore l'esercizio di dimostrare queste poprietà, trovare la matrice identità e la formula per prodotto tra matrici\footnote{comunque se scrolli dovresti trovarle la soluzione}
 	
 
 	\section{Combinazioni lineari}
@@ -118,7 +117,6 @@
 			\end{vmatrix}
 		\end{equation}
 		dove la matrice nel mezzo è la matrice che ha come colonne i vettori $v_1,\dots,v_n$, quindi un modo per calcolare i coefficenti $a_1,\dots,a_n$ è quello di calcolare l'inversa della matrice\footnote{che esiste perchè le righe sono lienarmente indipendenti} e moltiplicare membro a membro.\newline
-		\newline
 
 		La stessa cosa si può fare con le matrici continue, ma prima parliamo di matrici inverse.
 		Sarei tentato di definire la matrice $M^{-1}$ l'inversa di $M$ se $Id(x,y)=\delta (y-x)=\int_a^b M^{-1}(x,t) M(t,y) dt$, ma per ora la definisco così:\newline
@@ -193,7 +191,7 @@
 	\section{Trasformata di Furiè}
 		Ora che abbiamo reso incomprenzibile la serie, facciamo lo stesso lavoro con la trasformata.\newline \newline
 		La trasformata di fourier, può essere vista come una serie di forurier con il periodo che tende a infinito, ora però c'è il problema di scegliere una base.\newline
-		Non essendoci stavolta un valido motivo per escludere le funzioni periodiche che hanno la frequenza che non sia un multiplo di $1/T$ possiamo prenderci la libertà di prenderle tutte. Di conseguenza segliamo come base $\{M(x,y_0)=e^{ixy_0}\,|\,y_0 \in \rm I\!R \}$.\newline
+		Non essendoci stavolta un valido motivo per escludere le funzioni periodiche che hanno la frequenza che non siano un multiplo di $1/T$ possiamo prenderci la libertà di prenderle tutte. Di conseguenza segliamo come base $B=\{F(x,y_0)=e^{ixy_0}\,|\,y_0 \in \rm I\!R \}$.\newline
 		Come abbiamo visto nell'equazione \ref{combinazione lineare matrice} possiamo scrivere una generica funzione in questo modo
 		\begin{equation}
 			\begin{vmatrix}
@@ -204,7 +202,7 @@
 			=
 			\begin{vmatrix}
 				\, & & \, \\
-				& M(x,y) & \\
+				& F(x,y) & \\
 				& & 
 			\end{vmatrix}
 			\begin{vmatrix}
@@ -217,5 +215,69 @@
 		\begin{equation}
 		f(x)=\int_{-\infty}^{+\infty} e^{ixy}\hat{f}(y) dy
 		\end{equation}
-		Da qui si evince cosa rappresenta fisicamente $\hat{f}(y)$, essa è la funzione che indica i coefficienti da mettere davanti i vettori di base per ottenere il vettore desiderato.
+		Da qui si evince cosa rappresenta fisicamente $\hat{f}(y)$: essa è la funzione che indica i coefficienti da mettere davanti i vettori di base per ottenere il vettore desiderato.
+
+	\section{Matrice associata a un'applicazione lineare}
+		Per costruire una matrice associata a un'applicazione lineare il procedimento è pressocchè identico a quello adottato in algebra lineare:\newline
+		Sia $L:V\rightarrow W$ un'applicazione lineare tra due spazii vettoriali e sia $B=\{v_{y}(x)|y\in \rm I\!R\}$ una base di $V$. Allora la matrice associata all'applicazione lineare sarà $L(x,y)=L(v_{y}(x))$.\newline
+		Detto in parole povere ho messo in ogni colonna dove va a finire il vettore di base associato.\newline
+
+	\section{Cambiamento di base}
+		Trovare la matrice associata all'applicazione lineare ci dà informazioni su come trasformano i vettori di base, ma non ci dice molto su come trasforma una funzione generica.\newline
+		Sia $B=\{v_{y}(x)|y\in \rm I\!R\}$ una base di uno spazio vettoriare $V$ denso in $\rm I\!L$, sia $M$ la matrice assiociata all'applicazione lineare rispetto alla base $B$ e sia $N(x,y)=v_{y}(x)$ la matrice di cambiamento di base, allora la matrice associata all'applicazione lineare $L$ in $V$ sarà
+		\begin{equation}
+			L=N^{-1}\circ M \circ N
+		\end{equation}
+		Che è praticamente identica alla sua controparte discreta di algebra lineare
+
+	\section{Proprietà $\delta$ di Dirac}
+		Prima di ricavarci la matrice associata alla derivata occorre sapere un paio di proprietà sulla $\delta$ di dirac.\newline
+		La prima è sapere qual'è la sua derivata, che nonostante sia un pò un'abuso di notazione fa il suo sporco lavoro. Partiamo dall'osservare che $x\delta (x)=0$ per ogni $x$, adesso calcoliamoci la sua derivata.
+		\begin{equation}
+			(x\delta (x))'=0= x\delta'(x) + \delta(x)
+		\end{equation}
+		risolvendo per $\delta'(x)$ si ottiene che 
+		\begin{equation}
+			\delta'(x)=-\frac{\delta(x)}{x}
+		\end{equation}
+		La seconda proprietà non la dimostro, essa afferma che
+		\begin{equation}
+			\delta(x-y)=\frac{1}{2\pi} \int_{-\infty}^{+\infty} e^{it(x-y)} dt
+		\end{equation}
+
+	\section{Matrice associata alla derivata}
+		A questo punto possiamo trovare la matrice associata alla più famosa delle applicazioni lineare: la derivata\footnote{Se ti senti particolarmente intelligente puoi provare a trovare la matrice associata all'integrale}\newline
+		cominciamo mettendoci nella base $B=\{e^{ixy_0}\,|\,y_0 \in \rm I\!R \}$ delle esponenziali complesse, la matrice associata alla derivazione rispetto a $x$ $\widehat{D}$ in quella base è 
+		\begin{equation}
+			\widehat{D}(x,y)=-iy\delta (x-y)=-ix\delta(x-y)=-i\sqrt{|xy|}\delta(x-y)
+		\end{equation}
+		Mentre la matrice di cambiamento di base è $F(x,y)=\frac{e^{-iyx}}{\sqrt{2\pi}}$, e la sua inversa è $F^{-1}(x,y)=\frac{e^{iyx}}{\sqrt{2\pi}}$, per avere l'applicazione derivata $D$ rispetto alla base canonica bisognerà comporre le matrici
+		\begin{equation}
+			D=F^{-1}\circ \widehat{D}\circ F
+		\end{equation}
+		Essendo la composizione di matrici associativa, conviene calcolarci prima $\widehat{D}F$
+		\[
+			(\widehat{D}\circ F)(x,y)=\frac{1}{\sqrt{2\pi}}\int_{-\infty}^{+\infty}
+			-iy\delta(y-t)e^{-itx}dt=-\frac{iy}{\sqrt{2\pi}}e^{-iyx}
+		\]
+		adesso basta moltiplicare la nuova matrice per $F^{-1}$
+		\[
+			(F^{-1}\circ \widehat{D}\circ F)=
+			\frac{1}{\sqrt{2\pi}}\int_{-\infty}^{+\infty}-\frac{it}{\sqrt{2\pi}}e^{itx}e^{-ity}dt=
+			-\frac{i}{2\pi}\int_{-\infty}^{+\infty}te^{it(x-y)}dt
+		\]
+		integrando per parti si ottine
+		\[
+			-\frac{it}{2\pi}(2\pi\delta(x-y))\bigg\rvert_{-\infty}^{+\infty}+
+			\frac{i}{2\pi}\int_{-\infty}^{+\infty}\frac{e^{it(x-y)}}{i(x-y)}dt=
+			\frac{1}{2\pi(x-y)}\int_{-\infty}^{+\infty}e^{it(x-y)}dt=\frac{\delta(x-y)}{x-y}
+		\]
+		E così abbiamo la matrice associata alla derivata nella base canonica delle funzioni
+		\begin{equation}
+			D(x,y)=\frac{\delta(x-y)}{x-y}
+		\end{equation}
+		Adesso dimostriamo che effettivamente funziona
+		\[
+			\int_{-\infty}^{+\infty}\frac{\delta(x-y)}{x-y}f(y)dy=-\delta(x-y)f(y)\big\rvert_{-\infty}^{+\infty}+\int_{-\infty}^{+\infty}\delta(x-y)f'(y)dy=f'(x)
+		\]
 \end{document}

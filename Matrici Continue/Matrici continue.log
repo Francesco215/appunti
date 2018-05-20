@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.11.22)  24 FEB 2018 18:14
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.11.22)  6 MAY 2018 13:52
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -266,30 +266,25 @@ Underfull \hbox (badness 10000) in paragraph at lines 26--28
 
 {/usr/local/texlive/2016/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
 [2]
-Overfull \hbox (1.1497pt too wide) in paragraph at lines 119--122
+Overfull \hbox (1.1497pt too wide) in paragraph at lines 118--120
 \T1/cmr/m/n/10.95 dove la ma-tri-ce nel mez-zo � la ma-tri-ce che ha co-me co-l
 on-ne i vet-to-ri $\OML/cmm/m/it/10.95 v[]; [] ; v[]$\T1/cmr/m/n/10.95 ,
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 119--122
+Underfull \hbox (badness 10000) in paragraph at lines 118--120
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 119--122
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 123--125
+Underfull \hbox (badness 10000) in paragraph at lines 121--123
 
  []
 
 ! Argument of \@sect has an extra }.
 <inserted text> 
                 \par 
-l.153 ...e comunque fa più confondere che altro}}
+l.151 ...e comunque fa più confondere che altro}}
                                                   
 ? 
 Runaway argument?
@@ -298,20 +293,33 @@ C.
 ! Paragraph ended before \@sect was complete.
 <to be read again> 
                    \par 
-l.153 ...e comunque fa più confondere che altro}}
+l.151 ...e comunque fa più confondere che altro}}
                                                   
 ? 
 
-Underfull \hbox (badness 10000) in paragraph at lines 154--155
+Underfull \hbox (badness 10000) in paragraph at lines 152--153
 
  []
 
 [3]
-Underfull \hbox (badness 10000) in paragraph at lines 194--198
+Underfull \hbox (badness 10000) in paragraph at lines 192--196
 
  []
 
-[4] (./Matrici continue.aux) ) 
+
+Underfull \hbox (badness 10000) in paragraph at lines 221--224
+
+ []
+
+[4] [5]
+Overfull \hbox (33.38362pt too wide) detected at line 274
+\OMS/cmsy/m/n/10.95 ^^@[]\OT1/cmr/m/n/10.95 (2\OML/cmm/m/it/10.95 ^^Y^^N\OT1/cm
+r/m/n/10.95 (\OML/cmm/m/it/10.95 x \OMS/cmsy/m/n/10.95 ^^@ \OML/cmm/m/it/10.95 
+y\OT1/cmr/m/n/10.95 ))[][] + [] [][] []\OML/cmm/m/it/10.95 dt \OT1/cmr/m/n/10.9
+5 = [] [][] \OML/cmm/m/it/10.95 e[]dt \OT1/cmr/m/n/10.95 = []
+ []
+
+[6] (./Matrici continue.aux) ) 
 Here is how much of TeX's memory you used:
  3940 strings out of 493014
  50985 string characters out of 6133350
@@ -325,27 +333,29 @@ ps/cm-super/cm-super-t1.enc}</usr/local/texlive/2016/texmf-dist/fonts/type1/pub
 lic/amsfonts/cm/cmex10.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/publ
 ic/amsfonts/cmextra/cmex9.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/p
 ublic/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/pu
-blic/amsfonts/cm/cmmi6.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/publ
-ic/amsfonts/cm/cmmi8.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public
-/amsfonts/cm/cmmi9.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/a
-msfonts/cm/cmr10.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/ams
-fonts/cm/cmr6.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfon
-ts/cm/cmr8.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/
-cm/cmsy10.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/c
-m/cmsy8.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/
-cmsy9.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/cm-super/sfbx1
-095.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/cm-super/sfbx144
-0.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/cm-super/sfrm0600.
-pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/cm-super/sfrm0800.pf
-b></usr/local/texlive/2016/texmf-dist/fonts/type1/public/cm-super/sfrm0900.pfb>
-</usr/local/texlive/2016/texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb></
-usr/local/texlive/2016/texmf-dist/fonts/type1/public/cm-super/sfrm1095.pfb></us
-r/local/texlive/2016/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb></usr/
-local/texlive/2016/texmf-dist/fonts/type1/public/cm-super/sfrm1728.pfb>
-Output written on "Matrici continue.pdf" (4 pages, 258429 bytes).
+blic/amsfonts/cm/cmmi12.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/pub
+lic/amsfonts/cm/cmmi6.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/publi
+c/amsfonts/cm/cmmi8.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/
+amsfonts/cm/cmmi9.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/am
+sfonts/cm/cmr10.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsf
+onts/cm/cmr6.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfont
+s/cm/cmr8.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/c
+m/cmsy10.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm
+/cmsy6.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/c
+msy8.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cms
+y9.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/cm-super/sfbx1095
+.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/cm-super/sfbx1440.p
+fb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/cm-super/sfrm0600.pfb
+></usr/local/texlive/2016/texmf-dist/fonts/type1/public/cm-super/sfrm0800.pfb><
+/usr/local/texlive/2016/texmf-dist/fonts/type1/public/cm-super/sfrm0900.pfb></u
+sr/local/texlive/2016/texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb></usr
+/local/texlive/2016/texmf-dist/fonts/type1/public/cm-super/sfrm1095.pfb></usr/l
+ocal/texlive/2016/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb></usr/loc
+al/texlive/2016/texmf-dist/fonts/type1/public/cm-super/sfrm1728.pfb>
+Output written on "Matrici continue.pdf" (6 pages, 287199 bytes).
 PDF statistics:
- 102 PDF objects out of 1000 (max. 8388607)
- 74 compressed objects within 1 object stream
+ 116 PDF objects out of 1000 (max. 8388607)
+ 84 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 
