@@ -1,7 +1,7 @@
 %\documentclass[11pt,fleqn]{book}%
 %\documentclass{exam}%
 \documentclass[11pt,a4paper]{article}
-\date{Marzo 2018}
+\date{Febbraio 2018}
 \usepackage[italian]{babel}
 \usepackage[T1]{fontenc}
 \usepackage{graphicx}
@@ -118,7 +118,7 @@
 		\end{equation}
 		dove la matrice nel mezzo è la matrice che ha come colonne i vettori $v_1,\dots,v_n$, quindi un modo per calcolare i coefficenti $a_1,\dots,a_n$ è quello di calcolare l'inversa della matrice\footnote{che esiste perchè le righe sono lienarmente indipendenti} e moltiplicare membro a membro.\newline
 
-		La stessa cosa si può fare con le matrici continue, ma prima parliamo di matrici inverse.
+		La stessa cosa si può fare con le matrici continue, ma prima parliamo di matrici inverse.\newline
 		Sarei tentato di definire la matrice $M^{-1}$ l'inversa di $M$ se $Id(x,y)=\delta (y-x)=\int_a^b M^{-1}(x,t) M(t,y) dt$, ma per ora la definisco così:\newline
 		\begin{definizione}[Matrice inversa]
 			Sia $M:[a,b]\times [a,b]\rightarrow \rm I\!R$, e $N$ pure (se c'hai voglia te lo generalizzi tu), allora $N$ è l'inversa di $M$ se
@@ -233,9 +233,9 @@
 	\section{Proprietà $\delta$ di Dirac}
 		Prima di ricavarci la matrice associata alla derivata occorre sapere un paio di proprietà sulla $\delta$ di dirac.\newline
 		La prima è sapere qual'è la sua derivata, che nonostante sia un pò un'abuso di notazione fa il suo sporco lavoro. Partiamo dall'osservare che $x\delta (x)=0$ per ogni $x$, adesso calcoliamoci la sua derivata.
-		\begin{equation}
+		\[
 			(x\delta (x))'=0= x\delta'(x) + \delta(x)
-		\end{equation}
+		\]
 		risolvendo per $\delta'(x)$ si ottiene che 
 		\begin{equation}
 			\delta'(x)=-\frac{\delta(x)}{x}
@@ -282,21 +282,53 @@
 		\]
 
 	\section{Tensori fatti male\footnote{Questa parte presenterà diverse lacune e imperfezioni in quanto non ho studiato per bene i tensori ed è scritta pure male}}
-		Un tensore $T$ di tipo $(n,m)$ può essere visto come una specie di matrice con $n+m$ indici. La versione continua di un tensore è quindi qualcosa del genere $T^{(x_1,\dots,x_n)}_{(y_1,\dots,y_m)}$, dove $(x_1,\dots,x_n)$ e $(y_1,\dots,y_m)$ sono dei punti di $\rm I\!R^n$ e $\rm I\!R^m$ ed ad ogni coppia di punti è associato uno scalare.\newline
+		Un tensore $T$ di tipo $(n,m)$ può essere visto come una specie di matrice con $n+m$ indici. La versione continua di un tensore è quindi qualcosa del genere $T^{(x_1,\dots,x_n)}_{(y_1,\dots,y_m)}$, dove $(x_1,\dots,x_n)$ e $(y_1,\dots,y_m)$ sono dei vettori di $\rm I\!R^n$ e $\rm I\!R^m$ ed ad ogni coppia di punti è associato uno scalare.\newline
 		Se facciamo il limite al continuo degli indici otteniamo che il tensore diventa della forma $T^{f}_{g}$, dove $f$ e $g$ sono due vettori continui.
 
 	\section{Funzionali}
 		Adesso concentriamoci sui Tensori con indici continui che hanno solo una funzione negli indici $T_f$, che da ora in poi scriverò come $T[f(x)]$. Essi sono funzioni che vanno dallo spazio delle funzioni in $\rm I\!R$. Questi oggetti in matematica sono definiti come Funzionali.\newline
 		Esistono diversi tipi di funzionali, ma io mi concentrerò su quelli più facili, cioè quelli tali che
-		\[
+		\begin{equation}
 			\lim_{\epsilon 	\to 0}T[f(x)+\epsilon g(x)]-T[f(x)]=0
-		\]
-		Che chiamerò funzionali continui\footnote{Probablilmente ce l'hanno una definizione per come si deve, ma io non la so, quindi ci metto questa perchè assomigliano alle funzioni continue di Analisi 1}.\newline
+		\end{equation}
+		Che chiamerò funzionali continui\footnote{Probablilmente ce l'hanno una definizione per come si deve, ma io non la so, quindi ci metto questa perchè assomigliano alle funzioni continue di Analisi 1}.
 	\section{Derivata funzionale}
 		Le analogie tra le funzioni in $n$ variabili e i funzionali sono molte, una di queste è la derivata direzionale.\newline
-		Nelle funzioni in più variabili la derivata direzionale è\footnonte{ricordati che$||y||_2=1$} $\lim_{\epsilon \to 0}\frac{f(\mathbf{x}+\epsilon\mathbf{y})-f(\mathbf{x})}{\epsilon}$. Nei funzionali invece di prendere $\mathbf{x},\mathbf{y}$ vettori discreti, prendiamo vettori continui, e così facendo si ottene la derivata funzionale
+		Nelle funzioni in più variabili la derivata direzionale è\footnote{ricordati che $||y||_2=1$} $\lim_{\epsilon \to 0}\frac{f(\mathbf{x}+\epsilon\mathbf{y})-f(\mathbf{x})}{\epsilon}$. Nei funzionali invece di prendere $\mathbf{x},\mathbf{y}$ vettori discreti, prendiamo vettori continui, e così facendo si ottene la derivata funzionale
 		\begin{equation}
 			\frac{dF}{dg}[f(x)]=\lim_{\epsilon \to 0}\frac{F[f(x)+\epsilon g(x)]-F[f(x)]}{\epsilon}
 		\end{equation}
-		con $||g||_2=1$
+		con $||g||_2=1$. Questa equazione rappresenta la derivata di $F$ nella direzione di $g$.\newline
+		Se si vuole trovare un punto stazionario di un funzionale $F$ bisogna imporre che $\frac{dF}{dg}=0$ per ogni $g$, che equivarrebe a dire che la derivata deve essere zero in ogni direzione.\newline
+	\section{Equazioni di Eulero-Lagrange}
+		L'esempio più famoso nel trovare i punti stazionarii di un funzionale è l'equazione di Eulero-Lagrange:
+		\begin{equation}
+			A[x(t)]=\int_{t_a}^{t_b}L(x(t),\dot{x}(t),t)dt
+		\end{equation}
+		dove $A$ è un funzionale detto Azione che per qualche oscuro motivo dobbiamo minimizare, $L$ è la lagrangiana ,$x$ è la posizione, $\dot{x}$ la velocità e $t$ il tempo.
+		Per trovare il minimo bisogna imporre che per ogni $y$
+		\[
+			\frac{dA}{dy}=\lim_{\epsilon \to 0}\frac{A[x(t)+\epsilon y(t)]-A[x(t)]}{\epsilon}=0
+		\]
+		sviluppo in Taylor il primo membro
+		\[
+			A[x(t)+\epsilon y(t)]=\int_{t_a}^{t_b}L(x+\epsilon y,\dot{x}+\epsilon \dot{y},t)=A[x(t)]+\int_{t_a}^{t_b}\frac{\partial{L}}{\partial{x}}\epsilon y+\frac{\partial{L}}{\partial{\dot{x}}}\epsilon \dot{y}dt
+		\]
+		quindi
+		\[
+			\frac{dA}{dy}=\int_{t_a}^{t_b}\frac{\partial{L}}{\partial{x}}y+\frac{\partial{L}}{\partial{\dot{x}}}\dot{y}dt
+		\]
+		integrando per parti il secondo termine dell'integrale
+		\[
+			\int_{t_a}^{t_b}\frac{\partial{L}}{\partial{\dot{x}}}\dot{y}dt=y\frac{\partial{L}}{\partial{\dot{x}}}\bigg\rvert_{-\infty}^{+\infty}-
+			\int_{t_a}^{t_b}\frac{d}{dt}\bigg(\frac{\partial{L}}{\partial{\dot{x}}} \bigg)ydt
+		\]
+		Adesso per semplicità asumiamo che i punti estremali della traiettoria sono fissati, quindi $y(t_a)=y(t_b)=0$, quindi rimettendo tutto nell'equazione precedente si ha che
+		\begin{equation}
+			\frac{dA}{dy}=\int_{t_a}^{t_b}\bigg[\frac{\partial{L}}{\partial{x}}-\frac{d}{dt}\bigg(\frac{\partial{L}}{\partial{\dot{x}}} \bigg)\bigg]ydt
+		\end{equation}
+		che è uguale a zero per ogni $y(t)$ se e solo se 
+		\begin{equation}
+			\frac{\partial{L}}{\partial{x}}=\frac{d}{dt}\bigg(\frac{\partial{L}}{\partial{\dot{x}}} \bigg)
+		\end{equation}
 \end{document}
