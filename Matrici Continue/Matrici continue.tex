@@ -246,8 +246,8 @@
 		\end{equation}
 
 	\section{Matrice associata alla derivata}
-		A questo punto possiamo trovare la matrice associata alla più famosa delle applicazioni lineare: la derivata\footnote{Se ti senti particolarmente intelligente puoi provare a trovare la matrice associata all'integrale}\newline
-		cominciamo mettendoci nella base $B=\{e^{ixy_0}\,|\,y_0 \in \rm I\!R \}$ delle esponenziali complesse, la matrice associata alla derivazione rispetto a $x$ $\widehat{D}$ in quella base è 
+		A questo punto possiamo trovare la matrice associata alla più famosa delle applicazioni lineare: la derivata\footnote{Se ti senti particolarmente intelligente puoi provare a trovare la matrice associata all'integrale}.\newline
+		Cominciamo mettendoci nella base $B=\{e^{ixy_0}\,|\,y_0 \in \rm I\!R \}$ delle esponenziali complesse, la matrice associata alla derivazione rispetto a $x$ $\widehat{D}$ in quella base è 
 		\begin{equation}
 			\widehat{D}(x,y)=-iy\delta (x-y)=-ix\delta(x-y)=-i\sqrt{|xy|}\delta(x-y)
 		\end{equation}
@@ -280,4 +280,23 @@
 		\[
 			\int_{-\infty}^{+\infty}\frac{\delta(x-y)}{x-y}f(y)dy=-\delta(x-y)f(y)\big\rvert_{-\infty}^{+\infty}+\int_{-\infty}^{+\infty}\delta(x-y)f'(y)dy=f'(x)
 		\]
+
+	\section{Tensori fatti male\footnote{Questa parte presenterà diverse lacune e imperfezioni in quanto non ho studiato per bene i tensori ed è scritta pure male}}
+		Un tensore $T$ di tipo $(n,m)$ può essere visto come una specie di matrice con $n+m$ indici. La versione continua di un tensore è quindi qualcosa del genere $T^{(x_1,\dots,x_n)}_{(y_1,\dots,y_m)}$, dove $(x_1,\dots,x_n)$ e $(y_1,\dots,y_m)$ sono dei punti di $\rm I\!R^n$ e $\rm I\!R^m$ ed ad ogni coppia di punti è associato uno scalare.\newline
+		Se facciamo il limite al continuo degli indici otteniamo che il tensore diventa della forma $T^{f}_{g}$, dove $f$ e $g$ sono due vettori continui.
+
+	\section{Funzionali}
+		Adesso concentriamoci sui Tensori con indici continui che hanno solo una funzione negli indici $T_f$, che da ora in poi scriverò come $T[f(x)]$. Essi sono funzioni che vanno dallo spazio delle funzioni in $\rm I\!R$. Questi oggetti in matematica sono definiti come Funzionali.\newline
+		Esistono diversi tipi di funzionali, ma io mi concentrerò su quelli più facili, cioè quelli tali che
+		\[
+			\lim_{\epsilon 	\to 0}T[f(x)+\epsilon g(x)]-T[f(x)]=0
+		\]
+		Che chiamerò funzionali continui\footnote{Probablilmente ce l'hanno una definizione per come si deve, ma io non la so, quindi ci metto questa perchè assomigliano alle funzioni continue di Analisi 1}.\newline
+	\section{Derivata funzionale}
+		Le analogie tra le funzioni in $n$ variabili e i funzionali sono molte, una di queste è la derivata direzionale.\newline
+		Nelle funzioni in più variabili la derivata direzionale è\footnonte{ricordati che$||y||_2=1$} $\lim_{\epsilon \to 0}\frac{f(\mathbf{x}+\epsilon\mathbf{y})-f(\mathbf{x})}{\epsilon}$. Nei funzionali invece di prendere $\mathbf{x},\mathbf{y}$ vettori discreti, prendiamo vettori continui, e così facendo si ottene la derivata funzionale
+		\begin{equation}
+			\frac{dF}{dg}[f(x)]=\lim_{\epsilon \to 0}\frac{F[f(x)+\epsilon g(x)]-F[f(x)]}{\epsilon}
+		\end{equation}
+		con $||g||_2=1$
 \end{document}
