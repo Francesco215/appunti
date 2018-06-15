@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.11.22)  26 MAY 2018 16:12
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.11.22)  15 JUN 2018 20:23
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -319,10 +319,43 @@ y\OT1/cmr/m/n/10.95 ))[][] + [] [][] []\OML/cmm/m/it/10.95 dt \OT1/cmr/m/n/10.9
 5 = [] [][] \OML/cmm/m/it/10.95 e[]dt \OT1/cmr/m/n/10.95 = []
  []
 
+[6]
+Overfull \hbox (8.92148pt too wide) detected at line 299
+\OML/cmm/m/it/10.95 D[] \OT1/cmr/m/n/10.95 = (\OML/cmm/m/it/10.95 F[] \OMS/cmsy
+/m/n/10.95 ^^N [] ^^N \OML/cmm/m/it/10.95 F\OT1/cmr/m/n/10.95 ) = [] [][] []\OM
+L/cmm/m/it/10.95 e[]e[]dt \OT1/cmr/m/n/10.95 = [] [][] \OML/cmm/m/it/10.95 t[]e
+[]dt
+ []
+
+
+Overfull \hbox (60.40442pt too wide) detected at line 305
+[]\OT1/cmr/m/n/10.95 (2\OML/cmm/m/it/10.95 ^^Y^^N\OT1/cmr/m/n/10.95 (\OML/cmm/m
+/it/10.95 x \OMS/cmsy/m/n/10.95 ^^@ \OML/cmm/m/it/10.95 y\OT1/cmr/m/n/10.95 ))[
+][] \OMS/cmsy/m/n/10.95 ^^@ [] [][] \OML/cmm/m/it/10.95 nt[][]dt \OT1/cmr/m/n/1
+0.95 = [] [][] \OML/cmm/m/it/10.95 t[]e[]dt \OT1/cmr/m/n/10.95 =
+ []
+
+
+Overfull \hbox (1.76456pt too wide) in paragraph at lines 311--311
+[]\T1/cmr/bx/n/14.4 Risoluzione equa-zio-ni dif-fe-ren-zia-li li-nea-rii a coef
+-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 312--316
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 317--319
+
+ []
+
+[7]
 ! Argument of \@sect has an extra }.
 <inserted text> 
                 \par 
-l.284 ... bene i tensori ed è scritta pure male}}
+l.323 ... bene i tensori ed è scritta pure male}}
                                                   
 ? 
 Runaway argument?
@@ -331,15 +364,15 @@ C.
 ! Paragraph ended before \@sect was complete.
 <to be read again> 
                    \par 
-l.284 ... bene i tensori ed è scritta pure male}}
+l.323 ... bene i tensori ed è scritta pure male}}
                                                   
 ? 
-[6]
-Underfull \hbox (badness 10000) in paragraph at lines 300--303
+
+Underfull \hbox (badness 10000) in paragraph at lines 341--344
 
  []
 
-[7] [8] (./Matrici continue.aux) ) 
+[8] [9] (./Matrici continue.aux) ) 
 Here is how much of TeX's memory you used:
  3946 strings out of 493014
  51047 string characters out of 6133350
@@ -375,10 +408,10 @@ sr/local/texlive/2016/texmf-dist/fonts/type1/public/cm-super/sfrm0900.pfb></usr
 ocal/texlive/2016/texmf-dist/fonts/type1/public/cm-super/sfrm1095.pfb></usr/loc
 al/texlive/2016/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb></usr/local
 /texlive/2016/texmf-dist/fonts/type1/public/cm-super/sfrm1728.pfb>
-Output written on "Matrici continue.pdf" (8 pages, 324260 bytes).
+Output written on "Matrici continue.pdf" (9 pages, 335660 bytes).
 PDF statistics:
- 136 PDF objects out of 1000 (max. 8388607)
- 99 compressed objects within 1 object stream
+ 140 PDF objects out of 1000 (max. 8388607)
+ 101 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 
