@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.11.22)  27 JUN 2018 19:17
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.11.22)  29 JUN 2018 22:39
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -464,31 +464,26 @@ Underfull \hbox (badness 10000) in paragraph at lines 322--323
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 (hyperref)                removing `\@ifnextchar' on input line 326.
 
-[8]
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\@ifnextchar' on input line 345.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 363--366
+[8] [9]
+Underfull \hbox (badness 10000) in paragraph at lines 377--380
 
  []
 
-[9]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 399.
- [10]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 399.
+[10]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 413.
+ [11]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 413.
  (./Matrici continue.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 399.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 399.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 413.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 413.
 Package rerunfilecheck Info: File `"Matrici continue".out' has not changed.
-(rerunfilecheck)             Checksum: E5292B2E5AFBB39663428E8743275468;1451.
+(rerunfilecheck)             Checksum: 4E82B84108DBC777FBB25FBEDFE9449D;1269.
  ) 
 Here is how much of TeX's memory you used:
  7522 strings out of 493014
- 105467 string characters out of 6133350
+ 105468 string characters out of 6133350
  212646 words of memory out of 5000000
- 10902 multiletter control sequences out of 15000+600000
+ 10901 multiletter control sequences out of 15000+600000
  19532 words of font info for 53 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  29i,9n,37p,807b,478s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -519,10 +514,10 @@ onts/type1/public/cm-super/sfrm1000.pfb></usr/local/texlive/2016/texmf-dist/fon
 ts/type1/public/cm-super/sfrm1095.pfb></usr/local/texlive/2016/texmf-dist/fonts
 /type1/public/cm-super/sfrm1200.pfb></usr/local/texlive/2016/texmf-dist/fonts/t
 ype1/public/cm-super/sfrm1728.pfb>
-Output written on "Matrici continue.pdf" (10 pages, 352811 bytes).
+Output written on "Matrici continue.pdf" (11 pages, 347228 bytes).
 PDF statistics:
  301 PDF objects out of 1000 (max. 8388607)
- 260 compressed objects within 3 object streams
- 71 named destinations out of 1000 (max. 500000)
- 137 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 259 compressed objects within 3 object streams
+ 72 named destinations out of 1000 (max. 500000)
+ 129 words of extra memory for PDF output out of 10000 (max. 10000000)
 

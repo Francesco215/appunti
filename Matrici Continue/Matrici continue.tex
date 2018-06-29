@@ -319,12 +319,13 @@
 		A prima lettura sembra un problema veramente complicato, tuttavia bisogna ricordarsi che nel caso in cui si ci trova in una base di autovettori di $D_i$, $L$ risulta diagonale, e la cosa bella delle matrici diagonali è che il nucleo sono gli zeri sulla diagonale e che l'iversa è l'inverso degli elementi sulla diagonale.\newline
 		Visto che le esponenziali sono una base\footnote{A dire il vero dovrei dimostrarlo, ma per ora fidati, comunque se ti interessa perchè, vatti a studiare la trasformata di Laplace. In ogni caso lo stesso identico risultato si sarebbe ottenuto con le esponenziali complesse, ma sarebbe stato più fastidioso da ricavare a causa dei numeri complessi} di autovettori rispetto alla derivata conviene risolvere il probema rispetto ad essa.\newline
 
-		Rispetto alla base $B=\{e^{yx}|y \in \rm I\!R\}$ $D_n=y^n\delta(x-y)$, di conseguenza $L(x,y)=\delta(x-y)(a_ny^n+\dots+a_0)$, quindi gli zeri lungo la diagonale $y_0,\dots,y_n$ sono le soluzioni di $P(y)=a_ny^n+\dots+a_0$, inoltre per il teorema fondamentale dell'algebra si ha che $dim(N)=n$. Il nucleo sarà quindi nella forma $N=span\{e^{y_0x},\dots,e^{y_nx}\}$\footnote{Se la tua domanda è:"Ma tu vu futtiri a mia?! Che succede se delle radici sono coincidenti?" ti posso soltanto dire che ci sto lavorando}.\newline
+		Rispetto alla base $B=\{e^{yx}|y \in \rm I\!R\}$ $D_n=y^n\delta(x-y)$, di conseguenza $L(x,y)=\delta(x-y)(a_ny^n+\dots+a_0)$, quindi gli zeri lungo la diagonale $y_0,\dots,y_n$ sono le soluzioni di $P(y)=a_ny^n+\dots+a_0$, inoltre per il teorema fondamentale dell'algebra si ha che $dim(N)=n$. Il nucleo sarà quindi nella forma $N=span\{e^{y_0x},\dots,e^{y_nx}\}$\footnote{Se la tua domanda è:"Ma tu vu futtiri a mia?! Chi succiri si i radici su i stissi!?" ti posso soltanto dire che ci sto Travagghiando}.\newline
 
 		Per trovare l'omogenea $f_o$ bisognerà risolvere $f_o=L^{-1}_{|I}g$, ma per ora mi secca scrivere come si fa.
 
+
 	\section{Prodotto Tensoriale\protect\footnote{Per capire questa parte bisogna sapere almeno le basi sui tensori e il prodotto tensoriale, consiglio di leggere \href{url}{https://jeremykun.com/2014/01/17/how-to-conquer-tensorphobia}}}
-		Prendiamo due vettori continui $v$ e $w$ il loro prodotto tensoriale $v\otimes w$ è scrivibile come combinazione dei prodotti tensoriali degli elementi della base $B=\{B(x,y_0)|y_0\in \rm I\!R\}$ dello spazio vettoriale $V$, quindi esprimiamo $v$ e $w$ in termini di combinazione linare dei vettori di base, cioè $v(x)=\int B(x,y)a(y)dy$ e $w(x')=\int B(x',y')b(y')dy'$
+		Prendiamo due vettori continui $v$ e $w$ il loro prodotto tensoriale $v\otimes w$ è scrivibile come combinazione dei prodotti tensoriali degli elementi della base $B=\{B(x,y_0)|y_0\in \rm I\!R\}$ dello spazio vettoriale $V$, quindi esprimiamo $v$ e $w$ in termini di $B$ $v(x)=\int B(x,y)a(y)dy$ e $w(x')=\int B(x',y')b(y')dy'$
 		\[
 			v(x)\otimes w(x')=\bigg(\int B(x,y)a(y)dy \bigg)\otimes \bigg(\int B(x',y')b(y')dy'\bigg)=
 		\]
@@ -338,15 +339,29 @@
 		\begin{equation}
 			v(x)\otimes w(x')=\int \int T(y,y')a(y)b(y')dydy'
 		\end{equation}
-		Adesso cerchiamo di generalizzare un pò quello che abbiamo fatto fin'ora: prendiamo il prodotto tensoriale $\otimes:\underbrace{V^*\times\dots\times V^*}_{p \textrm{ volte}}\times\underbrace{V\times\dots\times V}_{q \textrm{ volte}}\times\rightarrow\rm I\!R\ $.\newline
-		Questi tensori sono detti di tipo $(p,q)$
+		Da questo punto in poi useremo la notazione di Einstein per i tensori, solo che anzicchè sommare gli indici ripetuti, li integriamo, inoltre se un vettore è covariante al posto di scrivere $v(x)$ scriveremo $v_{(x)}$, viceversa se sono controvarianti scriveremo $v^{(x)}$.\newline
+		Adesso cerchiamo di generalizzare un pò quello che abbiamo fatto fin'ora: prendiamo il prodotto tensoriale $P=v_1\otimes\dots\otimes v_q\otimes w_1\otimes\dots\otimes w_p$, dove $v_1\in V$ e $w_i\in V^*$, supponiamo che $v_i^{(x)}=B^{(x)}_{(y)}a_i^{(y)}$ e $w_{i(x)}=B_{(x)}^{(y)}b_{i(y)}$.\newline
+		Se scriviamo il prodotto Tensoriale in termini dei vettori di base esso diventa
+		\[
+			P=\Big(B^{(x_1)}_{(y_1)}a_1^{(y_1)}\Big)\otimes\dots\otimes\Big(B^{(x_q)}_{(y_q)}a_q^{(y_q)}\Big)\otimes\Big(B_{(z_1)}^{(t_1)}b_{1(t_1)}\Big)\otimes\dots\otimes\Big(B_{(z_p)}^{(t_p)}b_{p(t_p)}\Big)=
+		\]
+		\[
+			=\Big(B^{(x_1)}_{(y_1)}\otimes\dots\otimes B^{(x_q)}_{(y_q)}\otimes B_{(z_1)}^{(t_1)}\otimes\dots\otimes B_{(z_p)}^{(t_p)}\Big)a_1^{(y_1)}\dots a_q^{(y_q)}b_{1(t_1)}\dots b_{p(t_p)}
+		\]
+		Adesso definiamo il tensore "continuo" $T$ come
+		\begin{equation}
+			T_{(y_1,\dots,y_1)}^{(t_1,\dots,t_p)}=B^{(x_1)}_{(y_1)}\otimes\dots\otimes B^{(x_q)}_{(y_q)}\otimes B_{(z_1)}^{(t_1)}\otimes\dots\otimes B_{(z_p)}^{(t_p)}
+		\end{equation}
+		Questo tensore è detto di tipo $(p,q)$, cioè che ha $p$ indici controvarianti (in questo caso continui) e $q$ covarianti.\newline
+		A questo punto è possibile esprimere $P$ in termini di $T$
+		\begin{equation}
+			P=T_{(y_1,\dots,y_1)}^{(t_1,\dots,t_p)}a_1^{(y_1)}\dots a_q^{(y_q)}b_{1(t_1)}\dots b_{p(t_p)}
+		\end{equation}
 
-
-	\section{Tensori fatti male\protect\footnote{Questa parte presenterà diverse lacune e imperfezioni in quanto non ho studiato per bene i tensori ed è scritta pure male}}
-		Un tensore $T$ di tipo $(n,m)$ può essere visto come una specie di matrice con $n+m$ indici. La versione continua di un tensore è quindi qualcosa del genere $T^{(x_1,\dots,x_n)}_{(y_1,\dots,y_m)}$, dove $(x_1,\dots,x_n)$ e $(y_1,\dots,y_m)$ sono dei vettori di $\rm I\!R^n$ e $\rm I\!R^m$ ed ad ogni coppia di punti è associato uno scalare.\newline
-		Se facciamo il limite al continuo degli indici otteniamo che il tensore diventa della forma $T^{f}_{g}$, dove $f$ e $g$ sono due vettori continui.
 
 	\section{Funzionali}
+		Un tensore $T$ di tipo $(n,m)$ può essere visto come una specie di matrice con $n+m$ indici. La versione continua di un tensore è quindi qualcosa del genere $T^{(x_1,\dots,x_n)}_{(y_1,\dots,y_m)}$, dove $(x_1,\dots,x_n)$ e $(y_1,\dots,y_m)$ sono dei vettori di $\rm I\!R^n$ e $\rm I\!R^m$ ed ad ogni coppia di punti è associato uno scalare.\newline
+		Se facciamo il limite al continuo degli indici otteniamo che il tensore diventa della forma $T^{f}_{g}$, dove $f$ e $g$ sono due vettori continui.\newline
 		Adesso concentriamoci sui Tensori con indici continui che hanno solo una funzione negli indici $T_f$, che da ora in poi scriverò come $T[f(x)]$. Essi sono funzioni che vanno dallo spazio delle funzioni in $\rm I\!R$. Questi oggetti in matematica sono definiti come Funzionali.\newline
 		Esistono diversi tipi di funzionali, ma io mi concentrerò su quelli più facili, cioè quelli tali che
 		\begin{equation}
