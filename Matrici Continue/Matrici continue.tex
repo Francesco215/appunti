@@ -49,6 +49,7 @@
 		Così facendo non è più possibile indicare un'elemento della matrice con una coppia di numeri interi, ma è possibile indicarli con una coppia di numeri reali $(x,y)$, di  conseguenza la matrice non è più una funzione $M:\{1,\dots,n\}\times\{1,\dots,m\} \rightarrow \rm I\!R$, ma $M:[a,b]\times [c,d]\rightarrow \rm I\!R$.\newline
 		Usando lo stesso ragionamento con i vettori abbiamo che la loro versione con $n\rightarrow +\infty$ siano funzioni $v:[a,b]\rightarrow \rm I\!R$ 
 	
+	
 
 	\section{Prodotto caso discreto}
 		In algebra lineare un prodotto tra una matrice $M$ e un vettore $v$ non è altro che un vettore $w$ che ha come componente $i$-esima il prodotto scalare canonico tra il vettore $v$ e la $i$-esima riga di $M$, quindi vediamo prima di generalizzare il prodotto scalare.\newline
@@ -77,6 +78,8 @@
 		Adesso se lo guardi di lato dovresti vedere un'istrogramma, nell'immagine che se avrò voglia metterò si capisce benissimo quello che intendo.\newline
 		Definisco $A(v)$ l'area di quell'istogramma mostrato dalla fantomatica immagine, è facile verificare che $A(P(v,w))=<v,w>$\footnote{supponendo che alla base dell'istogramma ci sia un quadrato di area unitaria}.
 
+
+
 	\section{Prodotto caso continuo}
 		Adesso applichiamo lo stesso ragionamento generalizzandolo con le funzioni (che come abbiamo detto sono vettori continui), in questo caso la funzione $P(v(x),w(x))=v(x)w(x)$ e l'area è l'integrale nel dominio di definizione di $v$ e $w$, dunque
 		\begin{equation}
@@ -97,6 +100,7 @@
 		
 		Lascio al lettore l'esercizio di dimostrare queste poprietà, trovare la matrice identità e la formula per prodotto tra matrici\footnote{comunque se scrolli dovresti trovarle la soluzione}
 	
+
 
 	\section{Combinazioni lineari}
 		In algebra lineare sappiamo che se $w\in V$ e ${v_1,\dots,v_n}$ è una base di $V$ abbiamo che esistono dei coefficenti $a_1,\dots,a_n$ tali che $w=a_1 v_1+\dots +a_n v_n$, scritto in forma vettoriale
@@ -150,6 +154,8 @@
 		\end{equation}
 		Di conseguenza se si vuole trovare $a(y)$ basta moltiplicare per l'inversa entrambi i lati.
 
+
+
 	\section{Serie di Furiè \protect\footnote{se sai come funziona puoi saltarlo, e comunque fa più confondere che altro}}
 		Chi ha un'occhio attento avrà già notato che la trasformata di fourier è un prodotto matrice-vettore, ma prima di spiegare per bene il motivo è meglio cominciare dalla sua sorellina minore: la serie di fourier\newline 
 
@@ -190,6 +196,7 @@
 		So che è un pò complicato, ma se avete dubbi chiedetemi di persona\footnote{il mio numero è +39 345 7011798}
 
 
+
 	\section{Trasformata di Furiè}
 		Ora che abbiamo reso incomprenzibile la serie, facciamo lo stesso lavoro con la trasformata.\newline \newline
 		La trasformata di fourier, può essere vista come una serie di forurier con il periodo che tende a infinito, ora però c'è il problema di scegliere una base.\newline
@@ -219,10 +226,14 @@
 		\end{equation}
 		Da qui si evince cosa rappresenta fisicamente $\hat{f}(y)$: essa è la funzione che indica i coefficienti da mettere davanti i vettori di base per ottenere il vettore desiderato.
 
+
+
 	\section{Matrice associata a un'applicazione lineare}
 		Per costruire una matrice associata a un'applicazione lineare il procedimento è pressocchè identico a quello adottato in algebra lineare:\newline
 		Sia $L:V\rightarrow W$ un'applicazione lineare tra due spazii vettoriali e sia $B=\{v_{y}(x)|y\in \rm I\!R\}$ una base di $V$. Allora la matrice associata all'applicazione lineare sarà $L(x,y)=L(v_{y}(x))$.\newline
 		Detto in parole povere ho messo in ogni colonna dove va a finire il vettore di base associato.\newline
+
+
 
 	\section{Cambiamento di base}
 		Trovare la matrice associata all'applicazione lineare ci dà informazioni su come trasformano i vettori di base, ma non ci dice molto su come trasforma una funzione generica.\newline
@@ -231,6 +242,8 @@
 			L=N^{-1}\circ M \circ N
 		\end{equation}
 		Che è praticamente identica alla sua controparte discreta di algebra lineare
+
+
 
 	\section{Proprietà $\delta$ di Dirac}
 		Prima di ricavarci la matrice associata alla derivata occorre sapere un paio di proprietà sulla $\delta$ di dirac.\newline
@@ -246,6 +259,8 @@
 		\begin{equation}
 			\delta(x-y)=\frac{1}{2\pi} \int_{-\infty}^{+\infty} e^{it(x-y)} dt
 		\end{equation}
+
+
 
 	\section{Matrice associata alla derivata}
 		A questo punto possiamo trovare la matrice associata alla più famosa delle applicazioni lineare: la derivata\footnote{Se ti senti particolarmente intelligente puoi provare a trovare la matrice associata all'integrale}.\newline
@@ -282,6 +297,9 @@
 		\[
 			\int_{-\infty}^{+\infty}\frac{\delta(x-y)}{x-y}f(y)dy=-\delta(x-y)f(y)\big\rvert_{-\infty}^{+\infty}+\int_{-\infty}^{+\infty}\delta(x-y)f'(y)dy=f'(x)
 		\]
+
+
+
 	\section{Matrice associata alla derivata n-esima}
 		Ora che avete visto la matrice associata alla derivata, vediamo se si può fare la stessa cosa per la derivata n-esima.
 		Nella base delle esponenziali complesse la matrice che cerchiamo è 
@@ -310,6 +328,8 @@
 			D_{n}=\frac{n}{x-y}D_{n-1}=n!\frac{\delta(x-y)}{(x-y)^n}
 		\end{equation}	
 
+
+
 	\section{Risoluzione equazioni differenziali linearii a coefficenti costanti}
 		Se si vuole trovare la matrice associata ad un'equazione differenziale lineare basta prenderne una a caso $a_nf^{n}(x)+\dots +a_0f(x)=g(x)$ e scriverla in forma matriciale $a_nD_nf+\dots+a_0D_0f=g$.\newline
 		Se definiamo $L=a_nD_n+\dots+a_0D_0$ si ottiene che $L$ è la matrice associata alla nostra equazione differenziale $Lf=g$.\newline
@@ -322,6 +342,7 @@
 		Rispetto alla base $B=\{e^{yx}|y \in \rm I\!R\}$ $D_n=y^n\delta(x-y)$, di conseguenza $L(x,y)=\delta(x-y)(a_ny^n+\dots+a_0)$, quindi gli zeri lungo la diagonale $y_0,\dots,y_n$ sono le soluzioni di $P(y)=a_ny^n+\dots+a_0$, inoltre per il teorema fondamentale dell'algebra si ha che $dim(N)=n$. Il nucleo sarà quindi nella forma $N=span\{e^{y_0x},\dots,e^{y_nx}\}$.\footnote{Se la tua domanda è:"Ma tu vu futtiri a mia?! Chi succiri si i radici su i stissi!?" ti posso soltanto dire che ci sto Travagghiando}\newline
 
 		Per trovare l'omogenea $f_o$ bisognerà risolvere $f_o=L^{-1}_{|I}g$, ma per ora mi secca scrivere come si fa.
+
 
 
 	\section{Tensori Continui\protect\footnote{Per capire questa parte bisogna sapere almeno le basi sui tensori e il prodotto tensoriale, consiglio di leggere \href{url}{https://jeremykun.com/2014/01/17/how-to-conquer-tensorphobia}}}
@@ -359,6 +380,8 @@
 		\end{equation}
 		Adesso vi starete chiedendo:"ok, figo, ma cosa me ne faccio?" e a dire il vero non mi viene niente in mente su cosa farci, a parte trovare il tensore associato a qualche operatore vettoriale, però boh... se mi viene in mente qualcosa di utile da farci ve lo dirò.
 
+
+
 	\section{Funzionali}
 		Un tensore $T$ di tipo $(n,m)$ può essere visto come una specie di matrice con $n+m$ indici. La versione continua di un tensore è quindi qualcosa del genere $T^{(x_1,\dots,x_n)}_{(y_1,\dots,y_m)}$, dove $(x_1,\dots,x_n)$ e $(y_1,\dots,y_m)$ sono dei vettori di $\rm I\!R^n$ e $\rm I\!R^m$ ed ad ogni coppia di punti è associato uno scalare.\newline
 		Se facciamo il limite al continuo degli indici otteniamo che il tensore diventa della forma $T^{f}_{g}$, dove $f$ e $g$ sono due vettori continui.\newline
@@ -370,14 +393,16 @@
 		Che chiamerò funzionali continui\footnote{Probablilmente ce l'hanno una definizione per come si deve, ma io non la so, quindi ci metto questa perchè assomigliano alle funzioni continue di Analisi 1}.
 
 
+
 	\section{Derivata funzionale}
 		Le analogie tra le funzioni in $n$ variabili e i funzionali sono molte, una di queste è la derivata direzionale.\newline
 		Nelle funzioni in più variabili la derivata direzionale è\footnote{ricordati che $||y||_2=1$} $\lim_{\epsilon \to 0}\frac{f(\mathbf{x}+\epsilon\mathbf{y})-f(\mathbf{x})}{\epsilon}$. Nei funzionali invece di prendere $\mathbf{x},\mathbf{y}$ vettori discreti, prendiamo vettori continui, e così facendo si ottene la derivata funzionale
 		\begin{equation}
-			\frac{dF}{dg}[f(x)]=\lim_{\epsilon \to 0}\frac{F[f(x)+\epsilon g(x)]-F[f(x)]}{\epsilon}
+			\frac{\partial F}{\partial g}[f(x)]=\lim_{\epsilon \to 0}\frac{F[f(x)+\epsilon g(x)]-F[f(x)]}{\epsilon}
 		\end{equation}
 		con $||g||_2=1$. Questa equazione rappresenta la derivata di $F$ nella direzione di $g$.\newline
-		Se si vuole trovare un punto stazionario di un funzionale $F$ bisogna imporre che $\frac{dF}{dg}=0$ per ogni $g$, che equivarrebe a dire che la derivata deve essere zero in ogni direzione.\newline
+		Se si vuole trovare un punto stazionario di un funzionale $F$ bisogna imporre che $\frac{\partial F}{\partial g}=0$ per ogni $g$, che equivarrebe a dire che la derivata deve essere zero in ogni direzione.\newline
+
 
 
 	\section{Equazioni di Eulero-Lagrange}
@@ -388,7 +413,7 @@
 		dove $A$ è un funzionale detto Azione che per qualche oscuro motivo dobbiamo minimizare, $L$ è la lagrangiana, $x$ è la posizione, $\dot{x}$ la velocità e $t$ il tempo.
 		Per trovare il minimo bisogna imporre che per ogni $y$
 		\[
-			\frac{dA}{dy}=\lim_{\epsilon \to 0}\frac{A[x(t)+\epsilon y(t)]-A[x(t)]}{\epsilon}=0
+			\frac{\partial A}{\partial y}=\lim_{\epsilon \to 0}\frac{A[x(t)+\epsilon y(t)]-A[x(t)]}{\epsilon}=0
 		\]
 		sviluppo in Taylor il primo membro
 		\[
@@ -396,7 +421,7 @@
 		\]
 		quindi
 		\[
-			\frac{dA}{dy}=\int_{t_a}^{t_b}\frac{\partial{L}}{\partial{x}}y+\frac{\partial{L}}{\partial{\dot{x}}}\dot{y}dt
+			\frac{\partial A}{\partial y}=\int_{t_a}^{t_b}\frac{\partial{L}}{\partial{x}}y+\frac{\partial{L}}{\partial{\dot{x}}}\dot{y}dt
 		\]
 		integrando per parti il secondo termine dell'integrale
 		\[
@@ -412,13 +437,15 @@
 			\frac{\partial{L}}{\partial{x}}=\frac{d}{dt}\bigg(\frac{\partial{L}}{\partial{\dot{x}}} \bigg)
 		\end{equation}
 
+
+
 	\section{Gradiente e Sviluppo in Taylor di Funzionali}
 		In una funzione $f$ in $n$ variabili il gradiente è un vettore $n$ dimenzionale tale che $\nabla f_i=\partial_{e_i} f$, dove $e_i$ è il versore $i$-esimo.\newline
-		Se invece prendiamo un funzionale $T:(f:[a,b]\rightarrow \rm I\!R) \rm I\!R$ possiamo scegliere come versori le delte di dirac, in particolare il versore $e(x_0)$ associata alla "direzione" $x_0$-esima potrebbe essere $\frac{\delta (x-x_0)}{\delta(0)}$\footnote{perchè $||e(x_0)||_2$ deve essere uguale a $1$}, quindi il gradiente di questo tipo di funzionale è
+		Se prendiamo un funzionale $T:(f:[a,b]\rightarrow \rm I\!R)\rightarrow \rm I\!R$, e definiamo $e(x_0)$ il versore associato alla "direzione" $x_0$-esima\footnote{che potrebbe essere $\frac{\delta (x-x_0)}{\delta(0)}$ (perchè $||e(x_0)||_2$ deve essere uguale a $1$), ma preferisco restare generico lasciando $e(x_0)$}, il gradiente di questo tipo di funzionale diventa
 		\begin{equation}
 			(\nabla T[f])(x_0)=\frac{\partial T[f]}{\partial e(x_0)}
 		\end{equation}
-		quindi  il gradiente di un funzionale $\nabla T$,che una volta fissato $f$ è a sua volta un tensore che va dallo spazio delle funzioni allo spazio dei vettori continui.\newline
+		Quindi  il gradiente di un funzionale $\nabla T$, è a sua volta un tensore che va dallo spazio delle funzioni allo spazio dei vettori continui.\newline
 		Generalizzando si ha che il tensore associato alle derivate parziali di ordine $n$-esimo è un tensore $D_n:(f:[a,b]\rightarrow \rm I\!R)\times \rm I\!R^n\rightarrow \rm I\!R$
 		\begin{equation}
 			(D_n[f])(x_1,\dots,x_n)=\frac{\partial^n T[f]}{\partial e(x_1)\dots\partial e(x_n)}
@@ -432,9 +459,20 @@
 			{\partial e_{i_1}\dots\partial e_{i_m}}
 			(x_{i_1}-\hat x_{i_m})\dots(x_{i_m}-\hat x_{i_m})
 		\end{equation}
-		
-
-
+		A questo punto, per dedurre lo sviluppo in Taylor di un funzionale basta tenere conto che nel caso finito le coordinate devono andare da $1$ a $n$, quindi ogni $i_j$ assume valori in $\{1,\dots,n\}$ e poi sommare.\newline
+		Nel caso continuo però gli indici $x_j$ assumono valori in $[a,b]$, quindi bisogna sommare su tutti i valori in quell'intervallo, che equivale a integrare.\footnote{spiegazione per niente chiara, riscriverla (anche se il concetto è proprio na stronzata)}\newline
+		Quindi l'equazione dello sviluppo in Taylor di un funzionale diviene
+		\begin{equation}
+			T[\hat f]+\int_a^b \frac{\partial T[\hat f]}{\partial e(x)}[f(x)-\hat f(x)]dx\quad+\dots+
+		\end{equation}
+		\[
+			+\underbrace{\int_a^b\dots\int_a^b}_{n\textrm{ volte}}
+			\frac{\partial^n T[\hat f]}{\partial e(x_1)\dots\partial e(x_n)}[f(x_1)-\hat f(x_1)]\dots[f(x_n)-\hat f(x_n)]dx_1\dots dx_n=
+		\]
+		\begin{equation}
+			=\sum_{i=0}^n \Bigg\{\prod_{j=1}^i \int_a^b dx_j[f(x_j)-\hat f(x_j)]\frac{\partial}{\partial e(x_j)}\Bigg\}T[\hat f]
+		\end{equation}
+		che se dio vuole rispetta il teorema di Swartz\footnote{Per chi non si ricordasse è quello che dice che $\partial_x\partial_y f=\partial_y\partial_x f$, e comunque l'ultima equazione è un pò un'abuso di notazione, ma dalle equazioni di prima si dovrebbe capire come funziona}
 
 
 
