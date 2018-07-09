@@ -1,6 +1,6 @@
 %\documentclass[11pt,fleqn]{book}%
 %\documentclass{exam}%
-\documentclass[11pt,a4paper]{article}
+\documentclass[11pt,a4paper]{report}
 \date{Febbraio 2018}
 \usepackage[italian]{babel}
 \usepackage[T1]{fontenc}
@@ -30,452 +30,484 @@
 
 	Buona lettura.
 	
-
-	\section{Dalle matrici discrete a quelle continue}
-		Supponiamo di prendere una matrice $M$ $ n \times m$, adesso rendiamo le cellette della matrice sempre più strette mandando $n$ a infinito.
-		\begin{equation}
-			\begin{vmatrix}
-				a_{1,1} & \dots & a_{1,n} \\
-				\vdots	&	\ddots&	\vdots	\\
-				a_{n,1} & \dots & a_{n,n} 
-			\end{vmatrix}
-			\longrightarrow
-			\begin{vmatrix}
-				&\quad & & \\
-				&\ &\quad \cdot \, (x,y) & \\
-				& & & \\
-			\end{vmatrix}
-		\end{equation}
-		Così facendo non è più possibile indicare un'elemento della matrice con una coppia di numeri interi, ma è possibile indicarli con una coppia di numeri reali $(x,y)$, di  conseguenza la matrice non è più una funzione $M:\{1,\dots,n\}\times\{1,\dots,m\} \rightarrow \rm I\!R$, ma $M:[a,b]\times [c,d]\rightarrow \rm I\!R$.\newline
-		Usando lo stesso ragionamento con i vettori abbiamo che la loro versione con $n\rightarrow +\infty$ siano funzioni $v:[a,b]\rightarrow \rm I\!R$ 
-	
-	
-
-	\section{Prodotto caso discreto}
-		In algebra lineare un prodotto tra una matrice $M$ e un vettore $v$ non è altro che un vettore $w$ che ha come componente $i$-esima il prodotto scalare canonico tra il vettore $v$ e la $i$-esima riga di $M$, quindi vediamo prima di generalizzare il prodotto scalare.\newline
-		Possiamo definire il prodotto scalare in questo modo: prendiamo questa funzione $P:V\times V\rightarrow V$ tale che 
-		\begin{equation}
-			v=
-			\begin{vmatrix}
-				v_1\\
-				\vdots \\
-				v_n
-			\end{vmatrix}
-			\quad w=
-			\begin{vmatrix}
-				w_1\\
-				\vdots \\
-				w_n
-			\end{vmatrix}
-			\quad P(v,w)=
-			\begin{vmatrix}
-				v_1 w_1\\
-				\vdots \\
-				v_n w_n
-			\end{vmatrix}
-		\end{equation}
-		Una volta aver definito questa apparentemente inutile funzione ne definisco un'altra. Prendi un vettore $v=(v_1,\dots,v_n)$ e immagina che ogni componente uscisse dal foglio con un'altezza pari al suo valore (attento agli occhi).\newline
-		Adesso se lo guardi di lato dovresti vedere un'istrogramma, nell'immagine che se avrò voglia metterò si capisce benissimo quello che intendo.\newline
-		Definisco $A(v)$ l'area di quell'istogramma mostrato dalla fantomatica immagine, è facile verificare che $A(P(v,w))=<v,w>$\footnote{supponendo che alla base dell'istogramma ci sia un quadrato di area unitaria}.
-
-
-
-	\section{Prodotto caso continuo}
-		Adesso applichiamo lo stesso ragionamento generalizzandolo con le funzioni (che come abbiamo detto sono vettori continui), in questo caso la funzione $P(v(x),w(x))=v(x)w(x)$ e l'area è l'integrale nel dominio di definizione di $v$ e $w$, dunque
-		\begin{equation}
-			<v(x),w(x)>=\int_a^b v(x)w(x)dx
-		\end{equation}
-		ovviamente questo soddisfa le proprietà del prodotto scalare, non perchè lo so dimostrare, ma perchè lo so per sentito dire.\newline
-		Filamente possiamo definire il prodotto matrice per vettore. Come abbiamo detto prima un prodotto tra una matrice $M$ e un vettore $v$ non è altro che un vettore $w$ che ha come componente $i$-esima il prodotto scalare canonico tra il vettore $v$ e la $i$-esima riga di $M$, quindi il prototto $w$ tra $M$ e $v$ è
-		\begin{equation}
-			w(y)=\int_a^b M(x,y)v(x) dx
-		\end{equation}
-		da qui è facile verificare che rispetta tutte le stesse proprietà che ha il prodotto matrice-vettore standard, infatti siano $M, N, O$ matrici continue, $v,w$ vettori, e $\lambda$ uno scalare, allora 
-		\begin{equation}
-			\lambda Mv= M(\lambda v),\quad M\circ (N \circ O)= (M \circ N) \circ O,
-		\end{equation}
-		\[
-			Mv + Nv=  (M+N)v,\quad Mv+Mw=M(v+w)
-		\]
-		
-		Lascio al lettore l'esercizio di dimostrare queste poprietà, trovare la matrice identità e la formula per prodotto tra matrici\footnote{comunque se scrolli dovresti trovarle la soluzione}
-	
-
-
-	\section{Combinazioni lineari}
-		In algebra lineare sappiamo che se $w\in V$ e ${v_1,\dots,v_n}$ è una base di $V$ abbiamo che esistono dei coefficenti $a_1,\dots,a_n$ tali che $w=a_1 v_1+\dots +a_n v_n$, scritto in forma vettoriale
-		\begin{equation}
-			\begin{vmatrix}
-				w_1\\
-				\vdots\\
-				w_n
-			\end{vmatrix}
-			=
-			\begin{vmatrix}
-				& & \\
-				v_1 & \dots & v_n\\
-				& & 
-			\end{vmatrix}
-			\begin{vmatrix}
-				a_1\\
-				\vdots\\
-				a_n
-			\end{vmatrix}
-		\end{equation}
-		dove la matrice nel mezzo è la matrice che ha come colonne i vettori $v_1,\dots,v_n$, quindi un modo per calcolare i coefficenti $a_1,\dots,a_n$ è quello di calcolare l'inversa della matrice\footnote{che esiste perchè le righe sono lienarmente indipendenti} e moltiplicare membro a membro.\newline
-
-		La stessa cosa si può fare con le matrici continue, ma prima parliamo di matrici inverse.\newline
-		Sarei tentato di definire la matrice $M^{-1}$ l'inversa di $M$ se $Id(x,y)=\delta (y-x)=\int_a^b M^{-1}(x,t) M(t,y) dt$, ma per ora la definisco così:\newline
-		\begin{definizione}[Matrice inversa]
-			Sia $M:[a,b]\times [a,b]\rightarrow \rm I\!R$, e $N$ pure (se c'hai voglia te lo generalizzi tu), allora $N$ è l'inversa di $M$ se
+	\chapter{Algebra lineare}
+		\section{Dalle matrici discrete a quelle continue}
+			Supponiamo di prendere una matrice $M$ $ n \times m$, adesso rendiamo le cellette della matrice sempre più strette mandando $n$ a infinito.
 			\begin{equation}
-				v=NMv
+				\begin{vmatrix}
+					a_{1,1} & \dots & a_{1,n} \\
+					\vdots	&	\ddots&	\vdots	\\
+					a_{n,1} & \dots & a_{n,n} 
+				\end{vmatrix}
+				\longrightarrow
+				\begin{vmatrix}
+					&\quad & & \\
+					&\ &\quad \cdot \, (x,y) & \\
+					& & & \\
+				\end{vmatrix}
 			\end{equation}
-		\end{definizione}
-		Adesso che sappiamo cos'è l'inversa possiamo usare lo stesso ragionamento della scorsa sezione: Supponiamo che $\{M(x,y_0)\,|\, y_0\in \rm I\!R \}$ sia una base di uno spazio vettoriale $V$, allora per ogni $v\in V$ è possibile trovare una combinazione lineare dei vettori di base che sia uguale a $v$ stesso, cioè
-		\begin{equation}
-		\label{combinazione lineare matrice}
-			\begin{vmatrix}
-				\\
-				v(x)\\
-				\quad
-			\end{vmatrix}
-			=
-			\begin{vmatrix}
-				\, & & \, \\
-				& M(x,y) & \\
-				& & 
-			\end{vmatrix}
-			\begin{vmatrix}
-				\\
-				a(y)\\
-				\quad
-			\end{vmatrix}
-		\end{equation}
-		Di conseguenza se si vuole trovare $a(y)$ basta moltiplicare per l'inversa entrambi i lati.
+			Così facendo non è più possibile indicare un'elemento della matrice con una coppia di numeri interi, ma è possibile indicarli con una coppia di numeri reali $(x,y)$, di  conseguenza la matrice non è più una funzione $M:\{1,\dots,n\}\times\{1,\dots,m\} \rightarrow \rm I\!R$, ma $M:[a,b]\times [c,d]\rightarrow \rm I\!R$.\newline
+			Usando lo stesso ragionamento con i vettori abbiamo che la loro versione con $n\rightarrow +\infty$ siano funzioni $v:[a,b]\rightarrow \rm I\!R$ 
+		
+		
+
+		\section{Prodotto caso discreto}
+		\label{sec:prod-can}
+			In algebra lineare un prodotto tra una matrice $M$ e un vettore $v$ non è altro che un vettore $w$ che ha come componente $i$-esima il prodotto scalare canonico tra il vettore $v$ e la $i$-esima riga di $M$, quindi vediamo prima di generalizzare il prodotto scalare.\newline
+			Possiamo definire il prodotto scalare in questo modo: prendiamo questa funzione $P:V\times V\rightarrow V$ tale che 
+			\begin{equation}
+				v=
+				\begin{vmatrix}
+					v_1\\
+					\vdots \\
+					v_n
+				\end{vmatrix}
+				\quad w=
+				\begin{vmatrix}
+					w_1\\
+					\vdots \\
+					w_n
+				\end{vmatrix}
+				\quad P(v,w)=
+				\begin{vmatrix}
+					v_1 w_1\\
+					\vdots \\
+					v_n w_n
+				\end{vmatrix}
+			\end{equation}
+			Una volta aver definito questa apparentemente inutile funzione ne definisco un'altra. Prendi un vettore $v=(v_1,\dots,v_n)$ e immagina che ogni componente uscisse dal foglio con un'altezza pari al suo valore (attento agli occhi).\newline
+			Adesso se lo guardi di lato dovresti vedere un'istrogramma, nell'immagine che se avrò voglia metterò si capisce benissimo quello che intendo.\newline
+			Definisco $A(v)$ l'area di quell'istogramma mostrato dalla fantomatica immagine, è facile verificare che $A(P(v,w))=<v,w>$\footnote{supponendo che alla base dell'istogramma ci sia un quadrato di area unitaria}.
 
 
 
-	\section{Serie di Furiè \protect\footnote{se sai come funziona puoi saltarlo, e comunque fa più confondere che altro}}
-		Chi ha un'occhio attento avrà già notato che la trasformata di fourier è un prodotto matrice-vettore, ma prima di spiegare per bene il motivo è meglio cominciare dalla sua sorellina minore: la serie di fourier\newline 
-
-		Partiamo definendo un prodotto hermitiano che ci faccia comodo
-		\begin{equation}
-			<f(x),g(x)>=\frac{2}{T}\int_{-\frac{T}{2}}^\frac{T}{2} \overline{f(x)}g(x)dx
-		\end{equation}
-		se prendiamo questo insieme di vettori $E_T=\{e^{i2\pi n/ T} \, | \, n \in \rm I\!\! N\}$ abbiamo che sono vettori ortonormali rispetto a questo prodotto scalare, quindi sono perfetti per usarli come base dello spazio vettoriale $C\big[-\frac{T}{2},\frac{T}{2}\big]$\footnote{a dire il vero bisognerebbe dimostrare che $Span\{E_T\}$ sia effettivamente $C\big[-\frac{T}{2},\frac{T}{2}\big]$}, o per le funzioni che oscillano con un periodo $T$.\newline
-		Tutto ciò ci porta alla celeberrima serie di fouriè, dove $\widehat{e_n}=e^{i2\pi n/ T}$
-		\begin{equation}
-		\label{serieFuriè}
-			f(x)=Re\Bigg[\sum_{n=0}^{+\infty} <\widehat{e_n},f(x)>\widehat{e_n}\Bigg]
-		\end{equation}
-		Scritto in forma vettoriale assume una forma strana, è una matrice semi continua, che sarebbe $M:[a,b]\times \{1,\dots,n\}\rightarrow \rm I\!R$
-		\begin{equation}
-			\begin{vmatrix}
-				\,\\
-				\,\\
-				f(x)\\
-				\,\\
-				\,
-			\end{vmatrix}
-			=Re
-			\begin{vmatrix}
-				\, & & &\\
-				\, & & &\\
-				\widehat{e_0}& \dots & \widehat{e_n}&\dots\\
-				\, & & &\\
-				\, & & &
-			\end{vmatrix}
-			\begin{vmatrix}
-				<f(x),\widehat{e_0}>\\
-				\vdots\\
-				<f(x),\widehat{e_n}>\\
-				\vdots
-			\end{vmatrix}
-		\end{equation}
-		So che è un pò complicato, ma se avete dubbi chiedetemi di persona\footnote{il mio numero è +39 345 7011798}
+		\section{Prodotto caso continuo}
+			Adesso applichiamo lo stesso ragionamento generalizzandolo con le funzioni (che come abbiamo detto sono vettori continui), in questo caso la funzione $P(v(x),w(x))=v(x)w(x)$ e l'area è l'integrale nel dominio di definizione di $v$ e $w$, dunque
+			\begin{equation}
+				<v(x),w(x)>=\int_a^b v(x)w(x)dx
+			\end{equation}
+			ovviamente questo soddisfa le proprietà del prodotto scalare, non perchè lo so dimostrare, ma perchè lo so per sentito dire.\newline
+			Filamente possiamo definire il prodotto matrice per vettore. Come abbiamo detto prima un prodotto tra una matrice $M$ e un vettore $v$ non è altro che un vettore $w$ che ha come componente $i$-esima il prodotto scalare canonico tra il vettore $v$ e la $i$-esima riga di $M$, quindi il prototto $w$ tra $M$ e $v$ è
+			\begin{equation}
+				w(y)=\int_a^b M(x,y)v(x) dx
+			\end{equation}
+			da qui è facile verificare che rispetta tutte le stesse proprietà che ha il prodotto matrice-vettore standard, infatti siano $M, N, O$ matrici continue, $v,w$ vettori, e $\lambda$ uno scalare, allora 
+			\begin{equation}
+				\lambda Mv= M(\lambda v),\quad M\circ (N \circ O)= (M \circ N) \circ O,
+			\end{equation}
+			\[
+				Mv + Nv=  (M+N)v,\quad Mv+Mw=M(v+w)
+			\]
+			
+			Lascio al lettore l'esercizio di dimostrare queste poprietà, trovare la matrice identità e la formula per prodotto tra matrici\footnote{comunque se scrolli dovresti trovarle la soluzione}
+		
 
 
+		\section{Combinazioni lineari}
+			In algebra lineare sappiamo che se $w\in V$ e ${v_1,\dots,v_n}$ è una base di $V$ abbiamo che esistono dei coefficenti $a_1,\dots,a_n$ tali che $w=a_1 v_1+\dots +a_n v_n$, scritto in forma vettoriale
+			\begin{equation}
+				\begin{vmatrix}
+					w_1\\
+					\vdots\\
+					w_n
+				\end{vmatrix}
+				=
+				\begin{vmatrix}
+					& & \\
+					v_1 & \dots & v_n\\
+					& & 
+				\end{vmatrix}
+				\begin{vmatrix}
+					a_1\\
+					\vdots\\
+					a_n
+				\end{vmatrix}
+			\end{equation}
+			dove la matrice nel mezzo è la matrice che ha come colonne i vettori $v_1,\dots,v_n$, quindi un modo per calcolare i coefficenti $a_1,\dots,a_n$ è quello di calcolare l'inversa della matrice\footnote{che esiste perchè le righe sono lienarmente indipendenti} e moltiplicare membro a membro.\newline
 
-	\section{Trasformata di Furiè}
-		Ora che abbiamo reso incomprenzibile la serie, facciamo lo stesso lavoro con la trasformata.\newline \newline
-		La trasformata di fourier, può essere vista come una serie di forurier con il periodo che tende a infinito, ora però c'è il problema di scegliere una base.\newline
-		Non essendoci stavolta un valido motivo per escludere le funzioni periodiche che hanno la frequenza che non siano un multiplo di $1/T$ possiamo prenderci la libertà di prenderle tutte. Di conseguenza segliamo come base $B=\{F(x,y_0)=e^{ixy_0}\,|\,y_0 \in \rm I\!R \}$.\newline
-		Come abbiamo visto nell'equazione \ref{combinazione lineare matrice} possiamo scrivere una generica funzione in questo modo
-		\begin{equation}
-			\begin{vmatrix}
-				\\
-				f(x)\\
-				\quad
-			\end{vmatrix}
-			=
-			\begin{vmatrix}
-				\, & & \, \\
-				& F(x,y) & \\
-				& & 
-			\end{vmatrix}
-			\begin{vmatrix}
-				\\
-				\hat{f}(y)\\
-				\quad
-			\end{vmatrix}
-		\end{equation}
-		La quale scritta in forma esplicita diventa la trasformata di Fourier
-		\begin{equation}
-		f(x)=\int_{-\infty}^{+\infty} e^{ixy}\hat{f}(y) dy
-		\end{equation}
-		Da qui si evince cosa rappresenta fisicamente $\hat{f}(y)$: essa è la funzione che indica i coefficienti da mettere davanti i vettori di base per ottenere il vettore desiderato.
-
-
-
-	\section{Matrice associata a un'applicazione lineare}
-		Per costruire una matrice associata a un'applicazione lineare il procedimento è pressocchè identico a quello adottato in algebra lineare:\newline
-		Sia $L:V\rightarrow W$ un'applicazione lineare tra due spazii vettoriali e sia $B=\{v_{y}(x)|y\in \rm I\!R\}$ una base di $V$. Allora la matrice associata all'applicazione lineare sarà $L(x,y)=L(v_{y}(x))$.\newline
-		Detto in parole povere ho messo in ogni colonna dove va a finire il vettore di base associato.\newline
+			La stessa cosa si può fare con le matrici continue, ma prima parliamo di matrici inverse.\newline
+			Sarei tentato di definire la matrice $M^{-1}$ l'inversa di $M$ se $Id(x,y)=\delta (y-x)=\int_a^b M^{-1}(x,t) M(t,y) dt$, ma per ora la definisco così:\newline
+			\begin{definizione}[Matrice inversa]
+				Sia $M:[a,b]\times [a,b]\rightarrow \rm I\!R$, e $N$ pure (se c'hai voglia te lo generalizzi tu), allora $N$ è l'inversa di $M$ se
+				\begin{equation}
+					v=NMv
+				\end{equation}
+			\end{definizione}
+			Adesso che sappiamo cos'è l'inversa possiamo usare lo stesso ragionamento della scorsa sezione: Supponiamo che $\{M(x,y_0)\,|\, y_0\in \rm I\!R \}$ sia una base di uno spazio vettoriale $V$, allora per ogni $v\in V$ è possibile trovare una combinazione lineare dei vettori di base che sia uguale a $v$ stesso, cioè
+			\begin{equation}
+			\label{combinazione lineare matrice}
+				\begin{vmatrix}
+					\\
+					v(x)\\
+					\quad
+				\end{vmatrix}
+				=
+				\begin{vmatrix}
+					\, & & \, \\
+					& M(x,y) & \\
+					& & 
+				\end{vmatrix}
+				\begin{vmatrix}
+					\\
+					a(y)\\
+					\quad
+				\end{vmatrix}
+			\end{equation}
+			Di conseguenza se si vuole trovare $a(y)$ basta moltiplicare per l'inversa entrambi i lati.
 
 
 
-	\section{Cambiamento di base}
-		Trovare la matrice associata all'applicazione lineare ci dà informazioni su come trasformano i vettori di base, ma non ci dice molto su come trasforma una funzione generica.\newline
-		Sia $B=\{v_{y}(x)|y\in \rm I\!R\}$ una base di uno spazio vettoriare $V$ denso in $\rm I\!L$, sia $M$ la matrice assiociata all'applicazione lineare rispetto alla base $B$ e sia $N(x,y)=v_{y}(x)$ la matrice di cambiamento di base, allora la matrice associata all'applicazione lineare $L$ in $V$ sarà
-		\begin{equation}
-			L=N^{-1}\circ M \circ N
-		\end{equation}
-		Che è praticamente identica alla sua controparte discreta di algebra lineare
+		\section{Serie di Furiè \protect\footnote{se sai come funziona puoi saltarlo, e comunque fa più confondere che altro}}
+			Chi ha un'occhio attento avrà già notato che la trasformata di fourier è un prodotto matrice-vettore, ma prima di spiegare per bene il motivo è meglio cominciare dalla sua sorellina minore: la serie di fourier\newline 
+
+			Partiamo definendo un prodotto hermitiano che ci faccia comodo
+			\begin{equation}
+				<f(x),g(x)>=\frac{2}{T}\int_{-\frac{T}{2}}^\frac{T}{2} \overline{f(x)}g(x)dx
+			\end{equation}
+			se prendiamo questo insieme di vettori $E_T=\{e^{i2\pi n/ T} \, | \, n \in \rm I\!\! N\}$ abbiamo che sono vettori ortonormali rispetto a questo prodotto scalare, quindi sono perfetti per usarli come base dello spazio vettoriale $C\big[-\frac{T}{2},\frac{T}{2}\big]$\footnote{a dire il vero bisognerebbe dimostrare che $Span\{E_T\}$ sia effettivamente $C\big[-\frac{T}{2},\frac{T}{2}\big]$}, o per le funzioni che oscillano con un periodo $T$.\newline
+			Tutto ciò ci porta alla celeberrima serie di fouriè, dove $\widehat{e_n}=e^{i2\pi n/ T}$
+			\begin{equation}
+			\label{serieFuriè}
+				f(x)=Re\Bigg[\sum_{n=0}^{+\infty} <\widehat{e_n},f(x)>\widehat{e_n}\Bigg]
+			\end{equation}
+			Scritto in forma vettoriale assume una forma strana, è una matrice semi continua, che sarebbe $M:[a,b]\times \{1,\dots,n\}\rightarrow \rm I\!R$
+			\begin{equation}
+				\begin{vmatrix}
+					\,\\
+					\,\\
+					f(x)\\
+					\,\\
+					\,
+				\end{vmatrix}
+				=Re
+				\begin{vmatrix}
+					\, & & &\\
+					\, & & &\\
+					\widehat{e_0}& \dots & \widehat{e_n}&\dots\\
+					\, & & &\\
+					\, & & &
+				\end{vmatrix}
+				\begin{vmatrix}
+					<f(x),\widehat{e_0}>\\
+					\vdots\\
+					<f(x),\widehat{e_n}>\\
+					\vdots
+				\end{vmatrix}
+			\end{equation}
+			So che è un pò complicato, ma se avete dubbi chiedetemi di persona\footnote{il mio numero è +39 345 7011798}
 
 
 
-	\section{Proprietà $\delta$ di Dirac}
-		Prima di ricavarci la matrice associata alla derivata occorre sapere un paio di proprietà sulla $\delta$ di dirac.\newline
-		La prima è sapere qual'è la sua derivata, che nonostante sia un pò un'abuso di notazione fa il suo sporco lavoro. Partiamo dall'osservare che $x\delta (x)=0$ per ogni $x$, adesso calcoliamoci la sua derivata.
-		\[
-			(x\delta (x))'=0= x\delta'(x) + \delta(x)
-		\]
-		risolvendo per $\delta'(x)$ si ottiene che 
-		\begin{equation}
-			\delta'(x)=-\frac{\delta(x)}{x}
-		\end{equation}
-		La seconda proprietà non la dimostro, essa afferma che
-		\begin{equation}
-			\delta(x-y)=\frac{1}{2\pi} \int_{-\infty}^{+\infty} e^{it(x-y)} dt
-		\end{equation}
+		\section{Trasformata di Furiè}
+			Ora che abbiamo reso incomprenzibile la serie, facciamo lo stesso lavoro con la trasformata.\newline \newline
+			La trasformata di fourier, può essere vista come una serie di forurier con il periodo che tende a infinito, ora però c'è il problema di scegliere una base.\newline
+			Non essendoci stavolta un valido motivo per escludere le funzioni periodiche che hanno la frequenza che non siano un multiplo di $1/T$ possiamo prenderci la libertà di prenderle tutte. Di conseguenza segliamo come base $B=\{F(x,y_0)=e^{ixy_0}\,|\,y_0 \in \rm I\!R \}$.\newline
+			Come abbiamo visto nell'equazione \ref{combinazione lineare matrice} possiamo scrivere una generica funzione in questo modo
+			\begin{equation}
+				\begin{vmatrix}
+					\\
+					f(x)\\
+					\quad
+				\end{vmatrix}
+				=
+				\begin{vmatrix}
+					\, & & \, \\
+					& F(x,y) & \\
+					& & 
+				\end{vmatrix}
+				\begin{vmatrix}
+					\\
+					\hat{f}(y)\\
+					\quad
+				\end{vmatrix}
+			\end{equation}
+			La quale scritta in forma esplicita diventa la trasformata di Fourier
+			\begin{equation}
+			f(x)=\int_{-\infty}^{+\infty} e^{ixy}\hat{f}(y) dy
+			\end{equation}
+			Da qui si evince cosa rappresenta fisicamente $\hat{f}(y)$: essa è la funzione che indica i coefficienti da mettere davanti i vettori di base per ottenere il vettore desiderato.
 
 
 
-	\section{Matrice associata alla derivata}
-		A questo punto possiamo trovare la matrice associata alla più famosa delle applicazioni lineare: la derivata\footnote{Se ti senti particolarmente intelligente puoi provare a trovare la matrice associata all'integrale}.\newline
-		Cominciamo mettendoci nella base $B=\{e^{ixy_0}\,|\,y_0 \in \rm I\!R \}$ delle esponenziali complesse, la matrice associata alla derivazione rispetto a $x$ $\widehat{D}$ in quella base è 
-		\begin{equation}
-			\widehat{D}(x,y)=-iy\delta (x-y)=-ix\delta(x-y)=-i\sqrt{|xy|}\delta(x-y)
-		\end{equation}
-		Mentre la matrice di cambiamento di base è $F(x,y)=\frac{e^{-iyx}}{\sqrt{2\pi}}$, e la sua inversa è $F^{-1}(x,y)=\frac{e^{iyx}}{\sqrt{2\pi}}$, per avere l'applicazione derivata $D$ rispetto alla base canonica bisognerà comporre le matrici
-		\begin{equation}
-			D=F^{-1}\circ \widehat{D}\circ F
-		\end{equation}
-		Essendo la composizione di matrici associativa, conviene calcolarci prima $\widehat{D}F$
-		\[
-			(\widehat{D}\circ F)(x,y)=\frac{1}{\sqrt{2\pi}}\int_{-\infty}^{+\infty}
-			-iy\delta(y-t)e^{-itx}dt=-\frac{iy}{\sqrt{2\pi}}e^{-iyx}
-		\]
-		adesso basta moltiplicare la nuova matrice per $F^{-1}$
-		\[
-			(F^{-1}\circ \widehat{D}\circ F)=
-			\frac{1}{\sqrt{2\pi}}\int_{-\infty}^{+\infty}-\frac{it}{\sqrt{2\pi}}e^{itx}e^{-ity}dt=
-			-\frac{i}{2\pi}\int_{-\infty}^{+\infty}te^{it(x-y)}dt
-		\]
-		integrando per parti si ottine
-		\[
-			-\frac{it}{2\pi}(2\pi\delta(x-y))\bigg\rvert_{-\infty}^{+\infty}+
-			\frac{i}{2\pi}\int_{-\infty}^{+\infty}\frac{e^{it(x-y)}}{i(x-y)}dt=
-			\frac{1}{2\pi(x-y)}\int_{-\infty}^{+\infty}e^{it(x-y)}dt=\frac{\delta(x-y)}{x-y}
-		\]
-		E così abbiamo la matrice associata alla derivata nella base canonica delle funzioni
-		\begin{equation}
-			D(x,y)=\frac{\delta(x-y)}{x-y}
-		\end{equation}
-		Adesso dimostriamo che effettivamente funziona
-		\[
-			\int_{-\infty}^{+\infty}\frac{\delta(x-y)}{x-y}f(y)dy=-\delta(x-y)f(y)\big\rvert_{-\infty}^{+\infty}+\int_{-\infty}^{+\infty}\delta(x-y)f'(y)dy=f'(x)
-		\]
+
+		\section{Matrice associata a un'applicazione lineare}
+			Per costruire una matrice associata a un'applicazione lineare il procedimento è pressocchè identico a quello adottato in algebra lineare:\newline
+			Sia $L:V\rightarrow W$ un'applicazione lineare tra due spazii vettoriali e sia $B=\{v_{y}(x)|y\in \rm I\!R\}$ una base di $V$. Allora la matrice associata all'applicazione lineare sarà $L(x,y)=L(v_{y}(x))$.\newline
+			Detto in parole povere ho messo in ogni colonna dove va a finire il vettore di base associato.\newline
 
 
 
-	\section{Matrice associata alla derivata n-esima}
-		Ora che avete visto la matrice associata alla derivata, vediamo se si può fare la stessa cosa per la derivata n-esima.
-		Nella base delle esponenziali complesse la matrice che cerchiamo è 
-		\begin{equation}
-			\widehat{D_n}(x,y)=(-iy)^n\delta(x-y)
-		\end{equation}
-		A questo punto effettuiamo il cambiamento di base di quest'altra matrice
-		\[
-			(\widehat{D_n}\circ F)(x,y)=
-			\frac{1}{\sqrt{2\pi}}\int_{-\infty}^{+\infty}(-iy)^n\delta(y-t)e^{-itx}dt=
-			\frac{(-iy)^n}{\sqrt{2\pi}}e^{-iyx}
-		\]
-		\[
-			D_n=(F^{-1}\circ \widehat{D_n}\circ F)=
-			\frac{1}{\sqrt{2\pi}}\int_{-\infty}^{+\infty}\frac{(-it)^n}{\sqrt{2\pi}}e^{itx}e^{-ity}dt=
-			\frac{(-i)^n}{2\pi}\int_{-\infty}^{+\infty}t^n e^{it(x-y)}dt
-		\]
-		Integrando per parti si ottiene che
-		\[
-			\frac{(-it)^n}{2\pi}(2\pi\delta(x-y))\bigg\rvert_{-\infty}^{+\infty}-
-			\frac{(-i)^n}{2\pi}\int_{-\infty}^{+\infty}nt^{n-1}\frac{e^{it(x-y)}}{i(x-y)}dt=
-			\frac{n(-i)^{n-1}}{2\pi(x-y)}\int_{-\infty}^{+\infty}t^{n-1}e^{it(x-y)}dt=	
-		\]
-		Riscrivendo l'ultima equazione in termini di $D_{n-1}$ e applicandola ricorsivamente si ottiene la formula della marice associata alla derivata n-esima\footnote{Sinceramente non è che mi convinci molto questo risultato, ma per ora farò finta che funzioni. Se riuscite a trovarmi un contr'esempio, o una formula "più corrretta" mi fate un favore}
-		\begin{equation}
-			D_{n}=\frac{n}{x-y}D_{n-1}=n!\frac{\delta(x-y)}{(x-y)^n}
-		\end{equation}	
+		\section{Cambiamento di base}
+			Trovare la matrice associata all'applicazione lineare ci dà informazioni su come trasformano i vettori di base, ma non ci dice molto su come trasforma una funzione generica.\newline
+			Sia $B=\{v_{y}(x)|y\in \rm I\!R\}$ una base di uno spazio vettoriare $V$ denso in $\rm I\!L$, sia $M$ la matrice assiociata all'applicazione lineare rispetto alla base $B$ e sia $N(x,y)=v_{y}(x)$ la matrice di cambiamento di base, allora la matrice associata all'applicazione lineare $L$ in $V$ sarà
+			\begin{equation}
+				L=N^{-1}\circ M \circ N
+			\end{equation}
+			Che è praticamente identica alla sua controparte discreta di algebra lineare
 
 
 
-	\section{Risoluzione equazioni differenziali linearii a coefficenti costanti}
-		Se si vuole trovare la matrice associata ad un'equazione differenziale lineare basta prenderne una a caso $a_nf^{n}(x)+\dots +a_0f(x)=g(x)$ e scriverla in forma matriciale $a_nD_nf+\dots+a_0D_0f=g$.\newline
-		Se definiamo $L=a_nD_n+\dots+a_0D_0$ si ottiene che $L$ è la matrice associata alla nostra equazione differenziale $Lf=g$.\newline
-		Di conseguenza abbiamo davanti a noi un problema che è deltutto analogo alla risoluzione di un sistema di equazioni lineri in algebra lineare $Mv=w$.\newline
-		Quindi la soluzione più generica sarebbe il nucleo $N$ di $L$ sommato alla soluzione dell'inversa ristretta all'immagine $I$ di $L^{-1}_{|I}g=f$.\newline
-
-		A prima lettura sembra un problema veramente complicato, tuttavia bisogna ricordarsi che nel caso in cui si ci trova in una base di autovettori di $D_i$, $L$ risulta diagonale, e la cosa bella delle matrici diagonali è che il nucleo sono gli zeri sulla diagonale e che l'iversa è l'inverso degli elementi sulla diagonale.\newline
-		Visto che le esponenziali sono una base\footnote{A dire il vero dovrei dimostrarlo, ma per ora fidati, comunque se ti interessa perchè, vatti a studiare la trasformata di Laplace. In ogni caso lo stesso identico risultato si sarebbe ottenuto con le esponenziali complesse, ma sarebbe stato più fastidioso da ricavare a causa dei numeri complessi} di autovettori rispetto alla derivata conviene risolvere il probema rispetto ad essa.\newline
-
-		Rispetto alla base $B=\{e^{yx}|y \in \rm I\!R\}$ $D_n=y^n\delta(x-y)$, di conseguenza $L(x,y)=\delta(x-y)(a_ny^n+\dots+a_0)$, quindi gli zeri lungo la diagonale $y_0,\dots,y_n$ sono le soluzioni di $P(y)=a_ny^n+\dots+a_0$, inoltre per il teorema fondamentale dell'algebra si ha che $dim(N)=n$. Il nucleo sarà quindi nella forma $N=span\{e^{y_0x},\dots,e^{y_nx}\}$.\footnote{Se la tua domanda è:"Ma tu vu futtiri a mia?! Chi succiri si i radici su i stissi!?" ti posso soltanto dire che ci sto Travagghiando}\newline
-
-		Per trovare l'omogenea $f_o$ bisognerà risolvere $f_o=L^{-1}_{|I}g$, ma per ora mi secca scrivere come si fa.
-
-
-
-	\section{Tensori Continui\protect\footnote{Per capire questa parte bisogna sapere almeno le basi sui tensori e il prodotto tensoriale, consiglio di leggere \href{url}{https://jeremykun.com/2014/01/17/how-to-conquer-tensorphobia}}}
-		Prendiamo due vettori continui $v$ e $w$ il loro prodotto tensoriale $v\otimes w$ è scrivibile come combinazione dei prodotti tensoriali degli elementi della base $B=\{B(x,y_0)|y_0\in \rm I\!R\}$ dello spazio vettoriale $V$, quindi esprimiamo $v$ e $w$ in termini di $B$ $v(x)=\int B(x,y)a(y)dy$ e $w(x')=\int B(x',y')b(y')dy'$
-		\[
-			v(x)\otimes w(x')=\bigg(\int B(x,y)a(y)dy \bigg)\otimes \bigg(\int B(x',y')b(y')dy'\bigg)=
-		\]
-		\[
-			=\int \bigg[B(x,y)\otimes\bigg(\int B(x',y')b(y')dy'\bigg)\bigg]a(y)dy=
-		\]
-		\[
-			=\int \int \bigg(B(x,y)\otimes B(x',y')\bigg)a(y)b(y')dydy'
-		\]
-		A questo punto basta definire $T(y,y')=B(x,y)\otimes B(x',y')$\footnote{Aspetta! ma ti sei mangiato 2 indici!\\ No. Nel prodotto tensoriale "classico" $e_i\otimes f_j=k$ è comunque uno scalare $k$, nonostante possa sembrare a prima occhiata che $k$ dipenda sia da $i$ che da $j$, infatti $e_i$ serve solo per indicare la componente $i$-esima di $e$} il prodotto tensoriale tra gli elementi di base $B(x,y)$ e $B(x,y')$ e l'equazione di sopra diventa
-		\begin{equation}
-			v(x)\otimes w(x')=\int \int T(y,y')a(y)b(y')dydy'
-		\end{equation}
-		Da questo punto in poi useremo la notazione di Einstein per i tensori, solo che anzicchè sommare gli indici ripetuti, li integriamo, inoltre se un vettore è covariante al posto di scrivere $v(x)$ scriveremo $v_{(x)}$, viceversa se sono controvarianti scriveremo $v^{(x)}$.\newline
-		Adesso cerchiamo di generalizzare un pò quello che abbiamo fatto fin'ora: prendiamo il prodotto tensoriale $P=v_1\otimes\dots\otimes v_q\otimes w_1\otimes\dots\otimes w_p$, dove $v_1\in V$ e $w_i\in V^*$, supponiamo che $v_i^{(x)}=B^{(x)}_{(y)}a_i^{(y)}$ e $w_{i(x)}=B_{(x)}^{(y)}b_{i(y)}$.\newline
-		Se scriviamo il prodotto Tensoriale in termini dei vettori di base esso diventa
-		\[
-			P=\Big(B^{(x_1)}_{(y_1)}a_1^{(y_1)}\Big)\otimes\dots\otimes\Big(B^{(x_q)}_{(y_q)}a_q^{(y_q)}\Big)\otimes\Big(B_{(z_1)}^{(t_1)}b_{1(t_1)}\Big)\otimes\dots\otimes\Big(B_{(z_p)}^{(t_p)}b_{p(t_p)}\Big)=
-		\]
-		\[
-			=\Big(B^{(x_1)}_{(y_1)}\otimes\dots\otimes B^{(x_q)}_{(y_q)}\otimes B_{(z_1)}^{(t_1)}\otimes\dots\otimes B_{(z_p)}^{(t_p)}\Big)a_1^{(y_1)}\dots a_q^{(y_q)}b_{1(t_1)}\dots b_{p(t_p)}
-		\]
-		Adesso definiamo il tensore "continuo" $T$ come
-		\begin{equation}
-			T_{(y_1,\dots,y_1)}^{(t_1,\dots,t_p)}=B^{(x_1)}_{(y_1)}\otimes\dots\otimes B^{(x_q)}_{(y_q)}\otimes B_{(z_1)}^{(t_1)}\otimes\dots\otimes B_{(z_p)}^{(t_p)}
-		\end{equation}
-		Questo tensore è detto di tipo $(p,q)$, cioè che ha $p$ indici controvarianti (in questo caso continui) e $q$ covarianti.\newline
-		A questo punto è possibile esprimere $P$ in termini di $T$
-		\begin{equation}
-			P=T_{(y_1,\dots,y_1)}^{(t_1,\dots,t_p)}a_1^{(y_1)}\dots a_q^{(y_q)}b_{1(t_1)}\dots b_{p(t_p)}
-		\end{equation}
-		Adesso vi starete chiedendo:"ok, figo, ma cosa me ne faccio?" e a dire il vero non mi viene niente in mente su cosa farci, a parte trovare il tensore associato a qualche operatore vettoriale, però boh... se mi viene in mente qualcosa di utile da farci ve lo dirò.
+		\section{Proprietà $\delta$ di Dirac}
+			Prima di ricavarci la matrice associata alla derivata occorre sapere un paio di proprietà sulla $\delta$ di dirac.\newline
+			La prima è sapere qual'è la sua derivata, che nonostante sia un pò un'abuso di notazione fa il suo sporco lavoro. Partiamo dall'osservare che $x\delta (x)=0$ per ogni $x$, adesso calcoliamoci la sua derivata.
+			\[
+				(x\delta (x))'=0= x\delta'(x) + \delta(x)
+			\]
+			risolvendo per $\delta'(x)$ si ottiene che 
+			\begin{equation}
+				\delta'(x)=-\frac{\delta(x)}{x}
+			\end{equation}
+			La seconda proprietà non la dimostro, essa afferma che
+			\begin{equation}
+				\delta(x-y)=\frac{1}{2\pi} \int_{-\infty}^{+\infty} e^{it(x-y)} dt
+			\end{equation}
 
 
 
-	\section{Funzionali}
-		Un tensore $T$ di tipo $(n,m)$ può essere visto come una specie di matrice con $n+m$ indici. La versione continua di un tensore è quindi qualcosa del genere $T^{(x_1,\dots,x_n)}_{(y_1,\dots,y_m)}$, dove $(x_1,\dots,x_n)$ e $(y_1,\dots,y_m)$ sono dei vettori di $\rm I\!R^n$ e $\rm I\!R^m$ ed ad ogni coppia di punti è associato uno scalare.\newline
-		Se facciamo il limite al continuo degli indici otteniamo che il tensore diventa della forma $T^{f}_{g}$, dove $f$ e $g$ sono due vettori continui.\newline
-		Adesso concentriamoci sui Tensori con indici continui che hanno solo una funzione negli indici $T_f$, che da ora in poi scriverò come $T[f(x)]$. Essi sono funzioni che vanno dallo spazio delle funzioni in $\rm I\!R$. Questi oggetti in matematica sono definiti come Funzionali.\newline
-		Esistono diversi tipi di funzionali, ma io mi concentrerò su quelli più facili, cioè quelli tali che
-		\begin{equation}
-			\lim_{\epsilon 	\to 0}T[f(x)+\epsilon g(x)]-T[f(x)]=0
-		\end{equation}
-		Che chiamerò funzionali continui\footnote{Probablilmente ce l'hanno una definizione per come si deve, ma io non la so, quindi ci metto questa perchè assomigliano alle funzioni continue di Analisi 1}.
+		\section{Matrice associata alla derivata}
+			A questo punto possiamo trovare la matrice associata alla più famosa delle applicazioni lineare: la derivata\footnote{Se ti senti particolarmente intelligente puoi provare a trovare la matrice associata all'integrale}.\newline
+			Cominciamo mettendoci nella base $B=\{e^{ixy_0}\,|\,y_0 \in \rm I\!R \}$ delle esponenziali complesse, la matrice associata alla derivazione rispetto a $x$ $\widehat{D}$ in quella base è 
+			\begin{equation}
+				\widehat{D}(x,y)=-iy\delta (x-y)=-ix\delta(x-y)=-i\sqrt{|xy|}\delta(x-y)
+			\end{equation}
+			Mentre la matrice di cambiamento di base è $F(x,y)=\frac{e^{-iyx}}{\sqrt{2\pi}}$, e la sua inversa è $F^{-1}(x,y)=\frac{e^{iyx}}{\sqrt{2\pi}}$, per avere l'applicazione derivata $D$ rispetto alla base canonica bisognerà comporre le matrici
+			\begin{equation}
+				D=F^{-1}\circ \widehat{D}\circ F
+			\end{equation}
+			Essendo la composizione di matrici associativa, conviene calcolarci prima $\widehat{D}F$
+			\[
+				(\widehat{D}\circ F)(x,y)=\frac{1}{\sqrt{2\pi}}\int_{-\infty}^{+\infty}
+				-iy\delta(y-t)e^{-itx}dt=-\frac{iy}{\sqrt{2\pi}}e^{-iyx}
+			\]
+			adesso basta moltiplicare la nuova matrice per $F^{-1}$
+			\[
+				(F^{-1}\circ \widehat{D}\circ F)=
+				\frac{1}{\sqrt{2\pi}}\int_{-\infty}^{+\infty}-\frac{it}{\sqrt{2\pi}}e^{itx}e^{-ity}dt=
+				-\frac{i}{2\pi}\int_{-\infty}^{+\infty}te^{it(x-y)}dt
+			\]
+			integrando per parti si ottine
+			\[
+				-\frac{it}{2\pi}(2\pi\delta(x-y))\bigg\rvert_{-\infty}^{+\infty}+
+				\frac{i}{2\pi}\int_{-\infty}^{+\infty}\frac{e^{it(x-y)}}{i(x-y)}dt=
+				\frac{1}{2\pi(x-y)}\int_{-\infty}^{+\infty}e^{it(x-y)}dt=\frac{\delta(x-y)}{x-y}
+			\]
+			E così abbiamo la matrice associata alla derivata nella base canonica delle funzioni
+			\begin{equation}
+				D(x,y)=\frac{\delta(x-y)}{x-y}
+			\end{equation}
+			Adesso dimostriamo che effettivamente funziona
+			\[
+				\int_{-\infty}^{+\infty}\frac{\delta(x-y)}{x-y}f(y)dy=-\delta(x-y)f(y)\big\rvert_{-\infty}^{+\infty}+\int_{-\infty}^{+\infty}\delta(x-y)f'(y)dy=f'(x)
+			\]
 
 
 
-	\section{Derivata funzionale}
-		Le analogie tra le funzioni in $n$ variabili e i funzionali sono molte, una di queste è la derivata direzionale.\newline
-		Nelle funzioni in più variabili la derivata direzionale è\footnote{ricordati che $||y||_2=1$} $\lim_{\epsilon \to 0}\frac{f(\mathbf{x}+\epsilon\mathbf{y})-f(\mathbf{x})}{\epsilon}$. Nei funzionali invece di prendere $\mathbf{x},\mathbf{y}$ vettori discreti, prendiamo vettori continui, e così facendo si ottene la derivata funzionale
-		\begin{equation}
-			\frac{\partial F}{\partial g}[f(x)]=\lim_{\epsilon \to 0}\frac{F[f(x)+\epsilon g(x)]-F[f(x)]}{\epsilon}
-		\end{equation}
-		con $||g||_2=1$. Questa equazione rappresenta la derivata di $F$ nella direzione di $g$.\newline
-		Se si vuole trovare un punto stazionario di un funzionale $F$ bisogna imporre che $\frac{\partial F}{\partial g}=0$ per ogni $g$, che equivarrebe a dire che la derivata deve essere zero in ogni direzione.\newline
+		\section{Matrice associata alla derivata n-esima}
+			Ora che avete visto la matrice associata alla derivata, vediamo se si può fare la stessa cosa per la derivata n-esima.
+			Nella base delle esponenziali complesse la matrice che cerchiamo è 
+			\begin{equation}
+				\widehat{D_n}(x,y)=(-iy)^n\delta(x-y)
+			\end{equation}
+			A questo punto effettuiamo il cambiamento di base di quest'altra matrice
+			\[
+				(\widehat{D_n}\circ F)(x,y)=
+				\frac{1}{\sqrt{2\pi}}\int_{-\infty}^{+\infty}(-iy)^n\delta(y-t)e^{-itx}dt=
+				\frac{(-iy)^n}{\sqrt{2\pi}}e^{-iyx}
+			\]
+			\[
+				D_n=(F^{-1}\circ \widehat{D_n}\circ F)=
+				\frac{1}{\sqrt{2\pi}}\int_{-\infty}^{+\infty}\frac{(-it)^n}{\sqrt{2\pi}}e^{itx}e^{-ity}dt=
+				\frac{(-i)^n}{2\pi}\int_{-\infty}^{+\infty}t^n e^{it(x-y)}dt
+			\]
+			Integrando per parti si ottiene che
+			\[
+				\frac{(-it)^n}{2\pi}(2\pi\delta(x-y))\bigg\rvert_{-\infty}^{+\infty}-
+				\frac{(-i)^n}{2\pi}\int_{-\infty}^{+\infty}nt^{n-1}\frac{e^{it(x-y)}}{i(x-y)}dt=
+				\frac{n(-i)^{n-1}}{2\pi(x-y)}\int_{-\infty}^{+\infty}t^{n-1}e^{it(x-y)}dt=	
+			\]
+			Riscrivendo l'ultima equazione in termini di $D_{n-1}$ e applicandola ricorsivamente si ottiene la formula della marice associata alla derivata n-esima\footnote{Sinceramente non è che mi convinci molto questo risultato, ma per ora farò finta che funzioni. Se riuscite a trovarmi un contr'esempio, o una formula "più corrretta" mi fate un favore}
+			\begin{equation}
+				D_{n}=\frac{n}{x-y}D_{n-1}=n!\frac{\delta(x-y)}{(x-y)^n}
+			\end{equation}	
 
 
 
-	\section{Equazioni di Eulero-Lagrange}
-		L'esempio più famoso nel trovare i punti stazionari di un funzionale è l'equazione di Eulero-Lagrange:
-		\begin{equation}
-			A[x(t)]=\int_{t_a}^{t_b}L(x(t),\dot{x}(t),t)dt
-		\end{equation}
-		dove $A$ è un funzionale detto Azione che per qualche oscuro motivo dobbiamo minimizare, $L$ è la lagrangiana, $x$ è la posizione, $\dot{x}$ la velocità e $t$ il tempo.
-		Per trovare il minimo bisogna imporre che per ogni $y$
-		\[
-			\frac{\partial A}{\partial y}=\lim_{\epsilon \to 0}\frac{A[x(t)+\epsilon y(t)]-A[x(t)]}{\epsilon}=0
-		\]
-		sviluppo in Taylor il primo membro
-		\[
-			A[x(t)+\epsilon y(t)]=\int_{t_a}^{t_b}L(x+\epsilon y,\dot{x}+\epsilon \dot{y},t)=A[x(t)]+\int_{t_a}^{t_b}\frac{\partial{L}}{\partial{x}}\epsilon y+\frac{\partial{L}}{\partial{\dot{x}}}\epsilon \dot{y}dt
-		\]
-		quindi
-		\[
-			\frac{\partial A}{\partial y}=\int_{t_a}^{t_b}\frac{\partial{L}}{\partial{x}}y+\frac{\partial{L}}{\partial{\dot{x}}}\dot{y}dt
-		\]
-		integrando per parti il secondo termine dell'integrale
-		\[
-			\int_{t_a}^{t_b}\frac{\partial{L}}{\partial{\dot{x}}}\dot{y}dt=y\frac{\partial{L}}{\partial{\dot{x}}}\bigg\rvert_{t_a}^{t_b}-
-			\int_{t_a}^{t_b}\frac{d}{dt}\bigg(\frac{\partial{L}}{\partial{\dot{x}}} \bigg)ydt
-		\]
-		Adesso per semplicità asumiamo che i punti estremali della traiettoria sono fissati, quindi $y(t_a)=y(t_b)=0$, quindi rimettendo tutto nell'equazione precedente si ha che
-		\begin{equation}
-			\frac{dA}{dy}=\int_{t_a}^{t_b}\bigg[\frac{\partial{L}}{\partial{x}}-\frac{d}{dt}\bigg(\frac{\partial{L}}{\partial{\dot{x}}} \bigg)\bigg]ydt
-		\end{equation}
-		che è uguale a zero per ogni $y(t)$ se e solo se 
-		\begin{equation}
-			\frac{\partial{L}}{\partial{x}}=\frac{d}{dt}\bigg(\frac{\partial{L}}{\partial{\dot{x}}} \bigg)
-		\end{equation}
+		\section{Risoluzione equazioni differenziali linearii a coefficenti costanti}
+			Se si vuole trovare la matrice associata ad un'equazione differenziale lineare basta prenderne una a caso $a_nf^{n}(x)+\dots +a_0f(x)=g(x)$ e scriverla in forma matriciale $a_nD_nf+\dots+a_0D_0f=g$.\newline
+			Se definiamo $L=a_nD_n+\dots+a_0D_0$ si ottiene che $L$ è la matrice associata alla nostra equazione differenziale $Lf=g$.\newline
+			Di conseguenza abbiamo davanti a noi un problema che è deltutto analogo alla risoluzione di un sistema di equazioni lineri in algebra lineare $Mv=w$.\newline
+			Quindi la soluzione più generica sarebbe il nucleo $N$ di $L$ sommato alla soluzione dell'inversa ristretta all'immagine $I$ di $L^{-1}_{|I}g=f$.\newline
+
+			A prima lettura sembra un problema veramente complicato, tuttavia bisogna ricordarsi che nel caso in cui si ci trova in una base di autovettori di $D_i$, $L$ risulta diagonale, e la cosa bella delle matrici diagonali è che il nucleo sono gli zeri sulla diagonale e che l'iversa è l'inverso degli elementi sulla diagonale.\newline
+			Visto che le esponenziali sono una base\footnote{A dire il vero dovrei dimostrarlo, ma per ora fidati, comunque se ti interessa perchè, vatti a studiare la trasformata di Laplace. In ogni caso lo stesso identico risultato si sarebbe ottenuto con le esponenziali complesse, ma sarebbe stato più fastidioso da ricavare a causa dei numeri complessi} di autovettori rispetto alla derivata conviene risolvere il probema rispetto ad essa.\newline
+
+			Rispetto alla base $B=\{e^{yx}|y \in \rm I\!R\}$ $D_n=y^n\delta(x-y)$, di conseguenza $L(x,y)=\delta(x-y)(a_ny^n+\dots+a_0)$, quindi gli zeri lungo la diagonale $y_0,\dots,y_n$ sono le soluzioni di $P(y)=a_ny^n+\dots+a_0$, inoltre per il teorema fondamentale dell'algebra si ha che $dim(N)=n$. Il nucleo sarà quindi nella forma $N=span\{e^{y_0x},\dots,e^{y_nx}\}$.\footnote{Se la tua domanda è:"Ma tu vu futtiri a mia?! Chi succiri si i radici su i stissi!?" ti posso soltanto dire che ci sto Travagghiando}\newline
+
+			Per trovare l'omogenea $f_o$ bisognerà risolvere $f_o=L^{-1}_{|I}g$, ma per ora mi secca scrivere come si fa.
 
 
 
-	\section{Gradiente e Sviluppo in Taylor di Funzionali}
-		In una funzione $f$ in $n$ variabili il gradiente è un vettore $n$ dimenzionale tale che $\nabla f_i=\partial_{e_i} f$, dove $e_i$ è il versore $i$-esimo.\newline
-		Se prendiamo un funzionale $T:(f:[a,b]\rightarrow \rm I\!R)\rightarrow \rm I\!R$, e definiamo $e(x_0)$ il versore associato alla "direzione" $x_0$-esima\footnote{che potrebbe essere $\frac{\delta (x-x_0)}{\delta(0)}$ (perchè $||e(x_0)||_2$ deve essere uguale a $1$), ma preferisco restare generico lasciando $e(x_0)$}, il gradiente di questo tipo di funzionale diventa
-		\begin{equation}
-			(\nabla T[f])(x_0)=\frac{\partial T[f]}{\partial e(x_0)}
-		\end{equation}
-		Quindi  il gradiente di un funzionale $\nabla T$, è a sua volta un tensore che va dallo spazio delle funzioni allo spazio dei vettori continui.\newline
-		Generalizzando si ha che il tensore associato alle derivate parziali di ordine $n$-esimo è un tensore $D_n:(f:[a,b]\rightarrow \rm I\!R)\times \rm I\!R^n\rightarrow \rm I\!R$
-		\begin{equation}
-			(D_n[f])(x_1,\dots,x_n)=\frac{\partial^n T[f]}{\partial e(x_1)\dots\partial e(x_n)}
-		\end{equation}
-		Grazie a ciò è possibile creare un'analogo allo sviluppo in taylor in un continuo di dimenzioni.\newline
-		Come al solito per capire il limite al continuo di qualcosa può essere utile vedere prima come si descrive ciò in un numero finito di dimenzioni, in particolare lo sviluppo in Taylor di una funzione $g(x_1,\dots,x_n)=g(\mathbf x)$ di ordine $m$ attorno al punto $(\hat x_1,\dots,\hat x_n)=\mathbf{\hat x}$ è
-		\begin{equation}
-			g(\mathbf{\hat x})+\sum_{i}^{n}\frac{\partial g(\mathbf{\hat x})}{\partial e_i}(x_i-\hat x_i)+\dots+
-			\sum_{i_1,\dots,i_m}^{n}
-			\frac{\partial^m g(\mathbf{\hat x})}
-			{\partial e_{i_1}\dots\partial e_{i_m}}
-			(x_{i_1}-\hat x_{i_m})\dots(x_{i_m}-\hat x_{i_m})
-		\end{equation}
-		A questo punto, per dedurre lo sviluppo in Taylor di un funzionale basta tenere conto che nel caso finito le coordinate devono andare da $1$ a $n$, quindi ogni $i_j$ assume valori in $\{1,\dots,n\}$ e poi sommare.\newline
-		Nel caso continuo però gli indici $x_j$ assumono valori in $[a,b]$, quindi bisogna sommare su tutti i valori in quell'intervallo, che equivale a integrare.\footnote{spiegazione per niente chiara, riscriverla (anche se il concetto è proprio na stronzata)}\newline
-		Quindi l'equazione dello sviluppo in Taylor di un funzionale diviene
-		\begin{equation}
-			T[\hat f]+\int_a^b \frac{\partial T[\hat f]}{\partial e(x)}[f(x)-\hat f(x)]dx\quad+\dots+
-		\end{equation}
-		\[
-			+\underbrace{\int_a^b\dots\int_a^b}_{n\textrm{ volte}}
-			\frac{\partial^n T[\hat f]}{\partial e(x_1)\dots\partial e(x_n)}[f(x_1)-\hat f(x_1)]\dots[f(x_n)-\hat f(x_n)]dx_1\dots dx_n=
-		\]
-		\begin{equation}
-			=\sum_{i=0}^n \Bigg\{\prod_{j=1}^i \int_a^b dx_j[f(x_j)-\hat f(x_j)]\frac{\partial}{\partial e(x_j)}\Bigg\}T[\hat f]
-		\end{equation}
-		che se dio vuole rispetta il teorema di Swartz\footnote{Per chi non si ricordasse è quello che dice che $\partial_x\partial_y f=\partial_y\partial_x f$, e comunque l'ultima equazione è un pò un'abuso di notazione, ma dalle equazioni di prima si dovrebbe capire come funziona}
 
 
 
+
+
+
+
+	\chapter{Algebra Multilineare}
+
+	
+		\section{Tensori Continui\protect\footnote{Per capire questa parte bisogna sapere almeno le basi sui tensori e il prodotto tensoriale, consiglio di leggere \href{url}{https://jeremykun.com/2014/01/17/how-to-conquer-tensorphobia}}}
+			Prendiamo due vettori continui $v$ e $w$ il loro prodotto tensoriale $v\otimes w$ è scrivibile come combinazione dei prodotti tensoriali degli elementi della base $B=\{B(x,y_0)|y_0\in \rm I\!R\}$ dello spazio vettoriale $V$, quindi esprimiamo $v$ e $w$ in termini di $B$ $v(x)=\int B(x,y)a(y)dy$ e $w(x')=\int B(x',y')b(y')dy'$
+			\[
+				v(x)\otimes w(x')=\bigg(\int B(x,y)a(y)dy \bigg)\otimes \bigg(\int B(x',y')b(y')dy'\bigg)=
+			\]
+			\[
+				=\int \bigg[B(x,y)\otimes\bigg(\int B(x',y')b(y')dy'\bigg)\bigg]a(y)dy=
+			\]
+			\[
+				=\int \int \bigg(B(x,y)\otimes B(x',y')\bigg)a(y)b(y')dydy'
+			\]
+			A questo punto basta definire $T(y,y')=B(x,y)\otimes B(x',y')$\footnote{Aspetta! ma ti sei mangiato 2 indici!\\ No. Nel prodotto tensoriale "classico" $e_i\otimes f_j=k$ è comunque uno scalare $k$, nonostante possa sembrare a prima occhiata che $k$ dipenda sia da $i$ che da $j$, infatti $e_i$ serve solo per indicare la componente $i$-esima di $e$} il prodotto tensoriale tra gli elementi di base $B(x,y)$ e $B(x,y')$ e l'equazione di sopra diventa
+			\begin{equation}
+				v(x)\otimes w(x')=\int \int T(y,y')a(y)b(y')dydy'
+			\end{equation}
+			Da questo punto in poi useremo la notazione di Einstein per i tensori, solo che anzicchè sommare gli indici ripetuti, li integriamo, inoltre se un vettore è covariante al posto di scrivere $v(x)$ scriveremo $v_{(x)}$, viceversa se sono controvarianti scriveremo $v^{(x)}$.\newline
+			Adesso cerchiamo di generalizzare un pò quello che abbiamo fatto fin'ora: prendiamo il prodotto tensoriale $P=v_1\otimes\dots\otimes v_q\otimes w_1\otimes\dots\otimes w_p$, dove $v_1\in V$ e $w_i\in V^*$, supponiamo che $v_i^{(x)}=B^{(x)}_{(y)}a_i^{(y)}$ e $w_{i(x)}=B_{(x)}^{(y)}b_{i(y)}$.\newline
+			Se scriviamo il prodotto Tensoriale in termini dei vettori di base esso diventa
+			\[
+				P=\Big(B^{(x_1)}_{(y_1)}a_1^{(y_1)}\Big)\otimes\dots\otimes\Big(B^{(x_q)}_{(y_q)}a_q^{(y_q)}\Big)\otimes\Big(B_{(z_1)}^{(t_1)}b_{1(t_1)}\Big)\otimes\dots\otimes\Big(B_{(z_p)}^{(t_p)}b_{p(t_p)}\Big)=
+			\]
+			\[
+				=\Big(B^{(x_1)}_{(y_1)}\otimes\dots\otimes B^{(x_q)}_{(y_q)}\otimes B_{(z_1)}^{(t_1)}\otimes\dots\otimes B_{(z_p)}^{(t_p)}\Big)a_1^{(y_1)}\dots a_q^{(y_q)}b_{1(t_1)}\dots b_{p(t_p)}
+			\]
+			Adesso definiamo il tensore "continuo" $T$ come
+			\begin{equation}
+				T_{(y_1,\dots,y_1)}^{(t_1,\dots,t_p)}=B^{(x_1)}_{(y_1)}\otimes\dots\otimes B^{(x_q)}_{(y_q)}\otimes B_{(z_1)}^{(t_1)}\otimes\dots\otimes B_{(z_p)}^{(t_p)}
+			\end{equation}
+			Questo tensore è detto di tipo $(p,q)$, cioè che ha $p$ indici controvarianti (in questo caso continui) e $q$ covarianti.\newline
+			A questo punto è possibile esprimere $P$ in termini di $T$
+			\begin{equation}
+				P=T_{(y_1,\dots,y_1)}^{(t_1,\dots,t_p)}a_1^{(y_1)}\dots a_q^{(y_q)}b_{1(t_1)}\dots b_{p(t_p)}
+			\end{equation}
+			Adesso vi starete chiedendo:"ok, figo, ma cosa me ne faccio?" e a dire il vero non mi viene niente in mente su cosa farci, a parte trovare il tensore associato a qualche operatore vettoriale, però boh... se mi viene in mente qualcosa di utile da farci ve lo dirò.
+
+
+
+		\section{Funzionali}
+			Un tensore $T$ di tipo $(n,m)$ può essere visto come una specie di matrice con $n+m$ indici. La versione continua di un tensore è quindi qualcosa del genere $T^{(x_1,\dots,x_n)}_{(y_1,\dots,y_m)}$, dove $(x_1,\dots,x_n)$ e $(y_1,\dots,y_m)$ sono dei vettori di $\rm I\!R^n$ e $\rm I\!R^m$ ed ad ogni coppia di punti è associato uno scalare.\newline
+			Se facciamo il limite al continuo degli indici otteniamo che il tensore diventa della forma $T^{f}_{g}$, dove $f$ e $g$ sono due vettori continui.\newline
+			Adesso concentriamoci sui Tensori con indici continui che hanno solo una funzione negli indici $T_f$, che da ora in poi scriverò come $T[f(x)]$. Essi sono funzioni che vanno dallo spazio delle funzioni in $\rm I\!R$. Questi oggetti in matematica sono definiti come Funzionali.\newline
+			Esistono diversi tipi di funzionali, ma io mi concentrerò su quelli più facili, cioè quelli tali che
+			\begin{equation}
+				\lim_{\epsilon 	\to 0}T[f(x)+\epsilon g(x)]-T[f(x)]=0
+			\end{equation}
+			Che chiamerò funzionali continui\footnote{Probablilmente ce l'hanno una definizione per come si deve, ma io non la so, quindi ci metto questa perchè assomigliano alle funzioni continue di Analisi 1}.
+
+
+
+		\section{Derivata funzionale}
+			Le analogie tra le funzioni in $n$ variabili e i funzionali sono molte, una di queste è la derivata direzionale.\newline
+			Nelle funzioni in più variabili la derivata direzionale è\footnote{ricordati che $||y||_2=1$} $\lim_{\epsilon \to 0}\frac{f(\mathbf{x}+\epsilon\mathbf{y})-f(\mathbf{x})}{\epsilon}$. Nei funzionali invece di prendere $\mathbf{x},\mathbf{y}$ vettori discreti, prendiamo vettori continui, e così facendo si ottene la derivata funzionale
+			\begin{equation}
+				\frac{\partial F}{\partial g}[f(x)]=\lim_{\epsilon \to 0}\frac{F[f(x)+\epsilon g(x)]-F[f(x)]}{\epsilon}
+			\end{equation}
+			con $||g||_2=1$. Questa equazione rappresenta la derivata di $F$ nella direzione di $g$.\newline
+			Se si vuole trovare un punto stazionario di un funzionale $F$ bisogna imporre che $\frac{\partial F}{\partial g}=0$ per ogni $g$, che equivarrebe a dire che la derivata deve essere zero in ogni direzione.\newline
+
+
+
+		\section{Equazioni di Eulero-Lagrange}
+			L'esempio più famoso nel trovare i punti stazionari di un funzionale è l'equazione di Eulero-Lagrange:
+			\begin{equation}
+				A[x(t)]=\int_{t_a}^{t_b}L(x(t),\dot{x}(t),t)dt
+			\end{equation}
+			dove $A$ è un funzionale detto Azione che per qualche oscuro motivo dobbiamo minimizare, $L$ è la lagrangiana, $x$ è la posizione, $\dot{x}$ la velocità e $t$ il tempo.
+			Per trovare il minimo bisogna imporre che per ogni $y$
+			\[
+				\frac{\partial A}{\partial y}=\lim_{\epsilon \to 0}\frac{A[x(t)+\epsilon y(t)]-A[x(t)]}{\epsilon}=0
+			\]
+			sviluppo in Taylor il primo membro
+			\[
+				A[x(t)+\epsilon y(t)]=\int_{t_a}^{t_b}L(x+\epsilon y,\dot{x}+\epsilon \dot{y},t)=A[x(t)]+\int_{t_a}^{t_b}\frac{\partial{L}}{\partial{x}}\epsilon y+\frac{\partial{L}}{\partial{\dot{x}}}\epsilon \dot{y}dt
+			\]
+			quindi
+			\[
+				\frac{\partial A}{\partial y}=\int_{t_a}^{t_b}\frac{\partial{L}}{\partial{x}}y+\frac{\partial{L}}{\partial{\dot{x}}}\dot{y}dt
+			\]
+			integrando per parti il secondo termine dell'integrale
+			\[
+				\int_{t_a}^{t_b}\frac{\partial{L}}{\partial{\dot{x}}}\dot{y}dt=y\frac{\partial{L}}{\partial{\dot{x}}}\bigg\rvert_{t_a}^{t_b}-
+				\int_{t_a}^{t_b}\frac{d}{dt}\bigg(\frac{\partial{L}}{\partial{\dot{x}}} \bigg)ydt
+			\]
+			Adesso per semplicità asumiamo che i punti estremali della traiettoria sono fissati, quindi $y(t_a)=y(t_b)=0$, quindi rimettendo tutto nell'equazione precedente si ha che
+			\begin{equation}
+				\frac{dA}{dy}=\int_{t_a}^{t_b}\bigg[\frac{\partial{L}}{\partial{x}}-\frac{d}{dt}\bigg(\frac{\partial{L}}{\partial{\dot{x}}} \bigg)\bigg]ydt
+			\end{equation}
+			che è uguale a zero per ogni $y(t)$ se e solo se 
+			\begin{equation}
+				\frac{\partial{L}}{\partial{x}}=\frac{d}{dt}\bigg(\frac{\partial{L}}{\partial{\dot{x}}} \bigg)
+			\end{equation}
+
+
+
+		\section{Gradiente e Sviluppo in Taylor di Funzionali}
+			In una funzione $f$ in $n$ variabili il gradiente è un vettore $n$ dimenzionale tale che $\nabla f_i=\partial_{e_i} f$, dove $e_i$ è il versore $i$-esimo.\newline
+			Se prendiamo un funzionale $T:(f:[a,b]\rightarrow \rm I\!R)\rightarrow \rm I\!R$, e definiamo $e(x_0)$ il versore associato alla "direzione" $x_0$-esima\footnote{che potrebbe essere $\frac{\delta (x-x_0)}{\delta(0)}$ (perchè $||e(x_0)||_2$ deve essere uguale a $1$), ma preferisco restare generico lasciando $e(x_0)$}, il gradiente di questo tipo di funzionale diventa
+			\begin{equation}
+				(\nabla T[f])(x_0)=\frac{\partial T[f]}{\partial e(x_0)}
+			\end{equation}
+			Quindi  il gradiente di un funzionale $\nabla T$, è a sua volta un tensore che va dallo spazio delle funzioni allo spazio dei vettori continui.\newline
+			Generalizzando si ha che il tensore associato alle derivate parziali di ordine $n$-esimo è un tensore $D_n:(f:[a,b]\rightarrow \rm I\!R)\times \rm I\!R^n\rightarrow \rm I\!R$
+			\begin{equation}
+				(D_n[f])(x_1,\dots,x_n)=\frac{\partial^n T[f]}{\partial e(x_1)\dots\partial e(x_n)}
+			\end{equation}
+			Grazie a ciò è possibile creare un'analogo allo sviluppo in taylor in un continuo di dimenzioni.\newline
+			Come al solito per capire il limite al continuo di qualcosa può essere utile vedere prima come si descrive ciò in un numero finito di dimenzioni, in particolare lo sviluppo in Taylor di una funzione $g(x_1,\dots,x_n)=g(\mathbf x)$ di ordine $m$ attorno al punto $(\hat x_1,\dots,\hat x_n)=\mathbf{\hat x}$ è
+			\begin{equation}
+				g(\mathbf{\hat x})+\sum_{i}^{n}\frac{\partial g(\mathbf{\hat x})}{\partial e_i}(x_i-\hat x_i)+\dots+
+				\sum_{i_1,\dots,i_m}^{n}
+				\frac{\partial^m g(\mathbf{\hat x})}
+				{\partial e_{i_1}\dots\partial e_{i_m}}
+				(x_{i_1}-\hat x_{i_m})\dots(x_{i_m}-\hat x_{i_m})
+			\end{equation}
+			A questo punto, per dedurre lo sviluppo in Taylor di un funzionale basta tenere conto che nel caso finito le coordinate devono andare da $1$ a $n$, quindi ogni $i_j$ assume valori in $\{1,\dots,n\}$ e poi sommare.\newline
+			Nel caso continuo però gli indici $x_j$ assumono valori in $[a,b]$, quindi bisogna sommare su tutti i valori in quell'intervallo, che equivale a integrare.\footnote{spiegazione per niente chiara, riscriverla (anche se il concetto è proprio na stronzata)}\newline
+			Quindi l'equazione dello sviluppo in Taylor di un funzionale diviene
+			\begin{equation}
+				T[\hat f]+\int_a^b \frac{\partial T[\hat f]}{\partial e(x)}[f(x)-\hat f(x)]dx\quad+\dots+
+			\end{equation}
+			\[
+				+\underbrace{\int_a^b\dots\int_a^b}_{n\textrm{ volte}}
+				\frac{\partial^n T[\hat f]}{\partial e(x_1)\dots\partial e(x_n)}[f(x_1)-\hat f(x_1)]\dots[f(x_n)-\hat f(x_n)]dx_1\dots dx_n=
+			\]
+			\begin{equation}
+				=\sum_{i=0}^n \Bigg\{\prod_{j=1}^i \int_a^b dx_j[f(x_j)-\hat f(x_j)]\frac{\partial}{\partial e(x_j)}\Bigg\}T[\hat f]
+			\end{equation}
+			che se dio vuole rispetta il teorema di Swartz\footnote{Per chi non si ricordasse è quello che dice che $\partial_x\partial_y f=\partial_y\partial_x f$, e comunque l'ultima equazione è un pò un'abuso di notazione, ma dalle equazioni di prima si dovrebbe capire come funziona}
+
+
+
+
+		\section{Volume parallelogramma in un continuo di dimenzioni}
+			Generalizzare il determinante è più difficile di quanto sembri, e ne parlerò a breve\footnote{inserisci un collegamento al paragrafo}, ma prima è inutile parlare di determinante se non si sa nemmeno qual'è il limite al continuo del volume di un parallelogramma.\newline
+			Visto che ci troviamo in un continuo di dimenzioni, possiamo individuare una dimenzione con un numero reale $x\in[a,b]$ e la lunghezza dello spigolo in quella direzione avrà un certo valore $f(x)\in[0,+\infty)$.\newline
+			Chiaramente se definiamo il volume come il prodotto di tutti i valori di $f(x)$ perde ogni senzo, ma possiamo tentare di trovare qualcosa che si ci avvicini.\newline
+
+			Supponiamo di avere un parallelepipedo $n$ dimenzionale, esso può essere descritto da un vettore $v$ che ha come elementi la lunghezza di ogni spigolo $(v_1,\dots,v_n)$, adessso usando un ragionamento simile a quello del paragrafo sul prodotto scalare canonico ~\ref{sec:prod-can} a pagina ~\pageref{sec:prod-can} possiamo visualizzare il vettore come un'istogramma che ha ogni elemento con una larghezza di base $l=1$.\newline
+			Senza perdere di generalità possiamo affermare che il volume del parallelepipedo è il prodotto di ogni elemento del vettore $\prod v_i$ elevato alla larghezza di base (che in questo caso non fa nessuna differenza).\newline
+
+			Adesso prendiamo un parallelepipedo in un continuo di dimenzioni individuato dal vettore continuo $f(x)$ con $f(x)\in[0,+\infty)$ e $x\in[a,b]$ e approssimiamo il vettore continuo $f(x)$ con uno discreto (come quando si fanno gli integrali).\newline
+			Il volume del parallelepipedo così definito è uguale a
+			\begin{equation}
+			\begin{split}
+				\Bigg[\prod_{i=0}^n f\bigg(a+\frac{i(b-a)}{n}\bigg)\Bigg]^{\frac{b-a}{n}}&=
+				\textrm{exp}\Bigg\{\sum_{i=0}^n\frac{b-a}{n}\textrm{ln}\bigg[f\bigg(a+\frac{i(b-a)}{n}\bigg)\bigg]\Bigg\}=\\
+				&=\textrm{exp}\bigg[\int_a^b \textrm{ln}f(x)dx\bigg]
+			\end{split}
+			\end{equation}
+			Dove dal secondo al terzo passaggio ho scritto che la somma dell'area di tutti quei rettangolini è l'integrale di quella roba.\newline
+			Come abbiamo visto grazie al cielo questa roba tende a un valore ben determinato che è pure possibile calcolare. Questo procedimento può essere usato per portare una produttoria generica nel limite al continuo, così come l'integrale può essere usato per portare nel limite al continuo una sommatoria.
 
 
 
