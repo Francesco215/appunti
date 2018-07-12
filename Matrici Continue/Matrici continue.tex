@@ -1,12 +1,17 @@
 %\documentclass[11pt,fleqn]{book}%
 %\documentclass{exam}%
 \documentclass[11pt,a4paper]{report}
-\date{Febbraio 2018}
+\date{{\LARGE Febbraio 2018}}
 \usepackage[italian]{babel}
 \usepackage[T1]{fontenc}
 \usepackage{graphicx}
-\title{Algebra continua}
-\author{Francesco Sacco}
+\usepackage[11pt]{moresize}
+
+\font\myfont=cmr12 at 40pt
+\title{{\myfont Algebra Continua}}
+
+\author{{\Huge Francesco Sacco}\\ \\ \\
+		\includegraphics[scale=0.6]{Immagini/cherubino.eps}\\}
 \usepackage[utf8x]{inputenc}
 \usepackage{amsmath}
 \usepackage{amsthm}
@@ -24,11 +29,13 @@
 
 \begin{document}
 	\maketitle
-	Sono abbastanza convinto di specare tempo, e che forse era meglio se studiavo, ma non avrei studiato comunque quindi faccio questo pdf.\newline
-	Ovviamente non sarò formale, quindi Ischia non ci scassare la minchia, e farò parecchi errori grammaticali, quindi Silvio non ci scassare la minchia.\newline
-	Un ringraziamento speciale va a Tiziano Amato che mi ha chiesto di metterlo da qualche parte nel pdf, quindi lo metto qua.\newline
+	\tableofcontents
+	\chapter*{Prefazione}
+		Sono abbastanza convinto di specare tempo, e che forse era meglio se studiavo, ma non avrei studiato comunque quindi faccio questo pdf.\newline
+		Ovviamente non sarò formale, quindi Ischia non ci scassare la minchia, e farò parecchi errori grammaticali, quindi Silvio non ci scassare la minchia.\newline
+		Un ringraziamento speciale va a Tiziano Amato che mi ha chiesto di metterlo da qualche parte nel pdf, quindi lo metto qua.\newline
 
-	Buona lettura.
+		Buona lettura.
 	
 	\chapter{Algebra lineare}
 		\section{Dalle matrici discrete a quelle continue}
@@ -356,7 +363,7 @@
 
 	\chapter{Algebra Multilineare}
 
-	
+
 		\section{Tensori Continui\protect\footnote{Per capire questa parte bisogna sapere almeno le basi sui tensori e il prodotto tensoriale, consiglio di leggere \href{url}{https://jeremykun.com/2014/01/17/how-to-conquer-tensorphobia}}}
 			Prendiamo due vettori continui $v$ e $w$ il loro prodotto tensoriale $v\otimes w$ è scrivibile come combinazione dei prodotti tensoriali degli elementi della base $B=\{B(x,y_0)|y_0\in \rm I\!R\}$ dello spazio vettoriale $V$, quindi esprimiamo $v$ e $w$ in termini di $B$ $v(x)=\int B(x,y)a(y)dy$ e $w(x')=\int B(x',y')b(y')dy'$
 			\[
@@ -507,11 +514,37 @@
 			\end{split}
 			\end{equation}
 			Dove dal secondo al terzo passaggio ho scritto che la somma dell'area di tutti quei rettangolini è l'integrale di quella roba.\newline
-			Come abbiamo visto grazie al cielo questa roba tende a un valore ben determinato che è pure possibile calcolare. Questo procedimento può essere usato per portare una produttoria generica nel limite al continuo, così come l'integrale può essere usato per portare nel limite al continuo una sommatoria.
+			Come abbiamo visto grazie al cielo questa roba tende a un valore ben determinato che è pure possibile calcolare. Questo procedimento può essere usato per portare una produttoria generica nel limite al continuo, così come l'integrale può essere usato per portare nel limite al continuo una sommatoria.\footnote{
+				Da notare che non funziona niente se $f$ assume valori negativi, infatti non è possibile decidere se suddividere un numero pari o dispari di volte gli intervallini e quindi è impossibile determinare il segno.
+				\newline Questo viene rispecchiato dal fatto che nella formula scritta come integrale la funzione deve infilarsi dentro un logaritmo, il quale ammette solo argomenti positivi.
+				\newline Comunque è sempre possibile prendere il valore assoluto di $f$ e buona notte.\newline
+
+				Inoltre c'è da dire che questo non é veramente il volume di un parallelogramma in infinite dimenzioni, è semplicemente una definizione che gli ho dato perchè così ha parecchi bonus: è semplice da calcolare, è intuitivo (almeno per me), e il volume di $f(x)=1$ calcolato tra $0$ e $1$ fa 1. Ok, devo ammettere che l'ultima non è proprio convincente...\newline
+
+				Un'ultima cosa e poi la smetto con sta nota a piè di pagina. Promesso.\newline
+				Uno si potrebbe chiedere,:"ma non potevi dare un nome a sto volume anzicchè scrivere ogni volta \emph{il volume di un parallelepipedo in un continuo di dimenzioni}?". La risposta è sì, ma nonostante abbia cercato in rete, ho paura che qualcuno sta cosa l'abbia già definita, e non voglio sovrappore la mia definizione alla loro. In ogni caso se vuoi proprio sapere che nome c'avrei messo, sappi che sarebbe stato "Volugrale" perchè è tipo un misto tra volume e integrale, ma tanto lo so che mi prenderete per il culo per la scelta del nome...\newline
+
+				Come non detto, l'hanno già scoperto e si chiama integrale di Volterra, e anche sta volta qualcuno ci ha pensato prima di me. Dopo quando avrò voglia sostituirò il nome}
 
 
 
 
+
+		\section{Prodotto tra funzionali}
+			Fin'ora abbiamo analizzato i funzionali senza moltiplicarli tra di loro
+
+			\begin{equation}
+				\int T(x_1,\dots,x_n)a_1(y_1)\dots a_n(y_n)dy_1\dots dy_n=
+			\end{equation}
+			\[
+				\int T(x_1,\dots,x_n)\prod_{x=1}^n a[y(x)]dy(x)
+			\]
+			\[
+				\int T[y(x)]\textrm{exp}\bigg[\int \textrm{ln}\big(a[y(x)]\big)dx\bigg]d[y(x)]
+			\]
+			\[
+				\int T[y(x)]\textrm{exp}\bigg[\int \textrm{ln}\big(a[y(x)]d[y(x)]\big)dx\bigg]
+			\]
 
 
 
