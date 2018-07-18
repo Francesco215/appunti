@@ -363,8 +363,10 @@
 
 	\chapter{Algebra Multilineare}
 
+		Questo capitolo conterrà diversi errori perchè toccherà diversi argomenti che non ho ancora studiato tra cui l'algebra multilineare stessa e l'analisi funzionale, quindi se ci sono inprecisioni ditemelo che correggerò.\newline
+		Inoltre da questo punto in poi bisogna sapere almeno le basi sui tensori e il prodotto tensoriale, consiglio di leggere \href{url}{https://jeremykun.com/2014/01/17/how-to-conquer-tensorphobia}.
 
-		\section{Tensori Continui\protect\footnote{Per capire questa parte bisogna sapere almeno le basi sui tensori e il prodotto tensoriale, consiglio di leggere \href{url}{https://jeremykun.com/2014/01/17/how-to-conquer-tensorphobia}}}
+		\section{Tensori Continui}
 			Prendiamo due vettori continui $v$ e $w$ il loro prodotto tensoriale $v\otimes w$ è scrivibile come combinazione dei prodotti tensoriali degli elementi della base $B=\{B(x,y_0)|y_0\in \rm I\!R\}$ dello spazio vettoriale $V$, quindi esprimiamo $v$ e $w$ in termini di $B$ $v(x)=\int B(x,y)a(y)dy$ e $w(x')=\int B(x',y')b(y')dy'$
 			\[
 				v(x)\otimes w(x')=\bigg(\int B(x,y)a(y)dy \bigg)\otimes \bigg(\int B(x',y')b(y')dy'\bigg)=
@@ -395,6 +397,7 @@
 			Questo tensore è detto di tipo $(p,q)$, cioè che ha $p$ indici controvarianti (in questo caso continui) e $q$ covarianti.\newline
 			A questo punto è possibile esprimere $P$ in termini di $T$
 			\begin{equation}
+			\label{eq:tens-cont-vett}
 				P=T_{(y_1,\dots,y_1)}^{(t_1,\dots,t_p)}a_1^{(y_1)}\dots a_q^{(y_q)}b_{1(t_1)}\dots b_{p(t_p)}
 			\end{equation}
 			Adesso vi starete chiedendo:"ok, figo, ma cosa me ne faccio?" e a dire il vero non mi viene niente in mente su cosa farci, a parte trovare il tensore associato a qualche operatore vettoriale, però boh... se mi viene in mente qualcosa di utile da farci ve lo dirò.
@@ -447,7 +450,7 @@
 				\int_{t_a}^{t_b}\frac{\partial{L}}{\partial{\dot{x}}}\dot{y}dt=y\frac{\partial{L}}{\partial{\dot{x}}}\bigg\rvert_{t_a}^{t_b}-
 				\int_{t_a}^{t_b}\frac{d}{dt}\bigg(\frac{\partial{L}}{\partial{\dot{x}}} \bigg)ydt
 			\]
-			Adesso per semplicità asumiamo che i punti estremali della traiettoria sono fissati, quindi $y(t_a)=y(t_b)=0$, quindi rimettendo tutto nell'equazione precedente si ha che
+			Adesso per semplicità assumiamo che i punti estremali della traiettoria sono fissati, quindi $y(t_a)=y(t_b)=0$, quindi rimettendo tutto nell'equazione precedente si ha che
 			\begin{equation}
 				\frac{dA}{dy}=\int_{t_a}^{t_b}\bigg[\frac{\partial{L}}{\partial{x}}-\frac{d}{dt}\bigg(\frac{\partial{L}}{\partial{\dot{x}}} \bigg)\bigg]ydt
 			\end{equation}
@@ -507,6 +510,7 @@
 			Adesso prendiamo un parallelepipedo in un continuo di dimenzioni individuato dal vettore continuo $f(x)$ con $f(x)\in[0,+\infty)$ e $x\in[a,b]$ e approssimiamo il vettore continuo $f(x)$ con uno discreto (come quando si fanno gli integrali).\newline
 			Il volume del parallelepipedo così definito è uguale a
 			\begin{equation}
+			\label{eq:volterra}
 			\begin{split}
 				\Bigg[\prod_{i=0}^n f\bigg(a+\frac{i(b-a)}{n}\bigg)\Bigg]^{\frac{b-a}{n}}&=
 				\textrm{exp}\Bigg\{\sum_{i=0}^n\frac{b-a}{n}\textrm{ln}\bigg[f\bigg(a+\frac{i(b-a)}{n}\bigg)\bigg]\Bigg\}=\\
@@ -525,26 +529,31 @@
 				Uno si potrebbe chiedere,:"ma non potevi dare un nome a sto volume anzicchè scrivere ogni volta \emph{il volume di un parallelepipedo in un continuo di dimenzioni}?". La risposta è sì, ma nonostante abbia cercato in rete, ho paura che qualcuno sta cosa l'abbia già definita, e non voglio sovrappore la mia definizione alla loro. In ogni caso se vuoi proprio sapere che nome c'avrei messo, sappi che sarebbe stato "Volugrale" perchè è tipo un misto tra volume e integrale, ma tanto lo so che mi prenderete per il culo per la scelta del nome...\newline
 
 				Come non detto, l'hanno già scoperto e si chiama integrale di Volterra, e anche sta volta qualcuno ci ha pensato prima di me. Dopo quando avrò voglia sostituirò il nome}
+%ricordati di levare la newpage dopo
 
 
 
 
-
-		\section{Prodotto tra funzionali}
-			Fin'ora abbiamo analizzato i funzionali senza moltiplicarli tra di loro
-
+		\section{Come trasforma un Funzionale}
+			Fin'ora abbiamo analizzato i funzionali senza moltiplicarli tra di loro, ma adesso che abbiamo uno strumento che ci manda al continuo le produttorie possiamo vedere come trasforma l'equazione del prodotto vettori-tensore\footnote{l'equazione "originale" è la ~\ref{eq:tens-cont-vett} a pag \pageref{eq:tens-cont-vett}} quando il tensore divena un funzionale.\newline
+			Partiamo scrivendo l'equazione del prodotto tensore-vettori.
 			\begin{equation}
-				\int T(x_1,\dots,x_n)a_1(y_1)\dots a_n(y_n)dy_1\dots dy_n=
+				\int T(y_1,\dots,y_n)a_1(y_1)\dots a_n(y_n)dy_1\dots dy_n=
 			\end{equation}
 			\[
-				\int T(x_1,\dots,x_n)\prod_{x=1}^n a[y(x)]dy(x)
+				=\int T(y_1,\dots,y_n)\prod_{x=1}^n a_x(y_x)dy_x
 			\]
+			adesso se mandiamo $n$ al continuo la $x$ diventa una variabile reale, quindi il tensore diventa un funzionale $T(y_1,\dots,y_n)\rightarrow T[y(x)]$, il differenziale $\prod dy_x$ passa da essere un differenziale in $\rm I\!R^n$ a essere un differenziale nello spazio delle funzioni $d[y(x)]$;\newline
+			Tutte le cose che avevano una $x$ al pedice gli passa all'argomento $a_x\rightarrow a(x)$, $y_x\rightarrow y(x)$, $a_x(y_x)\rightarrow a(x)[y(x)]$\footnote{Non so quanto senso abbia mettere una $x$ sia fuori che dentro il funzionale, intanto io ce lo lascio, male che vada basta scrivere solo $a[y(x)]$ o $a(x)[y]$. Sinceramente credo che la seconda opzione sia quella più corretta, ma intanto la lascio scritta così com'era, non si sa mai}; e infine la produttoria diventa un integrale sfruttando l'equazione ~\ref{eq:volterra} del paragrafo di prima 
 			\[
-				\int T[y(x)]\textrm{exp}\bigg[\int \textrm{ln}\big(a[y(x)]\big)dx\bigg]d[y(x)]
+				\prod_{x=1}^n a_x(y_x)\rightarrow\textrm{exp}\bigg[\int \textrm{ln}\big(a(x)[y(x)]\big)dx\bigg]
 			\]
-			\[
-				\int T[y(x)]\textrm{exp}\bigg[\int \textrm{ln}\big(a[y(x)]d[y(x)]\big)dx\bigg]
-			\]
+			infine tutto diviene
+			\begin{equation}
+				\int T[y(x)]\textrm{exp}\bigg[\int \textrm{ln}\big(a(x)[y(x)]\big)dx\bigg]d[y(x)]
+			\end{equation}
+			Sinceramente non so quanto sia calcolabile un integrale nello spazio delle funzioni (senza sviluppi in Taylor), credo che per andare avanti servano conoscenze che al momento non ho, oppure c'è qualcosa che mi manca.\newline
+			Comunque questa roba credo che ce l'abbia un'applicazione in fisica, infatti l'integrale dei cammini di Feynmann ha una forma simile, ma preferisco non sbilanciarmi visto che di teoria quantistica dei campi non ne so niente
 
 
 

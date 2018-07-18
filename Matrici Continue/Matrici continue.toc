@@ -14,10 +14,10 @@
 \contentsline {section}{\numberline {1.11}Matrice associata alla derivata n-esima}{8}{section.1.11}
 \contentsline {section}{\numberline {1.12}Risoluzione equazioni differenziali linearii a coefficenti costanti}{9}{section.1.12}
 \contentsline {chapter}{\numberline {2}Algebra Multilineare}{11}{chapter.2}
-\contentsline {section}{\numberline {2.1}Tensori Continui\footnote {Per capire questa parte bisogna sapere almeno le basi sui tensori e il prodotto tensoriale, consiglio di leggere \href {url}{https://jeremykun.com/2014/01/17/how-to-conquer-tensorphobia}}}{11}{section.2.1}
+\contentsline {section}{\numberline {2.1}Tensori Continui}{11}{section.2.1}
 \contentsline {section}{\numberline {2.2}Funzionali}{12}{section.2.2}
 \contentsline {section}{\numberline {2.3}Derivata funzionale}{13}{section.2.3}
 \contentsline {section}{\numberline {2.4}Equazioni di Eulero-Lagrange}{13}{section.2.4}
 \contentsline {section}{\numberline {2.5}Gradiente e Sviluppo in Taylor di Funzionali}{14}{section.2.5}
 \contentsline {section}{\numberline {2.6}Volume parallelogramma in un continuo di dimenzioni}{15}{section.2.6}
-\contentsline {section}{\numberline {2.7}Prodotto tra funzionali}{16}{section.2.7}
+\contentsline {section}{\numberline {2.7}Come trasforma un Funzionale}{17}{section.2.7}
