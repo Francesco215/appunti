@@ -17,6 +17,10 @@
 \usepackage{amsthm}
 \usepackage{hyperref}
 
+\newcommand{\vettore}[1]{\mathbf{#1}}
+\newcommand{\vettorec}[1]{\textrm{#1}}
+\newcommand{\pscal}[2]{\langle \vettore{#1},\vettore{#2}\rangle}
+
 \theoremstyle{definition}
 \newtheorem{definizione}{Definizione}
 
@@ -32,7 +36,11 @@
 	\tableofcontents
 	\chapter*{Prefazione}
 		Sono abbastanza convinto di specare tempo, e che forse era meglio se studiavo, ma non avrei studiato comunque quindi faccio questo pdf.\newline
+		In questo articolo non faccio altro che prendere qualcosa di discreto, tipo il numero di dimenzioni di uno spazio vettoriale, e portarlo al continuo. Così facendo è stato possibile raggiungere alcuni risultati noti della matematica come la serie e trasformata di Furiè, alcuni elementi del calcolo variazionale, le equazioni di Eulero-Lagrange e altro ancora.\newline
+		Il mio obbiettivo è cercare di spiegare tutto partendo dai risultati di algebra lineare e analisi 1 e 2, quindi prima a o poi scriverò quelle quattro fissarie che servono dell'algebra multinineare per il secondo capitolo.\newline
 		Ovviamente non sarò formale, quindi Ischia non ci scassare la minchia, e farò parecchi errori grammaticali, quindi Silvio non ci scassare la minchia.\newline
+		Visto che detesto le cose prolisse ho deciso di mettere alcuni dettagli che secondo me sono superflui o ovvi a piè di pagina, quindi credo che sia meglio non leggerli affatto, ma li ho messi per completezza.\newline
+		In ogni caso dalla regia mi comunicano che è scritto con i piedi, ma non so come rimediare, quindi qualche consiglio sarebbe gradito.\newline
 		Un ringraziamento speciale va a Tiziano Amato che mi ha chiesto di metterlo da qualche parte nel pdf, quindi lo metto qua.\newline
 
 		Buona lettura.
@@ -54,56 +62,56 @@
 				\end{vmatrix}
 			\end{equation}
 			Così facendo non è più possibile indicare un'elemento della matrice con una coppia di numeri interi, ma è possibile indicarli con una coppia di numeri reali $(x,y)$, di  conseguenza la matrice non è più una funzione $M:\{1,\dots,n\}\times\{1,\dots,m\} \rightarrow \rm I\!R$, ma $M:[a,b]\times [c,d]\rightarrow \rm I\!R$.\newline
-			Usando lo stesso ragionamento con i vettori abbiamo che la loro versione con $n\rightarrow +\infty$ siano funzioni $v:[a,b]\rightarrow \rm I\!R$ 
+			Usando lo stesso ragionamento con i vettori abbiamo che la loro versione con $n\rightarrow +\infty$ siano funzioni $\vettore v:[a,b]\rightarrow \rm I\!R$ 
 		
 		
 
 		\section{Prodotto caso discreto}
 		\label{sec:prod-can}
-			In algebra lineare un prodotto tra una matrice $M$ e un vettore $v$ non è altro che un vettore $w$ che ha come componente $i$-esima il prodotto scalare canonico tra il vettore $v$ e la $i$-esima riga di $M$, quindi vediamo prima di generalizzare il prodotto scalare.\newline
+			In algebra lineare un prodotto tra una matrice $M$ e un vettore $\vettore v$ non è altro che un vettore $\vettore w$ che ha come componente $i$-esima il prodotto scalare canonico tra il vettore $\vettore v$ e la $i$-esima riga di $M$, quindi vediamo prima di generalizzare il prodotto scalare.\newline
 			Possiamo definire il prodotto scalare in questo modo: prendiamo questa funzione $P:V\times V\rightarrow V$ tale che 
 			\begin{equation}
-				v=
+				\vettore v=
 				\begin{vmatrix}
-					v_1\\
+					\vettorec v_1\\
 					\vdots \\
-					v_n
+					\vettorec v_n
 				\end{vmatrix}
-				\quad w=
+				\quad \vettore w=
 				\begin{vmatrix}
-					w_1\\
+					\vettorec w_1\\
 					\vdots \\
-					w_n
+					\vettorec w_n
 				\end{vmatrix}
-				\quad P(v,w)=
+				\quad P(\vettore v,\vettore w)=
 				\begin{vmatrix}
-					v_1 w_1\\
+					\vettorec v_1 \vettorec w_1\\
 					\vdots \\
-					v_n w_n
+					\vettorec v_n \vettorec  w_n
 				\end{vmatrix}
 			\end{equation}
-			Una volta aver definito questa apparentemente inutile funzione ne definisco un'altra. Prendi un vettore $v=(v_1,\dots,v_n)$ e immagina che ogni componente uscisse dal foglio con un'altezza pari al suo valore (attento agli occhi).\newline
+			Una volta aver definito questa apparentemente inutile funzione ne definisco un'altra. Prendi un vettore $\vettore v=(\vettorec v_1,\dots,\vettorec v_n)$ e immagina che ogni componente uscisse dal foglio con un'altezza pari al suo valore (attento agli occhi).\newline
 			Adesso se lo guardi di lato dovresti vedere un'istrogramma, nell'immagine che se avrò voglia metterò si capisce benissimo quello che intendo.\newline
-			Definisco $A(v)$ l'area di quell'istogramma mostrato dalla fantomatica immagine, è facile verificare che $A(P(v,w))=<v,w>$\footnote{supponendo che alla base dell'istogramma ci sia un quadrato di area unitaria}.
+			Definisco $A(\vettore v)$ l'area di quell'istogramma mostrato dalla fantomatica immagine, è facile verificare che $A(P(\vettore v,\vettore w))=\pscal{v}{w}$\footnote{supponendo che alla base dell'istogramma ci sia un quadrato di area unitaria}.
 
 
 
 		\section{Prodotto caso continuo}
-			Adesso applichiamo lo stesso ragionamento generalizzandolo con le funzioni (che come abbiamo detto sono vettori continui), in questo caso la funzione $P(v(x),w(x))=v(x)w(x)$ e l'area è l'integrale nel dominio di definizione di $v$ e $w$, dunque
+			Adesso applichiamo lo stesso ragionamento generalizzandolo con le funzioni (che come abbiamo detto sono vettori continui), in questo caso la funzione $P(\vettore v,\vettore w=\vettorec v(x)\vettorec w(x)$ e l'area è l'integrale nel dominio di definizione di $\vettore v$ e $\vettore w$, dunque
 			\begin{equation}
-				<v(x),w(x)>=\int_a^b v(x)w(x)dx
+				\pscal{v}{w}=\int_a^b \vettorec v(x)\vettorec w(x)dx
 			\end{equation}
 			ovviamente questo soddisfa le proprietà del prodotto scalare, non perchè lo so dimostrare, ma perchè lo so per sentito dire.\newline
-			Filamente possiamo definire il prodotto matrice per vettore. Come abbiamo detto prima un prodotto tra una matrice $M$ e un vettore $v$ non è altro che un vettore $w$ che ha come componente $i$-esima il prodotto scalare canonico tra il vettore $v$ e la $i$-esima riga di $M$, quindi il prototto $w$ tra $M$ e $v$ è
+			Filamente possiamo definire il prodotto matrice per vettore. Come abbiamo detto prima un prodotto tra una matrice $M$ e un vettore $\vettore v$ non è altro che un vettore $\vettore w$ che ha come componente $i$-esima il prodotto scalare canonico tra il vettore $v$ e la $i$-esima riga di $M$, quindi il prototto $\vettore w$ tra $M$ e $\vettore v$ è
 			\begin{equation}
-				w(y)=\int_a^b M(x,y)v(x) dx
+				\vettorec w(y)=\int_a^b M(x,y)\vettorec v(x) dx
 			\end{equation}
-			da qui è facile verificare che rispetta tutte le stesse proprietà che ha il prodotto matrice-vettore standard, infatti siano $M, N, O$ matrici continue, $v,w$ vettori, e $\lambda$ uno scalare, allora 
+			da qui è facile verificare che rispetta tutte le stesse proprietà che ha il prodotto matrice-vettore standard, infatti siano $M, N, O$ matrici continue, $\vettore v,\vettore w$ vettori, e $\lambda$ uno scalare, allora 
 			\begin{equation}
-				\lambda Mv= M(\lambda v),\quad M\circ (N \circ O)= (M \circ N) \circ O,
+				\lambda M\vettore v= M(\lambda \vettore v),\quad M\circ (N \circ O)= (M \circ N) \circ O,
 			\end{equation}
 			\[
-				Mv + Nv=  (M+N)v,\quad Mv+Mw=M(v+w)
+				M\vettore v + N\vettore v=  (M+N)\vettore v,\quad M\vettore v+M\vettore w=M(\vettore v+\vettore w)
 			\]
 			
 			Lascio al lettore l'esercizio di dimostrare queste poprietà, trovare la matrice identità e la formula per prodotto tra matrici\footnote{comunque se scrolli dovresti trovarle la soluzione}
@@ -111,33 +119,33 @@
 
 
 		\section{Combinazioni lineari}
-			In algebra lineare sappiamo che se $w\in V$ e ${v_1,\dots,v_n}$ è una base di $V$ abbiamo che esistono dei coefficenti $a_1,\dots,a_n$ tali che $w=a_1 v_1+\dots +a_n v_n$, scritto in forma vettoriale
+			In algebra lineare sappiamo che se $\vettore w\in V$ e $\{\vettore v_1,\dots,\vettore v_n\}$ è una base di $V$ abbiamo che esistono dei coefficenti $\vettorec a_1,\dots,\vettorec a_n$ tali che $\vettore w=\vettorec a_1 \vettore v_1+\dots +\vettorec a_n \vettore v_n$, scritto in forma vettoriale
 			\begin{equation}
 				\begin{vmatrix}
-					w_1\\
+					\vettorec w_1\\
 					\vdots\\
-					w_n
+					\vettorec w_n
 				\end{vmatrix}
 				=
 				\begin{vmatrix}
 					& & \\
-					v_1 & \dots & v_n\\
+					\vettore v_1 & \dots & \vettore v_n\\
 					& & 
 				\end{vmatrix}
 				\begin{vmatrix}
-					a_1\\
+					\vettorec a_1\\
 					\vdots\\
-					a_n
+					\vettorec a_n
 				\end{vmatrix}
 			\end{equation}
-			dove la matrice nel mezzo è la matrice che ha come colonne i vettori $v_1,\dots,v_n$, quindi un modo per calcolare i coefficenti $a_1,\dots,a_n$ è quello di calcolare l'inversa della matrice\footnote{che esiste perchè le righe sono lienarmente indipendenti} e moltiplicare membro a membro.\newline
+			dove la matrice nel mezzo è la matrice che ha come colonne i vettori $\vettore v_1,\dots,\vettore v_n$, quindi un modo per calcolare i coefficenti $\vettorec a_1,\dots,\vettorec a_n$ è quello di calcolare l'inversa della matrice\footnote{che esiste perchè le righe sono lienarmente indipendenti} e moltiplicare membro a membro.\newline
 
 			La stessa cosa si può fare con le matrici continue, ma prima parliamo di matrici inverse.\newline
-			Sarei tentato di definire la matrice $M^{-1}$ l'inversa di $M$ se $Id(x,y)=\delta (y-x)=\int_a^b M^{-1}(x,t) M(t,y) dt$, ma per ora la definisco così:\newline
+			Sarei tentato di definire la matrice $M^{-1}$ l'inversa di $M$ se Id$(x,y)=\delta (y-x)=\int_a^b M^{-1}(x,t) M(t,y) dt$, ma per ora la definisco così:\newline
 			\begin{definizione}[Matrice inversa]
 				Sia $M:[a,b]\times [a,b]\rightarrow \rm I\!R$, e $N$ pure (se c'hai voglia te lo generalizzi tu), allora $N$ è l'inversa di $M$ se
 				\begin{equation}
-					v=NMv
+					\vettore v=NM\vettore v=MN\vettore v
 				\end{equation}
 			\end{definizione}
 			Adesso che sappiamo cos'è l'inversa possiamo usare lo stesso ragionamento della scorsa sezione: Supponiamo che $\{M(x,y_0)\,|\, y_0\in \rm I\!R \}$ sia una base di uno spazio vettoriale $V$, allora per ogni $v\in V$ è possibile trovare una combinazione lineare dei vettori di base che sia uguale a $v$ stesso, cioè
@@ -145,7 +153,7 @@
 			\label{combinazione lineare matrice}
 				\begin{vmatrix}
 					\\
-					v(x)\\
+					\vettorec v(x)\\
 					\quad
 				\end{vmatrix}
 				=
@@ -156,11 +164,11 @@
 				\end{vmatrix}
 				\begin{vmatrix}
 					\\
-					a(y)\\
+					\vettorec a(y)\\
 					\quad
 				\end{vmatrix}
 			\end{equation}
-			Di conseguenza se si vuole trovare $a(y)$ basta moltiplicare per l'inversa entrambi i lati.
+			Di conseguenza se si vuole trovare $\vettore a$ basta moltiplicare per l'inversa entrambi i lati.
 
 
 
@@ -169,35 +177,35 @@
 
 			Partiamo definendo un prodotto hermitiano che ci faccia comodo
 			\begin{equation}
-				<f(x),g(x)>=\frac{2}{T}\int_{-\frac{T}{2}}^\frac{T}{2} \overline{f(x)}g(x)dx
+				\pscal{v}{w}=\frac{2}{T}\int_{-\frac{T}{2}}^\frac{T}{2} \overline{\vettorec v(x)}\vettorec w(x)dx
 			\end{equation}
 			se prendiamo questo insieme di vettori $E_T=\{e^{i2\pi n/ T} \, | \, n \in \rm I\!\! N\}$ abbiamo che sono vettori ortonormali rispetto a questo prodotto scalare, quindi sono perfetti per usarli come base dello spazio vettoriale $C\big[-\frac{T}{2},\frac{T}{2}\big]$\footnote{a dire il vero bisognerebbe dimostrare che $Span\{E_T\}$ sia effettivamente $C\big[-\frac{T}{2},\frac{T}{2}\big]$}, o per le funzioni che oscillano con un periodo $T$.\newline
-			Tutto ciò ci porta alla celeberrima serie di fouriè, dove $\widehat{e_n}=e^{i2\pi n/ T}$
+			Tutto ciò ci porta alla celeberrima serie di fouriè, dove $\widehat{\vettore e_n}=e^{i2\pi n/ T}$
 			\begin{equation}
 			\label{serieFuriè}
-				f(x)=Re\Bigg[\sum_{n=0}^{+\infty} <\widehat{e_n},f(x)>\widehat{e_n}\Bigg]
+				\vettorec v(x)=\textrm{Re}\Bigg[\sum_{n=0}^{+\infty} \pscal{\widehat{e_n}}{v}\widehat{\vettore e_n}\Bigg]
 			\end{equation}
 			Scritto in forma vettoriale assume una forma strana, è una matrice semi continua, che sarebbe $M:[a,b]\times \{1,\dots,n\}\rightarrow \rm I\!R$
 			\begin{equation}
 				\begin{vmatrix}
 					\,\\
 					\,\\
-					f(x)\\
+					\vettorec v(x)\\
 					\,\\
 					\,
 				\end{vmatrix}
-				=Re
+				=\textrm{Re}
 				\begin{vmatrix}
 					\, & & &\\
 					\, & & &\\
-					\widehat{e_0}& \dots & \widehat{e_n}&\dots\\
+					\widehat{\vettore e_0}& \dots & \widehat{\vettore e_n}&\dots\\
 					\, & & &\\
 					\, & & &
 				\end{vmatrix}
 				\begin{vmatrix}
-					<f(x),\widehat{e_0}>\\
+					\pscal{v}{\widehat{e_0}}\\
 					\vdots\\
-					<f(x),\widehat{e_n}>\\
+					\pscal{v}{\widehat{e_n}}\\
 					\vdots
 				\end{vmatrix}
 			\end{equation}
@@ -213,7 +221,7 @@
 			\begin{equation}
 				\begin{vmatrix}
 					\\
-					f(x)\\
+					\vettorec v(x)\\
 					\quad
 				\end{vmatrix}
 				=
@@ -224,29 +232,29 @@
 				\end{vmatrix}
 				\begin{vmatrix}
 					\\
-					\hat{f}(y)\\
+					\hat{\vettorec v}(y)\\
 					\quad
 				\end{vmatrix}
 			\end{equation}
 			La quale scritta in forma esplicita diventa la trasformata di Fourier
 			\begin{equation}
-			f(x)=\int_{-\infty}^{+\infty} e^{ixy}\hat{f}(y) dy
+			\vettorec v(x)=\int_{-\infty}^{+\infty} e^{ixy}\hat{\vettorec v}(y) dy
 			\end{equation}
-			Da qui si evince cosa rappresenta fisicamente $\hat{f}(y)$: essa è la funzione che indica i coefficienti da mettere davanti i vettori di base per ottenere il vettore desiderato.
+			Da qui si evince cosa rappresenta fisicamente $\hat{\vettore v}$: essa è la funzione che indica i coefficienti da mettere davanti i vettori di base per ottenere il vettore desiderato.
 
 
 
 
 		\section{Matrice associata a un'applicazione lineare}
 			Per costruire una matrice associata a un'applicazione lineare il procedimento è pressocchè identico a quello adottato in algebra lineare:\newline
-			Sia $L:V\rightarrow W$ un'applicazione lineare tra due spazii vettoriali e sia $B=\{v_{y}(x)|y\in \rm I\!R\}$ una base di $V$. Allora la matrice associata all'applicazione lineare sarà $L(x,y)=L(v_{y}(x))$.\newline
+			Sia $L:V\rightarrow W$ un'applicazione lineare tra due spazii vettoriali e sia $B=\{\vettore v(y_0)|y_0\in \rm I\!R\}$ una base di $V$. Allora la matrice $M$ associata all'applicazione lineare rispetto a $B$ sarà $M(x,y)=L(\vettore v(y))(x)$.\newline
 			Detto in parole povere ho messo in ogni colonna dove va a finire il vettore di base associato.\newline
 
 
 
 		\section{Cambiamento di base}
 			Trovare la matrice associata all'applicazione lineare ci dà informazioni su come trasformano i vettori di base, ma non ci dice molto su come trasforma una funzione generica.\newline
-			Sia $B=\{v_{y}(x)|y\in \rm I\!R\}$ una base di uno spazio vettoriare $V$ denso in $\rm I\!L$, sia $M$ la matrice assiociata all'applicazione lineare rispetto alla base $B$ e sia $N(x,y)=v_{y}(x)$ la matrice di cambiamento di base, allora la matrice associata all'applicazione lineare $L$ in $V$ sarà
+			Sia $B=\{\vettorec v(x,y_0)|y_0\in \rm I\!R\}$ una base di uno spazio vettoriare $V$ denso in $\rm I\!L$, sia $M$ la matrice assiociata all'applicazione lineare rispetto alla base $B$ e sia $N(x,y)=\vettorec v(x,y)$ la matrice di cambiamento di base, allora la matrice associata all'applicazione lineare $L$ in $V$ sarà
 			\begin{equation}
 				L=N^{-1}\circ M \circ N
 			\end{equation}
@@ -304,7 +312,7 @@
 			\end{equation}
 			Adesso dimostriamo che effettivamente funziona
 			\[
-				\int_{-\infty}^{+\infty}\frac{\delta(x-y)}{x-y}f(y)dy=-\delta(x-y)f(y)\big\rvert_{-\infty}^{+\infty}+\int_{-\infty}^{+\infty}\delta(x-y)f'(y)dy=f'(x)
+				\int_{-\infty}^{+\infty}\frac{\delta(x-y)}{x-y}\vettorec v(y)dy=-\delta(x-y)\vettorec v(y)\big\rvert_{-\infty}^{+\infty}+\int_{-\infty}^{+\infty}\delta(x-y)\vettorec v'(y)dy=\vettorec v'(x)
 			\]
 
 
@@ -340,17 +348,17 @@
 
 
 		\section{Risoluzione equazioni differenziali linearii a coefficenti costanti}
-			Se si vuole trovare la matrice associata ad un'equazione differenziale lineare basta prenderne una a caso $a_nf^{n}(x)+\dots +a_0f(x)=g(x)$ e scriverla in forma matriciale $a_nD_nf+\dots+a_0D_0f=g$.\newline
-			Se definiamo $L=a_nD_n+\dots+a_0D_0$ si ottiene che $L$ è la matrice associata alla nostra equazione differenziale $Lf=g$.\newline
-			Di conseguenza abbiamo davanti a noi un problema che è deltutto analogo alla risoluzione di un sistema di equazioni lineri in algebra lineare $Mv=w$.\newline
-			Quindi la soluzione più generica sarebbe il nucleo $N$ di $L$ sommato alla soluzione dell'inversa ristretta all'immagine $I$ di $L^{-1}_{|I}g=f$.\newline
+			Se si vuole trovare la matrice associata ad un'equazione differenziale lineare basta prenderne una a caso $a_n\vettorec v^{n}(x)+\dots +a_0\vettorec v(x)=\vettorec w(x)$ e scriverla in forma matriciale $a_nD_n\vettore v+\dots+a_0D_0\vettore v=\vettore w$.\newline
+			Se definiamo $L=a_nD_n+\dots+a_0D_0$ si ottiene che $L$ è la matrice associata alla nostra equazione differenziale $L\vettore v=\vettore w$.\newline
+			Di conseguenza abbiamo davanti a noi un problema che è deltutto analogo alla risoluzione di un sistema di equazioni lineri in algebra lineare $M\vettore v=\vettore w$.\newline
+			Quindi la soluzione più generica sarebbe il nucleo $N$ di $L$ sommato alla soluzione dell'inversa ristretta all'immagine $I$ di $L^{-1}_{|I}\vettore g=\vettore f$.\newline
 
 			A prima lettura sembra un problema veramente complicato, tuttavia bisogna ricordarsi che nel caso in cui si ci trova in una base di autovettori di $D_i$, $L$ risulta diagonale, e la cosa bella delle matrici diagonali è che il nucleo sono gli zeri sulla diagonale e che l'iversa è l'inverso degli elementi sulla diagonale.\newline
 			Visto che le esponenziali sono una base\footnote{A dire il vero dovrei dimostrarlo, ma per ora fidati, comunque se ti interessa perchè, vatti a studiare la trasformata di Laplace. In ogni caso lo stesso identico risultato si sarebbe ottenuto con le esponenziali complesse, ma sarebbe stato più fastidioso da ricavare a causa dei numeri complessi} di autovettori rispetto alla derivata conviene risolvere il probema rispetto ad essa.\newline
 
 			Rispetto alla base $B=\{e^{yx}|y \in \rm I\!R\}$ $D_n=y^n\delta(x-y)$, di conseguenza $L(x,y)=\delta(x-y)(a_ny^n+\dots+a_0)$, quindi gli zeri lungo la diagonale $y_0,\dots,y_n$ sono le soluzioni di $P(y)=a_ny^n+\dots+a_0$, inoltre per il teorema fondamentale dell'algebra si ha che $dim(N)=n$. Il nucleo sarà quindi nella forma $N=span\{e^{y_0x},\dots,e^{y_nx}\}$.\footnote{Se la tua domanda è:"Ma tu vu futtiri a mia?! Chi succiri si i radici su i stissi!?" ti posso soltanto dire che ci sto Travagghiando}\newline
 
-			Per trovare l'omogenea $f_o$ bisognerà risolvere $f_o=L^{-1}_{|I}g$, ma per ora mi secca scrivere come si fa.
+			Per trovare l'omogenea $\vettore v_o$ bisognerà risolvere $f_o=L^{-1}_{|I}\vettore g$, ma per ora mi secca scrivere come si fa.
 
 
 
@@ -458,6 +466,8 @@
 			\begin{equation}
 				\frac{\partial{L}}{\partial{x}}=\frac{d}{dt}\bigg(\frac{\partial{L}}{\partial{\dot{x}}} \bigg)
 			\end{equation}
+		Purtroppo in generale minimizzare un funzionale non è così semplice, infatti non sono ancora riuscito a minimizzare il funzionale $N[v]=||Mv||$, che permetterebbe di trovare il nucleo di $M$.
+
 
 
 
@@ -500,7 +510,7 @@
 
 
 		\section{Volume parallelogramma in un continuo di dimenzioni}
-			Generalizzare il determinante è più difficile di quanto sembri, e ne parlerò a breve\footnote{inserisci un collegamento al paragrafo}, ma prima è inutile parlare di determinante se non si sa nemmeno qual'è il limite al continuo del volume di un parallelogramma.\newline
+			Generalizzare il determinante è più difficile di quanto sembri, e ne parlerò a breve nel paragrafo ~\ref{sec:det} a pagina ~\pageref{sec:det}, ma prima è inutile parlare di determinante se non si sa nemmeno qual'è il limite al continuo del volume di un parallelogramma.\newline
 			Visto che ci troviamo in un continuo di dimenzioni, possiamo individuare una dimenzione con un numero reale $x\in[a,b]$ e la lunghezza dello spigolo in quella direzione avrà un certo valore $f(x)\in[0,+\infty)$.\newline
 			Chiaramente se definiamo il volume come il prodotto di tutti i valori di $f(x)$ perde ogni senzo, ma possiamo tentare di trovare qualcosa che si ci avvicini.\newline
 
@@ -554,6 +564,26 @@
 			\end{equation}
 			Sinceramente non so quanto sia calcolabile un integrale nello spazio delle funzioni (senza sviluppi in Taylor), credo che per andare avanti servano conoscenze che al momento non ho, oppure c'è qualcosa che mi manca.\newline
 			Comunque questa roba credo che ce l'abbia un'applicazione in fisica, infatti l'integrale dei cammini di Feynmann ha una forma simile, ma preferisco non sbilanciarmi visto che di teoria quantistica dei campi non ne so niente
+
+
+
+
+		\section{Determinante}
+		\label{sec:det}
+			Il determinante che conosciamo tutti è un'applicazione mulilineare antisimmetrica rispetto ai vettori colonna tale che Det$(e_1,e_2,\dots,e_n)=1$.\newline
+			Riuscire a trovare il tensore associato $\epsilon_{i_1,\dots,i_n}=$Det$(e_{i_1},\dots,e_{i_n})$ è abbastanza semplice.\newline
+			L'antisimmetria ci assicura che se due incici si ripetono allora il determinante è nullo $\epsilon_{i_1,\dots,i_a,\dots,i_a,\dots,i_n}=-\epsilon_{i_1,\dots,i_a,\dots,i_a,\dots,i_n}=0$.\footnote{questo è in accordo con il fatto che se dei vettori sono linearmente dipendenti allora il determinante si annulla}\newline
+			Un'altra importante proprierà derivante dall'antisimmetria è che un numero pari di permutazioni di indici scambiati a due a due lascia il tensore invariato, mentre un numero dispari lo cambia di segno.\footnote{questo è in accordo col fatto che se scambi due colonne il determinante cambia di segno}\newline
+			Usando il fatto che $\epsilon_{1,2,\dots,n}=1$ si ottiene che il tensore associato al detetermiante è la generalizzazione in $n$ indici del tensore di Levi-Civita.\newline
+
+			Mettendo tutto insieme si ottiene la formula tensoriale del deteminante\footnote{c'è la notazione covariante}
+			\begin{equation}
+				\textrm{Det}(v_1,\dots,v_n)=\epsilon_{i_1,\dots,i_n}v_1^{i_1}\dots v_n^{i_n}
+			\end{equation}
+			Purtroppo però è impossibile generalizzare al continuo il tensore di Levi-Civita visto che i funzionali completamente antisimmetrici soffrono di crisi esistenziali.\newline
+			Infatti se prendo una $f:[a,b]\in\rm I\!R$ e mi calcolo $T[f]$ (con $T$ antisimmetrico) questo mi restituirà un qualche valore, ma se scambio due intervalli del dominio di $f$ è impossibile stabilire se il numero di permutazioni è pari o dispari rendendo impossibile capire se l'applicazione cambia di segno oppure no. Ne consegue che non esiste un limite al continuo del determinante.
+
+
 
 
 
