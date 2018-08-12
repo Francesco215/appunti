@@ -43,6 +43,8 @@
 		In ogni caso dalla regia mi comunicano che è scritto con i piedi, ma non so come rimediare, quindi qualche consiglio sarebbe gradito.\newline
 		Un ringraziamento speciale va a Tiziano Amato che mi ha chiesto di metterlo da qualche parte nel pdf, quindi lo metto qua.\newline
 
+		Per quanto riguarda la notazione indicherò i vettori così $\vettore v$, mentre le componenti dei vettori così $\vettorec v_i$. Attenzione! $\vettore v_i$ indica il vettore $i$-esimo, non una componente e inoltre per indicare la componente $i$-esima del vettore $j$-esimo farò così $(\vettorec v_j)_i$\newline
+
 		Buona lettura.
 	
 	\chapter{Algebra lineare}
@@ -119,6 +121,7 @@
 
 
 		\section{Combinazioni lineari}
+		\label{sec:comb_lin}
 			In algebra lineare sappiamo che se $\vettore w\in V$ e $\{\vettore v_1,\dots,\vettore v_n\}$ è una base di $V$ abbiamo che esistono dei coefficenti $\vettorec a_1,\dots,\vettorec a_n$ tali che $\vettore w=\vettorec a_1 \vettore v_1+\dots +\vettorec a_n \vettore v_n$, scritto in forma vettoriale
 			\begin{equation}
 				\begin{vmatrix}
@@ -374,8 +377,50 @@
 		Questo capitolo conterrà diversi errori perchè toccherà diversi argomenti che non ho ancora studiato tra cui l'algebra multilineare stessa e l'analisi funzionale, quindi se ci sono inprecisioni ditemelo che correggerò.\newline
 		Inoltre da questo punto in poi bisogna sapere almeno le basi sui tensori e il prodotto tensoriale, consiglio di leggere \href{url}{https://jeremykun.com/2014/01/17/how-to-conquer-tensorphobia}.
 
+		\section{Applicazioni Multilineari e Tensori}
+			Un'applicazione multilineare $M:V_1\times\dots\times V_n\rightarrow W$\footnote{Talvolta $V_1\times\dots\times V_n$ viene indicata come $\prod_i V_i$, invece $V\times\dots\times V$ si indica come $V^n$} è una funzione lineare negli argomenti, cioè tale che
+			\[
+				M(\vettore v_1,\dots,\vettore v_i,\dots,\vettore v_n)+M(\vettore v_1,\dots,\vettore{\hat v}_i,\dots,\vettore v_n)=
+				M(\vettore v_1,\dots,\vettore v_i+\vettore{\hat v}_i,\dots,\vettore v_n)
+			\]
+			\begin{equation}
+				M(\vettore v_1,\dots,\lambda \vettore v_i,\dots,\vettore v_n)=
+				\lambda M(\vettore v_1,\dots,\vettore v_i,\dots,\vettore v_n)
+			\end{equation}
+			Per trovare il tensore associato ad un'applicazione multilineare bisogna esprimere ogni vettore in termini dei vettori di base del proprio spazio vettoriale.\newline
+			Per semplicità prendiamo un'applicazione multinineare $M:V^n\rightarrow W$, dove Dim$V=m$\newline
+			ogni vettore $\vettore v_i$ può essere scritto come combinazione lineare dei vei vettori di base in questo modo 
+			\[
+				\vettore v_j=\vettore b_1 a_{j,1}+\dots +\vettore b_m a_{j,m}=\sum_{i_j}^m\vettore b_{i_j}a_{j,i_j}
+			\]
+			Grazie a questo possiamo riscrivere $M(\vettore v_1,\dots,\vettore v_n)$ in un modo più complicato\newline
+			\[
+				M(\vettore v_1,\dots,\vettore v_n)=
+				\sum_{i_1,\dots,i_n}M(\vettore b_{i_1}  a_{1,{i_1}},\dots,\vettore b_{i_n} a_{n,{i_n}})=
+			\]
+			\[
+				=\sum_{i_1,\dots,i_n}M(\vettore b_{i_1},\dots,\vettore b_{i_n})a_{1,{i_1}}\dots a_{n,{i_n}}
+			\]
+			Adesso definisco il Tensore $T$
+			\begin{equation}
+				T_{i_1,\dots,i_n}=M(\vettore b_{i_1},\dots,\vettore b_{i_n})
+			\end{equation}
+			Quindi
+			\begin{equation}
+				M(\vettore v_1,\dots,\vettore v_n)=\sum_{i_1,\dots,i_n}T_{i_1,\dots,i_n}a_{1,{i_1}}\dots a_{n,{i_n}}
+			\end{equation}
+			se si sceglie come base quella canonica, allora diventa tutto più "carino"
+			\[
+				M(\vettore v_1,\dots,\vettore v_n)=\sum_{i_1,\dots,i_n}T_{i_1,\dots,i_n}
+				(\vettorec v_1)_{i_1}(\vettorec v_n)_{i_n}	
+			\]
+			Nel caso più generico in cui $M:V_1\times\dots\times V_n\rightarrow W$ andrebbe scelta una base diversa per ogni spazio vettoriale $V_i$, concettualmente non cambia molto, ma il numero di indici aumenta, il che renderebbe ancora più confusionaria la situazione, quindi se c'avete voglia fatevelo per conto vostro.
+
+
+
+
 		\section{Tensori Continui}
-			Prendiamo due vettori continui $v$ e $w$ il loro prodotto tensoriale $v\otimes w$ è scrivibile come combinazione dei prodotti tensoriali degli elementi della base $B=\{B(x,y_0)|y_0\in \rm I\!R\}$ dello spazio vettoriale $V$, quindi esprimiamo $v$ e $w$ in termini di $B$ $v(x)=\int B(x,y)a(y)dy$ e $w(x')=\int B(x',y')b(y')dy'$
+			Prendiamo due vettori continui $\vettore v$ e $\vettore w$ il loro prodotto tensoriale $v\otimes w$ è scrivibile come combinazione dei prodotti tensoriali degli elementi della base $B=\{B(x,y_0)|y_0\in \rm I\!R\}$ dello spazio vettoriale $V$, quindi esprimiamo $v$ e $w$ in termini di $B$ $v(x)=\int B(x,y)a(y)dy$ e $w(x')=\int B(x',y')b(y')dy'$
 			\[
 				v(x)\otimes w(x')=\bigg(\int B(x,y)a(y)dy \bigg)\otimes \bigg(\int B(x',y')b(y')dy'\bigg)=
 			\]
