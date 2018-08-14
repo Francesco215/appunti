@@ -388,7 +388,7 @@
 				\lambda M(\vettore v_1,\dots,\vettore v_i,\dots,\vettore v_n)
 			\end{equation}
 			Per trovare il tensore associato ad un'applicazione multilineare bisogna esprimere ogni vettore in termini dei vettori di base del proprio spazio vettoriale.\newline
-			Per semplicità prendiamo un'applicazione multinineare $M:V^n\rightarrow W$, dove Dim$V=m$\newline
+			Per semplicità prendiamo un'applicazione multinineare $M:V^n\rightarrow W$, dove Dim$(V)=m$\newline
 			ogni vettore $\vettore v_i$ può essere scritto come combinazione lineare dei vei vettori di base in questo modo 
 			\[
 				\vettore v_j=\vettore b_1 a_{j,1}+\dots +\vettore b_m a_{j,m}=\sum_{i_j}^m\vettore b_{i_j}a_{j,i_j}
@@ -420,47 +420,51 @@
 
 
 		\section{Tensori Continui}
-			Prendiamo due vettori continui $\vettore v$ e $\vettore w$ il loro prodotto tensoriale $v\otimes w$ è scrivibile come combinazione dei prodotti tensoriali degli elementi della base $B=\{B(x,y_0)|y_0\in \rm I\!R\}$ dello spazio vettoriale $V$, quindi esprimiamo $v$ e $w$ in termini di $B$ $v(x)=\int B(x,y)a(y)dy$ e $w(x')=\int B(x',y')b(y')dy'$
-			\[
-				v(x)\otimes w(x')=\bigg(\int B(x,y)a(y)dy \bigg)\otimes \bigg(\int B(x',y')b(y')dy'\bigg)=
-			\]
-			\[
-				=\int \bigg[B(x,y)\otimes\bigg(\int B(x',y')b(y')dy'\bigg)\bigg]a(y)dy=
-			\]
-			\[
-				=\int \int \bigg(B(x,y)\otimes B(x',y')\bigg)a(y)b(y')dydy'
-			\]
-			A questo punto basta definire $T(y,y')=B(x,y)\otimes B(x',y')$\footnote{Aspetta! ma ti sei mangiato 2 indici!\\ No. Nel prodotto tensoriale "classico" $e_i\otimes f_j=k$ è comunque uno scalare $k$, nonostante possa sembrare a prima occhiata che $k$ dipenda sia da $i$ che da $j$, infatti $e_i$ serve solo per indicare la componente $i$-esima di $e$} il prodotto tensoriale tra gli elementi di base $B(x,y)$ e $B(x,y')$ e l'equazione di sopra diventa
+			Adesso possiamo studiare come cambia tutto se come vettori scegliamo dei vettori continui.\newline
+			Partiamo per semplicità da un'applicazione bilineare $M:V\times V\rightarrow W$.
+			Sia $\{\vettore b(x)|x in \rm I\!R\}$ una base di $V$, allora per ogni $\vettore v\in V$ esiste una combinazione lineare di dei vettori di base che sia uguale a $\vettore v$, in matematichese si ha che $\vettore v=\int_I \vettore b(x)\vettorec a(x)dy$, dove $I$ è l'insieme d'integrazione. Quindi una applicazione bilineare tra due vettori contunui $\vettore v_1$ e $\vettore v_2$ diventa
 			\begin{equation}
-				v(x)\otimes w(x')=\int \int T(y,y')a(y)b(y')dydy'
+			\begin{split}
+				M(\vettore v_1,\vettore v_2)=& M\bigg(\int_I \vettore b(x_1)\vettorec a_1(x_1)dx_1,\int_I \vettore b(x_2)\vettorec a_2(x_2)dx_2\bigg)=\\
+				& =\int_I M\bigg(\vettore b(x_1),\int_I \vettore b(x_2)\vettorec a_2(x_2)dx_2\bigg)\vettorec a_1(x_1)dy_1=\\
+				&=\int_I \int_I M(\vettore b(x_1),\vettore b(x_2))\vettorec a_1(x_1)\vettorec a_2(x_2)dx_1dx_2
+			\end{split}
 			\end{equation}
-			Da questo punto in poi useremo la notazione di Einstein per i tensori, solo che anzicchè sommare gli indici ripetuti, li integriamo, inoltre se un vettore è covariante al posto di scrivere $v(x)$ scriveremo $v_{(x)}$, viceversa se sono controvarianti scriveremo $v^{(x)}$.\newline
-			Adesso cerchiamo di generalizzare un pò quello che abbiamo fatto fin'ora: prendiamo il prodotto tensoriale $P=v_1\otimes\dots\otimes v_q\otimes w_1\otimes\dots\otimes w_p$, dove $v_1\in V$ e $w_i\in V^*$, supponiamo che $v_i^{(x)}=B^{(x)}_{(y)}a_i^{(y)}$ e $w_{i(x)}=B_{(x)}^{(y)}b_{i(y)}$.\newline
-			Se scriviamo il prodotto Tensoriale in termini dei vettori di base esso diventa
+			A questo punto basta definire un tensore continuo (per le applicazioni bilineari) come quel coso così
 			\[
-				P=\Big(B^{(x_1)}_{(y_1)}a_1^{(y_1)}\Big)\otimes\dots\otimes\Big(B^{(x_q)}_{(y_q)}a_q^{(y_q)}\Big)\otimes\Big(B_{(z_1)}^{(t_1)}b_{1(t_1)}\Big)\otimes\dots\otimes\Big(B_{(z_p)}^{(t_p)}b_{p(t_p)}\Big)=
+				T(y_1,y_2)=M(\vettore b(y_1),\vettore b(y_2))
 			\]
+			e quindi l'equazione di prima diventa
 			\[
-				=\Big(B^{(x_1)}_{(y_1)}\otimes\dots\otimes B^{(x_q)}_{(y_q)}\otimes B_{(z_1)}^{(t_1)}\otimes\dots\otimes B_{(z_p)}^{(t_p)}\Big)a_1^{(y_1)}\dots a_q^{(y_q)}b_{1(t_1)}\dots b_{p(t_p)}
+				M(\vettore v_1,\vettore v_2)=\int \int T(y_1,y_2)\vettorec a_1(y_1)\vettorec a_2(y_2)dy_1dy_2
 			\]
-			Adesso definiamo il tensore "continuo" $T$ come
+			\newline
+
+			Adesso prendiamo un'applicazione lineare $M:V_1\times\dots\times V_n\rightarrow W$, siano $B_i=\{\vettore b_i(x)|x\in \rm I \! R\}$ delle basi dei rispettivi $V_i$, $\vettore v_i \in V_i$ dei vettori generici esprimibili in termini delle $B_i$ in questo modo $\vettore v_i=\int_{I_i} \vettore b_i(y)a_i(x)dx$.
+			A questo punto l'applicazione multilineare diventa
 			\begin{equation}
-				T_{(y_1,\dots,y_1)}^{(t_1,\dots,t_p)}=B^{(x_1)}_{(y_1)}\otimes\dots\otimes B^{(x_q)}_{(y_q)}\otimes B_{(z_1)}^{(t_1)}\otimes\dots\otimes B_{(z_p)}^{(t_p)}
+			\begin{split}
+				& M(\vettore v_1,\dots,\vettore v_n)=\\
+				&=M\bigg(\int_{I_1} \vettore b_1(x_1)\vettorec a_1(x_1)dx_1,\dots,\int_{I_n} \vettore b_n(x_n)\vettorec a_n(x_n)dx_n\bigg)=\\
+				&=\int_{I_1}\dots\int_{I_n}M(\vettore b_1(x_1),\dots,\vettore b_n(x_n))
+				\vettorec a_1(x_1)\dots\vettorec a_n(x_n)dx_1\dots dx_n
+			\end{split}
 			\end{equation}
-			Questo tensore è detto di tipo $(p,q)$, cioè che ha $p$ indici controvarianti (in questo caso continui) e $q$ covarianti.\newline
-			A questo punto è possibile esprimere $P$ in termini di $T$
+			definendo $T(x_1,\dots,x_n)=M(\vettore b_1(x_1),\dots,\vettore b_n(x_n))$ si può espimere il tutto così
 			\begin{equation}
-			\label{eq:tens-cont-vett}
-				P=T_{(y_1,\dots,y_1)}^{(t_1,\dots,t_p)}a_1^{(y_1)}\dots a_q^{(y_q)}b_{1(t_1)}\dots b_{p(t_p)}
+			\label{eq:prod_vett_tens}
+				M(\vettore v_1,\dots,\vettore v_n)=\int_{I_1}\dots\int_{I_n}T(x_1,\dots,x_n)
+				\vettorec a_1(x_1)\dots\vettorec a_n(x_n)dx_1\dots dx_n
 			\end{equation}
-			Adesso vi starete chiedendo:"ok, figo, ma cosa me ne faccio?" e a dire il vero non mi viene niente in mente su cosa farci, a parte trovare il tensore associato a qualche operatore vettoriale, però boh... se mi viene in mente qualcosa di utile da farci ve lo dirò.
+			e questi sono i Tensori Continui.
+
 
 
 
 		\section{Funzionali}
-			Un tensore $T$ di tipo $(n,m)$ può essere visto come una specie di matrice con $n+m$ indici. La versione continua di un tensore è quindi qualcosa del genere $T^{(x_1,\dots,x_n)}_{(y_1,\dots,y_m)}$, dove $(x_1,\dots,x_n)$ e $(y_1,\dots,y_m)$ sono dei vettori di $\rm I\!R^n$ e $\rm I\!R^m$ ed ad ogni coppia di punti è associato uno scalare.\newline
-			Se facciamo il limite al continuo degli indici otteniamo che il tensore diventa della forma $T^{f}_{g}$, dove $f$ e $g$ sono due vettori continui.\newline
-			Adesso concentriamoci sui Tensori con indici continui che hanno solo una funzione negli indici $T_f$, che da ora in poi scriverò come $T[f(x)]$. Essi sono funzioni che vanno dallo spazio delle funzioni in $\rm I\!R$. Questi oggetti in matematica sono definiti come Funzionali.\newline
+			Un tensore $T$ a $n$ indici può essere visto come un oggetto che prende un vettore $n$-dimenzionale e ti sputa qualcosa fuori.
+			Se facciamo il limite al continuo degli indici otteniamo che il tensore diventa della forma $T(\vettore v)$, dove $\vettore v$ è un vettore continuo.\newline
+			Essi sono funzioni che hanno come dominio lo spazio delle funzioni. Questi oggetti in matematica sono definiti come Funzionali e sono indicati con $T[\vettore v]$.\newline
 			Esistono diversi tipi di funzionali, ma io mi concentrerò su quelli più facili, cioè quelli tali che
 			\begin{equation}
 				\lim_{\epsilon 	\to 0}T[f(x)+\epsilon g(x)]-T[f(x)]=0
@@ -590,7 +594,7 @@
 
 
 		\section{Come trasforma un Funzionale}
-			Fin'ora abbiamo analizzato i funzionali senza moltiplicarli tra di loro, ma adesso che abbiamo uno strumento che ci manda al continuo le produttorie possiamo vedere come trasforma l'equazione del prodotto vettori-tensore\footnote{l'equazione "originale" è la ~\ref{eq:tens-cont-vett} a pag \pageref{eq:tens-cont-vett}} quando il tensore divena un funzionale.\newline
+			Fin'ora abbiamo analizzato i funzionali senza moltiplicarli tra di loro, ma adesso che abbiamo uno strumento che ci manda al continuo le produttorie possiamo vedere come trasforma l'equazione del prodotto vettori-tensore\footnote{l'equazione "originale" è la ~\ref{eq:prod_vett_tens} a pag \pageref{eq:prod_vett_tens}} quando il tensore divena un funzionale.\newline
 			Partiamo scrivendo l'equazione del prodotto tensore-vettori.
 			\begin{equation}
 				\int T(y_1,\dots,y_n)a_1(y_1)\dots a_n(y_n)dy_1\dots dy_n=
