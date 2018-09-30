@@ -35,15 +35,14 @@
 	\maketitle
 	\tableofcontents
 	\chapter*{Prefazione}
-		Sono abbastanza convinto di specare tempo, e che forse era meglio se studiavo, ma non avrei studiato comunque quindi faccio questo pdf.\newline
 		In questo articolo non faccio altro che prendere qualcosa di discreto, tipo il numero di dimenzioni di uno spazio vettoriale, e portarlo al continuo. Così facendo è stato possibile raggiungere alcuni risultati noti della matematica come la serie e trasformata di Furiè, alcuni elementi del calcolo variazionale, le equazioni di Eulero-Lagrange e altro ancora.\newline
-		Il mio obbiettivo è cercare di spiegare tutto partendo dai risultati di algebra lineare e analisi 1 e 2, quindi prima a o poi scriverò quelle quattro fissarie che servono dell'algebra multinineare per il secondo capitolo.\newline
+		Il mio obbiettivo è cercare di spiegare tutti gli argomenti trattati partendo dai risultati di algebra lineare e analisi 1 e 2, quindi prima a o poi scriverò quelle quattro fissarie che servono dell'algebra multinineare per il secondo capitolo.\newline
 		Ovviamente non sarò formale, quindi Ischia non ci scassare la minchia, e farò parecchi errori grammaticali, quindi Silvio non ci scassare la minchia.\newline
 		Visto che detesto le cose prolisse ho deciso di mettere alcuni dettagli che secondo me sono superflui o ovvi a piè di pagina, quindi credo che sia meglio non leggerli affatto, ma li ho messi per completezza.\newline
 		In ogni caso dalla regia mi comunicano che è scritto con i piedi, ma non so come rimediare, quindi qualche consiglio sarebbe gradito.\newline
-		Un ringraziamento speciale va a Tiziano Amato che mi ha chiesto di metterlo da qualche parte nel pdf, quindi lo metto qua.\newline
+		Un ringraziamento speciale va a Tiziano Amato perchè mi ha chiesto di scrivergli un ringraziamento da qualche parte.\newline
 
-		Per quanto riguarda la notazione indicherò i vettori così $\vettore v$, mentre le componenti dei vettori così $\vettorec v_i$. Attenzione! $\vettore v_i$ indica il vettore $i$-esimo, non una componente e inoltre per indicare la componente $i$-esima del vettore $j$-esimo farò così $(\vettorec v_j)_i$\newline
+		Per quanto riguarda la notazione indicherò i vettori così $\vettore v$, mentre le componenti dei vettori così $\vettorec v_i$, o alternativamente $(\vettore v)_i$. Attenzione! $\vettore v_i$ indica il vettore $i$-esimo, non una componente e inoltre per indicare la componente $i$-esima del vettore $j$-esimo farò così $(\vettore v_j)_i$\newline
 
 		Buona lettura.
 	
@@ -99,7 +98,7 @@
 
 
 		\section{Prodotto caso continuo}
-			Adesso applichiamo lo stesso ragionamento generalizzandolo con le funzioni (che come abbiamo detto sono vettori continui), in questo caso la funzione $P(\vettore v,\vettore w=\vettorec v(x)\vettorec w(x)$ e l'area è l'integrale nel dominio di definizione di $\vettore v$ e $\vettore w$, dunque
+			Adesso applichiamo lo stesso ragionamento generalizzandolo con le funzioni (che come abbiamo detto sono vettori continui), in questo caso la funzione $P(\vettore v,\vettore w)(x)=\vettorec v(x)\vettorec w(x)$ e l'area è l'integrale nel dominio di definizione di $\vettore v$ e $\vettore w$, dunque
 			\begin{equation}
 				\pscal{v}{w}=\int_a^b \vettorec v(x)\vettorec w(x)dx
 			\end{equation}
@@ -216,10 +215,11 @@
 
 
 
+
 		\section{Trasformata di Furiè}
 			Ora che abbiamo reso incomprenzibile la serie, facciamo lo stesso lavoro con la trasformata.\newline \newline
 			La trasformata di fourier, può essere vista come una serie di forurier con il periodo che tende a infinito, ora però c'è il problema di scegliere una base.\newline
-			Non essendoci stavolta un valido motivo per escludere le funzioni periodiche che hanno la frequenza che non siano un multiplo di $1/T$ possiamo prenderci la libertà di prenderle tutte. Di conseguenza segliamo come base $B=\{F(x,y_0)=e^{ixy_0}\,|\,y_0 \in \rm I\!R \}$.\newline
+			Non essendoci stavolta un valido motivo per escludere le funzioni periodiche che hanno la frequenza che non siano un multiplo di $1/T$ possiamo prenderci la libertà di prenderle tutte. Di conseguenza segliamo come base $B=\{\vettore f(k)=e^{ixk}=F(x,k)\,|\,k \in \rm I\!R \}$.\newline
 			Come abbiamo visto nell'equazione \ref{combinazione lineare matrice} possiamo scrivere una generica funzione in questo modo
 			\begin{equation}
 				\begin{vmatrix}
@@ -243,7 +243,29 @@
 			\begin{equation}
 			\vettorec v(x)=\int_{-\infty}^{+\infty} e^{ixy}\hat{\vettorec v}(y) dy
 			\end{equation}
-			Da qui si evince cosa rappresenta fisicamente $\hat{\vettore v}$: essa è la funzione che indica i coefficienti da mettere davanti i vettori di base per ottenere il vettore desiderato.
+			Da qui si evince cosa rappresenta fisicamente $\hat{\vettore v}$: essa è la funzione che indica i coefficienti da mettere davanti i vettori di base per ottenere il vettore desiderato.\newline
+
+			Se vogliamo ottenere $\vettore{\hat v}$ bisogna moltiplicare entrambi i membri per l'inversa $F^{-1}$
+			\begin{equation}
+				\vettore{\hat v}=F^{-1}\vettore{v}
+			\end{equation}
+			Di conseguenza ci tocca trovare l'inversa di $F$ per trovare $\vettore{\hat v}$.\newline
+			Visto che le funzioni trigonometriche sono ortogonali tra di loro in un intervallo finito, vogliamo vedere questa proprietà è anche vera su tutti i reali, di conseguenza ipotizziamo che $F^{-1}(k,x)t=\alpha e^{ikx}$ dove $\alpha \in \rm I\!\!\! C$.
+			Adesso vediamo le proprietà del prodotto di queste matrici e vediamo che riusciamo a tirarci fuori.
+			\begin{equation}
+				\hat I(k,\overline k)=F^{-1}F=\alpha\int_{-\infty}^{\infty}e^{ikx}e^{i\overline k x}dx=\alpha\int_{-\infty}^{\infty}e^{i(k+\overline k)x}dx
+			\end{equation}
+			Segue immediatamente che $\hat I(\lambda k,\lambda \overline k)=\frac{\hat I(k,\overline k)}{\lambda}$ e che $\hat I(k+\lambda,\overline k-\lambda)=\hat I(k,\overline k)$. Ciò implica che la funzione è costante lungo le rette parallele alla bisettrice del secondo e quarto quadrante e che lungo le rette parallele alla bisettrice del primo e terzo quadrante $\hat I$ va come $1/x$.\newline
+			Questo è molto importante perchè significa che sapere quanto vale la funzione in un solo punto\footnote{che non sia lungo la bisettrice del secondo e quarto quadrante (c'è il rischio che diverga)} significa sapere come vale la funzione in tutto $\rm I\! R^2-span\{(1,-1)\}$.\newline
+			Dalla serie di Fourier sappiamo che
+			\[
+				\pscal{\vettore e_1}{\vettore e_2}=0=\int_{-n\pi}^{n\pi}e^{-ix}e^{2ix}dx\quad \quad \forall n\in \rm I\! N
+			\]
+			Visto che la relazione di prima vale per ogni $n$ naturale, varrà anche se mando n a infinito. Quindi $\hat I(-1,2)=0$ e per le relazioni di prima si ha che $\hat I$ è nullo in tutto il piano cartesiano tranne la bisettrice del secondo e quardo quadrante. per sapere quanto vale la basta sostituire a $\overline k$ $k$, infatti
+			\[
+				\hat I(k,k)=\int_{-\infty}^{+\infty}e^{i(k-k)x} dx=\int_{-\infty}^{+\infty}1dx=+\infty
+			\]
+			quindi $\hat I(k,-\overline k)$è proporzionale alla matrice identità, e $F^{-1}(k,x)$ è proporzionale a $e^{-ikx}$.
 
 
 
@@ -412,7 +434,7 @@
 			se si sceglie come base quella canonica, allora diventa tutto più "carino"
 			\[
 				M(\vettore v_1,\dots,\vettore v_n)=\sum_{i_1,\dots,i_n}T_{i_1,\dots,i_n}
-				(\vettorec v_1)_{i_1}(\vettorec v_n)_{i_n}	
+				(\vettore v_1)_{i_1}(\vettore v_n)_{i_n}	
 			\]
 			Nel caso più generico in cui $M:V_1\times\dots\times V_n\rightarrow W$ andrebbe scelta una base diversa per ogni spazio vettoriale $V_i$, concettualmente non cambia molto, ma il numero di indici aumenta, il che renderebbe ancora più confusionaria la situazione, quindi se c'avete voglia fatevelo per conto vostro.
 
@@ -422,7 +444,7 @@
 		\section{Tensori Continui}
 			Adesso possiamo studiare come cambia tutto se come vettori scegliamo dei vettori continui.\newline
 			Partiamo per semplicità da un'applicazione bilineare $M:V\times V\rightarrow W$.
-			Sia $\{\vettore b(x)|x in \rm I\!R\}$ una base di $V$, allora per ogni $\vettore v\in V$ esiste una combinazione lineare di dei vettori di base che sia uguale a $\vettore v$, in matematichese si ha che $\vettore v=\int_I \vettore b(x)\vettorec a(x)dy$, dove $I$ è l'insieme d'integrazione. Quindi una applicazione bilineare tra due vettori contunui $\vettore v_1$ e $\vettore v_2$ diventa
+			Sia $\{\vettore b(x)|x \in \rm I\!R\}$ una base di $V$, allora per ogni $\vettore v\in V$ esiste una combinazione lineare di dei vettori di base che sia uguale a $\vettore v$, in matematichese si ha che $\vettore v=\int_I \vettore b(x)\vettorec a(x)dy$, dove $I$ è l'insieme d'integrazione. Quindi una applicazione bilineare tra due vettori contunui $\vettore v_1$ e $\vettore v_2$ diventa
 			\begin{equation}
 			\begin{split}
 				M(\vettore v_1,\vettore v_2)=& M\bigg(\int_I \vettore b(x_1)\vettorec a_1(x_1)dx_1,\int_I \vettore b(x_2)\vettorec a_2(x_2)dx_2\bigg)=\\
@@ -467,7 +489,7 @@
 			Essi sono funzioni che hanno come dominio lo spazio delle funzioni. Questi oggetti in matematica sono definiti come Funzionali e sono indicati con $T[\vettore v]$.\newline
 			Esistono diversi tipi di funzionali, ma io mi concentrerò su quelli più facili, cioè quelli tali che
 			\begin{equation}
-				\lim_{\epsilon 	\to 0}T[f(x)+\epsilon g(x)]-T[f(x)]=0
+				\lim_{\epsilon 	\to 0}T[\vettore v+\epsilon \vettore w]-T[\vettore v]=0
 			\end{equation}
 			Che chiamerò funzionali continui\footnote{Probablilmente ce l'hanno una definizione per come si deve, ma io non la so, quindi ci metto questa perchè assomigliano alle funzioni continue di Analisi 1}.
 
@@ -475,12 +497,12 @@
 
 		\section{Derivata funzionale}
 			Le analogie tra le funzioni in $n$ variabili e i funzionali sono molte, una di queste è la derivata direzionale.\newline
-			Nelle funzioni in più variabili la derivata direzionale è\footnote{ricordati che $||y||_2=1$} $\lim_{\epsilon \to 0}\frac{f(\mathbf{x}+\epsilon\mathbf{y})-f(\mathbf{x})}{\epsilon}$. Nei funzionali invece di prendere $\mathbf{x},\mathbf{y}$ vettori discreti, prendiamo vettori continui, e così facendo si ottene la derivata funzionale
+			Nelle funzioni in più variabili la derivata direzionale è\footnote{ricordati che $||w||_2=1$} $\lim_{\epsilon \to 0}\frac{f(\vettore v+\epsilon\vettore w)-f(\vettore v)}{\epsilon}$. Nei funzionali invece di prendere $\vettore v,\vettore w$ vettori discreti, prendiamo vettori continui, e così facendo si ottene la derivata funzionale
 			\begin{equation}
-				\frac{\partial F}{\partial g}[f(x)]=\lim_{\epsilon \to 0}\frac{F[f(x)+\epsilon g(x)]-F[f(x)]}{\epsilon}
+				\frac{\partial F}{\partial \vettore w}[\vettore v]=\lim_{\epsilon \to 0}\frac{F[\vettore v+\epsilon \vettore w]-F[\vettore v]}{\epsilon}
 			\end{equation}
-			con $||g||_2=1$. Questa equazione rappresenta la derivata di $F$ nella direzione di $g$.\newline
-			Se si vuole trovare un punto stazionario di un funzionale $F$ bisogna imporre che $\frac{\partial F}{\partial g}=0$ per ogni $g$, che equivarrebe a dire che la derivata deve essere zero in ogni direzione.\newline
+			con $||\vettore w||_2=1$. Questa equazione rappresenta la derivata di $F$ nella direzione di $\vettore w$.\newline
+			Se si vuole trovare un punto stazionario di un funzionale $F$ bisogna imporre che $\frac{\partial F}{\partial \vettore w}=0$ per ogni $\vettore w$, che equivarrebe a dire che la derivata deve essere zero in ogni direzione.\newline
 
 
 
@@ -515,33 +537,34 @@
 			\begin{equation}
 				\frac{\partial{L}}{\partial{x}}=\frac{d}{dt}\bigg(\frac{\partial{L}}{\partial{\dot{x}}} \bigg)
 			\end{equation}
-		Purtroppo in generale minimizzare un funzionale non è così semplice, infatti non sono ancora riuscito a minimizzare il funzionale $N[v]=||Mv||$, che permetterebbe di trovare il nucleo di $M$.
+		Purtroppo in generale minimizzare un funzionale non è così semplice, infatti non sono ancora riuscito a minimizzare il funzionale $N[\vettore v]=||M\vettore v||$, che permetterebbe di trovare il nucleo di $M$.
 
 
 
 
 		\section{Gradiente e Sviluppo in Taylor di Funzionali}
-			In una funzione $f$ in $n$ variabili il gradiente è un vettore $n$ dimenzionale tale che $\nabla f_i=\partial_{e_i} f$, dove $e_i$ è il versore $i$-esimo.\newline
-			Se prendiamo un funzionale $T:(f:[a,b]\rightarrow \rm I\!R)\rightarrow \rm I\!R$, e definiamo $e(x_0)$ il versore associato alla "direzione" $x_0$-esima\footnote{che potrebbe essere $\frac{\delta (x-x_0)}{\delta(0)}$ (perchè $||e(x_0)||_2$ deve essere uguale a $1$), ma preferisco restare generico lasciando $e(x_0)$}, il gradiente di questo tipo di funzionale diventa
+			In una funzione $f$ in $n$ variabili il gradiente è un vettore $n$ dimenzionale tale che $\nabla f_i=\partial_{\vettore e_i} f$, dove $\vettore e_i$ è il versore $i$-esimo.\newline
+			Sia $V$ lo spazio vettoriale delle funzioni $\vettore v:[a,b]\rightarrow R$, se prendiamo un funzionale $T:V\rightarrow \rm I\!R$, e definiamo $\vettore e(x_0)$ il versore associato alla "direzione" $x_0$-esima\footnote{che potrebbe essere $\frac{\delta (x-x_0)}{\delta(0)}$ (perchè $||e(x_0)||_2$ deve essere uguale a $1$), ma preferisco restare generico lasciando $e(x_0)$}, il gradiente di questo tipo di funzionale diventa
 			\begin{equation}
-				(\nabla T[f])(x_0)=\frac{\partial T[f]}{\partial e(x_0)}
+				(\nabla T[\vettore v])(x_0)=\frac{\partial T[\vettore v]}{\partial \vettore e(x_0)}
 			\end{equation}
 			Quindi  il gradiente di un funzionale $\nabla T$, è a sua volta un tensore che va dallo spazio delle funzioni allo spazio dei vettori continui.\newline
-			Generalizzando si ha che il tensore associato alle derivate parziali di ordine $n$-esimo è un tensore $D_n:(f:[a,b]\rightarrow \rm I\!R)\times \rm I\!R^n\rightarrow \rm I\!R$
+			Generalizzando si ha che il tensore associato alle derivate parziali di ordine $n$-esimo è un tensore $D_n:V\times \rm I\!R^n\rightarrow \rm I\!R$
 			\begin{equation}
-				(D_n[f])(x_1,\dots,x_n)=\frac{\partial^n T[f]}{\partial e(x_1)\dots\partial e(x_n)}
+				(D_n[\vettore v])(x_1,\dots,x_n)=\frac{\partial^n T[\vettore v]}{\partial \vettore e(x_1)\dots\partial \vettore e(x_n)}
 			\end{equation}
 			Grazie a ciò è possibile creare un'analogo allo sviluppo in taylor in un continuo di dimenzioni.\newline
-			Come al solito per capire il limite al continuo di qualcosa può essere utile vedere prima come si descrive ciò in un numero finito di dimenzioni, in particolare lo sviluppo in Taylor di una funzione $g(x_1,\dots,x_n)=g(\mathbf x)$ di ordine $m$ attorno al punto $(\hat x_1,\dots,\hat x_n)=\mathbf{\hat x}$ è
+			Come al solito per capire il limite al continuo di qualcosa può essere utile vedere prima come si descrive ciò in un numero finito di dimenzioni, in particolare lo sviluppo in Taylor di una funzione $g(\vettorec x_1,\dots,\vettorec x_n)=g(\vettore x)$ di ordine $m$ attorno al punto $(\hat{\vettorec{x}}_1,\dots,\hat{\vettorec{x}}_n)=\vettore{\hat x}$ è
 			\begin{equation}
-				g(\mathbf{\hat x})+\sum_{i}^{n}\frac{\partial g(\mathbf{\hat x})}{\partial e_i}(x_i-\hat x_i)+\dots+
+				g(\vettore{\hat x})+\sum_{i}^{n}\frac{\partial g(\vettore{\hat x})}{\partial \vettore e_i}(\vettorec x_i-\hat{\vettorec{x}}_i)+\dots+
 				\sum_{i_1,\dots,i_m}^{n}
-				\frac{\partial^m g(\mathbf{\hat x})}
-				{\partial e_{i_1}\dots\partial e_{i_m}}
-				(x_{i_1}-\hat x_{i_m})\dots(x_{i_m}-\hat x_{i_m})
+				\frac{\partial^m g(\vettore{\hat x})}
+				{\partial \vettore e_{i_1}\dots\partial \vettore e_{i_m}}
+				(\vettorec x_{i_1}-\hat{\vettorec{x}}_{i_m})\dots
+				(\vettorec x_{i_m}-\hat{\vettorec{x}}_{i_m})
 			\end{equation}
 			A questo punto, per dedurre lo sviluppo in Taylor di un funzionale basta tenere conto che nel caso finito le coordinate devono andare da $1$ a $n$, quindi ogni $i_j$ assume valori in $\{1,\dots,n\}$ e poi sommare.\newline
-			Nel caso continuo però gli indici $x_j$ assumono valori in $[a,b]$, quindi bisogna sommare su tutti i valori in quell'intervallo, che equivale a integrare.\footnote{spiegazione per niente chiara, riscriverla (anche se il concetto è proprio na stronzata)}\newline
+			Nel caso continuo però gli indici $\vettorec x_j$ assumono valori in $[a,b]$, quindi bisogna sommare su tutti i valori in quell'intervallo, che equivale a integrare.\footnote{spiegazione per niente chiara, riscriverla (anche se il concetto è proprio na stronzata)}\newline
 			Quindi l'equazione dello sviluppo in Taylor di un funzionale diviene
 			\begin{equation}
 				T[\hat f]+\int_a^b \frac{\partial T[\hat f]}{\partial e(x)}[f(x)-\hat f(x)]dx\quad+\dots+
@@ -550,45 +573,40 @@
 				+\underbrace{\int_a^b\dots\int_a^b}_{n\textrm{ volte}}
 				\frac{\partial^n T[\hat f]}{\partial e(x_1)\dots\partial e(x_n)}[f(x_1)-\hat f(x_1)]\dots[f(x_n)-\hat f(x_n)]dx_1\dots dx_n=
 			\]
-			\begin{equation}
-				=\sum_{i=0}^n \Bigg\{\prod_{j=1}^i \int_a^b dx_j[f(x_j)-\hat f(x_j)]\frac{\partial}{\partial e(x_j)}\Bigg\}T[\hat f]
-			\end{equation}
-			che se dio vuole rispetta il teorema di Swartz\footnote{Per chi non si ricordasse è quello che dice che $\partial_x\partial_y f=\partial_y\partial_x f$, e comunque l'ultima equazione è un pò un'abuso di notazione, ma dalle equazioni di prima si dovrebbe capire come funziona}
+			%\begin{equation}
+			%	=\sum_{i=0}^n \Bigg\{\prod_{j=1}^i \int_a^b dx_j[f(x_j)-\hat f(x_j)]\frac{\partial}{\partial e(x_j)}\Bigg\}T[\hat f]
+			%\end{equation}
+			che se dio vuole rispetta il teorema di Swartz\footnote{Per chi non si ricordasse è quello che dice che $\partial_x\partial_y f=\partial_y\partial_x f$}
 
 
 
 
 		\section{Volume parallelogramma in un continuo di dimenzioni}
 			Generalizzare il determinante è più difficile di quanto sembri, e ne parlerò a breve nel paragrafo ~\ref{sec:det} a pagina ~\pageref{sec:det}, ma prima è inutile parlare di determinante se non si sa nemmeno qual'è il limite al continuo del volume di un parallelogramma.\newline
-			Visto che ci troviamo in un continuo di dimenzioni, possiamo individuare una dimenzione con un numero reale $x\in[a,b]$ e la lunghezza dello spigolo in quella direzione avrà un certo valore $f(x)\in[0,+\infty)$.\newline
-			Chiaramente se definiamo il volume come il prodotto di tutti i valori di $f(x)$ perde ogni senzo, ma possiamo tentare di trovare qualcosa che si ci avvicini.\newline
+			Visto che ci troviamo in un continuo di dimenzioni, possiamo individuare una dimenzione con un numero reale $x\in[a,b]$ e la lunghezza dello spigolo in quella direzione avrà un certo valore $\vettorec v(x)\in[0,+\infty)$.\newline
+			Chiaramente se definiamo il volume come il prodotto di tutti i valori di $\vettorec v(x)$ perde ogni senzo, ma possiamo tentare di trovare qualcosa che si ci avvicini.\newline
 
-			Supponiamo di avere un parallelepipedo $n$ dimenzionale, esso può essere descritto da un vettore $v$ che ha come elementi la lunghezza di ogni spigolo $(v_1,\dots,v_n)$, adessso usando un ragionamento simile a quello del paragrafo sul prodotto scalare canonico ~\ref{sec:prod-can} a pagina ~\pageref{sec:prod-can} possiamo visualizzare il vettore come un'istogramma che ha ogni elemento con una larghezza di base $l=1$.\newline
-			Senza perdere di generalità possiamo affermare che il volume del parallelepipedo è il prodotto di ogni elemento del vettore $\prod v_i$ elevato alla larghezza di base (che in questo caso non fa nessuna differenza).\newline
+			Supponiamo di avere un parallelepipedo $n$ dimenzionale, esso può essere descritto da un vettore $\vettore v$ che ha come elementi la lunghezza di ogni spigolo $(v_1,\dots,v_n)$, adessso usando un ragionamento simile a quello del paragrafo sul prodotto scalare canonico ~\ref{sec:prod-can} a pagina ~\pageref{sec:prod-can} possiamo visualizzare il vettore come un'istogramma che ha ogni elemento con una larghezza di base $l=1$.\newline
+			Senza perdere di generalità possiamo affermare che il volume del parallelepipedo è il prodotto di ogni elemento del vettore $\prod \vettorec v_i$ elevato alla larghezza di base (che in questo caso non fa nessuna differenza).\newline
 
-			Adesso prendiamo un parallelepipedo in un continuo di dimenzioni individuato dal vettore continuo $f(x)$ con $f(x)\in[0,+\infty)$ e $x\in[a,b]$ e approssimiamo il vettore continuo $f(x)$ con uno discreto (come quando si fanno gli integrali).\newline
+			Adesso prendiamo un parallelepipedo in un continuo di dimenzioni individuato dal vettore continuo $\vettore v$ con $\vettorec v(x)\in[0,+\infty)$ e $x\in[a,b]$ e approssimiamo il vettore continuo $\vettore v$ con uno discreto (come quando si fanno gli integrali).\newline
 			Il volume del parallelepipedo così definito è uguale a
 			\begin{equation}
 			\label{eq:volterra}
 			\begin{split}
-				\Bigg[\prod_{i=0}^n f\bigg(a+\frac{i(b-a)}{n}\bigg)\Bigg]^{\frac{b-a}{n}}&=
-				\textrm{exp}\Bigg\{\sum_{i=0}^n\frac{b-a}{n}\textrm{ln}\bigg[f\bigg(a+\frac{i(b-a)}{n}\bigg)\bigg]\Bigg\}=\\
-				&=\textrm{exp}\bigg[\int_a^b \textrm{ln}f(x)dx\bigg]
+				\Bigg[\prod_{i=0}^n \vettorec v\bigg(a+\frac{i(b-a)}{n}\bigg)\Bigg]^{\frac{b-a}{n}}&=
+				\textrm{exp}\Bigg\{\sum_{i=0}^n\frac{b-a}{n}\textrm{ln}\bigg[\vettorec v\bigg(a+\frac{i(b-a)}{n}\bigg)\bigg]\Bigg\}=\\
+				&=\textrm{exp}\bigg[\int_a^b \textrm{ln}\vettorec v(x)dx\bigg]
 			\end{split}
 			\end{equation}
 			Dove dal secondo al terzo passaggio ho scritto che la somma dell'area di tutti quei rettangolini è l'integrale di quella roba.\newline
+			L'ultimo integrale è detto l'Integrale di Volterra, perchè lui l'ha scoperto prima di me.
 			Come abbiamo visto grazie al cielo questa roba tende a un valore ben determinato che è pure possibile calcolare. Questo procedimento può essere usato per portare una produttoria generica nel limite al continuo, così come l'integrale può essere usato per portare nel limite al continuo una sommatoria.\footnote{
 				Da notare che non funziona niente se $f$ assume valori negativi, infatti non è possibile decidere se suddividere un numero pari o dispari di volte gli intervallini e quindi è impossibile determinare il segno.
 				\newline Questo viene rispecchiato dal fatto che nella formula scritta come integrale la funzione deve infilarsi dentro un logaritmo, il quale ammette solo argomenti positivi.
 				\newline Comunque è sempre possibile prendere il valore assoluto di $f$ e buona notte.\newline
 
-				Inoltre c'è da dire che questo non é veramente il volume di un parallelogramma in infinite dimenzioni, è semplicemente una definizione che gli ho dato perchè così ha parecchi bonus: è semplice da calcolare, è intuitivo (almeno per me), e il volume di $f(x)=1$ calcolato tra $0$ e $1$ fa 1. Ok, devo ammettere che l'ultima non è proprio convincente...\newline
-
-				Un'ultima cosa e poi la smetto con sta nota a piè di pagina. Promesso.\newline
-				Uno si potrebbe chiedere,:"ma non potevi dare un nome a sto volume anzicchè scrivere ogni volta \emph{il volume di un parallelepipedo in un continuo di dimenzioni}?". La risposta è sì, ma nonostante abbia cercato in rete, ho paura che qualcuno sta cosa l'abbia già definita, e non voglio sovrappore la mia definizione alla loro. In ogni caso se vuoi proprio sapere che nome c'avrei messo, sappi che sarebbe stato "Volugrale" perchè è tipo un misto tra volume e integrale, ma tanto lo so che mi prenderete per il culo per la scelta del nome...\newline
-
-				Come non detto, l'hanno già scoperto e si chiama integrale di Volterra, e anche sta volta qualcuno ci ha pensato prima di me. Dopo quando avrò voglia sostituirò il nome}
-%ricordati di levare la newpage dopo
+				Inoltre c'è da dire che questo non é veramente il volume di un parallelogramma in infinite dimenzioni, è semplicemente una definizione che gli ho dato perchè così ha parecchi bonus: è semplice da calcolare, è intuitivo (almeno per me), e il volume di $\vettorec v(x)=1$ calcolato tra $0$ e $1$ fa 1. Ok, devo ammettere che l'ultima non è proprio convincente...\newline}
 
 
 
@@ -597,21 +615,21 @@
 			Fin'ora abbiamo analizzato i funzionali senza moltiplicarli tra di loro, ma adesso che abbiamo uno strumento che ci manda al continuo le produttorie possiamo vedere come trasforma l'equazione del prodotto vettori-tensore\footnote{l'equazione "originale" è la ~\ref{eq:prod_vett_tens} a pag \pageref{eq:prod_vett_tens}} quando il tensore divena un funzionale.\newline
 			Partiamo scrivendo l'equazione del prodotto tensore-vettori.
 			\begin{equation}
-				\int T(y_1,\dots,y_n)a_1(y_1)\dots a_n(y_n)dy_1\dots dy_n=
+				\int T(\vettorec v_1,\dots,\vettorec v_n)a_1(\vettorec v_1)\dots a_n(\vettorec v_n)d\vettorec v_1\dots d\vettorec v_n=
 			\end{equation}
 			\[
-				=\int T(y_1,\dots,y_n)\prod_{x=1}^n a_x(y_x)dy_x
+				=\int T(\vettorec v_1,\dots,\vettorec v_n)\prod_{x=1}^n a_x(\vettorec v_x)d\vettorec v_x
 			\]
-			adesso se mandiamo $n$ al continuo la $x$ diventa una variabile reale, quindi il tensore diventa un funzionale $T(y_1,\dots,y_n)\rightarrow T[y(x)]$, il differenziale $\prod dy_x$ passa da essere un differenziale in $\rm I\!R^n$ a essere un differenziale nello spazio delle funzioni $d[y(x)]$;\newline
-			Tutte le cose che avevano una $x$ al pedice gli passa all'argomento $a_x\rightarrow a(x)$, $y_x\rightarrow y(x)$, $a_x(y_x)\rightarrow a(x)[y(x)]$\footnote{Non so quanto senso abbia mettere una $x$ sia fuori che dentro il funzionale, intanto io ce lo lascio, male che vada basta scrivere solo $a[y(x)]$ o $a(x)[y]$. Sinceramente credo che la seconda opzione sia quella più corretta, ma intanto la lascio scritta così com'era, non si sa mai}; e infine la produttoria diventa un integrale sfruttando l'equazione ~\ref{eq:volterra} del paragrafo di prima 
+			adesso se mandiamo $n$ al continuo la $x$ diventa una variabile reale, quindi il tensore diventa un funzionale $T(\vettorec v_1,\dots,\vettorec v_n)\rightarrow T[\vettore v]$, il differenziale $\prod d\vettorec v_x$ passa da essere un differenziale in $\rm I\!R^n$ a essere un differenziale nello spazio delle funzioni $d[\vettore v]$;\newline
+			Tutte le cose che avevano una $x$ al pedice gli passa all'argomento $a_x\rightarrow a(x)$, $\vettorec v_x\rightarrow \vettore v(x)$, $a_x(\vettorec v_x)\rightarrow a(x)[\vettorec v(x)]$\footnote{Non so quanto senso abbia mettere una $x$ sia fuori che dentro il funzionale, intanto io ce lo lascio, male che vada basta scrivere solo $a[\vettorec v(x)]$ o $a(x)[\vettore v]$. Sinceramente credo che la seconda opzione sia quella più corretta, ma intanto la lascio scritta così com'era, non si sa mai}; e infine la produttoria diventa un integrale sfruttando l'equazione ~\ref{eq:volterra} del paragrafo di prima 
 			\[
-				\prod_{x=1}^n a_x(y_x)\rightarrow\textrm{exp}\bigg[\int \textrm{ln}\big(a(x)[y(x)]\big)dx\bigg]
+				\prod_{x=1}^n a_x(\vettorec v_x)\rightarrow\textrm{exp}\bigg[\int \textrm{ln}\big( a(x)[\vettorec v(x)]\big)dx\bigg]
 			\]
 			infine tutto diviene
 			\begin{equation}
-				\int T[y(x)]\textrm{exp}\bigg[\int \textrm{ln}\big(a(x)[y(x)]\big)dx\bigg]d[y(x)]
+				\int T[\vettore v]\textrm{exp}\bigg[\int \textrm{ln}\big(a(x)[\vettorec v(x)]\big)dx\bigg]d[\vettore v]
 			\end{equation}
-			Sinceramente non so quanto sia calcolabile un integrale nello spazio delle funzioni (senza sviluppi in Taylor), credo che per andare avanti servano conoscenze che al momento non ho, oppure c'è qualcosa che mi manca.\newline
+			Sinceramente non so quanto sia calcolabile un integrale nello spazio delle funzioni, credo che per andare avanti servano conoscenze che al momento non ho, oppure c'è qualcosa che mi manca.\newline
 			Comunque questa roba credo che ce l'abbia un'applicazione in fisica, infatti l'integrale dei cammini di Feynmann ha una forma simile, ma preferisco non sbilanciarmi visto che di teoria quantistica dei campi non ne so niente
 
 
@@ -619,19 +637,18 @@
 
 		\section{Determinante}
 		\label{sec:det}
-			Il determinante che conosciamo tutti è un'applicazione mulilineare antisimmetrica rispetto ai vettori colonna tale che Det$(e_1,e_2,\dots,e_n)=1$.\newline
-			Riuscire a trovare il tensore associato $\epsilon_{i_1,\dots,i_n}=$Det$(e_{i_1},\dots,e_{i_n})$ è abbastanza semplice.\newline
+			Il determinante che conosciamo tutti è un'applicazione mulilineare antisimmetrica rispetto ai vettori colonna tale che Det$(\vettore e_1,\vettore e_2,\dots,\vettore e_n)=1$.\newline
+			Riuscire a trovare il tensore associato $\epsilon_{i_1,\dots,i_n}=$Det$(\vettore e_{i_1},\dots,\vettore e_{i_n})$ è abbastanza semplice.\newline
 			L'antisimmetria ci assicura che se due incici si ripetono allora il determinante è nullo $\epsilon_{i_1,\dots,i_a,\dots,i_a,\dots,i_n}=-\epsilon_{i_1,\dots,i_a,\dots,i_a,\dots,i_n}=0$.\footnote{questo è in accordo con il fatto che se dei vettori sono linearmente dipendenti allora il determinante si annulla}\newline
 			Un'altra importante proprierà derivante dall'antisimmetria è che un numero pari di permutazioni di indici scambiati a due a due lascia il tensore invariato, mentre un numero dispari lo cambia di segno.\footnote{questo è in accordo col fatto che se scambi due colonne il determinante cambia di segno}\newline
 			Usando il fatto che $\epsilon_{1,2,\dots,n}=1$ si ottiene che il tensore associato al detetermiante è la generalizzazione in $n$ indici del tensore di Levi-Civita.\newline
 
-			Mettendo tutto insieme si ottiene la formula tensoriale del deteminante\footnote{c'è la notazione covariante}
+			Mettendo tutto insieme si ottiene la formula tensoriale del deteminante
 			\begin{equation}
-				\textrm{Det}(v_1,\dots,v_n)=\epsilon_{i_1,\dots,i_n}v_1^{i_1}\dots v_n^{i_n}
+				\textrm{Det}(\vettore v_1,\dots,\vettore v_n)=\epsilon_{i_1,\dots,i_n}(\vettore v_1)_{i_1}\dots (\vettore v_n)_{i_n}
 			\end{equation}
 			Purtroppo però è impossibile generalizzare al continuo il tensore di Levi-Civita visto che i funzionali completamente antisimmetrici soffrono di crisi esistenziali.\newline
-			Infatti se prendo una $f:[a,b]\in\rm I\!R$ e mi calcolo $T[f]$ (con $T$ antisimmetrico) questo mi restituirà un qualche valore, ma se scambio due intervalli del dominio di $f$ è impossibile stabilire se il numero di permutazioni è pari o dispari rendendo impossibile capire se l'applicazione cambia di segno oppure no. Ne consegue che non esiste un limite al continuo del determinante.
-
+			Infatti se prendo una funzione $\vettore v:[a,b]\in\rm I\!R$ e mi calcolo $T[\vettore v]$ (con $T$ antisimmetrico) questo mi restituirà un qualche valore, ma se scambio due intervalli del dominio di $\vettore v$ è impossibile stabilire se il numero di permutazioni è pari o dispari rendendo impossibile capire se l'applicazione cambia di segno oppure no.
 
 
 
