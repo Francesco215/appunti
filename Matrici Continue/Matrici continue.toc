@@ -7,11 +7,11 @@
 \contentsline {section}{\numberline {1.4}Combinazioni lineari}{4}{section.1.4}
 \contentsline {section}{\numberline {1.5}Serie di Furi\IeC {\`e} \footnote {se sai come funziona puoi saltarlo, e comunque fa pi\IeC {\`u} confondere che altro}}{5}{section.1.5}
 \contentsline {section}{\numberline {1.6}Trasformata di Furi\IeC {\`e}}{6}{section.1.6}
-\contentsline {section}{\numberline {1.7}Matrice associata a un'applicazione lineare}{7}{section.1.7}
+\contentsline {section}{\numberline {1.7}Matrice associata a un'applicazione lineare}{8}{section.1.7}
 \contentsline {section}{\numberline {1.8}Cambiamento di base}{8}{section.1.8}
 \contentsline {section}{\numberline {1.9}Propriet\IeC {\`a} $\delta $ di Dirac}{8}{section.1.9}
-\contentsline {section}{\numberline {1.10}Matrice associata alla derivata}{8}{section.1.10}
-\contentsline {section}{\numberline {1.11}Matrice associata alla derivata n-esima}{9}{section.1.11}
+\contentsline {section}{\numberline {1.10}Matrice associata alla derivata}{9}{section.1.10}
+\contentsline {section}{\numberline {1.11}Matrice associata alla derivata n-esima}{10}{section.1.11}
 \contentsline {section}{\numberline {1.12}Risoluzione equazioni differenziali linearii a coefficenti costanti}{10}{section.1.12}
 \contentsline {chapter}{\numberline {2}Algebra Multilineare}{12}{chapter.2}
 \contentsline {section}{\numberline {2.1}Applicazioni Multilineari e Tensori}{12}{section.2.1}

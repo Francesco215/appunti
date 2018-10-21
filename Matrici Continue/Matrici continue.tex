@@ -230,18 +230,18 @@
 				=
 				\begin{vmatrix}
 					\, & & \, \\
-					& F(x,y) & \\
+					& F(x,k) & \\
 					& & 
 				\end{vmatrix}
 				\begin{vmatrix}
 					\\
-					\hat{\vettorec v}(y)\\
+					\hat{\vettorec v}(k)\\
 					\quad
 				\end{vmatrix}
 			\end{equation}
 			La quale scritta in forma esplicita diventa la trasformata di Fourier
 			\begin{equation}
-			\vettorec v(x)=\int_{-\infty}^{+\infty} e^{ixy}\hat{\vettorec v}(y) dy
+			\vettorec v(x)=\int_{-\infty}^{+\infty} e^{ixk}\hat{\vettorec v}(k) dy
 			\end{equation}
 			Da qui si evince cosa rappresenta fisicamente $\hat{\vettore v}$: essa è la funzione che indica i coefficienti da mettere davanti i vettori di base per ottenere il vettore desiderato.\newline
 
@@ -250,22 +250,38 @@
 				\vettore{\hat v}=F^{-1}\vettore{v}
 			\end{equation}
 			Di conseguenza ci tocca trovare l'inversa di $F$ per trovare $\vettore{\hat v}$.\newline
-			Visto che le funzioni trigonometriche sono ortogonali tra di loro in un intervallo finito, vogliamo vedere questa proprietà è anche vera su tutti i reali, di conseguenza ipotizziamo che $F^{-1}(k,x)t=\alpha e^{ikx}$ dove $\alpha \in \rm I\!\!\! C$.
+			Visto che le funzioni trigonometriche sono ortogonali tra di loro in un intervallo finito, vogliamo vedere questa proprietà è anche vera su tutta la retta reale, di conseguenza ipotizziamo che $F^{-1}(k,x)t=\lambda e^{ikx}$ dove $\lambda$ è uno scalare.
 			Adesso vediamo le proprietà del prodotto di queste matrici e vediamo che riusciamo a tirarci fuori.
 			\begin{equation}
-				\hat I(k,\overline k)=F^{-1}F=\alpha\int_{-\infty}^{\infty}e^{ikx}e^{i\overline k x}dx=\alpha\int_{-\infty}^{\infty}e^{i(k+\overline k)x}dx
+			\label{eq:tras_fourie_1}
+				\hat I(k,\overline k)=F^{-1}F=\lambda\int_{-\infty}^{\infty}e^{ikx}e^{i\overline k x}dx=\lambda\int_{-\infty}^{\infty}e^{i(k+\overline k)x}dx
 			\end{equation}
-			Segue immediatamente che $\hat I(\lambda k,\lambda \overline k)=\frac{\hat I(k,\overline k)}{\lambda}$ e che $\hat I(k+\lambda,\overline k-\lambda)=\hat I(k,\overline k)$. Ciò implica che la funzione è costante lungo le rette parallele alla bisettrice del secondo e quarto quadrante e che lungo le rette parallele alla bisettrice del primo e terzo quadrante $\hat I$ va come $1/x$.\newline
-			Questo è molto importante perchè significa che sapere quanto vale la funzione in un solo punto\footnote{che non sia lungo la bisettrice del secondo e quarto quadrante (c'è il rischio che diverga)} significa sapere come vale la funzione in tutto $\rm I\! R^2-span\{(1,-1)\}$.\newline
-			Dalla serie di Fourier sappiamo che
+			Se facciamo l'integrale come se fosse una normale esponenziale otteniamo 
 			\[
-				\pscal{\vettore e_1}{\vettore e_2}=0=\int_{-n\pi}^{n\pi}e^{-ix}e^{2ix}dx\quad \quad \forall n\in \rm I\! N
+				F^{-1}F=-\frac{ie^{i(k+\overline k)x}}{k + \overline k}\bigg|_{-\infty}^{+\infty}	
 			\]
-			Visto che la relazione di prima vale per ogni $n$ naturale, varrà anche se mando n a infinito. Quindi $\hat I(-1,2)=0$ e per le relazioni di prima si ha che $\hat I$ è nullo in tutto il piano cartesiano tranne la bisettrice del secondo e quardo quadrante. per sapere quanto vale la basta sostituire a $\overline k$ $k$, infatti
-			\[
-				\hat I(k,k)=\int_{-\infty}^{+\infty}e^{i(k-k)x} dx=\int_{-\infty}^{+\infty}1dx=+\infty
-			\]
-			quindi $\hat I(k,-\overline k)$è proporzionale alla matrice identità, e $F^{-1}(k,x)$ è proporzionale a $e^{-ikx}$.
+			chiaramente l'equazione qui sopra non è ben determinata, quindi ci tocca usare qualche trucchetto.\newline
+			Visto che le esponenziali complesse causano problemi all'infinito proviamo a moltiplicargi una gaussiana molto larga, cioè $e^{ikx}\rightarrow \lim_{a\to 0}e^{ikx}e^{-\frac{ax^2}{2}}$, così facendo la penultima equazione (\ref{eq:tras_fourie_1}) diventa
+			\begin{equation}
+			\begin{split}
+				\hat I(k,\overline k)=&\lambda\int_{-\infty}^{\infty}e^{i(k+\overline k)x}dx=\lim_{a\to 0}\lambda\int_{-\infty}^{\infty}e^{i(k+\overline k)x}e^{-ax^2}dx=\\
+				=&\lim_{a\to 0}\lambda\int_{-\infty}^{\infty}\exp\Bigg[-ax^2 +i(k+\overline k)x+\frac{(k+\overline k)^2}{4a}-\frac{(k+\overline k)^2}{4a}\Bigg]dx=\\
+				=&\lim_{a\to 0}\lambda e^\frac{(k+\overline k)^2}{4a}
+				\int_{-\infty}^{\infty}\exp\Bigg[i\sqrt ax+\frac{(k+\overline k)}{2\sqrt a}\Bigg]^2dx=\\
+				=&\lim_{a\to 0}\lambda e^\frac{(k+\overline k)^2}{4a}
+				\int_{-\infty}^{\infty}\exp-\Bigg[\sqrt ax-i\frac{(k+\overline k)}{2\sqrt a}\Bigg]^2dx=\\
+				=&\lim_{a\to 0}\frac{\lambda}{\sqrt a} e^\frac{(k+\overline k)^2}{4a}
+				\int_{-\infty}^{\infty}e^{-z^2}dz=\, \Bigg|\textrm{ ho sostituito } z=\sqrt ax-i\frac{(k+\overline k)}{2\sqrt a}\\
+				=&\lambda \pi \lim_{a\to 0}\frac{e^\frac{(k+\overline k)^2}{4a}}{\sqrt{a\pi}}=\qquad \Bigg|\textrm{ sostituisco } \sigma^2=2a\\
+				=& \sqrt{2\pi}\lambda\lim_{\sigma \to 0}\frac{1}{\sigma}e^{-\frac{1}{2}\big(\frac{k+\overline k}{\sigma}\big)^2}=
+				2\pi\lambda\lim_{\sigma \to 0}\frac{1}{\sigma\sqrt{2\pi}}e^{-\frac{1}{2}\big(\frac{k+\overline k}{\sigma}\big)^2}=\\
+				=&2\pi\lambda \delta(k+\overline k)\quad \Bigg| \textrm{ Ho fatto il limite della Gaussiana a varianza nulla}
+			\end{split}
+			\end{equation}
+			Dopo tutti questi conti otteniamo che $\hat I(-k,\overline k)=\textrm{Id}(k,\overline k)$ per $\lambda=\frac{1}{2\pi}$. quindi
+			\begin{equation}
+				F^{-1}(k,x)=\frac{1}{2\pi}e^{-ikx}\quad \Bigg| \quad\delta(k-\overline k)=\frac{1}{2\pi}\int_{-\infty}^{\infty}e^{i(k-\overline k)x}dx
+			\end{equation}
 
 
 

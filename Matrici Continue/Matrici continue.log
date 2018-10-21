@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.11.22)  30 SEP 2018 15:41
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.11.22)  21 OCT 2018 18:01
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -372,7 +372,7 @@ verted-to.pdf Immagini/cherubino.eps>
 (epstopdf)             \includegraphics on input line 36.
 Package epstopdf Info: Output file is already uptodate.
 
-<Immagini/cherubino-eps-converted-to.pdf, id=100, 288.07625pt x 294.09875pt>
+<Immagini/cherubino-eps-converted-to.pdf, id=96, 288.07625pt x 294.09875pt>
 File: Immagini/cherubino-eps-converted-to.pdf Graphic file (type pdf)
 
 <use Immagini/cherubino-eps-converted-to.pdf>
@@ -448,34 +448,33 @@ Underfull \hbox (badness 10000) in paragraph at lines 245--247
 
  []
 
-[6]
-Underfull \hbox (badness 10000) in paragraph at lines 274--277
+[6] [7]
+Underfull \hbox (badness 10000) in paragraph at lines 290--293
 
  []
 
-[7]
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 290.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\delta' on input line 290.
+(hyperref)                removing `math shift' on input line 306.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 290.
+(hyperref)                removing `\delta' on input line 306.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 306.
 
 [8]
-Overfull \hbox (33.38362pt too wide) detected at line 333
+Overfull \hbox (33.38362pt too wide) detected at line 349
 \OMS/cmsy/m/n/10.95 ^^@[]\OT1/cmr/m/n/10.95 (2\OML/cmm/m/it/10.95 ^^Y^^N\OT1/cm
 r/m/n/10.95 (\OML/cmm/m/it/10.95 x \OMS/cmsy/m/n/10.95 ^^@ \OML/cmm/m/it/10.95 
 y\OT1/cmr/m/n/10.95 ))[][] + [] [][] []\OML/cmm/m/it/10.95 dt \OT1/cmr/m/n/10.9
 5 = [] [][] \OML/cmm/m/it/10.95 e[]dt \OT1/cmr/m/n/10.95 = []
  []
 
-
-Overfull \hbox (8.92148pt too wide) detected at line 361
+[9]
+Overfull \hbox (8.92148pt too wide) detected at line 377
 \OML/cmm/m/it/10.95 D[] \OT1/cmr/m/n/10.95 = (\OML/cmm/m/it/10.95 F[] \OMS/cmsy
 /m/n/10.95 ^^N [] ^^N \OML/cmm/m/it/10.95 F\OT1/cmr/m/n/10.95 ) = [] [][] []\OM
 L/cmm/m/it/10.95 e[]e[]dt \OT1/cmr/m/n/10.95 = [] [][] \OML/cmm/m/it/10.95 t[]e
@@ -483,143 +482,133 @@ L/cmm/m/it/10.95 e[]e[]dt \OT1/cmr/m/n/10.95 = [] [][] \OML/cmm/m/it/10.95 t[]e
  []
 
 
-Overfull \hbox (60.40442pt too wide) detected at line 367
+Overfull \hbox (60.40442pt too wide) detected at line 383
 []\OT1/cmr/m/n/10.95 (2\OML/cmm/m/it/10.95 ^^Y^^N\OT1/cmr/m/n/10.95 (\OML/cmm/m
 /it/10.95 x \OMS/cmsy/m/n/10.95 ^^@ \OML/cmm/m/it/10.95 y\OT1/cmr/m/n/10.95 ))[
 ][] \OMS/cmsy/m/n/10.95 ^^@ [] [][] \OML/cmm/m/it/10.95 nt[][]dt \OT1/cmr/m/n/1
 0.95 = [] [][] \OML/cmm/m/it/10.95 t[]e[]dt \OT1/cmr/m/n/10.95 =
  []
 
-[9]
-Overfull \hbox (14.0816pt too wide) in paragraph at lines 375--375
+
+Overfull \hbox (14.0816pt too wide) in paragraph at lines 391--391
 []\T1/cmr/bx/n/14.4 Risoluzione equa-zio-ni dif-fe-ren-zia-li li-nea-rii a coef
 -
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 376--380
+Underfull \hbox (badness 10000) in paragraph at lines 392--396
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 381--383
+Underfull \hbox (badness 10000) in paragraph at lines 397--399
 
  []
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 384--385
+[10]
+Underfull \hbox (badness 10000) in paragraph at lines 400--401
 
  []
 
-[10] [11]
+[11]
 Capitolo 2.
 
-Overfull \hbox (23.04382pt too wide) in paragraph at lines 399--401
+Overfull \hbox (23.04382pt too wide) in paragraph at lines 415--417
 \T1/cmr/m/n/10.95 pro-dot-to ten-so-ria-le, con-si-glio di leg-ge-re []https://
 jeremykun.com/2014/01/17/how-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 417--419
+Underfull \hbox (badness 10000) in paragraph at lines 433--435
 
  []
 
 [12
 
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 462--464
+Underfull \hbox (badness 10000) in paragraph at lines 478--480
 
  []
 
 [13] [14]
-Underfull \hbox (badness 10000) in paragraph at lines 503--506
+Underfull \hbox (badness 10000) in paragraph at lines 519--522
 
  []
 
 [15] [16]
-Underfull \hbox (badness 10000) in paragraph at lines 585--588
+Underfull \hbox (badness 10000) in paragraph at lines 601--604
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 589--591
+Underfull \hbox (badness 10000) in paragraph at lines 605--607
 
  []
 
 [17]
-Underfull \hbox (badness 10000) in paragraph at lines 609--609
+Underfull \hbox (badness 10000) in paragraph at lines 625--625
 
  []
 
 [18]
-Underfull \hbox (badness 10000) in paragraph at lines 640--645
+Underfull \hbox (badness 10000) in paragraph at lines 656--661
 
  []
 
 [19]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 658.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 674.
  [20]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 658.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 674.
  (./Matrici continue.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 658.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 658.
-
-
-Package rerunfilecheck Warning: File `"Matrici continue".out' has changed.
-(rerunfilecheck)                Rerun to get outlines right
-(rerunfilecheck)                or use package `bookmark'.
-
-Package rerunfilecheck Info: Checksums for `"Matrici continue".out':
-(rerunfilecheck)             Before: CC2124ECCAA162CBA145F7EBDB4AA05B;1848
-(rerunfilecheck)             After:  AF9E29980EA38B34C43751D6EF3A1B9B;1777.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 674.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 674.
+Package rerunfilecheck Info: File `"Matrici continue".out' has not changed.
+(rerunfilecheck)             Checksum: AF9E29980EA38B34C43751D6EF3A1B9B;1777.
  ) 
 Here is how much of TeX's memory you used:
  7644 strings out of 493014
- 107227 string characters out of 6133350
- 213587 words of memory out of 5000000
+ 107237 string characters out of 6133350
+ 214640 words of memory out of 5000000
  10963 multiletter control sequences out of 15000+600000
  25234 words of font info for 64 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 31i,19n,37p,807b,478s stack positions out of 5000i,500n,10000p,200000b,80000s
-pdfTeX warning (dest): name{section.1.13} has been referenced but does not ex
-ist, replaced by a fixed one
-
-{/usr/local/texlive/2016/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc}</
-usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></u
-sr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx8.pfb></usr
-/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx9.pfb></usr/l
-ocal/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/lo
-cal/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmex9.pfb></usr
-/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/
-local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/l
-ocal/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/loc
-al/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local
-/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi9.pfb></usr/local/t
-exlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/tex
-live/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texli
-ve/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/local/texlive/
-2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local/texlive/201
-6/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2016/t
-exmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/local/texlive/2016/texm
-f-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2016/texmf
--dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/local/texlive/2016/texmf-d
-ist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2016/texmf-dis
-t/fonts/type1/public/amsfonts/cm/cmsy9.pfb></usr/local/texlive/2016/texmf-dist/
-fonts/type1/public/cm-super/sfbx1095.pfb></usr/local/texlive/2016/texmf-dist/fo
-nts/type1/public/cm-super/sfbx1440.pfb></usr/local/texlive/2016/texmf-dist/font
-s/type1/public/cm-super/sfbx2074.pfb></usr/local/texlive/2016/texmf-dist/fonts/
-type1/public/cm-super/sfbx2488.pfb></usr/local/texlive/2016/texmf-dist/fonts/ty
-pe1/public/cm-super/sfrm0600.pfb></usr/local/texlive/2016/texmf-dist/fonts/type
-1/public/cm-super/sfrm0800.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/
-public/cm-super/sfrm0900.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/pu
-blic/cm-super/sfrm1000.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/publ
-ic/cm-super/sfrm1095.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public
-/cm-super/sfrm1728.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/c
-m-super/sfrm2488.pfb>
-Output written on "Matrici continue.pdf" (21 pages, 473994 bytes).
+ 31i,20n,37p,807b,478s stack positions out of 5000i,500n,10000p,200000b,80000s
+{/usr/local/texlive/2016/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc}
+</usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb><
+/usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx8.pfb></u
+sr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx9.pfb></usr
+/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/
+local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmex9.pfb></u
+sr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></us
+r/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr
+/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/l
+ocal/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/loc
+al/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi9.pfb></usr/local
+/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/t
+exlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/tex
+live/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/local/texliv
+e/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local/texlive/2
+016/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2016
+/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/local/texlive/2016/te
+xmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2016/tex
+mf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/local/texlive/2016/texmf
+-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2016/texmf-d
+ist/fonts/type1/public/amsfonts/cm/cmsy9.pfb></usr/local/texlive/2016/texmf-dis
+t/fonts/type1/public/cm-super/sfbx1095.pfb></usr/local/texlive/2016/texmf-dist/
+fonts/type1/public/cm-super/sfbx1440.pfb></usr/local/texlive/2016/texmf-dist/fo
+nts/type1/public/cm-super/sfbx2074.pfb></usr/local/texlive/2016/texmf-dist/font
+s/type1/public/cm-super/sfbx2488.pfb></usr/local/texlive/2016/texmf-dist/fonts/
+type1/public/cm-super/sfrm0600.pfb></usr/local/texlive/2016/texmf-dist/fonts/ty
+pe1/public/cm-super/sfrm0800.pfb></usr/local/texlive/2016/texmf-dist/fonts/type
+1/public/cm-super/sfrm0900.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/
+public/cm-super/sfrm1000.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/pu
+blic/cm-super/sfrm1095.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/publ
+ic/cm-super/sfrm1728.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public
+/cm-super/sfrm2488.pfb>
+Output written on "Matrici continue.pdf" (21 pages, 476183 bytes).
 PDF statistics:
- 475 PDF objects out of 1000 (max. 8388607)
- 414 compressed objects within 5 object streams
+ 471 PDF objects out of 1000 (max. 8388607)
+ 410 compressed objects within 5 object streams
  113 named destinations out of 1000 (max. 500000)
- 198 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 190 words of extra memory for PDF output out of 10000 (max. 10000000)
 
