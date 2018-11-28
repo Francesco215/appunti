@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.11.22)  21 OCT 2018 18:01
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.11.22)  27 NOV 2018 23:32
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -372,7 +372,7 @@ verted-to.pdf Immagini/cherubino.eps>
 (epstopdf)             \includegraphics on input line 36.
 Package epstopdf Info: Output file is already uptodate.
 
-<Immagini/cherubino-eps-converted-to.pdf, id=96, 288.07625pt x 294.09875pt>
+<Immagini/cherubino-eps-converted-to.pdf, id=100, 288.07625pt x 294.09875pt>
 File: Immagini/cherubino-eps-converted-to.pdf Graphic file (type pdf)
 
 <use Immagini/cherubino-eps-converted-to.pdf>
@@ -466,7 +466,7 @@ Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 (hyperref)                removing `math shift' on input line 306.
 
 [8]
-Overfull \hbox (33.38362pt too wide) detected at line 349
+Overfull \hbox (33.38362pt too wide) detected at line 345
 \OMS/cmsy/m/n/10.95 ^^@[]\OT1/cmr/m/n/10.95 (2\OML/cmm/m/it/10.95 ^^Y^^N\OT1/cm
 r/m/n/10.95 (\OML/cmm/m/it/10.95 x \OMS/cmsy/m/n/10.95 ^^@ \OML/cmm/m/it/10.95 
 y\OT1/cmr/m/n/10.95 ))[][] + [] [][] []\OML/cmm/m/it/10.95 dt \OT1/cmr/m/n/10.9
@@ -474,7 +474,7 @@ y\OT1/cmr/m/n/10.95 ))[][] + [] [][] []\OML/cmm/m/it/10.95 dt \OT1/cmr/m/n/10.9
  []
 
 [9]
-Overfull \hbox (8.92148pt too wide) detected at line 377
+Overfull \hbox (8.92148pt too wide) detected at line 373
 \OML/cmm/m/it/10.95 D[] \OT1/cmr/m/n/10.95 = (\OML/cmm/m/it/10.95 F[] \OMS/cmsy
 /m/n/10.95 ^^N [] ^^N \OML/cmm/m/it/10.95 F\OT1/cmr/m/n/10.95 ) = [] [][] []\OM
 L/cmm/m/it/10.95 e[]e[]dt \OT1/cmr/m/n/10.95 = [] [][] \OML/cmm/m/it/10.95 t[]e
@@ -482,7 +482,7 @@ L/cmm/m/it/10.95 e[]e[]dt \OT1/cmr/m/n/10.95 = [] [][] \OML/cmm/m/it/10.95 t[]e
  []
 
 
-Overfull \hbox (60.40442pt too wide) detected at line 383
+Overfull \hbox (60.40442pt too wide) detected at line 379
 []\OT1/cmr/m/n/10.95 (2\OML/cmm/m/it/10.95 ^^Y^^N\OT1/cmr/m/n/10.95 (\OML/cmm/m
 /it/10.95 x \OMS/cmsy/m/n/10.95 ^^@ \OML/cmm/m/it/10.95 y\OT1/cmr/m/n/10.95 ))[
 ][] \OMS/cmsy/m/n/10.95 ^^@ [] [][] \OML/cmm/m/it/10.95 nt[][]dt \OT1/cmr/m/n/1
@@ -490,86 +490,106 @@ Overfull \hbox (60.40442pt too wide) detected at line 383
  []
 
 
-Overfull \hbox (14.0816pt too wide) in paragraph at lines 391--391
+Overfull \hbox (14.0816pt too wide) in paragraph at lines 387--387
 []\T1/cmr/bx/n/14.4 Risoluzione equa-zio-ni dif-fe-ren-zia-li li-nea-rii a coef
 -
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 392--396
+Underfull \hbox (badness 10000) in paragraph at lines 388--392
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 397--399
+Underfull \hbox (badness 10000) in paragraph at lines 393--395
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 396--397
 
  []
 
 [10]
-Underfull \hbox (badness 10000) in paragraph at lines 400--401
+Underfull \hbox (badness 10000) in paragraph at lines 407--410
 
  []
 
-[11]
+
+Underfull \hbox (badness 10000) in paragraph at lines 438--440
+
+ []
+
+[11] [12]
 Capitolo 2.
 
-Overfull \hbox (23.04382pt too wide) in paragraph at lines 415--417
+Overfull \hbox (23.04382pt too wide) in paragraph at lines 447--449
 \T1/cmr/m/n/10.95 pro-dot-to ten-so-ria-le, con-si-glio di leg-ge-re []https://
 jeremykun.com/2014/01/17/how-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 433--435
+Underfull \hbox (badness 10000) in paragraph at lines 465--467
 
  []
 
-[12
+[13
 
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 478--480
+Underfull \hbox (badness 10000) in paragraph at lines 510--512
 
  []
 
-[13] [14]
-Underfull \hbox (badness 10000) in paragraph at lines 519--522
+[14] [15]
+Underfull \hbox (badness 10000) in paragraph at lines 551--554
 
  []
 
-[15] [16]
-Underfull \hbox (badness 10000) in paragraph at lines 601--604
+[16] [17]
+Underfull \hbox (badness 10000) in paragraph at lines 633--636
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 605--607
-
- []
-
-[17]
-Underfull \hbox (badness 10000) in paragraph at lines 625--625
+Underfull \hbox (badness 10000) in paragraph at lines 637--639
 
  []
 
 [18]
-Underfull \hbox (badness 10000) in paragraph at lines 656--661
+Underfull \hbox (badness 10000) in paragraph at lines 657--657
 
  []
 
 [19]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 674.
- [20]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 674.
+Underfull \hbox (badness 10000) in paragraph at lines 688--693
+
+ []
+
+[20]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 706.
+ [21]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 706.
  (./Matrici continue.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 674.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 674.
-Package rerunfilecheck Info: File `"Matrici continue".out' has not changed.
-(rerunfilecheck)             Checksum: AF9E29980EA38B34C43751D6EF3A1B9B;1777.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 706.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 706.
+
+
+Package rerunfilecheck Warning: File `"Matrici continue".out' has changed.
+(rerunfilecheck)                Rerun to get outlines right
+(rerunfilecheck)                or use package `bookmark'.
+
+Package rerunfilecheck Info: Checksums for `"Matrici continue".out':
+(rerunfilecheck)             Before: FA8D2E327F48BDBA2C9ECDAC92A02667;1867
+(rerunfilecheck)             After:  5BF69C3CF4E8FA2907BDEA3C9B8B4054;1863.
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
  ) 
 Here is how much of TeX's memory you used:
- 7644 strings out of 493014
- 107237 string characters out of 6133350
- 214640 words of memory out of 5000000
- 10963 multiletter control sequences out of 15000+600000
+ 7649 strings out of 493014
+ 107301 string characters out of 6133350
+ 214716 words of memory out of 5000000
+ 10965 multiletter control sequences out of 15000+600000
  25234 words of font info for 64 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  31i,20n,37p,807b,478s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -605,10 +625,10 @@ public/cm-super/sfrm1000.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/pu
 blic/cm-super/sfrm1095.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/publ
 ic/cm-super/sfrm1728.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public
 /cm-super/sfrm2488.pfb>
-Output written on "Matrici continue.pdf" (21 pages, 476183 bytes).
+Output written on "Matrici continue.pdf" (22 pages, 479317 bytes).
 PDF statistics:
- 471 PDF objects out of 1000 (max. 8388607)
- 410 compressed objects within 5 object streams
- 113 named destinations out of 1000 (max. 500000)
- 190 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 483 PDF objects out of 1000 (max. 8388607)
+ 421 compressed objects within 5 object streams
+ 116 named destinations out of 1000 (max. 500000)
+ 198 words of extra memory for PDF output out of 10000 (max. 10000000)
 

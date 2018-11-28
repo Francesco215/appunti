@@ -303,7 +303,7 @@
 
 
 
-		\section{Proprietà $\delta$ di Dirac}
+		\section{Derivata $\delta$ di Dirac}
 			Prima di ricavarci la matrice associata alla derivata occorre sapere un paio di proprietà sulla $\delta$ di dirac.\newline
 			La prima è sapere qual'è la sua derivata, che nonostante sia un pò un'abuso di notazione fa il suo sporco lavoro. Partiamo dall'osservare che $x\delta (x)=0$ per ogni $x$, adesso calcoliamoci la sua derivata.
 			\[
@@ -312,10 +312,6 @@
 			risolvendo per $\delta'(x)$ si ottiene che 
 			\begin{equation}
 				\delta'(x)=-\frac{\delta(x)}{x}
-			\end{equation}
-			La seconda proprietà non la dimostro, essa afferma che
-			\begin{equation}
-				\delta(x-y)=\frac{1}{2\pi} \int_{-\infty}^{+\infty} e^{it(x-y)} dt
 			\end{equation}
 
 
@@ -403,8 +399,44 @@
 
 
 
+		\section{Approssimazione problema degli autovettori}
+			Il problema dei autovalori equivarrebbe a trovare, data una matrice $M$ tutti i possibili vettori $\vettore v$ che soddisfino per qualche $\lambda$ questa equazione
+			\begin{equation}
+				M\vettore v=\lambda \vettore v
+				\label{eq:autovett1}
+			\end{equation}
+			Praticamente per tutto il resto pdf io non farò altro che cercare di di risolvere questo problema per bene, ma per ora si può ottenere una buona approssimazione.\newline
+			Tengo a precisare che questa non è stata un idea mia, ma ho trovato questa procedura nelle dispenze di meccanica quantistica del professor Paffuti.\newline
 
-
+			Dunque, supponiamo che $M:[a,b]\times[a,b]\rightarrow \rm I\!R$, cioè è una matrice quadra. Se la matrice non è particolarmente dispettosa è possibile espanderla in serie con una base ortonormale di vettori che chiameremo $\hat{\vettore{e}}_i$, per semplicità espanderemo entrambe le dimenzioni di $M$ all'$n$-esimo ordine, cioè
+			\[
+				M(x,y)\approx\sum_{i,j}^n \widetilde M_{ij} \hat{\vettore{e}}_i\hat{\vettore{e}}_j
+				\textrm{\quad dove\quad} 
+				\widetilde M_{ij}=\int_a^b\int_a^b M(x,y)\hat{\vettorec{e}}_i(x)\hat{\vettorec{e}}_j(y)dxdy
+			\]
+			Rimettendo tutto dentro l'equazione degli autovettori \ref{eq:autovett1} si ottiene che
+			\[
+				\lambda \vettorec v(x)\approx\int_a^bM(x,y)\vettorec v(y)dy=
+				\sum_{i,j}^n \widetilde M_{ij}\hat{\vettorec{e}}_i(x)
+				\int_a^b\hat{\vettorec{e}}_j(y)\vettorec v(y)dy
+			\]
+			Se definisco $\widetilde \vettorec v_i=\pscal{\hat{\vettore{e}}_i}{\vettore v}$, e moltiplico scalarmente a destra e sinistra per $\hat{\vettore{e}}_k$
+			\[
+				\lambda \pscal{\hat{\vettore{e}}_k}{\vettore v}=\lambda \widetilde \vettorec v_k\approx
+				\sum_{i,j}^n \widetilde M_{ij}\pscal{\hat{\vettore{e}}_k}{\hat{\vettore{e}}_i}\widetilde \vettorec v_j=
+				\sum_{i,j}^n \widetilde M_{ij}\delta_{k,i}\widetilde \vettorec v_j=
+				\sum_j^n\widetilde M_{kj}\widetilde \vettorec v_j 
+			\]
+			e così si ottiene che 
+			\begin{equation}
+				\lambda\widetilde \vettore v\approx\widetilde M \widetilde \vettore v
+			\end{equation}
+			dove vi ricordo che
+			\[
+				\widetilde M_{ij}=\int_a^b\int_a^b M(x,y)\hat{\vettorec{e}}_i(x)\hat{\vettorec{e}}_j(y)dxdy
+				\textrm{\qquad e\qquad} \widetilde \vettorec v_i=\pscal{\hat{\vettore{e}}_i}{\vettore v}
+			\]
+			A questo punto per trovare gli autovalori e i corrispondenti autovettori basta usare i vecchi metodi di algebra lineare, ma visto che per avere una stima sensata l'ordine dello sviluppo deve essere nell'ordine delle decine, conviene far fare tutti i conti a un calcolatore.\newline
 
 
 

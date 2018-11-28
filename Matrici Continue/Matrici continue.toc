@@ -9,17 +9,18 @@
 \contentsline {section}{\numberline {1.6}Trasformata di Furi\IeC {\`e}}{6}{section.1.6}
 \contentsline {section}{\numberline {1.7}Matrice associata a un'applicazione lineare}{8}{section.1.7}
 \contentsline {section}{\numberline {1.8}Cambiamento di base}{8}{section.1.8}
-\contentsline {section}{\numberline {1.9}Propriet\IeC {\`a} $\delta $ di Dirac}{8}{section.1.9}
+\contentsline {section}{\numberline {1.9}Derivata $\delta $ di Dirac}{8}{section.1.9}
 \contentsline {section}{\numberline {1.10}Matrice associata alla derivata}{9}{section.1.10}
-\contentsline {section}{\numberline {1.11}Matrice associata alla derivata n-esima}{10}{section.1.11}
+\contentsline {section}{\numberline {1.11}Matrice associata alla derivata n-esima}{9}{section.1.11}
 \contentsline {section}{\numberline {1.12}Risoluzione equazioni differenziali linearii a coefficenti costanti}{10}{section.1.12}
-\contentsline {chapter}{\numberline {2}Algebra Multilineare}{12}{chapter.2}
-\contentsline {section}{\numberline {2.1}Applicazioni Multilineari e Tensori}{12}{section.2.1}
-\contentsline {section}{\numberline {2.2}Tensori Continui}{13}{section.2.2}
-\contentsline {section}{\numberline {2.3}Funzionali}{14}{section.2.3}
-\contentsline {section}{\numberline {2.4}Derivata funzionale}{14}{section.2.4}
-\contentsline {section}{\numberline {2.5}Equazioni di Eulero-Lagrange}{15}{section.2.5}
-\contentsline {section}{\numberline {2.6}Gradiente e Sviluppo in Taylor di Funzionali}{16}{section.2.6}
-\contentsline {section}{\numberline {2.7}Volume parallelogramma in un continuo di dimenzioni}{17}{section.2.7}
-\contentsline {section}{\numberline {2.8}Come trasforma un Funzionale}{18}{section.2.8}
-\contentsline {section}{\numberline {2.9}Determinante}{19}{section.2.9}
+\contentsline {section}{\numberline {1.13}Approssimazione problema degli autovettori}{11}{section.1.13}
+\contentsline {chapter}{\numberline {2}Algebra Multilineare}{13}{chapter.2}
+\contentsline {section}{\numberline {2.1}Applicazioni Multilineari e Tensori}{13}{section.2.1}
+\contentsline {section}{\numberline {2.2}Tensori Continui}{14}{section.2.2}
+\contentsline {section}{\numberline {2.3}Funzionali}{15}{section.2.3}
+\contentsline {section}{\numberline {2.4}Derivata funzionale}{15}{section.2.4}
+\contentsline {section}{\numberline {2.5}Equazioni di Eulero-Lagrange}{16}{section.2.5}
+\contentsline {section}{\numberline {2.6}Gradiente e Sviluppo in Taylor di Funzionali}{17}{section.2.6}
+\contentsline {section}{\numberline {2.7}Volume parallelogramma in un continuo di dimenzioni}{18}{section.2.7}
+\contentsline {section}{\numberline {2.8}Come trasforma un Funzionale}{19}{section.2.8}
+\contentsline {section}{\numberline {2.9}Determinante}{20}{section.2.9}
