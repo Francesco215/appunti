@@ -406,7 +406,7 @@
 				\label{eq:autovett1}
 			\end{equation}
 			Praticamente per tutto il resto pdf io non farò altro che cercare di di risolvere questo problema per bene, ma per ora si può ottenere una buona approssimazione.\newline
-			Tengo a precisare che questa non è stata un idea mia, ma ho trovato questa procedura nelle dispenze di meccanica quantistica del professor Paffuti.\newline
+
 
 			Dunque, supponiamo che $M:[a,b]\times[a,b]\rightarrow \rm I\!R$, cioè è una matrice quadra. Se la matrice non è particolarmente dispettosa è possibile espanderla in serie con una base ortonormale di vettori che chiameremo $\hat{\vettore{e}}_i$, per semplicità espanderemo entrambe le dimenzioni di $M$ all'$n$-esimo ordine, cioè
 			\[
@@ -436,9 +436,9 @@
 				\widetilde M_{ij}=\int_a^b\int_a^b M(x,y)\hat{\vettorec{e}}_i(x)\hat{\vettorec{e}}_j(y)dxdy
 				\textrm{\qquad e\qquad} \widetilde \vettorec v_i=\pscal{\hat{\vettore{e}}_i}{\vettore v}
 			\]
-			A questo punto per trovare gli autovalori e i corrispondenti autovettori basta usare i vecchi metodi di algebra lineare, ma visto che per avere una stima sensata l'ordine dello sviluppo deve essere nell'ordine delle decine, conviene far fare tutti i conti a un calcolatore.\newline
+			A questo punto per trovare gli autovalori e i corrispondenti autovettori basta usare i vecchi metodi di algebra lineare, ma visto che per avere una stima sensata l'ordine dello sviluppo deve essere almeno nell'ordine delle decine, conviene far fare tutti i conti a un calcolatore.\newline
 
-
+			Questo metodo di approssimazione in genere viene chiamato \"Metodo Variazionale\". Un'altro modo per arrivare allo stesso risultato è disponibile nelle dispense o i libri di Paffuti e Konishi.
 
 
 
@@ -702,5 +702,85 @@
 
 
 
+
+
+
+	\chapter{Applicazioni alla teoria dei gruppi}
+		Nonostante in questo capitolo io faccia un breve ripasso di alcuni concetti base della teoria dei gruppi e delle rappresentazione, per capire quello che c'è scritto c'è bisogno che tu abbia imparato da qualche altra parte i concetti base della teoria dei gruppi.\newline
+		Buoni libri che trattano la materia sono "Group Theory in a nutshell for physics" di Andrew Zee e "Lie Algebras In Particle Physics: from Isospin To Unified Theories" di Howard Georgi
+		\section{SO$(N)$}
+			Il gruppo delle rotazioni in uno spazio $N$-dimenzionale è indicato con SO$(N)$, ogni elemento può essere rappresentato da una matrice, che viene detta "Rappresentazione", ad esempio in SO$(2)$ la rappresentazione è
+			\[
+				R(\theta)=
+				\begin{vmatrix}
+					sen(\theta) & -cos(\theta)\\
+					cos(\theta) &  sen(\theta)
+				\end{vmatrix}
+			\]
+			Per dimenzioni più alte diventa sconveniente lavorare direttamente con gli elementi di un gruppo, ma conviene ragionare in termini in rotazioni infinitesime applicate un numero infinito di volte.\newline
+			Ad esempio nel caso di SO$(2)$ una rotazione di angolo $\theta$ può essere rappresentata come
+			\begin{equation}
+				R(\theta)=\lim_{n\to\infty}\Bigg(
+				\begin{vmatrix}
+					1 & 0\\
+					0 & 1
+				\end{vmatrix}+\frac{\theta}{n}
+				\begin{vmatrix}
+					0 & -1\\
+					1 & 0
+				\end{vmatrix}\Bigg)^n=
+				\sum_{n=0}^{\infty}\frac{1}{n!}
+				\begin{vmatrix}
+					0 & -\theta\\
+					\theta & 0
+				\end{vmatrix}^n=
+				e^{\theta\big|
+				\begin{smallmatrix}
+					0 & -1\\
+					1 & 0 \\
+				\end{smallmatrix}\big|}
+			\end{equation}
+			nel caso di SO$(4)$ l'insieme dei generatori infinitesimi (a meno di qualche segno) è:
+			\[
+			\begin{vmatrix}
+				0&-1&0&0\\
+				1&0&0&0\\
+				0&0&0&0\\
+				0&0&0&0\\
+			\end{vmatrix},\quad
+			\begin{vmatrix}
+				0&0&-1&0\\
+				0&0&0&0\\
+				1&0&0&0\\
+				0&0&0&0\\
+			\end{vmatrix},\quad
+			\begin{vmatrix}
+				0&0&0&-1\\
+				0&0&0&0\\
+				0&0&0&0\\
+				1&0&0&0\\
+			\end{vmatrix},
+			\]
+			\[
+			\begin{vmatrix}
+				0&0&0&0\\
+				0&0&-1&0\\
+				0&1&0&0\\
+				0&0&0&0\\
+			\end{vmatrix},\quad
+			\begin{vmatrix}
+				0&0&0&0\\
+				0&0&0&-1\\
+				0&0&0&0\\
+				0&1&0&0\\
+			\end{vmatrix},\quad
+			\begin{vmatrix}
+				0&0&0&0\\
+				0&0&0&0\\
+				0&0&0&-1\\
+				0&0&1&0\\
+			\end{vmatrix}
+			\]
+			chiaramente per dimenzioni troppo grandi diventerebbe scomodo scrivere una matrice per intera, per questo indichiamo con $J^{(mn)}_{ij}=\delta_{mi}\delta_{nj}-\delta_{mj}\delta_{ni}$
 
 \end{document}
