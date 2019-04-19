@@ -19,10 +19,11 @@
 
 \newcommand{\vettore}[1]{\mathbf{#1}}
 \newcommand{\vettorec}[1]{\textrm{#1}}
-\newcommand{\pscal}[2]{\langle \vettore{#1},\vettore{#2}\rangle}
+\newcommand{\pscal}[2]{\langle #1,#2\rangle}
 
 \begin{document}
 	\maketitle
+	\tableofcontents
 	\newpage
 	\section*{Prefazione}
 		Visto che c'è molta confusione sulla sezione d'urto faccio questi brevi appunti per chiarire bene cos'è e cosa rappresenta.\newline
@@ -46,11 +47,11 @@
 		Solo che c'è un problema: nel caso di un'oggetto sgummato sarà difficile misurare l'area. Per ovviare a questo problema si può mettere uno schermo che sia in grado di contare i fotoni che riceve e una sorgente che sia in grado di contare i fotoni che manda.\newline
 		Chiamiamo $A$ l'area illuminata dalla sorgente quando non c'è il bersaglio in mezzo ai piedi, che per comodità la creiamo quadrangolare, $n_s$ il numero di fotoni che colpiscono lo schermo per unità di tempo e $\Phi$ il numero di fotoni che vengono sparati dalla luce per unità di tempo, allora con una semplice proporzione si può dire che:
 		\begin{equation}
-			\sigma:(n_l-n_s)=A:n_l \rightarrow \sigma=A\times(1-n_s/\Phi)
+			\sigma:(n_l-n_s)=A:n_l \rightarrow \sigma=A\cdot(1-n_s/\Phi)
 			\label{eq:sigma_luce}
 		\end{equation}
 		Adesso vediamo se funziona veramente questo ragionamento.\newline
-		Per verificare prendiamo un bersaglio quadrato di area $\sigma=1$ illuminata da una luce quadrata di area $A=2$, di conseguenza metà dei fotoni verrà bloccata, cioè $n_s=\Phi/2$, quindi $1=2\times(1-\Phi/2\times 1/\Phi)=2\times(1-1/2)=2\times 1/2=1$.\newline
+		Per verificare prendiamo un bersaglio quadrato di area $\sigma=1$ illuminata da una luce quadrata di area $A=2$, di conseguenza metà dei fotoni verrà bloccata, cioè $n_s=\Phi/2$, quindi $1=2\cdot(1-\Phi/2\cdot 1/\Phi)=2\cdot(1-1/2)=2\cdot 1/2=1$.\newline
 		Che bello funziona.\newline
 
 		Una cosa molto importante che poi verrà applicata è l'additività della sezione d'urto, infatti se prendiamo due schermi opachi quadrati con $\sigma=1$ e li mettiamo uno accanto all'altro formando un rettangolo, esso avrà una sezione d'urto uguale a $2$.
@@ -88,9 +89,9 @@
 		\end{equation}
 		Questa equazione però dipende da come è fatta la lastra bersaglio, quindi se vogliamo qualcosa che ne sia indipendente bisogna fare qualche passaggio matematico:
 		\[
-			\sigma=\frac{N_i}{\Phi n_s}\times \frac{An_s}{An_s}=
-			\frac{N_i}{An_s}\times\frac A\Phi\times \frac {n_s}{n_s}=
-			N_a\times \frac1{|j|}\times 1=\frac{N_a}{|j|}
+			\sigma=\frac{N_i}{\Phi n_s}\cdot \frac{An_s}{An_s}=
+			\frac{N_i}{An_s}\cdot\frac A\Phi\cdot \frac {n_s}{n_s}=
+			N_a\cdot \frac1{|j|}\cdot 1=\frac{N_a}{|j|}
 		\]
 		Dove ho detto che il numero di interazioni sulla lastra per unità di tempo $N_i$ è uguale al numero di interazioni su un singolo atomo $N_a$ moltiplicato per quanti atomi ci sono $An_s$ (Area per densità), quindi $N_i/(An_s)=N_a$ e poi ho detto che il flusso attraverso l'area $\Phi$ diviso l'area stessa $A$ dà la densità di corrente, quindi $A/\Phi=1/|j|$.\newline
 		Mettendo tutti insieme si ha che 
@@ -98,7 +99,67 @@
 			\sigma=\frac{N_a}{|j|}
 		\end{equation}
 
+	\section{Sezione d'urto differenziale}
+		Alcune sezioni d'urto per loro natura tendono a divergere. Infatti se consideriamo lo scattering Coulomb tra un flusso di particelle cariche $|j|$ che incide su una carica dello stesso segno si ha che $\sigma=N/|j|=+\infty$ visto che il numero di interazioni al secondo è infinito se consideriamo il flusso incidente come un'infinità di particelle che arrivano al secondo.\newline
+		Questo torna al livello intuitivo perchè se la sezione d'urto è l'area all'interno del quale c'è interazione tra proiettile e bersaglio, allora nel caso dell'interazione eletromagnetica deve fare infinito visto che il campo elettrico di una carica si estende all'infinito, anche se più debole.\newline
+		Però abbiamo detto che sezione d'urto e probabilità vanno a braccetto, quindi certe volte anzichè chiedersi "Qual'è la probabilità che ...", si ci può chiedere "Qual'è la sezione d'urto tale che ...". Nei puntini chiaramente si ci deve mettere qualcosa che abbia senso nel nostro contesto.\newline
+		Adesso ci chiediamo qual'è la sezione d'urto tale che il flusso uscente finisca per andare entro un certo angolo solido infinitesimo $d\Omega$ dopo che avvenga uno scattering coulumbiano, scritto in equazioni sarà così:
+		\begin{equation}
+			\frac{d\sigma}{d\Omega}=\frac{N(\Omega)}{|j|}
+			\label{eq:sez_diff}
+		\end{equation}
+		$d\sigma$ rappresenta una piccola area, tale che se ci entri poi vai a finire in un angolo solido $d\Omega$, come visibile nell'immagine \ref{fig:rut1} e $N(\Omega)$ è il numero di interazioni al secondo che fanno finire (asintoticamente) i proiettili in un angolo $\Omega$.\newline
+		\begin{figure}
+			\centering
+    		\includegraphics[width=\linewidth]{Immagini/solid_angle.png}
+    		\caption{In questo caso $d\sigma=2\pi b db$ e $d\Omega=2\pi \sin(\theta)d\theta$ sono a simmetria cilindrica}
+    		\label{fig:rut1}
+		\end{figure}
+		Questo tipo di scattering è detto "Scattering Rutherford", non mi dedicherò molto a questo argomento perchè è trattato abbastanza bene anche altrove\footnote{Ad esempio nelle dispenze di Claudio Bonati}. Qui dirò soltanto che il risultato finale è che
+		\begin{equation}
+			\frac{d\sigma}{d\Omega}=\Big(\frac{e_1e_2}{2\mu v_\infty^2 }\Big)\frac{1}{\sin^4(\theta/2)}
+		\end{equation}
+		dove $\mu$, $e_2$, $v_\infty$ e $\theta$ sono rispettivamente la massa, la carica, la velocità iniziale e l'angolo di deflessione delle particelle cariche proiettile ed $e_1$ è la carica del bersaglio.
 
-		
+	\section{Cose con onde elettromagnetiche}
+		Nel caso di onde elettromagnetiche si ci può chiedere:"Una volta che ci siamo calcolati come delle onde elettromangetiche di frequenza $\omega$ vengono diffratte da un'ostacolo, non possiamo calcolarci la sezione d'urto come se fosse stata calcolata con dei fotoni anch'essi di frequenza $\omega$?".\newline
+		Effettivamente, se fosse possibile farlo risolverebbe un bel pò di problemi, prima di tutto la necessità di considerare come proiettili delle cose che in un modo o nell'altro sono discrete, ma fare il tutto con dei campi.\newline
+		Immagginato di esser stati bravi ad aver calcolato i campi del problema che stiamo analizzato, cioè
+		\[
+			\begin{cases}
+				E=E_{i}+E_{s}\\
+				B=B_{i}+B_{s}
+
+			\end{cases}
+		\]
+		\begin{figure}
+			\centering
+    		\includegraphics[width=\linewidth]{Immagini/irraggiamento.png}
+    		\caption{Onda incidente e onda rifratta}
+    		\label{fig:irr}
+		\end{figure}
+		Dove $E_{i}$ e $E_{s}$ indicano i campi elettrici incidenti e irraggiati (figura \ref{fig:irr},\footnote{è scirtto $E_s$ perchè la $s$ sta per scattered (irraggiato in inglese)} stessa cosa vale per il campo magnetico.\newline
+		Visto che $\pscal{\langle\vettore S \rangle}{d\vettore{a}}$ è uguale al flusso di potenza che è uguale a quanti fotoni passano attraverso $d\vettore a$ per unità di tempo per quanta energia ha ognuno di loro, scritto in matematichese $\hbar \omega \phi$=$\hbar \omega \pscal{\vettore j}{d\vettore a}$. Quindi
+		\begin{equation}
+			\pscal{\langle\vettore S \rangle}{d\vettore{a}}=\hbar \omega \pscal{\vettore j}{d\vettore a}
+			\rightarrow
+			\langle\vettore S\rangle= \hbar \omega\vettore j
+		\end{equation}
+		dove $\vettore S=\frac{1}{\mu_0}\Re(\vettore E) \times \Re(\vettore B)$, e $\vettore j$ è lo stesso che va a finire nel denominatore dell'equazione \ref{eq:sez_diff}.\newline
+		Ricordiamo la definizione della sezione d'urto differenziale: $\frac{d\sigma}{d\Omega}=N(\Omega)/|j|$ (eq \ref{eq:sez_diff}).
+		\[
+			\frac{d\sigma}{d\Omega}=\frac{N(\Omega)}{|j|}\cdot\frac{\hbar\omega}{\hbar \omega}=\frac{\hbar \omega N(\Omega)}{|\langle \vettore S_i\rangle|}
+		\]
+		Adesso concentriamoci col significato di $\hbar \omega N(\Omega)$, esso è uguale a quanti atomi vanno nella direzione dell'angolo $\Omega$ moltiplicato per la loro energia, quindi possiamo dire che se lo moltiplichiamo per la superfice che essi attraversano ($R^2d\Omega $) otteniamo la densità di potenza irraggiata nell'angolo $\omega $, che è uguale a $R^2|\langle \vettore {S}_s \rangle |d\Omega $, quindi mettendo tutto dentro
+		\begin{equation}
+			\frac{d\sigma}{d\Omega}=\frac{R^2|\langle \vettore S_s(\Omega) \rangle |}{|\langle \vettore S_i\rangle|}
+		\end{equation}
+
+
+
+
+
+
+
 
 \end{document}
