@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2019.3.13)  19 APR 2019 14:34
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2019.3.13)  19 APR 2019 16:55
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -387,11 +387,12 @@ Underfull \hbox (badness 10000) in paragraph at lines 34--36
 
  []
 
-<Immagini/ombra.jpg, id=37, 1284.8pt x 963.6pt>
-File: Immagini/ombra.jpg Graphic file (type jpg)
-<use Immagini/ombra.jpg>
-Package pdftex.def Info: Immagini/ombra.jpg  used on input line 41.
-(pdftex.def)             Requested size: 360.0pt x 269.9973pt.
+<Immagini/ombra_con_blender.png, id=37, 1927.2pt x 1084.05pt>
+File: Immagini/ombra_con_blender.png Graphic file (type png)
+<use Immagini/ombra_con_blender.png>
+Package pdftex.def Info: Immagini/ombra_con_blender.png  used on input line 41.
+
+(pdftex.def)             Requested size: 360.0pt x 202.49797pt.
 [2]
 Underfull \hbox (badness 10000) in paragraph at lines 51--55
 
@@ -402,12 +403,12 @@ Underfull \hbox (badness 10000) in paragraph at lines 59--60
 
  []
 
-[3 <./Immagini/ombra.jpg>]
+
 Underfull \hbox (badness 10000) in paragraph at lines 61--62
 
  []
 
-
+[3 <./Immagini/ombra_con_blender.png>]
 Underfull \hbox (badness 10000) in paragraph at lines 63--64
 
  []
@@ -436,11 +437,15 @@ Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 104.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 104.
 Package rerunfilecheck Info: File `sezione_d'urto.out' has not changed.
 (rerunfilecheck)             Checksum: F832C13475B33EAC893106B377772894;277.
+
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
  ) 
 Here is how much of TeX's memory you used:
  7489 strings out of 492649
- 105445 string characters out of 6129622
- 215012 words of memory out of 5000000
+ 105505 string characters out of 6129622
+ 214010 words of memory out of 5000000
  11254 multiletter control sequences out of 15000+600000
  16763 words of font info for 45 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
@@ -459,10 +464,10 @@ live/2018/texmf-dist/fonts/type1/public/cm-super/sfrm0900.pfb></usr/local/texli
 ve/2018/texmf-dist/fonts/type1/public/cm-super/sfrm1095.pfb></usr/local/texlive
 /2018/texmf-dist/fonts/type1/public/cm-super/sfrm1728.pfb></usr/local/texlive/2
 018/texmf-dist/fonts/type1/public/cm-super/sfrm2488.pfb>
-Output written on sezione_d'urto.pdf (5 pages, 285974 bytes).
+Output written on sezione_d'urto.pdf (5 pages, 860270 bytes).
 PDF statistics:
- 135 PDF objects out of 1000 (max. 8388607)
- 110 compressed objects within 2 object streams
+ 137 PDF objects out of 1000 (max. 8388607)
+ 111 compressed objects within 2 object streams
  22 named destinations out of 1000 (max. 500000)
  43 words of extra memory for PDF output out of 10000 (max. 10000000)
 

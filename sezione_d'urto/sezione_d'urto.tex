@@ -1,7 +1,7 @@
 %\documentclass[11pt,fleqn]{book}%
 %\documentclass{exam}%
 \documentclass[11pt,a4paper]{article}
-\date{{\LARGE Febbraio 2018}}
+\date{{\LARGE Aprile 2019}}
 \usepackage[italian]{babel}
 \usepackage[T1]{fontenc}
 \usepackage{graphicx}
@@ -38,8 +38,8 @@
 		Chiamarente se l'oggetto è una superfice orientata ortogonalmente al facio luminoso, la sua sezione d'urto sarà uguale alla sua area.\newline
 		\begin{figure}
 			\centering
-    		\includegraphics[width=\linewidth]{Immagini/ombra.jpg}
-    		\caption{disegno illustrativo autistico}
+    		\includegraphics[width=\linewidth]{Immagini/ombra_con_blender.png}
+    		\caption{Immagine fatta male illustrativa}
     		\label{fig:ombra}
 		\end{figure}
 
@@ -70,7 +70,7 @@
 		Sempre rimandendo nel caso del vetro traslucido posso fare questa affermazione:Se il fotone viene assorbito, allora vuol dire che ha interagito con un'atomo dell vetro, altrimenti è passato indisturbato.\newline
 
 		Ora vogliamo vedere se è possible legare la probalbilirà di interazione $P$ con la sezione d'urto.\newline
-		Sempre usando la notazione della sezione \ref{sec:opaco} e dell'equazione \ref{eq:sigma_luce}, possiamo dire che la probabilità $P$ che il fotone incida sia quanti non ne arrivano sullo schermo per unità di tempo $N_i=(\Phi-n_s)$, diviso quanto ne arrivano in totale $\Phi$, quindi:
+		Sempre usando la notazione della sezione \ref{sec:opaco} e dell'equazione \ref{eq:sigma_luce}, possiamo dire che la probabilità $P$ che il fotone incida sia quanti ne vengono assorbiti dal bersaglio per unità di tempo, che sono tanti quanti a quellli che non arrivano sullo schermo per unità di tempo $N_i=(\Phi-n_s)$, diviso quanto ne arrivano in totale $\Phi$, quindi:
 		\begin{equation}
 			P=\frac {N_i} \Phi=\Big(1-\frac {n_s}\Phi\Big)=\frac\sigma A
 			\label{eq:prob1}
@@ -92,7 +92,7 @@
 			\frac{N_i}{An_s}\times\frac A\Phi\times \frac {n_s}{n_s}=
 			N_a\times \frac1{|j|}\times 1=\frac{N_a}{|j|}
 		\]
-		Dove ho detto che il numero di interazioni sulla lastra per unità di tempo $N_i$ è uguale al numero di interazioni su un singolo atomo $N_a$ moltiplicato per quanti atomi ci sono $An_s$ (Area per densità), quindi $N_a/(An_s)=N_i$ e poi ho detto che il flusso attraverso l'area $\Phi$ diviso l'area stessa $A$ dà la densità di corrente, quindi $A/\Phi=1/|j|$.\newline
+		Dove ho detto che il numero di interazioni sulla lastra per unità di tempo $N_i$ è uguale al numero di interazioni su un singolo atomo $N_a$ moltiplicato per quanti atomi ci sono $An_s$ (Area per densità), quindi $N_i/(An_s)=N_a$ e poi ho detto che il flusso attraverso l'area $\Phi$ diviso l'area stessa $A$ dà la densità di corrente, quindi $A/\Phi=1/|j|$.\newline
 		Mettendo tutti insieme si ha che 
 		\begin{equation}
 			\sigma=\frac{N_a}{|j|}
