@@ -4,5 +4,6 @@
 \contentsline {section}{\numberline {2}Sezione d'urto s'un oggetto traslucido}{3}{section.2}
 \contentsline {section}{\numberline {3}Collegamento con la probabilit\IeC {\`a}}{4}{section.3}
 \contentsline {section}{\numberline {4}Sezione d'urto di una particella}{4}{section.4}
-\contentsline {section}{\numberline {5}Sezione d'urto differenziale}{5}{section.5}
-\contentsline {section}{\numberline {6}Cose con onde elettromagnetiche}{7}{section.6}
+\contentsline {section}{\numberline {5}Sezione d'urto con due gas/plasmi che si scontrano}{5}{section.5}
+\contentsline {section}{\numberline {6}Sezione d'urto differenziale}{6}{section.6}
+\contentsline {section}{\numberline {7}Cose con onde elettromagnetiche}{8}{section.7}

@@ -86,6 +86,7 @@
 		dove la prima eguaglianza viene dall'equazione \ref{eq:prob1}, risolvendo per sigma si ottiene che 
 		\begin{equation}
 			\sigma=\frac{N_i}{\Phi n_s}
+			\label{eq:sez_lastra}
 		\end{equation}
 		Questa equazione però dipende da come è fatta la lastra bersaglio, quindi se vogliamo qualcosa che ne sia indipendente bisogna fare qualche passaggio matematico:
 		\[
@@ -99,16 +100,37 @@
 			\sigma=\frac{N_a}{|j|}
 		\end{equation}
 
+	\section{Sezione d'urto con due gas/plasmi che si scontrano}
+		Fin'ora abbiamo considerato dei bersagli fermi che vengono colpiti da particelle (nello specifico fotoni), adesso considereremo ammassi di particelle che si scontrano tra di loro.\newline
+		Questo è quello che succede ad esempio al CERN, dove per investigare cosa succede quando si scontrano delle particelle le une contro le altre si creano due fasci di particelle che circolano in direzione opposta ad altissima velocità e poi si mette un rilevatore nel mezzo che misura cosa avviene.\newline
+
+		Supponiamo di avere due specie di particelle con densità per unità di volume $n_1$ e $n_2$, una velocità relativa\footnote{Si suppone per semplicità che tutte le partivelle della stessa specie viaggiano con la stessa identica velocità} $v_r$ e che ci sia un numero di interazioni per unità di volume e per unità di tempo $N$.\newline
+		Adesso cerchiamo di vedere come queste variabili sono collegate con la definizione di sezione d'urto \ref{eq:sez_lastra}.\newline
+
+		Adesso mettiamoci nel sistema di riferimento nella quale la specie 2 è ferma\footnote{Volendo potevamo prendere la specie la specie 1, tanto non cambia niente, basta che almeno una delle due stia ferma}, in questo modo la specie 2 diventa il bersaglio.\newline
+		Per passare dalla densità per unità di volume $n_2$ a quella per unità di superfice $n_s$ basta moltiplicarla per $dx$ ($n_s=n_2dx$)\footnote{Questo perchè se hai in generale una funzione $f$ di cui sai $df/dV$, allora $df/dV\cdot dx=df/ds$}.\newline
+		Visto che ora le particelle che si muovono sono quelli della specie 1 possiamo determinare $\Phi$, cioè il flusso di queste particelle. Visto che sappiamo la densità di volume $n_1$ delle paricelle della specie 1 e la loro velocità $v_r$, possiamo dire che $\Phi dx=n_1v_r$. Adesso mettiamo tutto in mezzo\newline
+		\[
+			\frac{d\sigma}{dx}=\frac{N_s}{\Phi n_s}\cdot\frac{dx}{dx}=\frac{N_s}{\Phi dx}\cdot\frac{dx}{n_s}=\frac{N_s}{n_1n_2v_r}
+		\]
+		dove $N_s$ sono il numero di interazioni nella superficie.\newline
+		Così  peròotteniamo la sezione d'urto di un elemento di superfice con spessore infinitesimo $dx$ di gas ($d\sigma/dx$), noi vogliamo levare quel $dx$, quindi possiamo dire che il numero di interazioni per unità di superfice, integrato in dx darà il numero di interazioni in tutto il volume, cioè $\int N_sdx=N_v$, quindi.
+		\begin{equation}
+			\sigma=\frac{N_v}{n_1n_2v_r}
+		\end{equation} 
+
+
 	\section{Sezione d'urto differenziale}
 		Alcune sezioni d'urto per loro natura tendono a divergere. Infatti se consideriamo lo scattering Coulomb tra un flusso di particelle cariche $|j|$ che incide su una carica dello stesso segno si ha che $\sigma=N/|j|=+\infty$ visto che il numero di interazioni al secondo è infinito se consideriamo il flusso incidente come un'infinità di particelle che arrivano al secondo.\newline
-		Questo torna al livello intuitivo perchè se la sezione d'urto è l'area all'interno del quale c'è interazione tra proiettile e bersaglio, allora nel caso dell'interazione eletromagnetica deve fare infinito visto che il campo elettrico di una carica si estende all'infinito, anche se più debole.\newline
+		Questo torna al livello intuitivo perchè se la sezione d'urto è l'area all'interno del quale c'è interazione tra proiettile e bersaglio, allora nel caso dell'interazione eletromagnetica deve fare infinito visto che il campo elettrico di una carica si estende all'infinito, anche se diventa via via più debole.\newline
 		Però abbiamo detto che sezione d'urto e probabilità vanno a braccetto, quindi certe volte anzichè chiedersi "Qual'è la probabilità che ...", si ci può chiedere "Qual'è la sezione d'urto tale che ...". Nei puntini chiaramente si ci deve mettere qualcosa che abbia senso nel nostro contesto.\newline
-		Adesso ci chiediamo qual'è la sezione d'urto tale che il flusso uscente finisca per andare entro un certo angolo solido infinitesimo $d\Omega$ dopo che avvenga uno scattering coulumbiano, scritto in equazioni sarà così:
+
+		Adesso ci chiediamo qual'è la sezione d'urto tale che il flusso uscente finisca per andare entro un certo angolo solido infinitesimo $d\Omega$ dopo che avvenga uno scattering coulumbiano. Scritto in equazioni sarà così:
 		\begin{equation}
 			\frac{d\sigma}{d\Omega}=\frac{N(\Omega)}{|j|}
 			\label{eq:sez_diff}
 		\end{equation}
-		$d\sigma$ rappresenta una piccola area, tale che se ci entri poi vai a finire in un angolo solido $d\Omega$, come visibile nell'immagine \ref{fig:rut1} e $N(\Omega)$ è il numero di interazioni al secondo che fanno finire (asintoticamente) i proiettili in un angolo $\Omega$.\newline
+		$d\sigma$ rappresenta una piccola area, tale che se ci entri poi vai a finire in un angolo solido $d\Omega$, (immagine \ref{fig:rut1}) e $N(\Omega)$ è il numero di interazioni al secondo che fanno finire asintoticamente i proiettili in un angolo $\Omega$.\newline
 		\begin{figure}
 			\centering
     		\includegraphics[width=\linewidth]{Immagini/solid_angle.png}
@@ -123,7 +145,7 @@
 
 	\section{Cose con onde elettromagnetiche}
 		Nel caso di onde elettromagnetiche si ci può chiedere:"Una volta che ci siamo calcolati come delle onde elettromangetiche di frequenza $\omega$ vengono diffratte da un'ostacolo, non possiamo calcolarci la sezione d'urto come se fosse stata calcolata con dei fotoni anch'essi di frequenza $\omega$?".\newline
-		Effettivamente, se fosse possibile farlo risolverebbe un bel pò di problemi, prima di tutto la necessità di considerare come proiettili delle cose che in un modo o nell'altro sono discrete, ma fare il tutto con dei campi.\newline
+		Effettivamente, se fosse possibile farlo risolverebbe un bel pò di problemi: prima di tutto la necessità di considerare come proiettili delle cose che in un modo o nell'altro sono discrete, ma fare il tutto con dei campi.\newline
 		Immagginato di esser stati bravi ad aver calcolato i campi del problema che stiamo analizzato, cioè
 		\[
 			\begin{cases}
@@ -138,8 +160,8 @@
     		\caption{Onda incidente e onda rifratta}
     		\label{fig:irr}
 		\end{figure}
-		Dove $E_{i}$ e $E_{s}$ indicano i campi elettrici incidenti e irraggiati (figura \ref{fig:irr},\footnote{è scirtto $E_s$ perchè la $s$ sta per scattered (irraggiato in inglese)} stessa cosa vale per il campo magnetico.\newline
-		Visto che $\pscal{\langle\vettore S \rangle}{d\vettore{a}}$ è uguale al flusso di potenza che è uguale a quanti fotoni passano attraverso $d\vettore a$ per unità di tempo per quanta energia ha ognuno di loro, scritto in matematichese $\hbar \omega \phi$=$\hbar \omega \pscal{\vettore j}{d\vettore a}$. Quindi
+		Dove $E_{i}$ e $E_{s}$ indicano i campi elettrici incidenti e irraggiati (figura \ref{fig:irr}),\footnote{è scirtto $E_s$ perchè la $s$ sta per scattered (irraggiato in inglese)} stessa cosa vale per il campo magnetico.\newline
+		Visto che $\pscal{\langle\vettore S \rangle}{d\vettore{a}}$ è uguale al flusso di potenza, che è uguale a quanti fotoni passano attraverso $d\vettore a$ per unità di tempo moltiplicato per quanta energia ha ognuno di loro. Scritto in matematichese $\hbar \omega \phi$=$\hbar \omega \pscal{\vettore j}{d\vettore a}$, quindi
 		\begin{equation}
 			\pscal{\langle\vettore S \rangle}{d\vettore{a}}=\hbar \omega \pscal{\vettore j}{d\vettore a}
 			\rightarrow
@@ -148,9 +170,17 @@
 		dove $\vettore S=\frac{1}{\mu_0}\Re(\vettore E) \times \Re(\vettore B)$, e $\vettore j$ è lo stesso che va a finire nel denominatore dell'equazione \ref{eq:sez_diff}.\newline
 		Ricordiamo la definizione della sezione d'urto differenziale: $\frac{d\sigma}{d\Omega}=N(\Omega)/|j|$ (eq \ref{eq:sez_diff}).
 		\[
-			\frac{d\sigma}{d\Omega}=\frac{N(\Omega)}{|j|}\cdot\frac{\hbar\omega}{\hbar \omega}=\frac{\hbar \omega N(\Omega)}{|\langle \vettore S_i\rangle|}
+			d\sigma=\frac{N(\Omega)d\Omega}{|j|}\cdot\frac{\hbar\omega}{\hbar \omega}=
+			\frac{\hbar \omega N(\Omega)d\Omega}{|\langle \vettore S_i\rangle|}
 		\]
-		Adesso concentriamoci col significato di $\hbar \omega N(\Omega)$, esso è uguale a quanti atomi vanno nella direzione dell'angolo $\Omega$ moltiplicato per la loro energia, quindi possiamo dire che se lo moltiplichiamo per la superfice che essi attraversano ($R^2d\Omega $) otteniamo la densità di potenza irraggiata nell'angolo $\omega $, che è uguale a $R^2|\langle \vettore {S}_s \rangle |d\Omega $, quindi mettendo tutto dentro
+		Adesso concentriamoci col significato di $\hbar \omega N(\Omega)d\Omega$, esso è uguale a quanti fotoni vanno nella direzione dell'angolo infinitesimo $d\Omega$ moltiplicato per la loro energia.\newline
+		Quindi possiamo dire che se lo moltiplichiamo per la superfice che essi attraversano ($R^2d\Omega $) otteniamo potenza irraggiata nell'angolo $d\Omega$.\newline
+		Esso è uguale al flusso del vettore di poyinting attraverso la stessa superfice, che è $R^2|\langle \vettore {S}_s \rangle |d\Omega $. Quindi mettendo tutto dentro si ha che
+		\[
+			d\sigma=\frac{\hbar \omega N(\Omega)d\Omega}{|\langle \vettore S_i\rangle|}=
+			\frac{R^2|\langle \vettore S_s(\Omega) \rangle |d\Omega}{|\langle \vettore S_i\rangle|}
+		\]
+		adesso basta riportare il differenziale a sinistra e si ottiene la formula della sezione d'urto differenziale
 		\begin{equation}
 			\frac{d\sigma}{d\Omega}=\frac{R^2|\langle \vettore S_s(\Omega) \rangle |}{|\langle \vettore S_i\rangle|}
 		\end{equation}

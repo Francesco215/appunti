@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2019.3.13)  19 APR 2019 21:34
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2019.3.13)  20 APR 2019 17:21
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -365,7 +365,7 @@ Package epstopdf Info: Source file: <Immagini/cherubino.eps>
 verted-to.pdf Immagini/cherubino.eps>
 (epstopdf)             \includegraphics on input line 26.
 Package epstopdf Info: Output file is already uptodate.
-<Immagini/cherubino-eps-converted-to.pdf, id=28, 288.07625pt x 294.09875pt>
+<Immagini/cherubino-eps-converted-to.pdf, id=32, 288.07625pt x 294.09875pt>
 File: Immagini/cherubino-eps-converted-to.pdf Graphic file (type pdf)
 <use Immagini/cherubino-eps-converted-to.pdf>
 Package pdftex.def Info: Immagini/cherubino-eps-converted-to.pdf  used on input
@@ -391,7 +391,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 35--37
 
  []
 
-<Immagini/ombra_con_blender.png, id=54, 1927.2pt x 1084.05pt>
+<Immagini/ombra_con_blender.png, id=59, 1927.2pt x 1084.05pt>
 File: Immagini/ombra_con_blender.png Graphic file (type png)
 <use Immagini/ombra_con_blender.png>
 Package pdftex.def Info: Immagini/ombra_con_blender.png  used on input line 42.
@@ -432,34 +432,54 @@ Underfull \hbox (badness 10000) in paragraph at lines 71--72
 
  []
 
-[4] [5]
-<Immagini/solid_angle.png, id=104, 665.3658pt x 410.4936pt>
+[4]
+Underfull \hbox (badness 10000) in paragraph at lines 104--106
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 107--109
+
+ []
+
+[5]
+Underfull \hbox (badness 10000) in paragraph at lines 110--113
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 124--127
+
+ []
+
+[6]
+<Immagini/solid_angle.png, id=125, 665.3658pt x 410.4936pt>
 File: Immagini/solid_angle.png Graphic file (type png)
 <use Immagini/solid_angle.png>
-Package pdftex.def Info: Immagini/solid_angle.png  used on input line 114.
+Package pdftex.def Info: Immagini/solid_angle.png  used on input line 136.
 (pdftex.def)             Requested size: 360.0pt x 222.1017pt.
- [6 <./Immagini/solid_angle.png>]
-<Immagini/irraggiamento.png, id=116, 1034.86626pt x 493.845pt>
+ [7 <./Immagini/solid_angle.png>]
+<Immagini/irraggiamento.png, id=137, 1034.86626pt x 493.845pt>
 File: Immagini/irraggiamento.png Graphic file (type png)
 <use Immagini/irraggiamento.png>
-Package pdftex.def Info: Immagini/irraggiamento.png  used on input line 137.
+Package pdftex.def Info: Immagini/irraggiamento.png  used on input line 159.
 (pdftex.def)             Requested size: 360.0pt x 171.79337pt.
- [7 <./Immagini/irraggiamento.png>]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 165.
+ [8 <./Immagini/irraggiamento.png>]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 195.
 
-[8]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 165.
+[9]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 195.
  (./sezione_d'urto.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 165.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 165.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 195.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 195.
 Package rerunfilecheck Info: File `sezione_d'urto.out' has not changed.
-(rerunfilecheck)             Checksum: 719444B349B2C1B9260A7E5EC31DAD38;406.
+(rerunfilecheck)             Checksum: BA57FB942C5B5E7B81156E101E85505D;491.
  ) 
 Here is how much of TeX's memory you used:
- 7530 strings out of 492649
- 106096 string characters out of 6129622
- 215204 words of memory out of 5000000
- 11272 multiletter control sequences out of 15000+600000
+ 7538 strings out of 492649
+ 106184 string characters out of 6129622
+ 215262 words of memory out of 5000000
+ 11274 multiletter control sequences out of 15000+600000
  18475 words of font info for 49 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  28i,11n,37p,803b,478s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -474,20 +494,22 @@ al/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local
 /texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/t
 exlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local/texl
 ive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive
-/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/
-2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/20
-18/texmf-dist/fonts/type1/public/cm-super/sfbx1095.pfb></usr/local/texlive/2018
-/texmf-dist/fonts/type1/public/cm-super/sfbx1440.pfb></usr/local/texlive/2018/t
-exmf-dist/fonts/type1/public/cm-super/sfrm0600.pfb></usr/local/texlive/2018/tex
-mf-dist/fonts/type1/public/cm-super/sfrm0800.pfb></usr/local/texlive/2018/texmf
--dist/fonts/type1/public/cm-super/sfrm0900.pfb></usr/local/texlive/2018/texmf-d
-ist/fonts/type1/public/cm-super/sfrm1095.pfb></usr/local/texlive/2018/texmf-dis
-t/fonts/type1/public/cm-super/sfrm1728.pfb></usr/local/texlive/2018/texmf-dist/
-fonts/type1/public/cm-super/sfrm2488.pfb>
-Output written on sezione_d'urto.pdf (8 pages, 1203882 bytes).
+/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/local/texlive/20
+18/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/201
+8/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2018/
+texmf-dist/fonts/type1/public/amsfonts/cm/cmsy9.pfb></usr/local/texlive/2018/te
+xmf-dist/fonts/type1/public/cm-super/sfbx1095.pfb></usr/local/texlive/2018/texm
+f-dist/fonts/type1/public/cm-super/sfbx1440.pfb></usr/local/texlive/2018/texmf-
+dist/fonts/type1/public/cm-super/sfrm0600.pfb></usr/local/texlive/2018/texmf-di
+st/fonts/type1/public/cm-super/sfrm0800.pfb></usr/local/texlive/2018/texmf-dist
+/fonts/type1/public/cm-super/sfrm0900.pfb></usr/local/texlive/2018/texmf-dist/f
+onts/type1/public/cm-super/sfrm1095.pfb></usr/local/texlive/2018/texmf-dist/fon
+ts/type1/public/cm-super/sfrm1728.pfb></usr/local/texlive/2018/texmf-dist/fonts
+/type1/public/cm-super/sfrm2488.pfb>
+Output written on sezione_d'urto.pdf (9 pages, 1228152 bytes).
 PDF statistics:
- 213 PDF objects out of 1000 (max. 8388607)
- 174 compressed objects within 2 object streams
- 36 named destinations out of 1000 (max. 500000)
- 69 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 241 PDF objects out of 1000 (max. 8388607)
+ 199 compressed objects within 2 object streams
+ 42 named destinations out of 1000 (max. 500000)
+ 77 words of extra memory for PDF output out of 10000 (max. 10000000)
 
