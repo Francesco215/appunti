@@ -1,0 +1,62 @@
+\documentclass[10pt,a4paper]{article}
+\usepackage{verbatim}
+\usepackage{subcaption}
+\usepackage{karnaugh-map}
+\usepackage[utf8]{inputenc}
+\usepackage[italian]{babel}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage[left=2cm,right=2cm,top=2cm,bottom=2cm]{geometry}
+\newcommand{\rem}[1]{[\emph{#1}]}
+\newcommand{\exn}{\phantom{xxx}}
+\newcommand{\limx}{\lim_{dx\to 0}}
+
+\author{Francesco Sacco}
+\title{Proof that the derivative of $e^x$ is itself}
+\begin{document}
+\date{24 Aprile 2019}
+\maketitle
+In this document i'm going to use just the definition of derivative and basic algebraic rules to prove that the solution to $f'(x)=\tau f(x)$ is $e^{\tau x}$.
+\section*{Proof}
+	let's start by writing $f'(x)$ in terms of the limit.
+	\begin{equation}
+		f'(x)=\limx f'(x-dx)=\lim_{dx\to 0}\frac{f(x)-f(x-dx)}{dx}=\limx\tau f(x-dx)
+	\end{equation}
+	I've already used the fact that the derivative must be continuos\footnote{Look at the appendix to see why that must be true, but for now i think you can survive by assuming it to be true}.\newline
+	Now we can isolate $f(x)$ by bringing on the right side everything else.
+	\begin{equation}
+		f(x)=\limx f(x-dx)(\tau dx+1)
+	\end{equation}
+	that means that
+	\[
+		\limx f(x-dx)=\limx f(x-2dx)(\tau dx+1) \rightarrow f(x)=\limx f(x-2dx)(\tau dx+1)^2
+	\]
+	and
+	\[
+		\limx f(x-2dx)=\limx f(x-3dx)(\tau dx+1) \rightarrow f(x)=\limx f(x-3dx)(\tau dx+1)^3
+	\]
+	continuing this thing $n$ times we get
+	\begin{equation}
+		f(x)=\limx f(x-ndx)(\tau dx+1)^n
+	\end{equation}
+	that is true for every $n$\footnote{To be fear $n$ should be an integer, but we can choose either $dx$ to be a integer divisor of $x$ or we can do some trickery whidt some $\epsilon$s and $\delta$s. For now i don't think this is really important}, if we choose to set $n=\frac x{dx}$ we get that
+	\begin{equation}
+		f(x)=\limx f(0)(\tau dx+1)^\frac x{dx}
+	\end{equation}
+	if we multiply and divide the exponent by $\tau$ e define $k=\tau dx$ we get
+	\begin{equation}
+		f(x)=f(0)\big[\lim_{k\to 0}(k+1)^{1/k}\big]^{\tau x}
+	\end{equation}
+	if we define $e$ the number to witch the limit $\lim_{k\to 0}(k+1)^{1/k}$ converges we can write\footnote{How can we be so sure that the limit converges? Look at the appendix.}
+	\begin{equation}
+		f(x)=f(0)e^{\tau x}
+	\end{equation}
+
+
+\section*{Appendix}
+	Scrivi quelle cose
+
+
+\end{document}
