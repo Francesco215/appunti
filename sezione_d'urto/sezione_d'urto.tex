@@ -1,7 +1,7 @@
 %\documentclass[11pt,fleqn]{book}%
 %\documentclass{exam}%
 \documentclass[11pt,a4paper]{article}
-\date{{\LARGE 2019}}
+\date{{\LARGE Anno accademico 2018/2019}}
 \usepackage[italian]{babel}
 \usepackage[T1]{fontenc}
 \usepackage{graphicx}
@@ -10,8 +10,7 @@
 \font\myfont=cmr12 at 40pt
 \title{{\myfont Sezione d'urto}}
 
-\author{{\Huge Francesco Sacco}\\ \\ \\
-		\includegraphics[scale=0.4]{Immagini/cherubino.eps}\\}
+\author{{\Huge Francesco Sacco}}
 \usepackage[utf8x]{inputenc}
 \usepackage{amsmath}
 \usepackage{amsthm}
@@ -100,6 +99,8 @@
 		\begin{equation}
 			\sigma=\frac{N_a}{|j|}
 		\end{equation}
+		Nel sistema MKS la sezione d'urto si misura in $m^2$, ma siccome essa nel caso degli atomi è circa $10^{-28}\textrm m^2$ si introduce come nuova unità di misura il barn denominata col simbolo $b$ che è uguale a $1b=10^{-28}\textrm m^2$.\newline
+		Dalla relazione $h^2c^2/\textrm {GeV}^2=0.3894\textrm b$ si può usare con le unità naturali ($c=1$, $h=1$) i $\textrm {GeV}$ per misurare la sezione d'urto, in particolare $1\textrm{GeV}^{-2}=0.3894\textrm b$ oppure $1\textrm b=2.568\textrm{GeV}^{-2}$
 
 	\section{Sezione d'urto con due gas/plasmi che si scontrano}
 		\label{sec:gas}
@@ -232,12 +233,18 @@
 			d\sigma=f(\vettore p_1,\dots,\vettore p_n)\delta^4\bigg(\vettore P_t-\sum_i^n \vettore P_i\bigg)\prod_i^n\frac{d^3\vettore p_i}{2E_i}
 			\label{eq:spaz_fas}
 		\end{equation} 
-		Per qualche strana ragione questa definizione di sezione d'urto viene usata anche nei decadimenti, anche se non capisco che c'azzecca, cioè la sezione d'urto è un'area, non una probabilità, come fanno a determinare la costante di normalizzazione? Boh!
+		Per qualche strana ragione questa definizione di sezione d'urto viene usata anche nei decadimenti, anche se non capisco che c'azzecca, cioè la sezione d'urto è un'area, non una probabilità, come fanno a determinare la costante di normalizzazione?\newline
+		Forse si sfrutta la parametrizzazione della sezione d'urto in GeV e a quel punto si normalizza in modo che la sezione d'urto totale sia uguale all'energia rilasciata nel processo decadimento, ma non ne sono certo e comunque non vedo che senso abbia, a me sembra abbastanza arbitraria come cosa.
 
 
 	\section{Processi inclusivi}
-		In realtà non sempre è possibile misurare il quadrimpulso di ogni particella uscente da un urto, quindi difficilmente è possibile usare la definizione di sezione d'urto dell'ultima equazione scritta (eq.\ref{eq:spaz_fas}).\newline
+		In realtà non sempre è possibile misurare il quadrimpulso di ogni particella uscente da un urto, quindi difficilmente si può usare la definizione di sezione d'urto dell'ultima equazione scritta (eq.\ref{eq:spaz_fas}).\newline
 		In fisica i processi nei quali è possibile misurare il quadrimpulso di ogni particella sono detti processi processi "esclusivi", come per esempio l'urto tra due palle di biliardo, altrimenti sono detti "inclusivi", come in molti esperimenti di fisica delle alte energie.\newline
+		Ad esempio se siamo soltanto in grado di misurare l'energia della particella $i-$esima, allora l'equazione diventa così:
+		\begin{equation}
+			d\sigma=f(E_i)dE_i
+		\end{equation}
+		dove $f(E_i)$ ha lo stesso significato della $f(\vettore p_1,\dots,\vettore p_n)$ dell'ultima equazione (eq.\ref{eq:spaz_fas})
 
 
 
