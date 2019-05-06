@@ -1,6 +1,6 @@
 %\documentclass[11pt,fleqn]{book}%
 %\documentclass{exam}%
-\documentclass[11pt,a4paper]{article}
+\documentclass[11pt,a4paper]{report}
 \date{{\LARGE Anno accademico 2018/2019}}
 \usepackage[italian]{babel}
 \usepackage[T1]{fontenc}
@@ -8,9 +8,10 @@
 \usepackage[11pt]{moresize}
 
 \font\myfont=cmr12 at 40pt
-\title{{\myfont Sezione d'urto}}
+\title{{\myfont Appunti di Fisica III}}
 
-\author{{\Huge Francesco Sacco}}
+\author{{\Huge Francesco Sacco}\\ \\ \\
+		\includegraphics[scale=0.8]{Immagini/cherubino.eps}\\}
 \usepackage[utf8x]{inputenc}
 \usepackage{amsmath}
 \usepackage{amsthm}
@@ -20,16 +21,17 @@
 \newcommand{\vettore}[1]{\mathbf{#1}}
 \newcommand{\vettorec}[1]{\textrm{#1}}
 \newcommand{\pscal}[2]{\langle #1,#2\rangle}
+\newcommand{\pvet}[2]{#1\wedge #2}
 
 \begin{document}
-	\maketitle
-	\tableofcontents
-	\newpage
-	\section*{Prefazione}
-		Visto che c'è molta confusione sulla sezione d'urto faccio questi brevi appunti per chiarire bene cos'è e cosa rappresenta.\newline
-		Lungo il pdf mettero un bel pò di note a piè di pagina, esse vanno lette solo se non si capisce quello che si sta leggendo, se stai capendo non leggerle,\footnote{Minchia ma allora non hai capito un cazzo} rovinano il flusso della discussione.\newline 
-		La sezione d'urto viene indicata di solito con $\sigma$, Il suo nome richiama alla mente qualcosa che abbia a che vedere un'area su cui sbatte qualcosa. Però la sezione d'urto non è sempre l'area dell'oggetto, ma intende rappresentare una sorta di "area equivalente".\newline
-		Ad esempio è ragionevole dire che per la luce l'area effettiva di un vetro $1m\times 1m$ è minore di un metro quadro, questo perchè molti fotoni passano attraverso il vetro indisturbati.\newline
+\maketitle
+\tableofcontents
+\newpage
+\chapter{Sezione d'urto}
+	Visto che c'è molta confusione sulla sezione d'urto faccio questi brevi appunti per chiarire bene cos'è e cosa rappresenta.\newline
+	Lungo il pdf mettero un bel pò di note a piè di pagina, esse vanno lette solo se non si capisce quello che si sta leggendo, se stai capendo non leggerle,\footnote{Minchia ma allora non hai capito un cazzo} rovinano il flusso della discussione.\newline 
+	La sezione d'urto viene indicata di solito con $\sigma$, Il suo nome richiama alla mente qualcosa che abbia a che vedere un'area su cui sbatte qualcosa. Però la sezione d'urto non è sempre l'area dell'oggetto, ma intende rappresentare una sorta di "area equivalente".\newline
+	Ad esempio è ragionevole dire che per la luce l'area effettiva di un vetro $1m\times 1m$ è minore di un metro quadro, questo perchè molti fotoni passano attraverso il vetro indisturbati.\newline
 	\section{Sezione d'urto s'un oggetto opaco}
 	\label{sec:opaco}
 		Per semplicità iniziano a trattare il concetto di sezione d'urto nel caso di un oggetto opaco,\footnote{Chiaramente le particelle incidenti sono fotoni, ma con un pò di fantasia si può generalizzare il concetto con oggetti incidenti diversi dai fotoni} in questo caso ci aspettiamo che la sezione d'urto sia uguale alla superfice ortogonale al facio.\newline
@@ -182,7 +184,7 @@
 			\rightarrow
 			\langle\vettore S\rangle= \hbar \omega\vettore j
 		\end{equation}
-		dove $\vettore S=\frac{1}{\mu_0}\Re(\vettore E) \times \Re(\vettore B)$, e $\vettore j$ è lo stesso che va a finire nel denominatore dell'equazione \ref{eq:sez_diff}.\newline
+		dove $\vettore S=\frac{1}{\mu_0}\pvet{\Re(\vettore E)}{\Re(\vettore B)}$, e $\vettore j$ è lo stesso che va a finire nel denominatore dell'equazione \ref{eq:sez_diff}.\newline
 		Ricordiamo la definizione della sezione d'urto differenziale: $\frac{d\sigma}{d\Omega}=N(\Omega)/|j|$ (eq \ref{eq:sez_diff}).
 		\[
 			d\sigma=\frac{N(\Omega)d\Omega}{|j|}\cdot\frac{\hbar\omega}{\hbar \omega}=
@@ -250,4 +252,121 @@
 
 
 
-\end{document}
+
+
+
+
+
+
+
+
+
+
+\chapter{Fisica delle Particelle}
+	\section{Modello Standard}
+	\begin{figure}[h]
+		\centering
+    	\includegraphics[width=\linewidth]{Immagini/Modello_standard.png}
+		\caption{Modello standard}
+		\label{fig:mod_std}
+	\end{figure}
+	\subsection{Interazione Forte}
+		L'interazione forte agisce tra i quark attraverso i gluoni che generano la forza di colore, essa può creare i barioni (rosso, verde, blu), gli antibarioni (anti-rosso, anti-verde, anti-blu) e i mesoni (colore,anti-colore).\newline
+		I mesoni sono instabili e decadono (inserisci quanto tempo ci mettono) e fungono da intermediatori della forza fi colore tra diversi barioni.\newline
+		L'interazione forte conserva tutto (verifica questa affermazione)!
+	\subsection{Interazione Elettromagnetica}
+		Essa è mediata dai fotoni e agisce tra particelle cariche. le reazioni possibili sono annichilamento e scattering con fotini.L'annichilamento è possibile solo con la propria antiparticella.
+
+
+
+
+
+
+
+
+
+
+
+
+
+\chapter{Elettromagnetismo}
+	Qua metterò solo le cose da imparare a memoria di elettromagnetismo, se vuoi studiare l'elettromagnetismo necessario per Fisica 3 vai a leggerti le dispense di Bonati
+	\section{Equazioni di Maxwell}
+		Nel sistema internazionale (SI):
+		\begin{equation}
+			\begin{cases}
+				\pscal \nabla{\vettore E}=\rho/\epsilon_0\\
+				\pvet \nabla {\vettore E}=-\frac{\partial \vettore B}{\partial t}\\
+				\pscal \nabla{\vettore B}=0\\
+				\pvet \nabla {\vettore B}=\mu_0\vettore J+\mu_0\epsilon_0\frac{\partial \vettore E}{\partial t}
+			\end{cases}
+			\begin{cases}
+				\pscal \nabla{\vettore D}=\rho\\
+				\pvet \nabla {\vettore E}=-\frac{\partial \vettore B}{\partial t}\\
+				\pscal \nabla{\vettore B}=0\\
+				\pvet \nabla {\vettore H}=\vettore J+\frac{\partial \vettore D}{\partial t}
+			\end{cases}
+		\end{equation}
+		Nel sistema Gaussiano (G):
+		\begin{equation}
+			\begin{cases}
+				\pscal \nabla{\vettore E}=4\pi\rho\\
+				\pvet \nabla {\vettore E}=-\frac 1 c \frac{\partial \vettore B}{\partial t}\\
+				\pscal \nabla{\vettore B}=0\\
+				\pvet \nabla {\vettore B}=\frac{4\pi}c \vettore J+\frac 1 c \frac{\partial \vettore E}{\partial t}
+			\end{cases}
+		\end{equation}
+		Per ricordarsi del sistema gaussiano basta pensare che la forza di Coulomb è $q_1q_2/r^2$ e la forza di Lorentz è $q(\vettore E+\pvet{\vettore \beta}{\vettore B})$
+	\section{Conversione SI-G}
+		Per passare dal sistema internazionale a quello gaussiano basta usare queste 3 equazioni
+		\begin{equation}
+			\begin{cases}
+				(\vettore E,\phi)|_G=\sqrt{4\pi\epsilon_0}(\vettore E,\phi)|_{SI}\\
+				(\vettore J, \rho)|_G=\frac{(\vettore J, \rho)|_{SI}}{\sqrt{4\pi\epsilon_0}}\\
+				(\vettore B,\vettore A)_G=
+				\sqrt{\frac{4\pi}{\mu_0}}(\vettore B,\vettore A)_{SI}=
+				c\sqrt{4\pi\epsilon_0}(\vettore B,\vettore A)_{SI}
+			\end{cases}
+		\end{equation}
+		spesso si indica con $k_0=1/\sqrt{4\pi\epsilon_0}$
+	\section{Energia e Impulso}
+		\subsection{Densità di Energia}
+			\begin{equation}
+				W=\frac{E^2+B^2}{8\pi}\quad(\textrm{G})\quad=\quad\frac{\epsilon_0}{2}(E^2+c^2B^2)\quad(\textrm{SI})
+			\end{equation}
+		\subsection{Vettore di Poynting}
+			\begin{equation}
+				\vettore S=\frac c{4\pi}(\pvet{\vettore E}{\vettore B})\quad(\textrm{G})\quad=\quad\frac{1}{\mu_0}(\pvet{\vettore E}{\vettore B})\quad(\textrm{SI})
+			\end{equation}
+		\subsection{Tensore Impulso}
+			Per ricordarlo meglio bisogna pensare di mettere lungo la diagonale l'energia e poi sottrarre in tutta la matrice i campi incrociati
+			\begin{equation}
+				\sigma_{ij}=\frac 1{4\pi}\bigg[\frac{\delta_{ij}}2(E^2+B^2)-E_iE_j-B_iB_j\bigg]\quad(\textrm {G})
+			\end{equation}
+			\[
+				\sigma_{ij}=\epsilon_0\bigg[\frac{\delta_{ij}}2(E^2+c^2B^2)-E_iE_j-c^2B_iB_j\bigg]\quad(\textrm {SI})
+			\]
+		\subsection{Tensore Enegia-Impulso}
+			\begin{equation}
+				T^{\mu\nu}=
+				\begin{vmatrix}
+					W & \vettore S/c\\
+					\vettore S/c & \sigma_{ij}
+				\end{vmatrix}
+			\end{equation}
+	\section{Radiazione}
+		\subsection{Campi generati da una carica $q$ in un moto generico}
+			Il termine a destra del campo elettrico è quello più importante da imparare a memoria esso rappresenta il campo elttrico molto lontano visto che va come $1/R$.
+			\begin{equation}
+				\vettore E(\vettore r,t)=\frac q{\gamma^2R^2}\frac{\hat{\vettore n}-\vettore \beta}{(1-\pscal{\hat{\vettore n}}{\vettore \beta})^3}\bigg|_{t_r}+
+				\frac{q}{cR}
+				\frac{\pvet{\hat{\vettore n}}{\big[\pvet{(\hat{\vettore n}-\vettore \beta)}{\dot{\vettore \beta}}\big]}}{(1-\pscal{\hat{\vettore n}}{\vettore \beta})^3}\bigg|_{t_r}\quad(\textrm {G})
+			\end{equation}
+			\[
+				B=\pvet{\hat{\vettore n}}{\vettore E}|_{t_{rit}}
+			\]
+		\subsection{Radiazione sviluppata al secondo ordine non relativistica}
+			\begin{equation}
+				I=\frac{2}{3c^2}(\ddot p^2+\ddot m^2)+\frac{\sum_{ij}\dddot Q_{ij}\dddot Q_{ij}}{180c^5}\quad(\textrm {G})
+			\end{equation}
+	\end{document}
