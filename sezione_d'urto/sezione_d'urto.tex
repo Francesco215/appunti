@@ -34,7 +34,7 @@
 	Ad esempio è ragionevole dire che per la luce l'area effettiva di un vetro $1m\times 1m$ è minore di un metro quadro, questo perchè molti fotoni passano attraverso il vetro indisturbati.\newline
 	\section{Sezione d'urto s'un oggetto opaco}
 	\label{sec:opaco}
-		Per semplicità iniziano a trattare il concetto di sezione d'urto nel caso di un oggetto opaco,\footnote{Chiaramente le particelle incidenti sono fotoni, ma con un pò di fantasia si può generalizzare il concetto con oggetti incidenti diversi dai fotoni} in questo caso ci aspettiamo che la sezione d'urto sia uguale alla superfice ortogonale al facio.\newline
+		Per semplicità iniziano a trattare il concetto di sezione d'urto nel caso di un oggetto opaco,\footnote{Chiaramente le particelle incidenti sono fotoni, ma con un pò di fantasia si può generalizzare il concetto con oggetti incidenti diversi dai fotoni} in questo caso ci aspettiamo che la sezione d'urto sia uguale alla superfice ortogonale al fascio.\newline
 		Noi in questo caso vogliamo ricavare l'area ortogonale in base a quello che succede al fascio di luce che lo colpisce.\newline
 
 		Supponiamo di mandare un facio di luce con un'area maggiore del bersaglio, e che dietro ci sia uno schermo ortogonale al facio molto grande che raccolga la luce (figura \ref{fig:ombra}), allora possiamo dire che la sezione d'urto è l'area dell'ombra che l'oggetto genera sullo schermo.\newline
@@ -270,13 +270,22 @@
 		\caption{Modello standard}
 		\label{fig:mod_std}
 	\end{figure}
+	\subsection{Leggi di conservazione}
+		Si conservano
+		\begin{itemize}
+			\item Carica elettrica totale
+			\item Numero Barionico
+			\item Numero Leptonico
+		\end{itemize}
+	\subsection{Interazione Elettromagnetica}
+		Essa è mediata dai fotoni e agisce tra particelle cariche. le reazioni possibili sono annichilamento e scattering con fotoni. L'annichilamento è possibile solo con la rispettiva antiparticella.
+	\subsection{Interazione Debole}
+		È l'inerazione più strana di tutte, viene mediata dai Bosoni Z e W. In generale se da un processo escono fuori dei neutrini, allora l'interazione debole ci ha messo lo zampino.\newline
+		Questo tipo di interazione conserva il numero Leptonico totale, ma non quello familiare.
 	\subsection{Interazione Forte}
 		L'interazione forte agisce tra i quark attraverso i gluoni che generano la forza di colore, essa può creare i barioni (rosso, verde, blu), gli antibarioni (anti-rosso, anti-verde, anti-blu) e i mesoni (colore,anti-colore).\newline
 		I mesoni sono instabili e decadono (inserisci quanto tempo ci mettono) e fungono da intermediatori della forza fi colore tra diversi barioni.\newline
 		L'interazione forte conserva tutto (verifica questa affermazione)!
-	\subsection{Interazione Elettromagnetica}
-		Essa è mediata dai fotoni e agisce tra particelle cariche. le reazioni possibili sono annichilamento e scattering con fotini.L'annichilamento è possibile solo con la propria antiparticella.
-
 
 
 
@@ -329,6 +338,9 @@
 			\end{cases}
 		\end{equation}
 		spesso si indica con $k_0=1/\sqrt{4\pi\epsilon_0}$
+
+
+
 	\section{Energia e Impulso}
 		\subsection{Densità di Energia}
 			\begin{equation}
@@ -353,14 +365,30 @@
 					W & \vettore S/c\\
 					\vettore S/c & \sigma_{ij}
 				\end{vmatrix}
-			\end{equation}
+			\end{equation}		
+
+
+
+
 	\section{Radiazione}
+		Partiamo con un pò di notazione:
+		\begin{itemize}
+			\item $\vettore r$ è il punto nel quale si osservano i campi (una specie di origine)
+			\item $t$ è il momento nel quale si osservano i campi
+			\item $\vettore r'$ è la posizione della sorgente
+			\item $t'$ è il tempo ritardato, deriva da $c(t-t')=|\vettore r-\vettore r'(t')|$
+			\item $\vettore R=\vettore r-\vettore r'(t')$ è il vettore che parte da $\vettore r'$ e finisce in $\vettore r$
+			\item $\hat{\vettore n}=\vettore R/\vettorec R$
+			\item $\beta=\frac1c\frac{d\vettore r'}{dt}$
+			\item $\gamma=\frac 1{\sqrt{1-\beta^2}}$
+		\end{itemize}
 		\subsection{Campi generati da una carica $q$ in un moto generico}
-			Il termine a destra del campo elettrico è quello più importante da imparare a memoria esso rappresenta il campo elttrico molto lontano visto che va come $1/R$.
+			Il termine a destra del campo elettrico è quello più importante da imparare a memoria esso rappresenta il campo elettrico molto lontano visto che va come $1/R$.
 			\begin{equation}
 				\vettore E(\vettore r,t)=\frac q{\gamma^2R^2}\frac{\hat{\vettore n}-\vettore \beta}{(1-\pscal{\hat{\vettore n}}{\vettore \beta})^3}\bigg|_{t_r}+
 				\frac{q}{cR}
 				\frac{\pvet{\hat{\vettore n}}{\big[\pvet{(\hat{\vettore n}-\vettore \beta)}{\dot{\vettore \beta}}\big]}}{(1-\pscal{\hat{\vettore n}}{\vettore \beta})^3}\bigg|_{t_r}\quad(\textrm {G})
+				\label{eq:Eirr}
 			\end{equation}
 			\[
 				B=\pvet{\hat{\vettore n}}{\vettore E}|_{t_{rit}}
@@ -369,4 +397,76 @@
 			\begin{equation}
 				I=\frac{2}{3c^2}(\ddot p^2+\ddot m^2)+\frac{\sum_{ij}\dddot Q_{ij}\dddot Q_{ij}}{180c^5}\quad(\textrm {G})
 			\end{equation}
+
+	\section{Attraversamento della materia di particelle cariche}
+		Altra notazione:
+		\begin{itemize}
+			\item $\alpha=e^2/(\hbar c)\approx 1/137$ costante di struttura fine
+			\item $m_e=0.51$MeV$/c^2$
+			\item $r_e=e^2/(m_ec^2)\approx 2.8$fm raggio classico dell'elettrone
+		\end{itemize}
+		sia $\frac{d\mathcal{E}}{d\Omega}$ l'energia irraggiata per unità di angolo solido, essa è uguale a
+		\begin{equation}
+			\frac{d\mathcal{E}}{d\Omega}=\frac{c}{4\pi}\int_{-\infty} ^{+\infty} R^2\vettorec E^2 dt
+		\end{equation}
+		Il campo elettico è quello dell'equazione \ref{eq:Eirr} nel nostro caso consideriamo la forza agente sulla particella esclusivamente perpendicolare al suo moto caso, e quindi si può scrivere
+		\begin{equation}
+			R\vettore E=\frac{q}{c}\pvet{\hat{\vettore n}}{\big(\pvet{\hat{\vettore n}}{\dot{\vettore \beta}}\big)}
+		\end{equation}
+		La trasformata dell'equazione di sopra è 
+		\begin{equation}
+			\int_{-\infty} ^{+\infty} \frac{e^{i\omega t}}{\sqrt{2\pi}}\frac{q}{c}\pvet{\hat{\vettore n}}{\big(\pvet{\hat{\vettore n}}{\dot{\vettore \beta}}\big)} dt
+		\end{equation}
+		Sfruttanto che la trasformata definita così è isometrica si ha che
+		\begin{equation}
+			\frac{d\mathcal{E}}{d\Omega}=\int_{-\infty} ^{+\infty} 
+			\frac{e^2}{8\pi^2 c}\Bigg|\int_{-\infty} ^{+\infty}e^{i\omega t}\frac{q}{c}\pvet{\hat{\vettore n}}{\big(\pvet{\hat{\vettore n}}{\dot{\vettore \beta}}\big)} dt\Bigg|^2
+			d\omega=
+		\end{equation}
+		\[
+			=\frac{e^2}{4\pi^2 c}\int_0 ^{+\infty} 
+			\Bigg|\int_{-\infty} ^{+\infty}e^{i\omega t}\frac{q}{c}\pvet{\hat{\vettore n}}{\big(\pvet{\hat{\vettore n}}{\dot{\vettore \beta}}\big)} dt\Bigg|^2
+			d\omega	
+		\]
+		Quindi si può decidere (in modo abbastanza improprio) che 
+		\begin{equation}
+			\frac{d^2\mathcal{E}}{d\Omega d\omega}=\frac{e^2}{4\pi^2 c}\Bigg|\int_{-\infty} ^{+\infty}e^{i\omega t}\frac{q}{c}\pvet{\hat{\vettore n}}{\big(\pvet{\hat{\vettore n}}{\dot{\vettore \beta}}\big)} dt\Bigg|^2
+		\end{equation}
+		$\pvet{\hat{\vettore n}}{\big(\pvet{\hat{\vettore n}}{\dot{\vettore \beta}}\big)}=\dot{\vettore \beta}\sin(\theta)$.\newline
+		nel caso $\omega\tau\gg1$ allora la trasformata si annulla perhcè c'è interferenza, nel caso opposto invece la funzione rimane para para: 
+		\begin{equation}
+			\frac{d^2\mathcal{E}}{d\Omega d\omega}=
+			\begin{cases}
+				\frac1c \Big(\frac{q|\Delta \vettore v|\sin(\theta)}{2\pi c}\Big)^2\textrm{ per } \omega\tau\lesssim 1 \\
+				0 \textrm{ per }\omega\tau\gtrsim 1
+			\end{cases}
+		\end{equation}
+		Se si suppone che l'angolo di deflessione sia piccolo, allora si può dire che la variazione di velocità è pari alla forza subita nella direzione ortogonale al moto, facendo qualche conto si ottiene che 
+		\[
+			|\Delta \vettore v|=\frac{2qQ}{bmv}
+		\]
+		dove $Q$ è la massa del coso colpito e m la massa del proiettile. Dopo aver integrato in tutti gli angoli solidi e imposto che $\tau\approx b/v$ si ottiene che 
+		\begin{equation}
+			\frac{d\mathcal{E}}{d\omega}=
+			\begin{cases}
+				\frac8{3c^3\pi }\Big(\frac{q^2Q}{bmv}\Big)^2\textrm{ per } \omega\lesssim v/b \\
+				0 \textrm{ per }\omega\gtrsim v/b
+			\end{cases}
+		\end{equation}
+
+		Adesso voglio vedere quanta energia viene irradiata per unità di frequenza se ci faccio passare un flusso di particelle attorno al bersaglio.\newline
+		\begin{equation}
+			\frac{d\chi}{d\omega}=\int_{b_{min}}^{b_{max}}2\pi b  \frac{d\mathcal{E}}{d\omega}db=\frac1{3c^3 }\Big(\frac{4q^2Q}{mv}\Big)^2\int_{b_{min}}^{b_{max}} \frac{db}b
+		\end{equation}
+
+		Adesso bisogna scegliere bene $b_{max}$ e $b_{min}$.\newline
+		I valori cambiano a seconda se si è nel caso relativistico o in quello non relativistico.\newline
+		$b_{max}=\min\{a,v\gamma/\omega\}$, per $\gamma$ grandi si prende il raggio atomico $a$, nel caso non relativistico si sceglie $v/\omega$.\newline
+		dal principio di indeterminazione si ha che $\Delta \vettore x\Delta \vettore v=\hbar/m$, se si suppone per eccesso che $\Delta \vettore v\lesssim \vettore v$ e al posto di $\vettore x $ si ci metter $b$ si ottiene che $b_{min}=\hbar/mv$.\newline
+		mettendo tutto inzieme si ottiene 
+		\begin{equation}
+			\frac{d\chi}{d\omega}=\frac1{3c^3 }\Big(\frac{4q^2Q}{mv}\Big)^2
+			\ln\bigg(\frac{mv\min\{a,v\gamma/\omega\}}{\hbar}\bigg)
+		\end{equation}
+
 	\end{document}
