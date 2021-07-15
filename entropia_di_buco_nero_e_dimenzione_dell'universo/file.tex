@@ -1,0 +1,123 @@
+\documentclass[10pt,twoside]{article}
+
+\usepackage{blindtext} % Package to generate dummy text throughout this template 
+
+\usepackage[sc]{mathpazo} % Use the Palatino font
+\usepackage[T1]{fontenc} % Use 8-bit encoding that has 256 glyphs
+\linespread{1.05} % Line spacing - Palatino needs more space between lines
+\usepackage{microtype} % Slightly tweak font spacing for aesthetics
+\usepackage{graphicx}
+\usepackage{multirow}
+\setlength\parindent{0pt}
+\usepackage[english]{babel} % Language hyphenation and typographical rules
+\usepackage[hmarginratio=1:1,top=32mm,columnsep=20pt, total={6.8in, 9in}]{geometry} % Increase total to increase margins 
+\usepackage[hang, small,labelfont=bf,up,textfont=it,up]{caption} % Custom captions under/above floats in tables or figures
+\usepackage{booktabs} % Horizontal rules in tables
+
+\usepackage{braket}
+
+\usepackage[export]{adjustbox} % valign package
+
+\usepackage{lettrine} % The lettrine is the first enlarged letter at the beginning of the text
+
+\usepackage{enumitem} % Customized lists
+\setlist[itemize]{noitemsep} % Make itemize lists more compact
+
+\usepackage{abstract} % Allows abstract customization
+\renewcommand{\abstractnamefont}{\normalfont\bfseries} % Set the "Abstract" text to bold
+\renewcommand{\abstracttextfont}{\normalfont\itshape\normalsize} % Set the abstract itself to small italic text
+
+\usepackage{titlesec} % Allows customization of titles
+\renewcommand\thesection{\Roman{section}} % Roman numerals for the sections
+\renewcommand\thesubsection{\roman{subsection}} % roman numerals for subsections
+\titleformat{\section}[block]{\large\scshape\centering}{\thesection.}{1em}{} % Change the look of the section titles
+\titleformat{\subsection}[block]{\large}{\thesubsection.}{1em}{} % Change the look of the section titles
+
+\usepackage{fancyhdr} % Headers and footers
+\pagestyle{fancy} % All pages have headers and footers
+\fancyhead{} % Blank out the default header
+\fancyfoot{} % Blank out the default footer
+\fancyhead[C]{University of Pisa} % Custom header text
+\fancyfoot[RO,LE]{\thepage} % Custom footer text
+\pagenumbering{gobble}
+\usepackage{titling} % Customizing the title section
+
+\usepackage{hyperref} % For hyperlinks in the PDF
+\usepackage[ruled,vlined]{algorithm2e}
+
+\usepackage[backend=bibtex]{biblatex}
+\addbibresource{bib_source.bib}
+
+\usepackage{multicol,caption}
+
+\newenvironment{Figure}
+  {\par\medskip\noindent\minipage{\linewidth}}
+  {\endminipage\par\medskip}
+
+\newenvironment{Algorithm}[1][htb]
+  {\renewcommand{\algorithmcfname}{Algorithm}% Update algorithm name
+   \begin{algorithm}[#1]%
+  }{\end{algorithm}}
+
+
+\setlength{\droptitle}{-4\baselineskip} % Move the title up
+
+\pretitle{\centering \Huge\bfseries} % Article title formatting
+%\posttitle % Article title closing formatting
+\title{Why the Universe can't be Infinite and why it Expands} % Article title
+\author{%
+\textsc{Francesco Sacco}\\[1ex] % Second author's name
+\normalsize \href{mailto:francesco215@live.it}{francesco215@live.it} % Second author's email address
+}
+\date{
+    \small\today\\
+    \small{\small{Qiskit Hackaton Europe 2021}}} % Leave empty to omit a date
+
+
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+The maximum entropy a region of space can cointain is proportional to the surface area
+\end{abstract}
+\vspace{0.2cm}
+\begin{multicols}{2}
+
+\section{Why the universe can't be Infinite}
+	The entropy of a black hole is
+	\begin{equation}
+		S=\frac{k_b c^3}{4G\hbar} A=\alpha V^{2/3}
+	\end{equation}
+	where
+	\begin{equation}
+		\alpha=\frac{k_b c^3}{4G\hbar} \sqrt[3]{3}\bigg(\frac34\bigg)^{2/3}
+	\end{equation}
+
+	and $A$ and $V$ is the surface of the black hole\newline
+	Therefore the entropy per unit volume of a black hole is
+	\begin{equation}
+		s_b=\frac SV=\frac{\alpha}{\sqrt[3]{V}}
+	\end{equation}
+	And it decreases as the volume of the black hole gets larger and larger.
+
+
+	The main property of black holes that we are going to keep in mind is that a black hole of volume $V$ has the maximum entropy any spherical volume $V$ can have.
+
+
+	Suppose we have a universe enclosed in a volume of radius $R$ and that on large scales we can say that it has constant entropy density $s_u=dS/dV$.\newline
+	The maximum volume of this universe $V_{max}$ is
+	\begin{equation}
+		V_{max}= \bigg(\frac\alpha {s_u}\bigg)^3
+	\end{equation}
+
+	Therefore the univere can't be infinite if it is homogeneus on large scales and flat
+\section{Why the universe expands}
+	Suppose the volume of the Universe for some reason is exactly $V_{max}$ it would last a blink of an eye before collapsing into a black hole. That is because the total entropy has to increase.
+	If the universe has some kind of law that keeps it's volume always equal to $V_{max}$ we would have an expanding universe.
+
+	This could explain why our universe in expanding, and why the expantion of the universe isn't constant throught the age of the universe.
+
+\end{multicols}
+\end{document}

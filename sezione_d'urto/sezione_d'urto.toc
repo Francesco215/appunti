@@ -1,26 +1,26 @@
 \babel@toc {italian}{}
 \babel@toc {italian}{}
-\contentsline {chapter}{\numberline {1}Sezione d'urto}{2}{chapter.1}
-\contentsline {section}{\numberline {1.1}Sezione d'urto s'un oggetto opaco}{2}{section.1.1}
-\contentsline {section}{\numberline {1.2}Sezione d'urto s'un oggetto traslucido}{4}{section.1.2}
-\contentsline {section}{\numberline {1.3}Collegamento con la probabilit\IeC {\`a}}{4}{section.1.3}
-\contentsline {section}{\numberline {1.4}Sezione d'urto di una particella}{5}{section.1.4}
-\contentsline {section}{\numberline {1.5}Sezione d'urto con due gas/plasmi che si scontrano}{6}{section.1.5}
-\contentsline {section}{\numberline {1.6}Sezione d'urto differenziale e Scattering Rutherford}{7}{section.1.6}
-\contentsline {section}{\numberline {1.7}Cose con onde elettromagnetiche}{8}{section.1.7}
-\contentsline {section}{\numberline {1.8}Cose con lo spazio delle fasi}{10}{section.1.8}
-\contentsline {section}{\numberline {1.9}Processi inclusivi}{11}{section.1.9}
-\contentsline {chapter}{\numberline {2}Elettromagnetismo}{13}{chapter.2}
-\contentsline {section}{\numberline {2.1}Equazioni di Maxwell}{13}{section.2.1}
-\contentsline {section}{\numberline {2.2}Conversione SI-G}{13}{section.2.2}
-\contentsline {section}{\numberline {2.3}Formule utili}{14}{section.2.3}
-\contentsline {subsection}{\numberline {2.3.1}Densit\IeC {\`a} di Energia}{14}{subsection.2.3.1}
-\contentsline {subsection}{\numberline {2.3.2}Vettore di Poynting}{14}{subsection.2.3.2}
-\contentsline {subsection}{\numberline {2.3.3}Tensore Impulso}{14}{subsection.2.3.3}
-\contentsline {subsection}{\numberline {2.3.4}Tensore di campo}{14}{subsection.2.3.4}
-\contentsline {subsection}{\numberline {2.3.5}Tensore Enegia-Impulso}{14}{subsection.2.3.5}
-\contentsline {subsection}{\numberline {2.3.6}Trasformazione dei Campi}{15}{subsection.2.3.6}
-\contentsline {section}{\numberline {2.4}Radiazione}{15}{section.2.4}
-\contentsline {subsection}{\numberline {2.4.1}Campi generati da una carica $q$ in un moto generico}{15}{subsection.2.4.1}
-\contentsline {subsection}{\numberline {2.4.2}Radiazione sviluppata al secondo ordine non relativistica}{15}{subsection.2.4.2}
-\contentsline {section}{\numberline {2.5}Attraversamento della materia di particelle cariche}{16}{section.2.5}
+\contentsline {chapter}{\numberline {1}Sezione d'urto}{2}{chapter.1}% 
+\contentsline {section}{\numberline {1.1}Sezione d'urto s'un oggetto opaco}{2}{section.1.1}% 
+\contentsline {section}{\numberline {1.2}Sezione d'urto s'un oggetto traslucido}{4}{section.1.2}% 
+\contentsline {section}{\numberline {1.3}Collegamento con la probabilit\IeC {\`a}}{4}{section.1.3}% 
+\contentsline {section}{\numberline {1.4}Sezione d'urto di una particella}{5}{section.1.4}% 
+\contentsline {section}{\numberline {1.5}Sezione d'urto con due gas/plasmi che si scontrano}{6}{section.1.5}% 
+\contentsline {section}{\numberline {1.6}Sezione d'urto differenziale e Scattering Rutherford}{7}{section.1.6}% 
+\contentsline {section}{\numberline {1.7}Cose con onde elettromagnetiche}{8}{section.1.7}% 
+\contentsline {section}{\numberline {1.8}Cose con lo spazio delle fasi}{10}{section.1.8}% 
+\contentsline {section}{\numberline {1.9}Processi inclusivi}{11}{section.1.9}% 
+\contentsline {chapter}{\numberline {2}Elettromagnetismo}{13}{chapter.2}% 
+\contentsline {section}{\numberline {2.1}Equazioni di Maxwell}{13}{section.2.1}% 
+\contentsline {section}{\numberline {2.2}Conversione SI-G}{13}{section.2.2}% 
+\contentsline {section}{\numberline {2.3}Formule utili}{14}{section.2.3}% 
+\contentsline {subsection}{\numberline {2.3.1}Densit\IeC {\`a} di Energia}{14}{subsection.2.3.1}% 
+\contentsline {subsection}{\numberline {2.3.2}Vettore di Poynting}{14}{subsection.2.3.2}% 
+\contentsline {subsection}{\numberline {2.3.3}Tensore Impulso}{14}{subsection.2.3.3}% 
+\contentsline {subsection}{\numberline {2.3.4}Tensore di campo}{14}{subsection.2.3.4}% 
+\contentsline {subsection}{\numberline {2.3.5}Tensore Enegia-Impulso}{14}{subsection.2.3.5}% 
+\contentsline {subsection}{\numberline {2.3.6}Trasformazione dei Campi}{15}{subsection.2.3.6}% 
+\contentsline {section}{\numberline {2.4}Radiazione}{15}{section.2.4}% 
+\contentsline {subsection}{\numberline {2.4.1}Campi generati da una carica $q$ in un moto generico}{15}{subsection.2.4.1}% 
+\contentsline {subsection}{\numberline {2.4.2}Radiazione sviluppata al secondo ordine non relativistica}{15}{subsection.2.4.2}% 
+\contentsline {section}{\numberline {2.5}Attraversamento della materia di particelle cariche}{16}{section.2.5}% 

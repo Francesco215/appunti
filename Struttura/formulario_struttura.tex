@@ -1,0 +1,75 @@
+\documentclass[10pt,a4paper]{article}
+\usepackage{verbatim}
+\usepackage{subcaption}
+\usepackage{karnaugh-map}
+\usepackage[utf8]{inputenc}
+\usepackage[italian]{babel}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{mathrsfs}
+\usepackage[left=2cm,right=2cm,top=2cm,bottom=2cm]{geometry}
+\newcommand{\rem}[1]{[\emph{#1}]}
+\newcommand{\exn}{\phantom{xxx}}
+\newcommand{\limx}{\lim_{dx\to 0}}
+
+\author{Francesco Sacco}
+\title{Formulario di Struttura della materia}
+\begin{document}
+\date{Agosto 2018}
+\maketitle
+
+\section{Definizioni fondamentali}
+\begin{itemize}
+	\item $E\exn |$ Energia del sistema (gas)
+	\item $T\exn |$ Temperatura (in kelvin)
+	\item $k_b\exn |$ Costante di Botlzmann = $1,380 \times 10^{-23}$J/K
+	\item $\Gamma\exn |$ Numero di microstati accessibili
+	\item $S=k_b\ln(\Gamma)\exn |$ Entropia
+	\item $P\exn |$ Pressione
+	\item $V\exn |$ Volume
+	\item $\mu\exn |$ Potenziale chimico
+	\item $N\exn |$ Numero di particelle
+	\item $B=H+4\pi M\exn |$ Campo magnetico, $H$ e magnetizzazione
+\end{itemize}
+
+\section{Definizioni inventate}
+\begin{itemize}
+	\item $\rho(E)=dn/dE\exn |$ densità di stati per unità di energia
+	\item $w_E\exn |$ numero di stati con l'energia $E$
+	\item $Z=\sum_E w_E e^{-E/k_bT}=\int\rho(E)e^{-E/k_bT}dE\exn |$ Funzione di partizione\footnote{La prima somma è su ogni possibile stato con ogni possibile numero di particelle}
+	\item $\mathscr L=\sum_\alpha \exp\big(-\frac{E_\alpha-\mu N_\alpha}{k_bT}\big)=
+		\sum_{N_\alpha}e^{\mu N_\alpha/k_bT}\sum_{\alpha'}e^{-E_{\alpha'}/k_bT}dE\exn |$
+		Funzione di Gran partizione
+	\item $F=E-TS=-k_bT\ln Z\exn |$ Energia libera di Helmholz
+	\item $W=E+PV\exn |$ Entalpia
+	\item $\Phi=F+PV=E-TS+PV\exn |$ Energia libera di Gibbs (o potenziale di Gibbs) 
+	\item $\Omega=F-\mu N=E-TS-\mu N=-k_bT\ln\mathscr L\exn |$ Potenziale di Landau
+\end{itemize}
+
+
+\section{Equazioni importanti}
+Conservazione dell'enerigia
+\begin{equation}
+	dE=TdS-PdV+\mu dN+ \mathbf H\cdot d\bigg[\int \mathbf M(V)dV\bigg]+\dots
+\end{equation}
+Legge del gas perfetto
+\begin{equation}
+	PV=Nk_bT=\frac23E
+\end{equation}
+Formula di stirling (valida per N grandi)
+\begin{equation}
+	N! \approx \sqrt{2\pi N}\bigg(\frac Ne\bigg)^N
+\end{equation}
+
+
+
+
+
+
+
+
+
+
+\end{document}

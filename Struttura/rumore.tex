@@ -1,0 +1,57 @@
+\documentclass[10pt,a4paper]{article}
+\usepackage{verbatim}
+\usepackage{subcaption}
+\usepackage{karnaugh-map}
+\usepackage[utf8]{inputenc}
+\usepackage[italian]{babel}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{mathrsfs}
+\usepackage[left=2cm,right=2cm,top=2cm,bottom=2cm]{geometry}
+\newcommand{\rem}[1]{[\emph{#1}]}
+\newcommand{\exn}{\phantom{xxx}}
+\newcommand{\limx}{\lim_{dx\to 0}}
+
+\author{Francesco Sacco}
+\title{Fluttuazioni e Rumore}
+\begin{document}
+\date{Agosto 2018}
+\maketitle
+
+\section{Fluttuazioni numero di Particelle}
+	Il potenziale di landau $\Omega=E-TS-\mu N$, quindi $d\Omega=-SdT-PdV-Nd\mu$ ne consegue che $\partial \Omega/\partial \mu=-N$. Questa relazione può essere dimostrata attraverso la seguente relazione.
+
+	\begin{equation}
+		\Omega=-kT\ln Z\exn|\exn Z=\sum_{stati}\exp\bigg(\frac{\mu N -E}{kT}\bigg)
+	\end{equation}
+
+	Per $\sum_{stati}$ si intende dire di sommare su tutti i possibili numeri $N$ di particelle e su tutte le possibili configurazioni di posizioni e impulsi di quelle $N$ particelle.\newline
+
+	Prima di vedere quanto vale quella somma calcoliamoci per sport $\partial \Omega/\partial \mu$ e $\partial^2 \Omega/\partial \mu^2$.
+
+	\[
+		\frac{\partial \Omega}{\partial \mu}=\frac{-kT}{Z}\frac{\partial}{\partial \mu}
+		\bigg[\sum_{stati}\exp\frac{\mu N -E}{kT}\bigg]=-\frac1Z \sum_{stati}N\exp\frac{\mu N -E}{kT}=-\bar N
+	\]\newline\newline
+	\[
+		\frac{\partial^2 \Omega}{\partial \mu^2}=
+		-\frac{\partial}{\partial \mu}\bigg[\frac1Z \sum_{stati}N\exp\frac{\mu N -E}{kT}\bigg]=
+	\]
+	\[
+		=\frac1{kTZ^2}\bigg[\sum_{stati}N\exp\frac{\mu N -E}{kT}\bigg]^2-\frac1{kTZ}\sum_{stati}N^2\exp\frac{\mu N -E}{kT}=\frac1{kT}\bigg[\big(\bar N\big)^2-\bar{\big(N^2\big)}\bigg]=-\frac{\big(\Delta N\big)^2}{kT}
+	\]
+	Quindi alla fine si ha che:
+	\begin{equation}
+		-kT\frac{\partial^2 \Omega}{\partial \mu^2}=\big(\Delta N\big)^2
+	\end{equation}
+
+
+\section{Potenziali di Landau per Fermi e Bose}
+
+	\Omega_q=-Kt\ln
+
+
+
+\end{document}
